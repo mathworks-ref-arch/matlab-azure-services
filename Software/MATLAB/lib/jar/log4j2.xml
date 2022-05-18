@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                pattern="[%d] %p %m (%c)%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="error" additivity="false">
+            <AppenderRef ref="console" />
+        </Root>
+        <!-- SharedTokenCacheCredential accidentally tries to unlock the cache
+             twice which throws a harmless error, hide it -->
+        <Logger name="com.microsoft.aad.msal4jextensions.CrossProcessCacheFileLock" level="fatal"/>        
+        <!-- SharedTokenCacheCredential throws an error if token not found in
+             cache. Hide this error as this is not an actual issue. The
+             authentication strategies will perform an interactive flow. -->
+        <Logger name="com.azure.identity.SharedTokenCacheCredential" level="fatal"/>        
+    </Loggers>
+</Configuration>

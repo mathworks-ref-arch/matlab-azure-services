@@ -1,0 +1,16 @@
+function accountSasPermission = setReadPermission(obj, permission)
+% SETREADPERMISSION Sets the read permission status
+% The permission argument should be of type logical.
+% A azure.storage.common.sas.AccountSasPermission object is returned.
+
+% Copyright 2020 The MathWorks, Inc.
+
+if ~islogical(permission)
+    logObj = Logger.getLogger();
+    write(logObj,'error','permission argument must be of type logical');
+end
+
+accountSasPermissionj = obj.Handle.setReadPermission(permission);
+accountSasPermission = azure.storage.common.sas.AccountSasPermission(accountSasPermissionj);
+
+end

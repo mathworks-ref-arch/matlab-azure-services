@@ -1,0 +1,20 @@
+# References
+
+In general the MATLAB interfaces follow the same design as the Azure® SDK for
+Java. Thus it can be helpful to also consult the [Azure SDK for Java documentation](https://docs.microsoft.com/en-us/azure/developer/java/sdk)
+to learn more about specific client interfaces, methods and authentication workflows.
+
+
+## Azure Storage
+
+* [Azure SDK for Java Reference Documentation](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.8.0/index.html)
+* [Known issues with Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-known-issues)
+
+## Azure Authentication
+
+* [Chained Token Credentials](https://docs.microsoft.com/en-us/java/api/com.azure.identity.chainedtokencredential?view=azure-java-stable)
+* [Azure Identity Examples](https://docs.microsoft.com/en-us/java/api/overview/azure/identity-readme?view=azure-java-stable)
+how-to-procure-tenant-id-client-id-and-client-secret-key-to-connect-to-microsoft-azure-data-lake-storage-gen2/)
+* [Support Matrix](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage)
+
+[//]: #  (Copyright 2020-2022 The MathWorks, Inc.)

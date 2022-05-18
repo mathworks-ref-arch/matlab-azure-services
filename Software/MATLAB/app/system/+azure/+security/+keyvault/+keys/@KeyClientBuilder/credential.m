@@ -1,0 +1,29 @@
+function builder = credential(obj, credential)
+% CREDENTIAL Sets the credentials used to authorize a client's requests
+% An updated builder object is returned.
+%
+% Example:
+%     configFilePath = fullfile(AzureCommonRoot, 'config', 'ClientSecret.json');
+%     credentials = configureCredentials(configFilePath);
+%     builder = builder.credential(credentials);
+
+% Copyright 2021 The MathWorks, Inc.
+
+if  isa(credential, 'azure.core.credential.TokenCredential') || ...
+    isa(credential, 'azure.identity.ClientSecretCredential') || ...
+    isa(credential, 'azure.identity.EnvironmentCredential') || ...
+    isa(credential, 'azure.identity.InteractiveBrowserCredential') || ...
+    isa(credential, 'azure.identity.ChainedTokenCredential') || ...
+    isa(credential, 'azure.identity.AzureCliCredential') || ...
+    isa(credential, 'azure.identity.DeviceCodeCredential') || ...
+    isa(credential, 'azure.identity.ManagedIdentityCredential') || ...
+    isa(credential, 'azure.identity.DefaultAzureCredential') || ...
+    isa(credential, 'azure.identity.SharedTokenCacheCredential')
+    builderj = obj.Handle.credential(credential.Handle);
+    builder = azure.security.keyvault.keys.KeyClientBuilder(builderj);
+else
+    logObj = Logger.getLogger();
+    write(logObj,'error','Invalid credential argument');
+end
+
+end
