@@ -1,0 +1,26 @@
+name: Generate Documentation and Publish to Pages
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  pages:
+    name: Generate Documentation and Publish to Pages 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+      - name: Install Sphinx Python Dependencies
+        run: pip install -r requirements.txt
+        working-directory: Documentation
+      - name: Build Documentation
+        run: make html
+        working-directory: Documentation  
+      - name: Deploy Documentation to Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Documentation/_build/html

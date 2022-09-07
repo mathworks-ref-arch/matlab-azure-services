@@ -35,16 +35,18 @@ the static java class path if `SharedTokenCacheCredential` and
 `TokenCachePersistenceOptions` are used, if not, the jar file can be in any
 position on the static java class path.
 
-> **_NOTE:_** when making use of MathWorks features which can automatically add
-> jar files to the static class path, these typically add them to then *end* of
-> the static class path. For example when working with a [packaged custom
-> toolbox](https://www.mathworks.com/help/matlab/matlab_prog/create-and-share-custom-matlab-toolboxes.html)
-> the included jar file is added to the *end* of the static path in the end user
-> MATLAB installation. Or if working with MATLAB Compiler (SDK) standalone
-> components the jar file which was packaged into the component are
-> automatically added to the *end* of the static class path at runtime. However
-> there may be situations in which this is not possible and then these features
-> may add the jar file to the dynamic class path.
+```{note}
+When making use of MathWorks features which can automatically add
+jar files to the static class path, these typically add them to then *end* of
+the static class path. For example when working with a [packaged custom
+toolbox](https://www.mathworks.com/help/matlab/matlab_prog/create-and-share-custom-matlab-toolboxes.html)
+the included jar file is added to the *end* of the static path in the end user
+MATLAB installation. Or if working with MATLAB Compiler (SDK) standalone
+components the jar file which was packaged into the component are
+automatically added to the *end* of the static class path at runtime. However
+there may be situations in which this is not possible and then these features
+may add the jar file to the dynamic class path.
+```
 
 In general the recommended approach to add the jar file to the static java class
 path in a local MATLAB installation is to add an entry to the

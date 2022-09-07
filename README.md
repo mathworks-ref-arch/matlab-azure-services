@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This package offers MATLAB interfaces that connect to various Microsoft Azure®
+This package offers MATLAB™ interfaces that connect to various Microsoft Azure®
 Services it currently supports:
 
-* [Azure Data Lake Storage Gen2](Documentation/DataLakeStorageGen2.md)
-* [Azure Key Vault](Documentation/KeyVault.md)
+* [Azure Data Lake Storage Gen2](https://mathworks-ref-arch.github.io/matlab-azure-services/DataLakeStorageGen2.html)
+* [Azure Key Vault](https://mathworks-ref-arch.github.io/matlab-azure-services/KeyVault.html)
 
 > Note, very many of MATLAB's IO operations support Blob Storage via builtin functions.
 > For example ```dir``` supports accessing remote data:
@@ -30,9 +30,15 @@ Services it currently supports:
 
 This package is primarily tested using Ubuntu™ 20.04 and Windows® 10.
 
+## Documentation
+
+The main documentation for this package is available at:
+
+<https://mathworks-ref-arch.github.io/matlab-azure-services>
+
 ## Usage
 
-Once [installed](Documentation/Installation.md) the interface is added to the MATLAB path
+Once [installed](https://mathworks-ref-arch.github.io/matlab-azure-services/Installation.html) the interface is added to the MATLAB path
 by running `startup.m` from the `Software/MATLAB` directory.
 
 ### Azure Data Lake Storage Gen2
@@ -70,7 +76,7 @@ dataLakeFileClient = createStorageClient('FileSystemName','myFileSystem',...
 tf = dataLakeFileClient.exists();
 ```
 
-For further details see: [Azure Data Lake Storage Gen2](Documentation/DataLakeStorageGen2.md)
+For further details see: [Azure Data Lake Storage Gen2](https://mathworks-ref-arch.github.io/matlab-azure-services/DataLakeStorageGen2.html)
 
 ### Azure Key Vault
 
@@ -95,7 +101,7 @@ properties = keyClient.listPropertiesOfKeys();
 name = propList(1).getName();
 ```
 
-For further details see: [Azure Key Vault](Documentation/KeyVault.md)
+For further details see: [Azure Key Vault](https://mathworks-ref-arch.github.io/matlab-azure-services/KeyVault.html)
 
 ### Configuration
 
@@ -103,14 +109,14 @@ The package offers a `loadConfigurationSettings` function which allows reading
 configuration settings from a short JSON format file. This offers a convenient
 way for you to configure various settings (like endpoint URLs) as well as
 authentication configurations without having to hardcode these into your MATLAB
-code. For more details see: [Documentation/Configuration.md](Documentation/Configuration.md)
+code. For more details see: [Configuration](https://mathworks-ref-arch.github.io/matlab-azure-services/Configuration.html)
 
 ### Authentication
 
 Virtually all interactions with Azure will require some form of authentication.
 The authentication workflows are common to all services. The package offers
 various Builder classes as well as a higher-level function `configureCredentials`
-to aid performing the authentication. For more details see: [Documentation/Authentication.md](Documentation/Authentication.md)
+to aid performing the authentication. For more details see: [Authentication](https://mathworks-ref-arch.github.io/matlab-azure-services/Authentication.html)
 
 ## License
 

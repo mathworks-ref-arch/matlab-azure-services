@@ -9,11 +9,13 @@ if ~(ischar(filePath) || isStringScalar(filePath))
     logObj = Logger.getLogger();
     write(logObj,'error','Invalid filePath argument');
 else
-    if ~isfile(filePath)
+    % Resolve filePath to absolute path
+    [status,info] = fileattrib(filePath);
+    if ~status
         logObj = Logger.getLogger();
         write(logObj,'error','File not found: %s');
     else
-        obj.Handle.uploadFromFile(filePath);
+        obj.Handle.uploadFromFile(info.Name);
     end
 end
 

@@ -2,6 +2,12 @@
 
 ## Release Notes
 
+## Release 0.1.1 September 7th 2022
+
+* Published documentation to GitHub pages.
+* Fixed relative path issues with `uploadFromFile` and `downloadToFile`.
+* Documented deployment workflows.
+
 ## Release 0.1.0 May 18th 2022
 
 * Initial release to GitHub.com

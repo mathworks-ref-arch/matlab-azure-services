@@ -253,6 +253,97 @@ methods (Test)
         testCase.verifyFalse(containerClient.exists());
     end
 
+    function testUploadDownloadAltDir(testCase)
+        disp('Running testUploadDownloadAltDir');
+        import java.util.UUID;
+        uuid = char(UUID.randomUUID());
+        containerName = ['unittestcontainer-',uuid];
+        builder = azure.storage.blob.BlobContainerClientBuilder();
+        credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
+        builder = builder.connectionString(credentials);
+        builder = builder.httpClient();
+        builder = builder.containerName(containerName);
+        containerClient = builder.buildClient();
+        containerClient.create();
+        testCase.verifyTrue(containerClient.exists());
+              
+        % Go into temp location
+        loc = tempname;
+        mkdir(loc);
+        prevDir = cd(loc);
+        % Go back to original location after test
+        cleanup1 = onCleanup(@()cd(prevDir));
+
+        % Create a file test.mat for upload here
+        uploadFile = 'test.mat';
+        x = rand(10);
+        save(fullfile(loc,uploadFile),'x');
+
+        % Start a new blob
+        blobName = uploadFile;
+        builder = azure.storage.blob.BlobClientBuilder();
+        builder = builder.connectionString(credentials);
+        builder = builder.httpClient();
+        builder = builder.containerName(containerName);
+        builder = builder.blobName(blobName);
+        blobClient = builder.buildClient();
+        % Verify blob does not exist at first
+        testCase.verifyFalse(blobClient.exists)
+        
+        % Upload the file using filename only, no absolute path
+        blobClient.uploadFromFile(uploadFile);
+    
+        % Verify this succeeded by checking whether blob exists now
+        testCase.verifyTrue(blobClient.exists)
+
+        % Try to download the file overwriting existing file which should
+        % fail.
+        testCase.verifyError(@()blobClient.downloadToFile(uploadFile),'Azure:ADLSG2');
+
+        % Replace local file such that after a download we can check that
+        % it changed back
+        y = rand(10);
+        save(fullfile(loc,uploadFile),'y');
+        
+        % Download with overwrite, which should succeed
+        blobClient.downloadToFile(uploadFile,'overwrite',true)
+        % Verify that the local file now indeed contains x again
+        data = load(fullfile(loc,uploadFile));
+        testCase.verifyTrue(isfield(data,'x'));
+
+        % Try download to new file with relative name
+        blobClient.downloadToFile('newmat.mat')
+        % Verify this was downloaded in local dir
+        testCase.verifyTrue(isfile(fullfile(loc,'newmat.mat')));
+
+        % Also try with relative subdir, which should fail if subdir does
+        % not exist
+        testCase.verifyError(@()blobClient.downloadToFile(fullfile('subdir',uploadFile)),'Azure:ADLSG2')
+        % But succeed when it does
+        mkdir('subdir');
+        blobClient.downloadToFile(fullfile('subdir',uploadFile));
+        
+        % Verify that this file is also correct
+        data = load(fullfile(loc,'subdir',uploadFile));
+        testCase.verifyTrue(isfield(data,'x'));
+
+
+        % Online Clean-up
+        
+        % delete the blob and check it is gone
+        blobClient.deleteBlob();
+        testCase.verifyFalse(blobClient.exists());
+
+        % clean up the container
+        containerClient.deleteContainer();
+        testCase.verifyFalse(containerClient.exists());
+        
+        % Local clean-up
+        cd(prevDir);
+        rmdir(loc,'s')
+
+    end
+
 
     function testCopyFromUrl(testCase)
         disp('Running testCopyFromUrl');

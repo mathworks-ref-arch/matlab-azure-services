@@ -17,12 +17,14 @@ function uploadFromFile(obj, filePath, varargin)
         logObj = Logger.getLogger();
         write(logObj,'error','Invalid filePath type');
     else
-        if ~isfile(filePath)
+        % Resolve filePath to absolute path
+        [status,info] = fileattrib(filePath);
+        if ~status
             logObj = Logger.getLogger();
             write(logObj,'error',['File not found: ', strrep(char(filePath),'\','\\')]);
         end
     end
-    
+    filePath = info.Name;
     % validString = @(x) ischar(x) || isStringScalar(x);
     p = inputParser;
     p.CaseSensitive = false;
