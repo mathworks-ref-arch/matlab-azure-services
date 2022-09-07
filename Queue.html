@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queue Storage &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="File Data Lake Storage" href="File.html" />
+    <link rel="prev" title="Blob Storage" href="Blob.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Blob.html">Blob Storage</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Queue Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
+          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
+      <li>Queue Storage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Queue.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="queue-storage">
+<h1>Queue Storage<a class="headerlink" href="#queue-storage" title="Permalink to this headline"></a></h1>
+<p>QueueStorage is designed to provide durable message queueing for large
+workloads. This package provides a low-level interface to queue storage and
+provides capabilities not available in shipping MATLAB. This package supersedes
+a previously published blob storage low-level interface
+<a class="reference external" href="https://github.com/mathworks-ref-arch/matlab-azure-blob">https://github.com/mathworks-ref-arch/matlab-azure-blob</a>.
+Specifically this interface target’s Gen2 storage APIs and the Azure® v12 SDK
+rather than the previous generation of APIs and the v8 SDK. While older
+interface referenced above provides some forward compatibility with Gen2 it is
+strongly recommended that this interface be used when working with Gen2 blob
+storage. While conceptually quite similar the APIs are not backwardly compatible
+as a consequence of significant changes in the underlying Azure APIs.</p>
+<section id="queue-clients">
+<h2>Queue Clients<a class="headerlink" href="#queue-clients" title="Permalink to this headline"></a></h2>
+<p>The concept of a <em>Client</em> is central to how queue storage is accessed. A
+hierarchy of clients exist that target different levels of the storage
+hierarchy:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">QueueServiceClient</span></code> - This highest level client addresses the level of
+queue service itself.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QueueClient</span></code> - The lowest level client supports operations at the queue
+level.</p></li>
+</ol>
+<p>Client objects are created and configured using corresponding <em>Builder</em> objects.
+There is overlap in functionality between the various clients and there may
+often be more than one way to accomplish a given operation.</p>
+<p>Detailed information on the underlying client APIs can be found here: <a class="reference external" href="https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-java/staging/apidocs/index.html?com/azure/storage/queue/package-summary.html">Queue Client SDK</a>.
+This interface exposes a subset of the available functionality to cover common
+use cases in an extensible way.</p>
+<p>A higher-level function <em>createStorageClient()</em> is provided to help build the
+various clients.</p>
+</section>
+<section id="createstorageclient-function">
+<h2><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function<a class="headerlink" href="#createstorageclient-function" title="Permalink to this headline"></a></h2>
+<p>See the <a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> description</span></a> for more details.</p>
+</section>
+<section id="queue-service-client">
+<h2>Queue Service Client<a class="headerlink" href="#queue-service-client" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">QueueServiceClient</span></code> can be created using <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> as
+follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>or build on a lower level using <code class="docutils literal notranslate"><span class="pre">QueueServiceClientBuilder</span></code>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the client&#39;s builder</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="n">QueueServiceClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% configureCredentials is a function that simplifies creating a credentials</span><span class="w"></span>
+<span class="c">% argument for the client&#39;s builder. In this case a Connection String is used to</span><span class="w"></span>
+<span class="c">% authenticate. Other authentication methods may required different build steps,</span><span class="w"></span>
+<span class="c">% e.g. setting an endpoint</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="common-service-client-operations">
+<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this headline"></a></h3>
+<p>For a full list of supported service client methods consult the API
+documentation or call <code class="docutils literal notranslate"><span class="pre">methods()</span></code> on the client object or see the
+<a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference.md</span></a> file.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a Queue &amp; its client</span><span class="w"></span>
+<span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% List queues</span><span class="w"></span>
+<span class="n">qList</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">listQueues</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Delete a Queue &amp; its client</span><span class="w"></span>
+<span class="n">qsc</span><span class="p">.</span><span class="n">deleteQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="queue-client">
+<h2>Queue Client<a class="headerlink" href="#queue-client" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">QueueClient</span></code> is created as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span><span class="w"></span>
+<span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;QueueName&#39;</span><span class="p">,</span><span class="s">&#39;myquename-123456&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the Client&#39;s builder</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="n">QueueClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">queueName</span><span class="p">(</span><span class="s">&quot;myquename-123456&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span>
+</pre></div>
+</div>
+<section id="common-queue-client-operations">
+<h3>Common Queue Client operations<a class="headerlink" href="#common-queue-client-operations" title="Permalink to this headline"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Send a message</span><span class="w"></span>
+<span class="n">msgResult</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&#39;my test message&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get insertion, expiration &amp; next visible times</span><span class="w"></span>
+<span class="n">insertTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getInsertionTime</span><span class="p">();</span><span class="w"></span>
+<span class="n">expireTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getExpirationTime</span><span class="p">();</span><span class="w"></span>
+<span class="n">visibleTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getTimeNextVisible</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Receive a message</span><span class="w"></span>
+<span class="n">msg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">receiveMessage</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get insertion, expiration &amp; next visible times</span><span class="w"></span>
+<span class="n">insertTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getInsertionTime</span><span class="p">();</span><span class="w"></span>
+<span class="n">expireTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getExpirationTime</span><span class="p">();</span><span class="w"></span>
+<span class="n">visibleTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getTimeNextVisible</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the message count, id and receipt</span><span class="w"></span>
+<span class="nb">count</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getDequeueCount</span><span class="p">();</span><span class="w"></span>
+<span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getMessageId</span><span class="p">();</span><span class="w"></span>
+<span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the message text itself</span><span class="w"></span>
+<span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getMessageText</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Clear all or delete a single message</span><span class="w"></span>
+<span class="n">qc</span><span class="p">.</span><span class="n">clearMessages</span><span class="p">();</span><span class="w"></span>
+<span class="n">qc</span><span class="p">.</span><span class="n">deleteMessage</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">receipt</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Blob.html" class="btn btn-neutral float-left" title="Blob Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="File.html" class="btn btn-neutral float-right" title="File Data Lake Storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

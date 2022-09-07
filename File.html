@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File Data Lake Storage &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Azure Key Vault" href="KeyVault.html" />
+    <link rel="prev" title="Queue Storage" href="Queue.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Blob.html">Blob Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">File Data Lake Storage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
+          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
+      <li>File Data Lake Storage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/File.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-data-lake-storage">
+<h1>File Data Lake Storage<a class="headerlink" href="#file-data-lake-storage" title="Permalink to this headline"></a></h1>
+<p>The File Data Lake API currently has less implemented functionality than the equivalent
+Blob and Queue APIs, where additional API calls are needed contact MathWorks.</p>
+<p>Relevant Azure® API/service documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/java/api/overview/azure/storage-file-datalake-readme?view=azure-java-stable">https://docs.microsoft.com/en-us/java/api/overview/azure/storage-file-datalake-readme?view=azure-java-stable</a></p></li>
+</ul>
+<section id="file-data-lake-clients">
+<h2>File Data Lake Clients<a class="headerlink" href="#file-data-lake-clients" title="Permalink to this headline"></a></h2>
+<p>The concept of a <em>Client</em> is central to how file storage is accessed. A
+hierarchy of clients exist that target different levels of the storage
+hierarchy:</p>
+<ol class="arabic simple">
+<li><p>Path</p></li>
+<li><p>Filesystem</p></li>
+<li><p>Directory</p></li>
+<li><p>File</p></li>
+</ol>
+</section>
+<section id="high-level-client-creation">
+<h2>High-level Client Creation<a class="headerlink" href="#high-level-client-creation" title="Permalink to this headline"></a></h2>
+<p>As with other services both high-level and low-level approaches for creating
+various clients are supported.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% creates a DataLakeFileSystemClient with default options</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Creates a DataLakeDirectoryClient with default options</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">               </span><span class="s">&#39;DirectoryName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%  Creates a DataLakeFileClient with default options</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">               </span><span class="s">&#39;FileName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir/file&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Additional Name, Value pairs can be supplied to configure non-default options. See: <code class="docutils literal notranslate"><span class="pre">doc</span> <span class="pre">createStorageClient</span></code> for more details.</p>
+</section>
+<section id="url-format">
+<h2>URL Format<a class="headerlink" href="#url-format" title="Permalink to this headline"></a></h2>
+<p>File path are addressable using the following URL format:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://myaccount.dfs.core.windows.net/myfilesystem/myfilepath</span></code></p>
+<p>Filesystems can be thought of as being similar to Blob Containers and Paths for
+files or Directories as being similar to Blobs.</p>
+</section>
+<section id="build-a-filesystem-client">
+<h2>Build a Filesystem Client<a class="headerlink" href="#build-a-filesystem-client" title="Permalink to this headline"></a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Read a shared storage key from a file</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;myStorageSharedKey.json&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% Create a filesystem builder</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakeFileSystemClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Configure the builder&#39;s credentials, http client, endpoint and name</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">endpoint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;https://&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">.</span><span class="n">getAccountName</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;.dfs.core.windows.net&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">fileSystemName</span><span class="p">(</span><span class="s">&quot;myfilesystemname&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Build the client</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A very similar Path class, <code class="docutils literal notranslate"><span class="pre">azure.storage.file.datalake.DataLakePathClientBuilder()</span></code> exists.</p>
+</section>
+<section id="build-a-filesystem-client-to-work-with-sass">
+<h2>Build a Filesystem Client to work with SASs<a class="headerlink" href="#build-a-filesystem-client-to-work-with-sass" title="Permalink to this headline"></a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create some minimal permissions</span><span class="w"></span>
+<span class="n">FSSP</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">FileSystemSasPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">FSSP</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">FSSP</span><span class="p">.</span><span class="n">setListPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">FSSP</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">FSSP</span><span class="p">.</span><span class="n">setReadPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Set the SAS to expire in 1 days </span><span class="w"></span>
+<span class="n">expiryTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">datetime</span><span class="p">(</span><span class="s">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TimeZone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;UTC&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">days</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">DLSSSV</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">DataLakeServiceSasSignatureValues</span><span class="p">(</span><span class="n">expiryTime</span><span class="p">,</span><span class="w"> </span><span class="n">FSSP</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Requires a shared storage key based client for SAS generation</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;myStorageSharedKey.json&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% Build the client previously shown</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakeFileSystemClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">endpoint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;https://&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">.</span><span class="n">getAccountName</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;.dfs.core.windows.net&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">fileSystemName</span><span class="p">(</span><span class="s">&quot;myfilesystemname&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Use the client to generate a SAS</span><span class="w"></span>
+<span class="n">sasToken</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">generateSas</span><span class="p">(</span><span class="n">DLSSSV</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Return an array of azure.storage.file.datalake.models.PathItem</span><span class="w"></span>
+<span class="c">% detailing filesystem contents</span><span class="w"></span>
+<span class="n">paths</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">listPaths</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Build a second client authenticated with the previoulsy creates SAS</span><span class="w"></span>
+<span class="n">builder2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakeFileSystemClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder2</span><span class="p">.</span><span class="n">sasToken</span><span class="p">(</span><span class="n">sasToken</span><span class="p">);</span><span class="w"></span>
+<span class="n">endpoint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;https://&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">.</span><span class="n">getAccountName</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;.dfs.core.windows.net&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder2</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder2</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder2</span><span class="p">.</span><span class="n">fileSystemName</span><span class="p">(</span><span class="s">&quot;myfilesystemname&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">client2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder2</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Perform an operation using it</span><span class="w"></span>
+<span class="n">paths</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client2</span><span class="p">.</span><span class="n">listPaths</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="sas-permissions">
+<h2>SAS Permissions<a class="headerlink" href="#sas-permissions" title="Permalink to this headline"></a></h2>
+<p>A <em>Path</em> SAS Permission is created as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">psp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">PathSasPermission</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>By default all permissions are disabled and the following methods return false:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">psp</span><span class="p">.</span><span class="n">hasAddPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasCreatePermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasDeletePermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasExecutePermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasListPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasManageAccessControlPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasManageOwnershipPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasMovePermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasReadPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">psp</span><span class="p">.</span><span class="n">hasWritePermission</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>There are corresponding set permission methods that accept a logical and return
+and updated permission:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">psp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">psp</span><span class="p">.</span><span class="n">setCreatePermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A <em>File System</em> permission class with very similar functionality also exists:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">fssp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">FileSystemSasPermission</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="directory-clients-misc-operations">
+<h2>Directory Clients &amp; misc. operations<a class="headerlink" href="#directory-clients-misc-operations" title="Permalink to this headline"></a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Begin by creating a Path Client</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakePathClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;myStorageSharedKey.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">endpoint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;https://&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">.</span><span class="n">getAccountName</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;.dfs.core.windows.net&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">fileSystemName</span><span class="p">(</span><span class="s">&quot;myfilesystemname&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">pathName</span><span class="p">(</span><span class="s">&#39;mydirectoryname&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">dirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildDirectoryClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Check if the path exists</span><span class="w"></span>
+<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Client</span><span class="p">.</span><span class="n">exists</span><span class="p">());</span><span class="w"></span>
+
+<span class="c">% Create a Directory Client from a Filesystem Client</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakeFileSystemClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;myStorageSharedKey.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">endpoint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;https://&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">.</span><span class="n">getAccountName</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;.dfs.core.windows.net&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">fileSystemName</span><span class="p">(</span><span class="s">&quot;myfilesystemname&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">fsClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Create Directory Client</span><span class="w"></span>
+<span class="n">existingDirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fsClient</span><span class="p">.</span><span class="n">createDirectory</span><span class="p">(</span><span class="s">&#39;myOtherDirectory&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Return the path &amp; URL</span><span class="w"></span>
+<span class="nb">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">existingDirClient</span><span class="p">.</span><span class="n">getDirectoryPath</span><span class="p">();</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">existingDirClient</span><span class="p">.</span><span class="n">getDirectoryUrl</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Delete the directory</span><span class="w"></span>
+<span class="n">existingDirClient</span><span class="p">.</span><span class="n">deleteDirectory</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Create and Delete a subdirectory on the filesystem</span><span class="w"></span>
+<span class="n">level1DirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fsClient</span><span class="p">.</span><span class="n">createDirectory</span><span class="p">(</span><span class="s">&#39;level1&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">level2DirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fsClient</span><span class="p">.</span><span class="n">createDirectory</span><span class="p">(</span><span class="s">&#39;level1/level2&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">level1DirClient</span><span class="p">.</span><span class="n">deleteSubdirectory</span><span class="p">(</span><span class="s">&#39;level2&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% verify using an exists() method</span><span class="w"></span>
+<span class="n">level2DirClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Create a File</span><span class="w"></span>
+<span class="n">level1DirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fsClient</span><span class="p">.</span><span class="n">createDirectory</span><span class="p">(</span><span class="s">&#39;level1&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">level1FileClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">level1DirClient</span><span class="p">.</span><span class="n">createFile</span><span class="p">(</span><span class="s">&#39;tmpFile.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span>
+<span class="c">% Rename a directory from srcDir to dstDir</span><span class="w"></span>
+<span class="n">srcDirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fsClient</span><span class="p">.</span><span class="n">createDirectory</span><span class="p">(</span><span class="s">&#39;srcDir&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">nullVal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[];</span><span class="w"></span>
+<span class="n">renamedDirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">srcDirClient</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="n">nullVal</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;dstDir&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<p>This API does not support storage accounts where hierarchical namespace (HNS) is disabled.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Queue.html" class="btn btn-neutral float-left" title="Queue Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="KeyVault.html" class="btn btn-neutral float-right" title="Azure Key Vault" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

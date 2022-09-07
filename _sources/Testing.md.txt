@@ -1,0 +1,177 @@
+# Unit Tests
+
+The package includes various MATLAB® Unit Tests for testing the different
+interfaces and clients for the different Azure® services. These tests can be
+found in `Software/MATLAB/test/unit` and they are further split into directories
+for different Azure services as well as a `Common` directory:
+
+* `/Common`
+* `/KeyVault`
+* `/Storage`
+
+The unit tests for the different services may have different requirements. These
+are documented on a per service basis below.
+
+Typically the tests will require an Azure App Registration with certain specific
+permissions and a service specific resource with specific content and which is
+accessible by the App's service principal. Details like the App Client ID,
+Client Secret, Resource Account Name, etc. which can contain sensitive data, are
+provided to the unit tests through environment variables. This also allows the
+Unit Tests to be more securely included in CI/CD systems where one can typically
+configure variables in a protected and secure way (e.g. through "Actions
+secrets" on GitHub or "Masked/Protected Variables" on GitLab, etc.).
+
+It may be possible to use one single App for all different features. This App
+will then have to meet all the requirements listed in the sections below. Even
+with one App, it is still required to set/provide `AZURE_CLIENT_ID`,
+`KEYVAULT_CLIENT_ID`, etc. separately but they could then all have the same
+value to point to the same App.
+
+Some tests cannot run non-interactively (e.g. authentication tests which require
+user interaction). These tests are automatically skipped if environment variable
+`GITLAB_CI`=`true` is set.
+
+## `/Common` unit tests
+
+`Common` tests various common features like authentication and networking
+features like proxy settings.
+
+> **NOTE:** the common features cannot be tested entirely independently, to be
+> properly tested, the credentials or network configuration, etc. also need to
+> be passed to at least one service specific client which is then interacted
+> with. The `Common` unit tests, test against `BlobServiceClient`,
+> `BlobContainerClient`, `BlobClient`, `QueueServiceClient` and `QueueClient`
+> which are all `Storage` Data Lake Storage Gen2 related client. Hence these
+> tests also require a storage account resource and corresponding environment
+> variables.
+
+### `Common` Azure App Registration
+
+Configure an Azure App for which a Client Secret has been generated as the
+`Storage` App Registration. And if also running the interactive authentication
+tests make sure that for this App:
+
+* A Redirect Uri has been configured in the form of `http://localhost:PORT`
+  where *PORT* is configurable.
+* `Allow public client flows` is enabled.
+* `https://storage.azure.com/user_impersonation` API permissions have been
+  configured.
+
+### Azure CLI
+
+In order to be able to test Azure CLI credentials, Azure CLI must have been
+installed and a user must have have already successfully logged in using `az
+login`.
+
+> **NOTE:** The Azure CLI authentication test is skipped when
+> `GITLAB_CI`=`true`.
+
+### `Common` Storage Account
+
+Configure a storage account as discussed under `Storage` Storage Account.
+
+When also running the interactive tests (including Azure CLI test), the
+interactive user which you are logging in as, will also require `Contributor`,
+`Storage Blob Data Contributor` and `Storage Queue Data Contributor` roles on
+the storage account.
+
+### `Common` environment variables
+
+| Variable Name           | Description                                        |
+|-------------------------|----------------------------------------------------|
+| `COMMON_REDIRECT_URI`   | Redirect URI as configured for App                 |
+
+As well as the `Storage` environment variables below.
+
+## `/Storage` Azure Data Lake Storage Gen2 unit tests
+
+### Azure App Registration
+
+In order to be able to run the Storage tests an App registration is required for
+which:
+
+* A Client Secret has been generated.
+
+### `Storage` Storage Account
+
+The storage account should contain three containers:
+
+* `containerempty` which should be empty
+
+* `containernotempty` which should contain two blobs *blob1.txt* and
+  *blob2.txt*.
+
+* `leasetest` which should contain a blob *file1.txt*.
+
+Further, make sure that the App's service principal is assigned `Contributor`,
+`Storage Blob Data Contributor` as well as `Storage Queue Data Contributor`
+roles on this account.
+
+### Connection String/SAS Token
+
+Under "Shared access signature" generate a signature with:
+
+* Allowed Services: "Blob" and "Queue"
+* Allowed resource types: "Service", "Container" and "Object".
+* Allowed permissions: All
+
+Choose an appropriate expiry date/time; Azure by default appears to suggest a
+period of 6 hours which is relatively safe but not very convenient for testing.
+Since the account should really only be used for testing anyway and should
+not be used to store any sensitive data, it may be acceptable to significantly
+increase the validity period in accordance with local security polices.
+
+Similarly one can configure specific allowed IP addresses.
+
+Once generated note down the "Connection string" and "SAS token".
+
+### `Storage` environment variables
+
+| Variable Name               | Description                                    |
+|-----------------------------|------------------------------------------------|
+| `STORAGE_CONNECTION_STRING` | "Connection string" obtained above             |
+| `STORAGE_ACCOUNT_KEY`       | "SAS token" obtained above                     |
+| `STORAGE_ACCOUNT_NAME`      | Name of the storage account                    |
+| `AZURE_CLIENT_ID`           | Client ID of the Azure App                     |
+| `AZURE_CLIENT_SECRET`       | Client Secret which has been generated for the App |
+| `AZURE_TENANT_ID`           | Azure Tenant ID                                |
+
+## `/KeyVault` Azure Key Vault unit tests
+
+All KeyVault Unit Tests are performed using Client Secret authentication. There
+are no interactive tests.
+
+### Key Vault Azure App Registration
+
+In order to be able to run the Key Vault tests an App registration is required
+for which:
+
+* A Client Secret has been generated.
+
+### Key Vault Account
+
+A Key Vault account needs to exist:
+
+* On which soft-delete is enabled.
+
+* For a Key Vault with "Azure role-based access control" permissions model, the
+  App's service principal must be assigned `Key Vault Administrator` role. For a
+  Key Vault working with "Vault access policy" permission model the service
+  principal must have been granted all `Key Management Operations` and `Secret
+  Management Operations` permissions.
+
+* In which a secret named `anakin` with value `darth` needs to exist.
+
+* In which a RSA key named `kvtestkey` must exist (key size and actual value are
+  irrelevant).
+
+### `KeyVault` environment variables
+
+| Variable Name           | Description                                        |
+|-------------------------|----------------------------------------------------|
+| `KEYVAULT_CLIENT_ID`    | Client ID of the Azure App                         |
+| `KEYVAULT_CLIENT_SECRET`| Client Secret which has been generated for the App |
+| `KEYVAULT_TENANT_ID`    | Azure Tenant ID                                    |
+| `KEYVAULT_VAULT_NAME`   | Name of the Key Vault                              |
+
+[//]: #  (Copyright 2021-2022 The MathWorks, Inc.)

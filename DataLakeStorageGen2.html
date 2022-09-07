@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azure Data Lake Storage Gen2 &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Blob Storage" href="Blob.html" />
+    <link rel="prev" title="Usage Per Service" href="Services.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Azure Data Lake Storage Gen2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#name-value-pairs">Name, Value pairs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-options">Configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-protocol-access">Multi-protocol access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#low-level-interfaces">Low Level Interfaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Blob.html">Blob Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
+      <li>Azure Data Lake Storage Gen2</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/DataLakeStorageGen2.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="azure-data-lake-storage-gen2">
+<h1>Azure Data Lake Storage Gen2<a class="headerlink" href="#azure-data-lake-storage-gen2" title="Permalink to this headline"></a></h1>
+<p>The MATLAB® Azure™ Data Lake Storage Gen2 interface is a low-level interface
+that supports:</p>
+<ul class="simple">
+<li><p>Blob</p></li>
+<li><p>Queue</p></li>
+<li><p>File Data Lake</p></li>
+</ul>
+<p>The documentation below is split into separate files <a class="reference internal" href="Blob.html"><span class="doc std std-doc">Blob Storage</span></a>,
+<a class="reference internal" href="Queue.html"><span class="doc std std-doc">Queue Storage</span></a> and <a class="reference internal" href="File.html"><span class="doc std std-doc">File Data Lake Storage</span></a>.</p>
+<p>MATLAB’s IO operations increasingly support access to Blob Storage via builtin
+interfaces, e.g. the <code class="docutils literal notranslate"><span class="pre">dir</span></code> command supports accessing remote data:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.mathworks.com/help/matlab/ref/dir.html">https://www.mathworks.com/help/matlab/ref/dir.html</a>,</p></li>
+<li><p><a class="reference external" href="https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html">https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html</a>.</p></li>
+</ul>
+<p>Where MATLAB supports the required operations directly it is recommended to use
+that built in functionality.</p>
+<section id="createstorageclient-function">
+<h2><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function<a class="headerlink" href="#createstorageclient-function" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function can be used for creating BlobServiceClient,
+BlobContainerClient, BlobClient, QueueServiceClient, QueueClient,
+DataLakeFileSystemClient, DataLakeDirectoryClient and DataLakeFileClient.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a BlobServiceClient with default options</span><span class="w"></span>
+<span class="n">blobServiceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Create a BlobContainerClient with default options</span><span class="w"></span>
+<span class="n">blobContainerClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;myContainer&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Create a BlobClient with default options</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;myContainer&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;myBlob&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="c">% Create a QueueServiceClient with default options.</span><span class="w"></span>
+<span class="n">queueServiceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="c">% Create a QueueClient with default options.</span><span class="w"></span>
+<span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;QueueName&#39;</span><span class="p">,</span><span class="s">&#39;myQueue&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="c">% Create a DataLakeFileSystemClient with default options.</span><span class="w"></span>
+<span class="n">dataLakeFileSystemClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="c">% Create a DataLakeDirectoryClient with default options.</span><span class="w"></span>
+<span class="n">dataLakeDirectoryClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;DirectoryName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="c">%Creates a DataLakeFileClient with default options.</span><span class="w"></span>
+<span class="n">dataLakeFileClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;FileName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir/file&#39;</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>By default <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> reads Credential information and the Account
+Name (used to build the Client endpoint) from a configuration file named
+<code class="docutils literal notranslate"><span class="pre">storagesettings.json</span></code>. The function automatically searches for this file on the
+MATLAB path. It is possible to specify a different filename using
+<code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code>. It is also possible to provide <code class="docutils literal notranslate"><span class="pre">'Credentials'</span></code> or
+<code class="docutils literal notranslate"><span class="pre">'SASToken'</span></code> and <code class="docutils literal notranslate"><span class="pre">'AccountName'</span></code> as inputs to the function directly in which
+case no configuration file may be needed. See the Name, Value pairs below for
+more details.</p>
+<section id="name-value-pairs">
+<h3>Name, Value pairs<a class="headerlink" href="#name-value-pairs" title="Permalink to this headline"></a></h3>
+<p>Additional Name, Value pairs can be supplied to configure non-default options:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'Type'</span></code></strong>, explicitly specify the type of client to create. Required for
+creating <code class="docutils literal notranslate"><span class="pre">QueueServiceClient</span></code>. In all other cases the type of client is
+derived from whether <code class="docutils literal notranslate"><span class="pre">'ContainerName'</span></code>, <code class="docutils literal notranslate"><span class="pre">'BlobName'</span></code>, <code class="docutils literal notranslate"><span class="pre">'QueueName'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'FileSystemName'</span></code>, <code class="docutils literal notranslate"><span class="pre">'DirectoryName'</span></code>, and/or <code class="docutils literal notranslate"><span class="pre">'FileName'</span></code> are provided.
+With none of these configured a <code class="docutils literal notranslate"><span class="pre">BlobServiceClient</span></code> is created. If only
+BlobContainer is specified a <code class="docutils literal notranslate"><span class="pre">BlobContainerClient</span></code> is created, if both
+BlobContainer and BlobName are specified a <code class="docutils literal notranslate"><span class="pre">BlobClient</span></code> is created. If
+QueueName is specified a <code class="docutils literal notranslate"><span class="pre">QueueClient</span></code> is created. If only
+FileSystemName is specified a <code class="docutils literal notranslate"><span class="pre">DataLakeFileSystemClient</span></code> is created, if
+DirectoryName is specified as well, a <code class="docutils literal notranslate"><span class="pre">DataLakeDirectoryClient</span></code> is
+created, or if FileName is specified a <code class="docutils literal notranslate"><span class="pre">DataLakeFileClient</span></code> is created.</p>
+<p><em>Possible Values:</em> <code class="docutils literal notranslate"><span class="pre">'BlobService'</span></code>, <code class="docutils literal notranslate"><span class="pre">'BlobContainer'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Blob'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'QueueService'</span></code>, <code class="docutils literal notranslate"><span class="pre">'QueueClient'</span></code>, <code class="docutils literal notranslate"><span class="pre">'DataLakeDirectory'</span></code>, <code class="docutils literal notranslate"><span class="pre">'DataLakeFile'</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">'DataLakeFileSystem'</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code></strong>, explicitly specify which configuration file to use.
+This file is used for configuring Credentials (when not supplied as input)
+and/or Account Name (when not supplied as input).</p>
+<p><em>Default Value:</em> <code class="docutils literal notranslate"><span class="pre">'storagesettings.json'</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'Credentials'</span></code></strong>, explicitly specify credentials to use. This for example
+allows building multiple clients based on the same credentials without having to
+go through (interactive) authentication again. If neither this option nor
+<code class="docutils literal notranslate"><span class="pre">'SASToken'</span></code> is specified, <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> uses <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code>
+with ‘ConfigurationFile’ as input to first configure credentials before building
+the client.</p>
+<p><em>Hint:</em> <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> can be used to build valid Credentials.</p>
+<p>Example:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;myCredentials.json&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">client1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Credentials&#39;</span><span class="p">,</span><span class="n">credentials</span><span class="p">,</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;container1&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">client2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Credentials&#39;</span><span class="p">,</span><span class="n">credentials</span><span class="p">,</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;container2&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'SASToken'</span></code></strong>, explicitly specify a SAS Token to use for authentication rather
+than reading authentication details from a configuration file or a
+credentials object passed in through the <code class="docutils literal notranslate"><span class="pre">'Credentials'</span></code> option. If neither
+this option nor <code class="docutils literal notranslate"><span class="pre">'Credentials'</span></code> are specified, <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> uses
+<code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> with ‘ConfigurationFile’ as input to first configure
+credentials before building the client.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'AccountName'</span></code></strong>, explicitly specify the AccountName used to configure the
+endpoint for the client. If not specified <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> uses
+<code class="docutils literal notranslate"><span class="pre">loadConfigurationSettings</span></code> to load configuration options from
+<code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code>. This file must then contain a “AccountName” setting.</p>
+</section>
+</section>
+<section id="configuration-options">
+<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline"></a></h2>
+<p>The higher-level functions for this service use the same kind of configuration
+options as discussed in <a class="reference internal" href="Configuration.html"><span class="doc std std-doc">Configuration.md</span></a>. The service
+specific options are discussed below.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">AzureStorageExplorer</span></code> function requires <code class="docutils literal notranslate"><span class="pre">LocalPathToStorageExplorer</span></code> to be
+set and it should point to your locally installed StorageExplorer.exe. The
+<code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function may use <code class="docutils literal notranslate"><span class="pre">AccountName</span></code> if not specified in the
+call to <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code>. For example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;LocalPathToStorageExplorer&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Program Files (x86)\\Microsoft Azure Storage Explorer\\StorageExplorer.exe&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;AccountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mystorageaccount&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The default name of the JSON file which <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> works with is
+<code class="docutils literal notranslate"><span class="pre">storagesettings.json</span></code>.</p>
+<p>The clients for the various services follow a common design pattern with
+considerable overlap. Blob is documented in the greatest detail and is should be
+referred to even if using the other APIs.</p>
+</section>
+<section id="multi-protocol-access">
+<h2>Multi-protocol access<a class="headerlink" href="#multi-protocol-access" title="Permalink to this headline"></a></h2>
+<p>If accessing storage via various clients and protocols it is important to consider
+how this differs from pre Gen2 capabilities, the following Azure documentation
+is recommended:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-multi-protocol-access">https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-multi-protocol-access</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction</a></p></li>
+</ul>
+</section>
+<section id="low-level-interfaces">
+<h2>Low Level Interfaces<a class="headerlink" href="#low-level-interfaces" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Blob.html">Blob Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Services.html" class="btn btn-neutral float-left" title="Usage Per Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Blob.html" class="btn btn-neutral float-right" title="Blob Storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

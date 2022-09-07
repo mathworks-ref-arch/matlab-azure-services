@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage Per Service" href="Services.html" />
+    <link rel="prev" title="Configuration" href="Configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#azure-cli">Azure CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-myservicespecificsettings-json">Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managed-identity">Managed Identity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#managed-identity-myservicespecificsettings-json">Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#client-secret">Client Secret</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client-secret-myservicespecificsettings-json">Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variable">Environment Variable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variable-myservicespecificsettings-json">Environment Variable <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#shared-token-cache">Shared Token Cache</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shared-token-cache-myservicespecificsettings-json">Shared Token Cache <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-browser">Interactive Browser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tokencachepersistenceoptions">TokenCachePersistenceOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-browser-myservicespecificsettings-json">Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#device-code">Device Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scopes">Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-and-authenticating">Building <em>and</em> authenticating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">TokenCachePersistenceOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-code-myservicespecificsettings-json">Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#default-azure">Default Azure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-azure-myservicespecificsettings-json">Default Azure <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#storage-shared-key">Storage Shared Key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#storage-shared-key-myservicespecificsettings-json">Storage Shared Key <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-string">Connection String</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connection-string-myservicespecificsettings-json">Connection String <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chained-token">Chained Token</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Authentication.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h1>
+<p>Azure® supports a variety of authentication methods. These can be invoked
+specifically or as a series of failover attempts in a so-called provider-chain.</p>
+<p>When working with high level functions like <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> or
+<code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code>, these will automatically perform the authentication and
+then use these credentials to automatically create the service specific clients.
+The authentication details are read from JSON Configuration files as also
+discussed in <a class="reference internal" href="Configuration.html"><span class="doc std std-doc">Configuration.md</span></a>. Each service has its own
+filename for its default JSON configuration file. Most functions also accept an
+alternative configuration filename as input. The configuration files may contain
+service specific non-authentication related options as well.</p>
+<p>See the service specific documentation to learn more about the default filename
+for each service and how to provide an alternative filename if desired.</p>
+<p>See the sections below to learn more about which settings need to be added in
+the JSON configuration files for the various authentication methods.</p>
+<p>Alternatively, if not using the high level functions for creating service
+specific clients and using the Client <em>Builders</em> instead, the Credential objects
+can still first be build using the <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> function (which is in
+fact also used internally by the higher level functions). This function must be
+called with a specific configuration filename as input, e.g.:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;myCredentialConfiguration.json&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Again, see the sections below on what options need to be configured in the file
+for the different authentication methods.</p>
+<p>Lastly, it is also possible to build Credential objects on the lowest level with
+the help of Credential <em>Builders</em>; see the <a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference</span></a> for
+more details on these classes. This approach does not require any configuration
+files.</p>
+<p>The following authentication approaches are supported:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#azure-cli"><span class="std std-doc">Azure CLI</span></a></p></li>
+<li><p><a class="reference internal" href="#managed-identity"><span class="std std-doc">Managed Identity</span></a></p></li>
+<li><p><a class="reference internal" href="#client-secret"><span class="std std-doc">Client Secret</span></a></p></li>
+<li><p><a class="reference internal" href="#environment-variable"><span class="std std-doc">Environment Variable</span></a></p></li>
+<li><p><a class="reference internal" href="#shared-token-cache"><span class="std std-doc">Shared Token Cache</span></a></p></li>
+<li><p><a class="reference internal" href="#interactive-browser"><span class="std std-doc">Interactive Browser</span></a></p></li>
+<li><p><a class="reference internal" href="#device-code"><span class="std std-doc">Device Code</span></a></p></li>
+<li><p><a class="reference internal" href="#default-azure"><span class="std std-doc">Default Azure</span></a></p></li>
+<li><p><a class="reference internal" href="#storage-shared-key"><span class="std std-doc">Storage Shared Key</span></a></p></li>
+<li><p><a class="reference internal" href="#connection-string"><span class="std std-doc">Connection String</span></a></p></li>
+<li><p><a class="reference internal" href="#chained-token"><span class="std std-doc">Chained Token</span></a></p></li>
+</ol>
+<section id="azure-cli">
+<h2>Azure CLI<a class="headerlink" href="#azure-cli" title="Permalink to this headline"></a></h2>
+<p>This approach uses credentials used to previously authenticate to the Azure CLI
+tool when the <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">login</span></code> command is used. The Azure CLI login process
+supports a number of authentication processes many of which are common to this
+package.</p>
+<section id="sample-myservicespecificsettings-json">
+<h3>Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#sample-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AzureCli&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>For more information on the CLI see: <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/">Azure CLI
+site</a></p>
+</section>
+</section>
+<section id="managed-identity">
+<h2>Managed Identity<a class="headerlink" href="#managed-identity" title="Permalink to this headline"></a></h2>
+<p>Managed identities provide an identity for the Azure resource in Azure Active
+Directory (Azure AD) and use it to obtain Azure AD tokens. Thus identities do
+not have to be directly managed by the developer or end user. This can be
+particularly useful in a deployed scenario as credentials should not be embedded
+in a compiled MATLAB application or CTF file, rather the application can in
+effect derive its credentials by virtue of the machine hosting it in Azure.</p>
+<section id="managed-identity-myservicespecificsettings-json">
+<h3>Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#managed-identity-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagedIdentity&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="client-secret">
+<h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this headline"></a></h2>
+<p>A Client Secret credential is an Azure AD credential that acquires a token with
+a client secret. The secret can be provided in the form as a string specified as
+<code class="docutils literal notranslate"><span class="pre">ClientSecret</span></code> or can be a certificate referred to by <code class="docutils literal notranslate"><span class="pre">pemCertificate</span></code>.</p>
+<section id="client-secret-myservicespecificsettings-json">
+<h3>Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#client-secret-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientSecret&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i6Q&lt;REDACTED&gt;p72&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Either </span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;pemCertificate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c:/path/to/clientCert.pem&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Or</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="environment-variable">
+<h2>Environment Variable<a class="headerlink" href="#environment-variable" title="Permalink to this headline"></a></h2>
+<p>With Environment Variable based credentials the variables must be set in the
+process used to start MATLAB® such that the variables apply to the JVM which is
+configured when MATLAB starts and is not affected by MATLAB <code class="docutils literal notranslate"><span class="pre">setenv</span></code> calls.
+The following combinations of credentials are accepted:</p>
+<ol class="arabic simple">
+<li><p>AZURE_CLIENT_ID, AZURE_CLIENT_SECRET &amp; AZURE_TENANT_ID</p></li>
+<li><p>AZURE_CLIENT_ID, AZURE_CLIENT_CERTIFICATE_PATH &amp; AZURE_TENANT_ID</p></li>
+<li><p>AZURE_CLIENT_ID, AZURE_USERNAME &amp; AZURE_PASSWORD</p></li>
+</ol>
+<p>Environment Variable credentials can often be used in CI/CD based processes.
+Additional note the support for a certificate file path.</p>
+<section id="environment-variable-myservicespecificsettings-json">
+<h3>Environment Variable <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#environment-variable-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Environment&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="shared-token-cache">
+<h2>Shared Token Cache<a class="headerlink" href="#shared-token-cache" title="Permalink to this headline"></a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code>, credentials are read from a cache saved on
+disk (Windows®) or GNOME keyring (Linux). It <em>is</em> possible to work with Shared
+Token Cache directly, in which case the tokens need to already exist in the
+cache. <em>However</em>, in more practical situations it is recommended to use Shared
+Token Cache in combination with an other authentication method like Interactive
+Browser or Device Code.</p>
+<p>Interactive Browser and Device Code can be configured in such a way that they
+will store the tokens which they obtain interactively in the cache.
+<code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will then also configure these workflows to first try to
+read the token from the cache, such that if the token already exists in the
+cache, these methods do not have to go through their interactive flow anymore
+and they can complete without user interaction.</p>
+<p>Specifying a cache <code class="docutils literal notranslate"><span class="pre">Name</span></code> is optional, <code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code> can be
+provided as empty object. In this case the default name “msal” is used on
+Windows and “MSALCache” on Linux.</p>
+<section id="shared-token-cache-myservicespecificsettings-json">
+<h3>Shared Token Cache <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#shared-token-cache-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SharedTokenCache&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="interactive-browser">
+<h2>Interactive Browser<a class="headerlink" href="#interactive-browser" title="Permalink to this headline"></a></h2>
+<p>When Interactive Browser credentials are used an Azure Active Directory
+credential acquires a token for an Azure AD application by prompting the login
+in the default browser. When authenticated, the oauth2 flow will notify the
+credential of the authentication code through the reply URL. The application to
+authenticate to must have delegated user login permissions and
+have<code class="docutils literal notranslate"><span class="pre">http://localhost:port</span></code> listed as a valid Redirect URI for the Azure
+App.</p>
+<section id="tokencachepersistenceoptions">
+<h3>TokenCachePersistenceOptions<a class="headerlink" href="#tokencachepersistenceoptions" title="Permalink to this headline"></a></h3>
+<p>Interactive Browser can optionally be configured with
+<code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code>. When these are configured,
+<code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will actually build and return a <code class="docutils literal notranslate"><span class="pre">ChainedTokenCredential</span></code>
+object instead of an <code class="docutils literal notranslate"><span class="pre">InteractiveBrowserCredential</span></code>. The first option in this
+chain will be a <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> and the second option an
+<code class="docutils literal notranslate"><span class="pre">InteractiveBrowserCredential</span></code> configured to persist the tokens it obtains in
+the same cache.</p>
+<p>When using this the very first time, the token will not exist in the cache and
+the Interactive Browser workflow will be executed interactively. This will then
+store the obtained token in the cache. If the same authentication method is then
+used again later, the token <em>can</em> be read from the cache and the authentication
+flow will complete without needing any action from the end-user.</p>
+</section>
+<section id="interactive-browser-myservicespecificsettings-json">
+<h3>Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#interactive-browser-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;InteractiveBrowser&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w">    </span>
+<span class="w">    </span><span class="nt">&quot;RedirectUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8765&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w">        </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="device-code">
+<h2>Device Code<a class="headerlink" href="#device-code" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code> enables authentication to Azure AD using a device code
+that the user can enter into
+<a class="reference external" href="https://microsoft.com/devicelogin">https://microsoft.com/devicelogin</a>.</p>
+<p>Note that in general the actual authentication provided through the credential
+objects is only executed when the client (KeyClient, BlobClient, etc.) requires
+it (typically on the first operation you perform using the client). In general
+the Azure Java SDK follows this same workflow when working with Device Code
+Credentials. However, in MATLAB specifically, MATLAB will <em>not</em> be able to
+display the device code while other client code is already running, so MATLAB
+requires the Device Code authentication to be explicitly performed <em>before</em>
+passing the credentials to a client. This also means MATLAB cannot rely on the
+client to automatically request the correct scope by itself and therefore it is
+required to specify the correct scopes in the configuration file. Scopes are
+entered as an array of strings.</p>
+<section id="scopes">
+<h3>Scopes<a class="headerlink" href="#scopes" title="Permalink to this headline"></a></h3>
+<p>Azure DataLake Storage Gen2 typically requires the
+<code class="docutils literal notranslate"><span class="pre">https://storage.azure.com/.default</span></code> scope.</p>
+<p>Key Vault typically requires the <code class="docutils literal notranslate"><span class="pre">https://vault.azure.net/.default</span></code> scope.</p>
+<blockquote>
+<div><p><strong><em>NOTE:</em></strong> it is <strong>not</strong> possible to request access to multiple different
+resources (services) in one authentication call. This is a limitation from the
+Azure end and not specific to this package.</p>
+<p>I.e. it is <strong>not</strong> possible to request both
+<code class="docutils literal notranslate"><span class="pre">https://storage.azure.com/.default</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">https://vault.azure.net/.default</span></code>
+Scopes simultaneously to obtain a single Credential object which is then
+usable with both Storage clients as well as Key Vault clients. Separate
+Credential objects will have to be obtained for the different Scopes and then
+passed to the different Clients.</p>
+</div></blockquote>
+</section>
+<section id="building-and-authenticating">
+<h3>Building <em>and</em> authenticating<a class="headerlink" href="#building-and-authenticating" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will automatically build the <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code>
+object <em>and</em> authenticate it for the scopes configured in the settings file. The
+<code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code> object which is returned will be “pre-authenticated” in
+that sense.</p>
+<p>By default the instructions for the end-user on how to complete the device code
+authentication flow are printed to the Command Window. An optional
+<code class="docutils literal notranslate"><span class="pre">'DeviceCodeCallback'</span></code> Name-Value input pair can be passed to
+<code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> to specify a custom callback function for displaying the
+device code instructions:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;settings_DeviceCode.json&#39;</span><span class="p">,,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;DeviceCodeCallback&#39;</span><span class="p">,@</span><span class="n">myExampleCallbackFunction</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This callback will then be called during the authentication flow with an
+<code class="docutils literal notranslate"><span class="pre">azure.identity.DeviceCodeInfo</span></code> object as input. Use the information provided in
+this object to display instructions to the end user on how to complete the
+authentication flow. Or for example use this to automatically copy the code to
+clipboard and open a browser:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">myExampleCallbackFunction</span><span class="p">(</span>deviceCodeInfo<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">% Simply still print to instructions to the Command Window</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getMessage</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">% But also copy the code to the clipboard</span><span class="w"></span>
+<span class="w">    </span><span class="nb">clipboard</span><span class="p">(</span><span class="s">&quot;copy&quot;</span><span class="p">,</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getUserCode</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c">% And open a browser</span><span class="w"></span>
+<span class="w">    </span><span class="nb">web</span><span class="p">(</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getVerificationUrl</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>TokenCachePersistenceOptions<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<p>Device Code can optionally be configured with <code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code>.
+When these are configured, <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will actually build and return
+a <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> object instead of a <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code>. The
+internal workflow is as follows then:</p>
+<ol class="arabic simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> is built and MATLAB uses it to try to obtain a
+valid token for the specified scope from the cache. If this succeeds the
+<code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> is returned immediately without any end-user
+interaction.</p></li>
+<li><p>If no token could be obtained from the cache, a <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code> is
+built and configured to store obtained tokens in the cache <em>and</em> it is then
+authenticated for the requested scope. This will require the end-user to
+perform the authentication interactively. Once this interactive flow has
+completed, the tokens which were obtained during this, will have been stored
+in the cache, so it sufficient now for <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> to return the
+<code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> and there is no need to return the
+<code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code>.</p></li>
+</ol>
+</section>
+<section id="device-code-myservicespecificsettings-json">
+<h3>Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#device-code-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DeviceCode&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w">    </span>
+<span class="w">    </span><span class="nt">&quot;Scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;https://storage.azure.com/.default&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w">        </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="default-azure">
+<h2>Default Azure<a class="headerlink" href="#default-azure" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">DefaultAzureProviderCredential</span></code> attempts to create a credential using
+environment variables or the shared token cache. It tries to create a valid
+credential in the following order:</p>
+<ol class="arabic simple">
+<li><p>EnvironmentCredential</p></li>
+<li><p>ManagedIdentityCredential</p></li>
+<li><p>SharedTokenCacheCredential</p></li>
+<li><p>IntelliJCredential</p></li>
+<li><p>VisualStudioCodeCredential</p></li>
+<li><p>AzureCliCredential</p></li>
+<li><p>Fails if none of the credentials above could be created.</p></li>
+</ol>
+<p>The chained token provider allows for customization of this process (see below).
+Note in the following JSON config file the ManagedIdentityClientId, TenantId and
+AuthorityHost are optional fields depending on which means of authentication is
+expected to be used.</p>
+<section id="default-azure-myservicespecificsettings-json">
+<h3>Default Azure <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#default-azure-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultAzure&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ManagedIdentityClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="storage-shared-key">
+<h2>Storage Shared Key<a class="headerlink" href="#storage-shared-key" title="Permalink to this headline"></a></h2>
+<p>This approach is only supported/relevant when working with Azure Storage
+workflows and can for example <em>not</em> be used when working with Azure Key Vault
+workflows.</p>
+<p>This approach creates a <code class="docutils literal notranslate"><span class="pre">StorageSharedKeyCredential</span></code> containing an account’s
+name and its primary or secondary accountKey. The <code class="docutils literal notranslate"><span class="pre">accountName</span></code> is the
+account name associated with the request and the <code class="docutils literal notranslate"><span class="pre">accountKey</span></code> is the account
+access key used to authenticate the request.</p>
+<p>To obtain the primary or secondary key:</p>
+<ol class="arabic simple">
+<li><p>Sign in to the Azure portal.</p></li>
+<li><p>Locate the storage account.</p></li>
+<li><p>In the account’s settings section, select “Access keys”, showing the access
+keys and the connection string for each key.</p></li>
+<li><p>Select the “Key” string value for key1 or key2 and copy the value.</p></li>
+</ol>
+<section id="storage-shared-key-myservicespecificsettings-json">
+<h3>Storage Shared Key <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#storage-shared-key-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StorageSharedKey&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AccountKey&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lrd&lt;REDACTED&gt;g==&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AccountName&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a&lt;REDACTED&gt;t&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Connection String is a form of <code class="docutils literal notranslate"><span class="pre">StorageSharedKeyCredential</span></code> where the
+credential is simply the connection string.</p>
+</section>
+</section>
+<section id="connection-string">
+<h2>Connection String<a class="headerlink" href="#connection-string" title="Permalink to this headline"></a></h2>
+<p>This approach is only supported/relevant when working with Azure Storage
+workflows and can for example not be used when working with Azure Key Vault
+workflows.</p>
+<p>A connection string contains all the relevant connection properties, like the
+account name and authentication information in one big string. The
+authentication information can be in the form of a Storage Shared Key or a SAS
+signature.</p>
+<p>To obtain a connection string based on Storage Shared Key:</p>
+<ol class="arabic simple">
+<li><p>Sign in to the Azure portal.</p></li>
+<li><p>Locate the storage account.</p></li>
+<li><p>In the account’s settings section, select “Access keys”, showing the access
+keys and the connection string for each key.</p></li>
+<li><p>Select the “Connection string” value for key1 or key2 and copy the value.</p></li>
+</ol>
+<p>To obtain a connection string based on a SAS signature:</p>
+<ol class="arabic simple">
+<li><p>Sign in to the Azure portal</p></li>
+<li><p>Locate the storage account</p></li>
+<li><p>In the account’s settings section, select “Shared access signature”.</p></li>
+<li><p>Configure the permissions and access properties as required/desired and click
+“Generate SAS and connection string”.</p></li>
+<li><p>Select the “Connection string” value and copy the value.</p></li>
+</ol>
+<section id="connection-string-myservicespecificsettings-json">
+<h3>Connection String <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#connection-string-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ConnectionString&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultEndpointsProtocol=https;&lt;REDACTED CONNECTION STRING&gt;g==;EndpointSuffix=core.windows.net&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Alternatively the connection string can be passed as an environment value as
+follows: On Windows using cmd:</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>setx AZURE_STORAGE_CONNECTION_STRING <span class="s2">&quot;&lt;myConnectionString&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Or on Linux/macOS using bash:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AZURE_STORAGE_CONNECTION_STRING</span><span class="o">=</span><span class="s2">&quot;&lt;myConnectionString&gt;&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="chained-token">
+<h2>Chained Token<a class="headerlink" href="#chained-token" title="Permalink to this headline"></a></h2>
+<p>Using a Chained Token provider allows a list of token based credential providers
+to be built such that the authentication process will fall through the providers
+until successful or the list is exhausted. Connection String and Storage Shared
+Key approaches are not token based. Credentials are built in the usual way but
+rather than being used directly they are <em>added</em> to the
+<code class="docutils literal notranslate"><span class="pre">chainedTokenCredentialBuilder</span></code> in descending order of preference. This
+builder is then built and the result provides the client’s credentials.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">chainedTokenCredentialBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chainedTokenCredentialBuilder</span><span class="p">.</span><span class="n">addLast</span><span class="p">(</span><span class="n">clientSecretCredentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">chainedTokenCredentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chainedTokenCredentialBuilder</span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w"></span>
+<span class="n">serviceClientBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClientBuilder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">chainedTokenCredentials</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In this case multiple settings files are used to build the individual
+credentials by passing a specific path e.g.:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">clientSecretCredentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ClientSecret.json&#39;</span><span class="p">));</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Configuration.html" class="btn btn-neutral float-left" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Services.html" class="btn btn-neutral float-right" title="Usage Per Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

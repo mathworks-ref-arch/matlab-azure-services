@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATLAB Compiler (SDK) Deployment &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Unit Tests" href="Testing.html" />
+    <link rel="prev" title="API Reference" href="APIReference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MATLAB Compiler (SDK) Deployment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#option-one-compile-the-jar-file-into-the-standalone-component">Option One: Compile the JAR-file <em>into</em> the standalone component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-two-modified-javaclasspath-txt-and-distribute-jar-file-next-to-component">Option Two: Modified <code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code> and distribute JAR-file <em>next to</em> component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-three-make-jar-file-available-in-matlab-runtime">Option Three: Make JAR-file available in MATLAB Runtime</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MATLAB Compiler (SDK) Deployment</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Deployment.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="matlab-compiler-sdk-deployment">
+<h1>MATLAB Compiler (SDK) Deployment<a class="headerlink" href="#matlab-compiler-sdk-deployment" title="Permalink to this headline"></a></h1>
+<p>When compiling MATLAB™ code, in general, <a class="reference external" href="https://www.mathworks.com/products/compiler.html">MATLAB Compiler™</a> will do a dependency analysis of the code and automatically include all the necessary files. However in the case of this package, because Java components are used <a class="reference internal" href="Installation.html#configuring-the-matlab-java-class-path"><span class="std std-doc">which need to be loaded on the static Java class path</span></a>, additional steps are required.</p>
+<p>Three options are discussed below for making the correct JAR-files available to the deployed component.</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="#option-one-compile-the-jar-file-into-the-standalone-component"><span class="std std-doc">first option</span></a> is the easiest but will add the JAR-file to the <em>end</em> of the static class path; see the <a class="reference internal" href="Installation.html#configuring-the-matlab-java-class-path"><span class="std std-doc">installation documentation</span></a> to learn more about what limitations this may introduce depending on the platform.</p></li>
+<li><p>The <a class="reference internal" href="#option-two-modified-javaclasspath-txt-and-distribute-jar-file-next-to-component"><span class="std std-doc">second option</span></a> can add the JAR-file to the <em>front</em> of the static Java class path but is more involved.</p></li>
+<li><p>The <a class="reference internal" href="#option-three-make-jar-file-available-in-matlab-runtime"><span class="std std-doc">last option</span></a> adds the JAR-file to the MATLAB Runtime installation rather than include it with the component, making it available to all standalone components using that MATLAB Runtime installation.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Contact us at <a class="reference external" href="mailto:mwlab&#37;&#52;&#48;mathworks&#46;com">mwlab<span>&#64;</span>mathworks<span>&#46;</span>com</a> if you require additional advice on your specific use-case of deploying MATLAB Code which makes use of the “MATLAB Interface <em>for Azure Services</em>”.</p>
+</div>
+<section id="option-one-compile-the-jar-file-into-the-standalone-component">
+<h2>Option One: Compile the JAR-file <em>into</em> the standalone component<a class="headerlink" href="#option-one-compile-the-jar-file-into-the-standalone-component" title="Permalink to this headline"></a></h2>
+<p>Any JAR-file which is compiled into a MATLAB Compiler (SDK) standalone component will automatically be added to the Java static<sup><a class="reference internal" href="#option-three-make-jar-file-available-in-matlab-runtime"><span class="std std-doc">1</span></a></sup> class path at runtime of the component. This will add the JAR-file to the <em>end</em> of the Java class path though, which on Windows should not be a problem but may introduce <a class="reference internal" href="Installation.html#configuring-the-matlab-java-class-path"><span class="std std-doc">limitations on Linux</span></a>.</p>
+<p>To compile the JAR-files into the component, in the Application- or Library Compiler App under “Files required for your application to run” (or when working with <code class="docutils literal notranslate"><span class="pre">mcc</span></code>, using the <code class="docutils literal notranslate"><span class="pre">-a</span></code> argument), explicitly add the following files to the component, they will not be added by automatic dependency analysis:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$MATLABROOT/java/jarext/slf4j/slf4j-api.jar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar</span></code></p></li>
+</ul>
+<p>Where <code class="docutils literal notranslate"><span class="pre">$MATLABROOT</span></code> stands for the MATLAB installation directory as returned by running the <code class="docutils literal notranslate"><span class="pre">matlabroot</span></code> function in the MATLAB Command Window.</p>
+</section>
+<section id="option-two-modified-javaclasspath-txt-and-distribute-jar-file-next-to-component">
+<h2>Option Two: Modified <code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code> and distribute JAR-file <em>next to</em> component<a class="headerlink" href="#option-two-modified-javaclasspath-txt-and-distribute-jar-file-next-to-component" title="Permalink to this headline"></a></h2>
+<p>During the <a class="reference internal" href="Installation.html"><span class="doc std std-doc">installation</span></a> of the package, a <a class="reference internal" href="Installation.html#configuring-the-matlab-java-class-path"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code> will have been created</span></a> in the MATLAB preferences directory, with the following content:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;before&gt;</span>
+/myfiles/matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar
+</pre></div>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code> from the preferences directory <em>can</em> be included in MATLAB Compiler (SDK) standalone components and <em>will</em> then actually be used at runtime of the component. The problem however is that this typically refers to an absolute path which exists on the development machine but which will likely <em>not</em> exist on target machines to which the standalone component is deployed.</p>
+<p>However, the <code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code> file can be updated to the following before compiling the standalone component:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;before&gt;</span>
+/myfiles/matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar
+<span class="hll">./azure-common-sdk-0.2.0.jar
+</span></pre></div>
+</div>
+<p>Where the line which added at the bottom basically says: load <code class="docutils literal notranslate"><span class="pre">azure-common-sdk-0.2.0.jar</span></code> from <code class="docutils literal notranslate"><span class="pre">./</span></code> which stands for “the current directory”.</p>
+<p>Now when compiling a standalone component with this updated <code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code>, that component can load the JAR-file from either the specified absolute location <em>or</em> “the current directory at runtime of the standalone component”. Where “the current directory at runtime” is typically quite simply equal to the directory where the main executable is located.</p>
+<p>Further, for this workflow, in the Application- or Library Compiler App under “Files required for your application to run” (or when working with <code class="docutils literal notranslate"><span class="pre">mcc</span></code>, using the <code class="docutils literal notranslate"><span class="pre">-a</span></code> argument), explicitly add the following files to the component:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$MATLABROOT/java/jarext/slf4j/slf4j-api.jar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$PREFDIR/javaclasspath.txt</span></code></p></li>
+</ul>
+<p>Where <code class="docutils literal notranslate"><span class="pre">$PREFDIR</span></code> stands for the MATLAB preferences directory as returned by running the <code class="docutils literal notranslate"><span class="pre">prefdir</span></code> function in the MATLAB Command Windows. Depending on the exact MATLAB Compiler version, <em>some</em> versions may already include <code class="docutils literal notranslate"><span class="pre">$PREFDIR/javaclasspath.txt</span></code> <em>automatically</em>; by adding it <em>explicitly</em> though, this approach should work in <em>all</em> supported releases.</p>
+<p>And then, if working with <a class="reference external" href="https://www.mathworks.com/help/compiler/files-generated-after-packaging-application-compiler.html">MATLAB Compiler (SDK) packaged installers</a>, under “Files installed for your end user”, add:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar</span></code></p></li>
+</ul>
+<p>The packaged installer will then place the JAR-file next to the standalone component during installation. Alternatively, if not working with the packaged installers, simply manually distribute <code class="docutils literal notranslate"><span class="pre">azure-common-sdk-0.2.0.jar</span></code> next to the standalone component itself, in the same directory.</p>
+</section>
+<section id="option-three-make-jar-file-available-in-matlab-runtime">
+<h2>Option Three: Make JAR-file available in MATLAB Runtime<a class="headerlink" href="#option-three-make-jar-file-available-in-matlab-runtime" title="Permalink to this headline"></a></h2>
+<p>JAR-files can only be added to the <em>static</em> class path upon initialization of the MATLAB Runtime. In use cases where multiple standalone components are used in a single application, there will be only <em>one</em> MATLAB Runtime instance which is instantiated upon first interaction with the first component. If a component is loaded after initial initialization of the MATLAB Runtime, its JAR-files are added to the <em>dynamic</em> class path rather than the static class path. Unfortunately <code class="docutils literal notranslate"><span class="pre">azure-common-sdk-0.2.0.jar</span></code> <em>must</em> be loaded on the <em>static</em> class path though.</p>
+<p>In some situation, for example when working with multiple MATLAB Compiler Java/.NET/Python modules in a single Java/.NET/Python application, this is simply something to “keep in mind” and it may be possible to ensure that the right component is loaded first. However, this can not always be <em>guaranteed</em>, especially in <a class="reference external" href="https://www.mathworks.com/products/matlab-production-server.html">MATLAB Production Server</a> workflows, where it is not possible to predict which component will be called first inside which worker process. In such situations an option could be to add the JAR-file to the MATLAB Runtime such that it is <em>always</em> loaded, regardless of which exact component instantiated this runtime first.</p>
+<p>First, at compile time, again add the following two files to the “Files required for your application to run” (or using <code class="docutils literal notranslate"><span class="pre">mcc</span></code>’s <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml</span></code></p></li>
+</ul>
+<p>Then, manually copy the following three files to the target machine onto which the component will be deployed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$MATLABROOT/java/jarext/slf4j/slf4j-api.jar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar</span></code></p></li>
+</ul>
+<p>The files can basically be placed anywhere on this machine as long as they are accessible by the runtime. Lastly, also on the target machine where the MATLAB Runtime has been installed, open <code class="docutils literal notranslate"><span class="pre">$MCRROOT/toolbox/local/classpath.txt</span></code> (where <code class="docutils literal notranslate"><span class="pre">$MCRROOT</span></code> stands for the installation directory of the MATLAB Runtime) in a text editor and add the full absolute locations of the three files to the <em>front</em> of the list of JAR-files and directories in the text file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">toolbox/local/classpath.txt</span></code> file contains a notification:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#DO NOT MODIFY THIS FILE.  IT IS AN AUTOGENERATED FILE.</span>
+</pre></div>
+</div>
+<p>For this particular use-case, this can partly be ignored, the file <em>may</em> be edited but do indeed keep in mind that it may be changed or overwritten when reinstalling the MATLAB Runtime or installing an Update to the runtime. The modification may have to be reapplied afterwards.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="APIReference.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Testing.html" class="btn btn-neutral float-right" title="Unit Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

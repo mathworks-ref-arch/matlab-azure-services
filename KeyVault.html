@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azure Key Vault &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="APIReference.html" />
+    <link rel="prev" title="File Data Lake Storage" href="File.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Azure Key Vault</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-options">Configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createkeyvaultclient-function"><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#name-value-pairs">Name, Value pairs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-secret-client">Creating a secret client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listing-secrets-in-a-vault">Listing secrets in a vault</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-a-secret">Accessing a secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-secret">Creating a secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-a-secret">Deleting a secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled">Additional operations on secrets in Key Vaults with soft-delete enabled</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#listing-deleted-secrets">Listing deleted secrets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recovering-a-deleted-secret">Recovering a deleted secret</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#purging-a-deleted-secret">Purging a deleted secret</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-key-client">Creating a key client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listing-keys-in-a-vault">Listing keys in a vault</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-a-key">Accessing a Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-key">Creating a key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-a-key">Deleting a key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled">Additional operations on keys in Key Vaults with soft-delete enabled</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#listing-deleted-keys">Listing deleted keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recovering-a-deleted-key">Recovering a deleted key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#purging-a-deleted-key">Purging a deleted key</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
+      <li>Azure Key Vault</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/KeyVault.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="azure-key-vault">
+<h1>Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permalink to this headline"></a></h1>
+<p>The MATLAB® Azure® Key Vault Interface enables the manipulation of Key Vault
+Secrets and Keys from within MATLAB. Certificates are not currently supported.</p>
+<section id="configuration-options">
+<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline"></a></h2>
+<p>The higher-level client functions for this service use the same kind of configuration
+options as discussed in <a class="reference internal" href="Configuration.html"><span class="doc std std-doc">Configuration.md</span></a>. The service
+specific options are discussed below.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function may use <code class="docutils literal notranslate"><span class="pre">VaultName</span></code> if not
+specified in the call to <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code>, for example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;VaultName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myvaultname&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The default name of the JSON file which <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> works with is <code class="docutils literal notranslate"><span class="pre">keyvaultsettings.json</span></code>.</p>
+</section>
+<section id="createkeyvaultclient-function">
+<h2><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function<a class="headerlink" href="#createkeyvaultclient-function" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> is a higher-level function for creating a <code class="docutils literal notranslate"><span class="pre">KeyClient</span></code> or
+<code class="docutils literal notranslate"><span class="pre">SecretClient</span></code></p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a KeyClient with default options</span><span class="w"></span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="c">% Create a SecretClient with default options</span><span class="w"></span>
+<span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>By default <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> reads credential information and the vault
+name from a configuration file named <code class="docutils literal notranslate"><span class="pre">'keyvaultsettings.json'</span></code>. The function
+automatically searches for this file on the MATLAB path. It is possible to
+specify a different filename using <code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code>. It is also possible to
+provide <code class="docutils literal notranslate"><span class="pre">'Credentials'</span></code> and <code class="docutils literal notranslate"><span class="pre">'VaultName'</span></code> as inputs to the function directly in
+which case no configuration file may be needed. See the Name, Value pairs below
+for more details.</p>
+<section id="name-value-pairs">
+<h3>Name, Value pairs<a class="headerlink" href="#name-value-pairs" title="Permalink to this headline"></a></h3>
+<p>Additional Name, Value pairs can be supplied to configure non-default options:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code></strong>, explicitly specify which configuration file to use.
+This file is used for configuring Credentials (when not supplied as input)
+and/or Account Name (when not supplied as input).</p>
+<p><em>Default Value:</em> <code class="docutils literal notranslate"><span class="pre">'keyvaultsettings.json'</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'Credentials'</span></code></strong>, explicitly specify credentials to use. This for example
+allows building multiple clients based on the same credentials without having to
+go through (interactive) authentication again. If not specified,
+<code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> uses <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> with ‘ConfigurationFile’ as
+input to first configure credentials before building the client.</p>
+<p><em>Hint:</em> configureCredentials can be used to build valid Credentials.</p>
+<p>Example:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;myCredentials.json&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Credentials&#39;</span><span class="p">,</span><span class="n">credentials</span><span class="p">,</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Credentials&#39;</span><span class="p">,</span><span class="n">credentials</span><span class="p">,</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">'VaultName'</span></code></strong>, explicitly specify the vault name for the client. If not
+specified <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> uses <code class="docutils literal notranslate"><span class="pre">loadConfigurationSettings</span></code> to load
+configuration options from <code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code>. This file must then contain a
+“VaultName” setting.</p>
+</section>
+</section>
+<section id="creating-a-secret-client">
+<h2>Creating a secret client<a class="headerlink" href="#creating-a-secret-client" title="Permalink to this headline"></a></h2>
+<p>A client is used to access secrets or keys in Key Vault. Certificates are not
+currently supported.</p>
+<p>A number of steps are required to build a client. A higher-level function
+<em>createKeyVaultClient()</em> is provided to simplify this process. A key or secret
+client can be created as follows:</p>
+<p>If a configuration file path is not provided <em>createKeyVaultClient()</em> will
+search the MATLAB path for a configuration file named <code class="docutils literal notranslate"><span class="pre">keyvaultsettings.json</span></code>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here an optional non default configuration file path is provided.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">,</span><span class="s">&#39;ConfigurationFile&#39;</span><span class="p">,</span><span class="s">&#39;C:\myFiles\matlab-azure-key-vault\Software\MATLAB\config\ClientSecret.json&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A client can be created manually as follows if customized configuration is
+required, this should rarely be necessary and if so using a custom higher-level
+wrapper function similar to <em>createKeyVaultClient()</em> is recommended:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a clientBuilder object, a SecretClient in this case</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">security</span><span class="p">.</span><span class="n">keyvault</span><span class="p">.</span><span class="n">secrets</span><span class="p">.</span><span class="n">SecretClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Configure a credentials object based on a JSON config file</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">which</span><span class="p">(</span><span class="s">&#39;azurekeyvault.json&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% Alternatively a KeyClientBuilder is created as follows:</span><span class="w"></span>
+<span class="c">% builder = azure.security.keyvault.keys.KeyClientBuilder();</span><span class="w"></span>
+
+<span class="c">% Configure the builder using its methods</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="nb">settings</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">loadConfigurationSettings</span><span class="p">(</span><span class="nb">which</span><span class="p">(</span><span class="s">&#39;azurekeyvault.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">vaultUrl</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;https://%s.vault.azure.net/&#39;</span><span class="p">,</span><span class="nb">settings</span><span class="p">.</span><span class="n">VaultName</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% Create the client</span><span class="w"></span>
+<span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A key client can be created similarly using the <code class="docutils literal notranslate"><span class="pre">Key</span></code> type:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="listing-secrets-in-a-vault">
+<h2>Listing secrets in a vault<a class="headerlink" href="#listing-secrets-in-a-vault" title="Permalink to this headline"></a></h2>
+<p>Secrets and keys have properties that can be obtained from Key Vault.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span><span class="w"></span>
+<span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Get an array of secret properties</span><span class="w"></span>
+<span class="n">propList</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">listPropertiesOfSecrets</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Get the name property for the first entry</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">propList</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-a-secret">
+<h2>Accessing a secret<a class="headerlink" href="#accessing-a-secret" title="Permalink to this headline"></a></h2>
+<p>A secret value is easily accessed using the client. Note it is best practice to
+clear a secretValue from memory once it is no longer needed and consider
+carefully how that value is used, e.g. written to a file etc. Also use
+semi-colons to prevent the value unintentionally being logged to MATLAB’s
+console or other logs.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span><span class="w"></span>
+<span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Get the secret using its name</span><span class="w"></span>
+<span class="n">secret</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">getSecret</span><span class="p">(</span><span class="s">&#39;mySecretName&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Get the secret value</span><span class="w"></span>
+<span class="n">secretValue</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secret</span><span class="p">.</span><span class="n">getValue</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="creating-a-secret">
+<h2>Creating a secret<a class="headerlink" href="#creating-a-secret" title="Permalink to this headline"></a></h2>
+<p>Secrets are easily created using a name value pair. Note it is good practice to
+<em>NOT</em> include hardcoded secret values in code, contrary to this trivial example.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">myNewSecret</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">setSecret</span><span class="p">(</span><span class="s">&#39;mySecretName&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mySecretValue&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="deleting-a-secret">
+<h2>Deleting a secret<a class="headerlink" href="#deleting-a-secret" title="Permalink to this headline"></a></h2>
+<p>Deleting a secret is an asynchronous operation and a <code class="docutils literal notranslate"><span class="pre">SyncPoller</span></code> object is
+returned. This can be used in a number of ways but in this simple example the
+code blocks until completion or it times out. Deleting a secret is normally a
+quick operation.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Start the process of deleting a secret</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">beginDeleteSecret</span><span class="p">(</span><span class="s">&#39;mySecretName&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Block until the delete complete or the 10 second timeout elapses.</span><span class="w"></span>
+<span class="c">% The timeout value is optional, but can prevent unexpected hangs.</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="p">.</span><span class="n">waitForCompletion</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled">
+<h2>Additional operations on secrets in Key Vaults with soft-delete enabled<a class="headerlink" href="#additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled" title="Permalink to this headline"></a></h2>
+<p>When working with key vaults with soft-delete enabled, deleted secrets can be
+listed and recovered for a limited time, the default is 90 days but this can be
+configured on a per key vault basis, or they can purged explicitly before this
+time expires unless purge protection is enabled.</p>
+<section id="listing-deleted-secrets">
+<h3>Listing deleted secrets<a class="headerlink" href="#listing-deleted-secrets" title="Permalink to this headline"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Obtain the list of deleted secrets</span><span class="w"></span>
+<span class="n">deletedSecrets</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">listDeletedSecrets</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Get the name of the first deleted secret</span><span class="w"></span>
+<span class="n">secretName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">deletedSecrets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Check when the secret was deleted</span><span class="w"></span>
+<span class="n">deletedSecrets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getDeletedOn</span><span class="p">()</span><span class="w"></span>
+<span class="c">% Check when the secret is scheduled to be purged permanently</span><span class="w"></span>
+<span class="n">deletedSecrets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getScheduledPurgeDate</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> The interface for Azure Key Vault follows the same design as
+Azure Key Vault Java SDK here, meaning that the returned <code class="docutils literal notranslate"><span class="pre">DeletedSecret</span></code>
+objects have the same methods as current secrets obtained with <code class="docutils literal notranslate"><span class="pre">getSecret</span></code>. So
+for example, they also have a <code class="docutils literal notranslate"><span class="pre">getValue</span></code> method. The Azure Key Vault Java SDK
+does not appear to actually return any values for deleted secrets however. To
+be able to obtain the value, first recover the secret and then query the value
+of the recovered secret.</p>
+</div></blockquote>
+</section>
+<section id="recovering-a-deleted-secret">
+<h3>Recovering a deleted secret<a class="headerlink" href="#recovering-a-deleted-secret" title="Permalink to this headline"></a></h3>
+<p>Recovering a secret is an asynchronous operation and a <code class="docutils literal notranslate"><span class="pre">SyncPoller</span></code> object is
+returned. This can be used in a number of ways but in this simple example the
+code blocks until completion or it times out. Recovering a secret is normally a
+quick operation.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Start the process of recovering a secret</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">beginRecoverDeletedSecret</span><span class="p">(</span><span class="n">secretName</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Block until the recovery complete or the 10 second timeout elapses.</span><span class="w"></span>
+<span class="c">% The timeout value is optional, but can prevent unexpected hangs.</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="p">.</span><span class="n">waitForCompletion</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="purging-a-deleted-secret">
+<h3>Purging a deleted secret<a class="headerlink" href="#purging-a-deleted-secret" title="Permalink to this headline"></a></h3>
+<p>Key vault names are globally unique. The names of secrets stored in a key vault
+are also unique. So it is not possible to reuse the name of a secret that exists
+in the soft-deleted state. Hence it can be preferred to purge a secret before it
+is purged automatically on its scheduled purge date.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Purge a deleted secret right now</span><span class="w"></span>
+<span class="n">secretClient</span><span class="p">.</span><span class="n">purgeDeletedSecret</span><span class="p">(</span><span class="n">secretName</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="creating-a-key-client">
+<h2>Creating a key client<a class="headerlink" href="#creating-a-key-client" title="Permalink to this headline"></a></h2>
+<p>A key client can be created as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Here an optional non default configuration file path is provided.</span><span class="w"></span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">,</span><span class="s">&#39;ConfigurationFile&#39;</span><span class="p">,</span><span class="s">&#39;C:\myFiles\matlab-azure-services\Software\MATLAB\config\ClientSecret.json&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>By default <em>createKeyVaultClient()</em> will search the MATLAB path for <code class="docutils literal notranslate"><span class="pre">keyvaultsettings.json</span></code>.</p>
+<p>A client can be created manually as follows if customized configuration is
+required, this should rarely be necessary and if so using a custom wrapper
+script similar to <em>createKeyVaultClient()</em> is recommended:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a clientBuilder object, a KeyClient in this case</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">security</span><span class="p">.</span><span class="n">keyvault</span><span class="p">.</span><span class="n">keys</span><span class="p">.</span><span class="n">KeyClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Configure a credentials object based on a JSON config file</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">which</span><span class="p">(</span><span class="s">&#39;azurekeyvault.json&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% Configure the builder using its methods</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="nb">settings</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">loadConfigurationSettings</span><span class="p">(</span><span class="nb">which</span><span class="p">(</span><span class="s">&#39;azurekeyvault.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">vaultUrl</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;https://%s.vault.azure.net/&#39;</span><span class="p">,</span><span class="nb">settings</span><span class="p">.</span><span class="n">VaultName</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">% Create the client</span><span class="w"></span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="listing-keys-in-a-vault">
+<h2>Listing keys in a vault<a class="headerlink" href="#listing-keys-in-a-vault" title="Permalink to this headline"></a></h2>
+<p>Keys have properties that can be obtained from Key Vault.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span><span class="w"></span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Get an array of secret properties</span><span class="w"></span>
+<span class="k">properties</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">listPropertiesOfKeys</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Get the name property for the first entry</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">propList</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-a-key">
+<h2>Accessing a Key<a class="headerlink" href="#accessing-a-key" title="Permalink to this headline"></a></h2>
+<p>A key can be returned in a number of forms, see
+azure.security.keyvault.keys.models.JsonWebKey <em>to</em> methods. For
+interoperability with other security libraries these methods return a Java key
+object of varying types.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span><span class="w"></span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Get the key using its name</span><span class="w"></span>
+<span class="n">jsonWebKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">getKey</span><span class="p">(</span><span class="s">&#39;myKeyName&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Convert the key to java.security.KeyPair RSA form</span><span class="w"></span>
+<span class="n">keyRsa</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">jsonWebKey</span><span class="p">.</span><span class="n">toRsa</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="creating-a-key">
+<h2>Creating a key<a class="headerlink" href="#creating-a-key" title="Permalink to this headline"></a></h2>
+<p>Keys are easily created using a name and key type.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">rsaKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">security</span><span class="p">.</span><span class="n">keyvault</span><span class="p">.</span><span class="n">keys</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">KeyType</span><span class="p">.</span><span class="n">RSA</span><span class="p">;</span><span class="w"></span>
+<span class="n">key</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">createKey</span><span class="p">(</span><span class="s">&#39;myTestRSAKey&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rsaKey</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="deleting-a-key">
+<h2>Deleting a key<a class="headerlink" href="#deleting-a-key" title="Permalink to this headline"></a></h2>
+<p>Deleting a key is an asynchronous operation and a <em>SyncPoller</em> object is
+returned. This can be used in a number of ways but in this simple example the
+code blocks until completion or it times out. Deleting a key is normally a quick
+operation.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Start the process of deleting a key</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">beginDeleteKey</span><span class="p">(</span><span class="s">&#39;myTestRSAKey&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Block until the delete complete or the 10 second timeout elapses.</span><span class="w"></span>
+<span class="c">% The timeout value is optional, but can prevent unexpected hangs</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="p">.</span><span class="n">waitForCompletion</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled">
+<h2>Additional operations on keys in Key Vaults with soft-delete enabled<a class="headerlink" href="#additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled" title="Permalink to this headline"></a></h2>
+<p>When working with key vaults with soft-delete enabled, deleted keys can be
+listed and recovered for a limited time, the default is 90 days but this can be
+configured on a per key vault basis, or purged explicitly before this time
+expires unless purge protection is enabled.</p>
+<section id="listing-deleted-keys">
+<h3>Listing deleted keys<a class="headerlink" href="#listing-deleted-keys" title="Permalink to this headline"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Obtain the list of deleted keys</span><span class="w"></span>
+<span class="n">deletedKeys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">listDeletedKeys</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Get the recovery ID of the first deleted key</span><span class="w"></span>
+<span class="n">recoveryId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">deletedKeys</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getRecoveryId</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Check when the key was deleted</span><span class="w"></span>
+<span class="n">deletedKeys</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getDeletedOn</span><span class="p">()</span><span class="w"></span>
+<span class="c">% Check when the key is scheduled to be purged permanently</span><span class="w"></span>
+<span class="n">deletedKeys</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getScheduledPurgeDate</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> The interface for Azure Key Vault follows the same design as
+Azure Key Vault Java SDK here, meaning that the returned <code class="docutils literal notranslate"><span class="pre">DeletedKey</span></code> objects
+have the same methods as current keys obtained with <code class="docutils literal notranslate"><span class="pre">getKey</span></code>. So for example
+they also have a <code class="docutils literal notranslate"><span class="pre">getKey</span></code> and <code class="docutils literal notranslate"><span class="pre">getName</span></code> method. The Azure Key Vault Java SDK
+does not appear to actually return all values for deleted keys though. For a
+list of deleted keys obtained with <code class="docutils literal notranslate"><span class="pre">listDeletedKeys</span></code> it does not even appear
+to be able to return the name for delete keys with <code class="docutils literal notranslate"><span class="pre">getName</span></code>. In that sense
+the best option to obtain the name of a deleted key appears to be to use
+<code class="docutils literal notranslate"><span class="pre">getRecoveryId</span></code> and then parse the return URI:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Use matlab.net.URI to help parse the returned ID </span><span class="w"></span>
+<span class="n">recoveryURI</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">matlab.net.URI</span><span class="p">(</span><span class="n">deletedKeys</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getRecoveryId</span><span class="p">());</span><span class="w"></span>
+<span class="c">% The name of the key should be the last part of the URI Path</span><span class="w"></span>
+<span class="n">keyName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">recoveryURI</span><span class="p">.</span><span class="n">Path</span><span class="p">{</span><span class="k">end</span><span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="recovering-a-deleted-key">
+<h3>Recovering a deleted key<a class="headerlink" href="#recovering-a-deleted-key" title="Permalink to this headline"></a></h3>
+<p>Recovering a key is an asynchronous operation and a <code class="docutils literal notranslate"><span class="pre">SyncPoller</span></code> object is
+returned. This can be used in a number of ways but in this simple example the
+code blocks until completion or times out. Recovering a key is normally a quick
+operation.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Start the process of recovering a secret</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">beginRecoverDeletedKey</span><span class="p">(</span><span class="n">keyName</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Block until the recovery complete or the 10 second timeout elapses.</span><span class="w"></span>
+<span class="c">% The timeout value is optional, but can prevent unexpected hangs.</span><span class="w"></span>
+<span class="n">syncPoller</span><span class="p">.</span><span class="n">waitForCompletion</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="purging-a-deleted-key">
+<h3>Purging a deleted key<a class="headerlink" href="#purging-a-deleted-key" title="Permalink to this headline"></a></h3>
+<p>Key vault names are globally unique. The names of keys stored in a key vault are
+also unique. So it is not possible to reuse the name of a key that exists in the
+soft-deleted state. Hence it can be preferred to purge a key before it is purged
+automatically on its scheduled purge date.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Purge a deleted key right now</span><span class="w"></span>
+<span class="n">keyClient</span><span class="p">.</span><span class="n">purgeDeletedKey</span><span class="p">(</span><span class="n">keyName</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="File.html" class="btn btn-neutral float-left" title="File Data Lake Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="APIReference.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

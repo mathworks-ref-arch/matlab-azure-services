@@ -1,0 +1,161 @@
+# Azure Data Lake Storage Gen2
+
+The MATLAB® Azure™ Data Lake Storage Gen2 interface is a low-level interface
+that supports:
+
+* Blob
+* Queue
+* File Data Lake
+
+The documentation below is split into separate files [Blob Storage](Blob.md),
+[Queue Storage](Queue.md) and [File Data Lake Storage](File.md).
+
+MATLAB's IO operations increasingly support access to Blob Storage via builtin
+interfaces, e.g. the ```dir``` command supports accessing remote data:
+
+* [https://www.mathworks.com/help/matlab/ref/dir.html](https://www.mathworks.com/help/matlab/ref/dir.html),
+* [https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html](https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html).
+
+Where MATLAB supports the required operations directly it is recommended to use
+that built in functionality.
+
+
+## `createStorageClient` function
+
+The `createStorageClient` function can be used for creating BlobServiceClient,
+BlobContainerClient, BlobClient, QueueServiceClient, QueueClient,
+DataLakeFileSystemClient, DataLakeDirectoryClient and DataLakeFileClient.
+
+```matlab
+% Create a BlobServiceClient with default options
+blobServiceClient = createStorageClient();
+% Create a BlobContainerClient with default options
+blobContainerClient = createStorageClient('ContainerName','myContainer');
+% Create a BlobClient with default options
+blobClient = createStorageClient('ContainerName','myContainer',...
+    'BlobName','myBlob') 
+% Create a QueueServiceClient with default options.
+queueServiceClient = createStorageClient('Type','QueueService') 
+% Create a QueueClient with default options.
+queueClient = createStorageClient('QueueName','myQueue')
+% Create a DataLakeFileSystemClient with default options.
+dataLakeFileSystemClient = createStorageClient('FileSystemName','myFileSystem') 
+% Create a DataLakeDirectoryClient with default options.
+dataLakeDirectoryClient = createStorageClient('FileSystemName','myFileSystem',...
+    'DirectoryName','my/dir') 
+%Creates a DataLakeFileClient with default options.
+dataLakeFileClient = createStorageClient('FileSystemName','myFileSystem',...
+    'FileName','my/dir/file') 
+```
+
+By default `createStorageClient` reads Credential information and the Account
+Name (used to build the Client endpoint) from a configuration file named
+`storagesettings.json`. The function automatically searches for this file on the
+MATLAB path. It is possible to specify a different filename using
+`'ConfigurationFile'`. It is also possible to provide `'Credentials'` or
+`'SASToken'` and `'AccountName'` as inputs to the function directly in which
+case no configuration file may be needed. See the Name, Value pairs below for
+more details.
+
+### Name, Value pairs
+
+Additional Name, Value pairs can be supplied to configure non-default options:
+
+**`'Type'`**, explicitly specify the type of client to create. Required for
+        creating `QueueServiceClient`. In all other cases the type of client is
+        derived from whether `'ContainerName'`, `'BlobName'`, `'QueueName'`,
+        `'FileSystemName'`, `'DirectoryName'`, and/or `'FileName'` are provided.
+        With none of these configured a `BlobServiceClient` is created. If only
+        BlobContainer is specified a `BlobContainerClient` is created, if both
+        BlobContainer and BlobName are specified a `BlobClient` is created. If
+        QueueName is specified a `QueueClient` is created. If only
+        FileSystemName is specified a `DataLakeFileSystemClient` is created, if
+        DirectoryName is specified as well, a `DataLakeDirectoryClient` is
+        created, or if FileName is specified a `DataLakeFileClient` is created.
+
+_Possible Values:_ `'BlobService'`, `'BlobContainer'`, `'Blob'`,
+   `'QueueService'`, `'QueueClient'`, `'DataLakeDirectory'`, `'DataLakeFile'`,
+   or `'DataLakeFileSystem'`.
+
+**`'ConfigurationFile'`**, explicitly specify which configuration file to use.
+This file is used for configuring Credentials (when not supplied as input)
+and/or Account Name (when not supplied as input).
+
+_Default Value:_ `'storagesettings.json'`
+
+**`'Credentials'`**, explicitly specify credentials to use. This for example
+allows building multiple clients based on the same credentials without having to
+go through (interactive) authentication again. If neither this option nor
+`'SASToken'` is specified, `createStorageClient` uses `configureCredentials`
+with 'ConfigurationFile' as input to first configure credentials before building
+the client. 
+
+_Hint:_ `configureCredentials` can be used to build valid Credentials.
+
+Example:
+
+```matlab
+credentials = configureCredentials('myCredentials.json');
+client1 = createStorageClient('Credentials',credentials,'ContainerName','container1')
+client2 = createStorageClient('Credentials',credentials,'ContainerName','container2')
+```
+
+**`'SASToken'`**, explicitly specify a SAS Token to use for authentication rather
+   than reading authentication details from a configuration file or a
+   credentials object passed in through the `'Credentials'` option. If neither
+   this option nor `'Credentials'` are specified, `createStorageClient` uses
+   `configureCredentials` with 'ConfigurationFile' as input to first configure
+   credentials before building the client. 
+
+**`'AccountName'`**, explicitly specify the AccountName used to configure the
+endpoint for the client. If not specified `createStorageClient` uses
+`loadConfigurationSettings` to load configuration options from
+`'ConfigurationFile'`. This file must then contain a "AccountName" setting.
+
+## Configuration options
+
+The higher-level functions for this service use the same kind of configuration
+options as discussed in [Configuration.md](Configuration.md). The service
+specific options are discussed below.
+
+The `AzureStorageExplorer` function requires `LocalPathToStorageExplorer` to be
+set and it should point to your locally installed StorageExplorer.exe. The
+`createStorageClient` function may use `AccountName` if not specified in the
+call to `createStorageClient`. For example:
+
+```json
+{
+  "LocalPathToStorageExplorer" : "C:\\Program Files (x86)\\Microsoft Azure Storage Explorer\\StorageExplorer.exe",
+  "AccountName": "mystorageaccount"
+}
+```
+
+The default name of the JSON file which `createStorageClient` works with is
+`storagesettings.json`.
+
+The clients for the various services follow a common design pattern with
+considerable overlap. Blob is documented in the greatest detail and is should be
+referred to even if using the other APIs.
+
+## Multi-protocol access
+
+If accessing storage via various clients and protocols it is important to consider
+how this differs from pre Gen2 capabilities, the following Azure documentation
+is recommended:
+
+* [https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-multi-protocol-access](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-multi-protocol-access)
+* [https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)
+
+## Low Level Interfaces
+% This section includes the relevant sub pages in the HTML version of the documentation, please ignore when viewing the Markdown page itself.
+```{toctree}
+---
+maxdepth: 1
+---
+Blob
+Queue
+File
+```
+
+[//]: #  (Copyright 2020-2022 The MathWorks, Inc.)
+

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blob Storage &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Queue Storage" href="Queue.html" />
+    <link rel="prev" title="Azure Data Lake Storage Gen2" href="DataLakeStorageGen2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Blob Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
+          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
+      <li>Blob Storage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Blob.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="blob-storage">
+<h1>Blob Storage<a class="headerlink" href="#blob-storage" title="Permalink to this headline"></a></h1>
+<p>Blob storage is the most common use case for Azure® Data Lake Storage Gen2. This
+package provides a low-level interface to blob storage and provides capabilities
+not available in shipping MATLAB. This package supersedes a previously published
+blob storage low-level interface
+<a class="reference external" href="https://github.com/mathworks-ref-arch/matlab-azure-blob">https://github.com/mathworks-ref-arch/matlab-azure-blob</a>.
+Specifically this interface targets Gen2 storage APIs and the Azure v12 SDK
+rather than the previous generation of APIs and the v8 SDK. While the older
+interface referenced above provides some forward compatibility with Gen2 it is
+strongly recommended that this interface be used when working with Gen2 blob
+storage. While conceptually quite similar the APIs are not backwardly compatible
+as a consequence of significant changes in the underlying Azure APIs.</p>
+<section id="blob-clients">
+<h2>Blob Clients<a class="headerlink" href="#blob-clients" title="Permalink to this headline"></a></h2>
+<p>The concept of a <em>Client</em> is central to how blob storage is accessed. A
+hierarchy of clients exist that target different levels of the storage
+hierarchy:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BlobServiceClient</span></code> - This highest level client addresses the level of
+blob service itself.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BlobContainerClient</span></code> - This client primarily supports operations at the
+container level.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BlobClient</span></code> - The lowest level client supports operations at the blob
+level.</p></li>
+</ol>
+<p>And there is a fourth <code class="docutils literal notranslate"><span class="pre">BlobLeaseClient</span></code> which can be used in conjunction with
+<code class="docutils literal notranslate"><span class="pre">BlobContainerClient</span></code> or <code class="docutils literal notranslate"><span class="pre">BlobClient</span></code> for managing leases on blobs and
+containers.</p>
+<p>Client objects are created and configured using corresponding <em>Builder</em> objects.
+There is overlap in functionality between the various clients and there may
+often be more than one way to accomplish a given operation e.g. creating a
+container.</p>
+<p>Detailed information on the underlying client APIs can be found here: <a class="reference external" href="https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-java/staging/apidocs/index.html?com/azure/storage/blob/package-summary.html">Blob
+Client
+SDK</a>.
+This interface exposes a subset of the available functionality to cover common
+use cases in an extensible way.</p>
+<p>A higher-level function <em>createStorageClient()</em> is provided to help build the
+various clients, see: <a class="reference internal" href="DataLakeStorageGen2.html"><span class="doc std std-doc">DataLakeStorageGen2.md</span></a></p>
+</section>
+<section id="blob-service-client">
+<h2>Blob Service Client<a class="headerlink" href="#blob-service-client" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">BlobServiceClient</span></code> can be created using <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> as follows:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">serviceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>or build on a lower level using <code class="docutils literal notranslate"><span class="pre">BlobServiceClientBuilder</span></code>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the client&#39;s builder</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobServiceClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% configureCredentials is a convenience method that simplifies creating a credentials</span><span class="w"></span>
+<span class="c">% argument for the client&#39;s builder. In this case a Connection String is used to</span><span class="w"></span>
+<span class="c">% authenticate. Other authentication methods may required different build steps,</span><span class="w"></span>
+<span class="c">% e.g. setting an endpoint</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Use a default Netty HTTP client and proxy settings as per MATLAB&#39;s proxy preferences</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% The service client can now be built and then used</span><span class="w"></span>
+<span class="n">serviceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="common-service-client-operations">
+<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this headline"></a></h3>
+<p>For a full list of supported service client methods consult the API
+documentation or call <code class="docutils literal notranslate"><span class="pre">methods()</span></code> on the client object or see the
+<a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference.md</span></a> file.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Listing containers</span><span class="w"></span>
+
+<span class="c">% Returns an array of BlobContainerItem objects that describe the containers in</span><span class="w"></span>
+<span class="c">% the current account</span><span class="w"></span>
+<span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClient</span><span class="p">.</span><span class="n">listBlobContainers</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Assuming non-empty results show the name of the first container</span><span class="w"></span>
+<span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Create &amp; Delete a container</span><span class="w"></span>
+<span class="c">% The service client creates a container with a given name an returns</span><span class="w"></span>
+<span class="c">% a corresponding BlobContainerObject</span><span class="w"></span>
+<span class="n">containerClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClient</span><span class="p">.</span><span class="n">createBlobContainer</span><span class="p">(</span><span class="n">containerName</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% We can use that client to test the container&#39;s existence</span><span class="w"></span>
+<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% The service client can the delete the container</span><span class="w"></span>
+<span class="n">serviceClient</span><span class="p">.</span><span class="n">deleteBlobContainer</span><span class="p">(</span><span class="n">containerName</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Or alternatively the BlobContainerClient can do the deletion</span><span class="w"></span>
+<span class="n">containerClient</span><span class="p">.</span><span class="n">deleteContainer</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="shared-access-signature-generation">
+<h2>Shared Access Signature Generation<a class="headerlink" href="#shared-access-signature-generation" title="Permalink to this headline"></a></h2>
+<p>In Azure, Shared Access Signatures or SASs are an important means of granting
+access to resources via URLs and strings that are easily shared. There are
+various types of SASs, see:</p>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature">https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature</a></p>
+<p>Which type of SAS you can generate depends on how the client is authenticated:</p>
+<ul class="simple">
+<li><p>When authenticated with <a class="reference internal" href="Authentication.html#storage-shared-key"><span class="std std-doc">Storage Shared
+Key</span></a> you can generate <em>account-level</em>
+and <em>service-level</em> SAS using <code class="docutils literal notranslate"><span class="pre">BlobServiceClient.generateAccountSas</span></code> and
+<code class="docutils literal notranslate"><span class="pre">BlobClient.generateSas</span></code>.</p></li>
+<li><p>When authenticated with <a class="reference internal" href="Authentication.html#connection-string"><span class="std std-doc">Connection
+String</span></a> (which is basically “using a
+SAS”) or <a class="reference internal" href="#create-a-client-using-a-sas-for-authentication"><span class="std std-doc">with a SAS
+directly</span></a> you cannot
+<em>generate</em> any SAS at all but the SAS which you already have may simply be
+reusable.</p></li>
+<li><p>When authenticated using any other method (in which the client is essentially
+authenticated as a specific user or service principal) you can generate <em>user
+delegation</em> SAS.</p></li>
+</ul>
+<p>The following example shows how to generate a <em>service-level</em> SAS for a
+container:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a service client</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobServiceClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_StorageSharedKey.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">endpoint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;https://&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">.</span><span class="n">getAccountName</span><span class="p">(),</span><span class="w"> </span><span class="s">&#39;.blob.core.windows.net&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">serviceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Define the access permissions to associate with the signature</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">common</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">AccountSasPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">permissions</span><span class="p">.</span><span class="n">setListPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">permissions</span><span class="p">.</span><span class="n">setReadPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define the resource type as a container</span><span class="w"></span>
+<span class="n">resourceTypes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">common</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">AccountSasResourceType</span><span class="p">();</span><span class="w"></span>
+<span class="n">resourceTypes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">resourceTypes</span><span class="p">.</span><span class="n">setContainer</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Define the Azure data services to which the SAS applies</span><span class="w"></span>
+<span class="n">services</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">common</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">AccountSasService</span><span class="p">();</span><span class="w"></span>
+<span class="n">services</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">services</span><span class="p">.</span><span class="n">setBlobAccess</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">services</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">services</span><span class="p">.</span><span class="n">setFileAccess</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Set the expiry time of the SAS for 24 hours from now, note a timezone is required</span><span class="w"></span>
+<span class="n">expiryTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">datetime</span><span class="p">(</span><span class="s">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TimeZone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;UTC&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">days</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Create a AccountSasSignatureValues to combine the above values</span><span class="w"></span>
+<span class="n">sasValues</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">common</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">AccountSasSignatureValues</span><span class="p">(</span><span class="n">expiryTime</span><span class="p">,</span><span class="w"> </span><span class="n">permissions</span><span class="p">,</span><span class="w"> </span><span class="n">services</span><span class="p">,</span><span class="w"> </span><span class="n">resourceTypes</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Create the SAS</span><span class="w"></span>
+<span class="c">% Note the service client must have been authenticated via a StorageSharedKeyCredential</span><span class="w"></span>
+<span class="c">% to allow it to generate a SAS</span><span class="w"></span>
+<span class="n">sas</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClient</span><span class="p">.</span><span class="n">generateAccountSas</span><span class="p">(</span><span class="n">sasValues</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>And the following example shows how to generate a <em>user delegation</em> SAS for a
+specific Blob:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a BlobClient using the convenience function (it is also possible</span><span class="w"></span>
+<span class="c">% to use the Builders). As an example a configuration for</span><span class="w"></span>
+<span class="c">% InteractiveBrowser authentication is used (any method which authenticates</span><span class="w"></span>
+<span class="c">% as user or service principal should do though).</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;my-container&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;my-blob.txt&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;ConfigurationFile&#39;</span><span class="p">,</span><span class="s">&#39;myInteractiveBrowserSetting.json&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">%% First obtain the UserDelegationKey using BlobServiceClient</span><span class="w"></span>
+<span class="c">% Obtain a service client for the given blob and its container</span><span class="w"></span>
+<span class="n">serviceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">getContainerClient</span><span class="p">.</span><span class="n">getServiceClient</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Obtain a UserDelegationKey which is valid for, as an example, 1 hour</span><span class="w"></span>
+<span class="n">userKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClient</span><span class="p">.</span><span class="n">getUserDelegationKey</span><span class="p">(</span><span class="nb">datetime</span><span class="p">(</span><span class="s">&#39;now&#39;</span><span class="p">),</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="nb">datetime</span><span class="p">(</span><span class="s">&#39;now&#39;</span><span class="p">)</span><span class="o">+</span><span class="nb">hours</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+
+<span class="c">%% Configure the desired permissions for the SAS</span><span class="w"></span>
+<span class="c">% Start with empty BlobSasPermission</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">BlobSasPermission</span><span class="p">();</span><span class="w"></span>
+<span class="c">% As an example, add read permissions</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">permissions</span><span class="p">.</span><span class="n">setReadPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Create the SAS signature, again for a validity of 1 hour</span><span class="w"></span>
+<span class="n">sasValues</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">BlobServiceSasSignatureValues</span><span class="p">(</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="nb">datetime</span><span class="p">(</span><span class="s">&#39;now&#39;</span><span class="p">)</span><span class="o">+</span><span class="nb">hours</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">permissions</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">%% Generate the full signed SAS</span><span class="w"></span>
+<span class="n">sas</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">generateUserDelegationSas</span><span class="p">(</span><span class="n">sasValues</span><span class="p">,</span><span class="n">userKey</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">%% Do something with the SAS</span><span class="w"></span>
+<span class="c">% As an example now generate a full URL with which the blob can be accessed</span><span class="w"></span>
+<span class="c">% and which can be shared with others</span><span class="w"></span>
+<span class="n">URL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">blobClient</span><span class="p">.</span><span class="n">getBlobUrl</span><span class="w"> </span><span class="s">&#39;?&#39;</span><span class="w"> </span><span class="n">sas</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">%% Or which can for example be used with copyFromUrl</span><span class="w"></span>
+<span class="c">% Create a blob client for a new blob</span><span class="w"></span>
+<span class="n">newBlobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;my-container&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;copy-of-my-blob.txt&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;ConfigurationFile&#39;</span><span class="p">,</span><span class="s">&#39;myInteractiveBrowserSetting.json&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% And actually create it by copying the other blob</span><span class="w"></span>
+<span class="n">newBlobClient</span><span class="p">.</span><span class="n">copyFromUrl</span><span class="p">(</span><span class="n">URL</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="blob-container-client">
+<h2>Blob Container Client<a class="headerlink" href="#blob-container-client" title="Permalink to this headline"></a></h2>
+<p>A <em>BlobContainerClient</em> appears very similar to a service client both in
+creation and operation.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span><span class="w"></span>
+<span class="n">containerClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;mycontainername&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the Client using its builder</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobContainerClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Again using connection string based authentication</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerName</span><span class="p">(</span><span class="s">&quot;mycontainername&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">containerClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="common-container-client-operations">
+<h3>Common Container Client operations<a class="headerlink" href="#common-container-client-operations" title="Permalink to this headline"></a></h3>
+<section id="list-blobs-in-a-container">
+<h4>List blobs in a container<a class="headerlink" href="#list-blobs-in-a-container" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% With the client in place it can be used to list the blobs within its corresponding</span><span class="w"></span>
+<span class="c">% container</span><span class="w"></span>
+
+<span class="c">% List the blobs in the container</span><span class="w"></span>
+<span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">listBlobs</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Display the name of the 1st blob assuming the container is not empty</span><span class="w"></span>
+<span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-blobclient">
+<h4>Create a BlobClient<a class="headerlink" href="#create-a-blobclient" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get a blob name and create a client using it</span><span class="w"></span>
+<span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">listBlobs</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Assume there is a blob with name:</span><span class="w"></span>
+<span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Create the corresponding BlobClient</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">getBlobClient</span><span class="p">(</span><span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="blob-client">
+<h2>Blob Client<a class="headerlink" href="#blob-client" title="Permalink to this headline"></a></h2>
+<p>The <em>BlobClient</em> appears very similar to the other clients in creation and
+operation.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span><span class="w"></span>
+<span class="n">containerClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;mycontainername&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">   </span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;myblobname.txt&#39;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the client builder</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobClientBuilder</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Configure the builder</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerName</span><span class="p">(</span><span class="s">&quot;mycontainername&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobName</span><span class="p">(</span><span class="s">&quot;myblobname.txt&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Create the client</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="common-blob-client-operations">
+<h3>Common Blob Client operations<a class="headerlink" href="#common-blob-client-operations" title="Permalink to this headline"></a></h3>
+<section id="test-if-a-blob-exists">
+<h4>Test if a blob exists<a class="headerlink" href="#test-if-a-blob-exists" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="get-a-url-for-a-blob">
+<h4>Get a URL for a blob<a class="headerlink" href="#get-a-url-for-a-blob" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">urlStr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">getBlobUrl</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-client-using-a-sas-for-authentication">
+<h4>Create a client using a SAS for authentication<a class="headerlink" href="#create-a-client-using-a-sas-for-authentication" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">sasToken</span><span class="p">(</span><span class="n">sas</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">endpoint</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerName</span><span class="p">(</span><span class="s">&quot;mycontaintername&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobName</span><span class="p">(</span><span class="s">&quot;myblobname.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="upload-download-a-blob">
+<h4>Upload &amp; download a blob<a class="headerlink" href="#upload-download-a-blob" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">uploadFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;C:\mydir\myfile.mat&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="nb">fileName</span><span class="p">,</span><span class="w"> </span><span class="n">ext</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fileparts</span><span class="p">(</span><span class="n">uploadFile</span><span class="p">);</span><span class="w"></span>
+<span class="c">% The blob name and filename need not match but they typically do</span><span class="w"></span>
+<span class="n">blobName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="nb">fileName</span><span class="p">,</span><span class="w"> </span><span class="n">ext</span><span class="p">];</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerName</span><span class="p">(</span><span class="s">&#39;mycontainername&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobName</span><span class="p">(</span><span class="n">blobName</span><span class="p">);</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Upload the file to the blob overwriting any existing blob of that name</span><span class="w"></span>
+<span class="n">blobClient</span><span class="p">.</span><span class="n">uploadFromFile</span><span class="p">(</span><span class="n">uploadFile</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;overwrite&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Download the blob to a temporary location</span><span class="w"></span>
+<span class="n">downloadFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="nb">tempname</span><span class="p">,</span><span class="s">&#39;.mat&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="n">blobClient</span><span class="p">.</span><span class="n">downloadToFile</span><span class="p">(</span><span class="n">downloadFile</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;overwrite&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="copy-a-blob-using-a-sas">
+<h4>Copy a blob using a SAS<a class="headerlink" href="#copy-a-blob-using-a-sas" title="Permalink to this headline"></a></h4>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client for the source blob</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_StorageSharedKey.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerName</span><span class="p">(</span><span class="s">&quot;sourcecontainer&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobName</span><span class="p">(</span><span class="s">&quot;sourceblob.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">srcClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Create a service-level read only SAS valid for 24 hours</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">BlobSasPermission</span><span class="p">();</span><span class="w"></span>
+<span class="n">permissions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">permissions</span><span class="p">.</span><span class="n">setReadPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="n">expiryTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">datetime</span><span class="p">(</span><span class="s">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;TimeZone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;UTC&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">days</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">sasValues</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">BlobServiceSasSignatureValues</span><span class="p">(</span><span class="n">expiryTime</span><span class="p">,</span><span class="w"> </span><span class="n">permissions</span><span class="p">);</span><span class="w"></span>
+<span class="n">srcSas</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">srcClient</span><span class="p">.</span><span class="n">generateSas</span><span class="p">(</span><span class="n">sasValues</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Build the full SAS URL by appending the SAS to the blob URL, note the &#39;?&#39;</span><span class="w"></span>
+<span class="n">srcUrl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">srcClient</span><span class="p">.</span><span class="n">getBlobUrl</span><span class="p">();</span><span class="w"></span>
+<span class="n">srcStr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="n">srcUrl</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;?&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">srcSas</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Create a container &amp; respective client for the destination blob</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobContainerClientBuilder</span><span class="p">();</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerName</span><span class="p">(</span><span class="s">&quot;destinationcontainer&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">containerClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">containerClient</span><span class="p">.</span><span class="n">create</span><span class="p">();</span><span class="w"></span>
+<span class="n">destClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">getBlobClient</span><span class="p">(</span><span class="s">&#39;destinationblob.txt&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Finally copy the source blob to the destination</span><span class="w"></span>
+<span class="n">destClient</span><span class="p">.</span><span class="n">copyFromUrl</span><span class="p">(</span><span class="n">srcStr</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="blob-lease-client">
+<h2>Blob Lease Client<a class="headerlink" href="#blob-lease-client" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">BlobLeaseClient</span></code> is created using <code class="docutils literal notranslate"><span class="pre">BlobLeaseClientBuilder</span></code> which can then build
+the client based on an existing <code class="docutils literal notranslate"><span class="pre">BlobClient</span></code> or <code class="docutils literal notranslate"><span class="pre">BlobContainerClient</span></code>.
+Optionally the <code class="docutils literal notranslate"><span class="pre">BlobLeaseClient</span></code> can be configured with a specific leaseId (e.g.
+in order to then be able to release a lease previously created outside of MATLAB
+or for which the <code class="docutils literal notranslate"><span class="pre">BlobLeaseClient</span></code> was cleared).</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create BlobLeaseClient based on an existing BlobClient </span><span class="w"></span>
+<span class="c">% &#39;existingBlobClient&#39; (created using the instructions above)</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">specialized</span><span class="p">.</span><span class="n">BlobLeaseClientBuilder</span><span class="p">;</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobClient</span><span class="p">(</span><span class="n">existingBlobClient</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Optionally specify a specific leaseId</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">leaseId</span><span class="p">(</span><span class="s">&#39;60233c25-dc52-4b3a-a874-dc641b4877a9&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Build the BlobLeaseClient</span><span class="w"></span>
+<span class="n">leaseClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create BlobLeaseClient based on an existing BlobContainerClient </span><span class="w"></span>
+<span class="c">% &#39;existingContainerClient&#39; (created using the instructions above)</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">specialized</span><span class="p">.</span><span class="n">BlobLeaseClientBuilder</span><span class="p">;</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">containerClient</span><span class="p">(</span><span class="n">existingContainerClient</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Optionally specify a specific leaseId</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">leaseId</span><span class="p">(</span><span class="s">&#39;60233c25-dc52-4b3a-a874-dc641b4877a9&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Build the BlobLeaseClient</span><span class="w"></span>
+<span class="n">leaseClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="acquiring-renewing-changing-releasing-and-breaking-leases">
+<h3>Acquiring, renewing, changing, releasing and breaking leases<a class="headerlink" href="#acquiring-renewing-changing-releasing-and-breaking-leases" title="Permalink to this headline"></a></h3>
+<p>The interface supports all Lease Blob operations as specified in the <a class="reference external" href="https://docs.microsoft.com/en-us/rest/api/storageservices/lease-blob">Azure
+documentation</a>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Acquire a lease for 30 seconds</span><span class="w"></span>
+<span class="n">leaseId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClient</span><span class="p">.</span><span class="n">acquireLease</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Acquire a lease which never expires</span><span class="w"></span>
+<span class="n">leaseId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClient</span><span class="p">.</span><span class="n">acquireLease</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="c">% Renew an active lease</span><span class="w"></span>
+<span class="n">leaseClient</span><span class="p">.</span><span class="n">renewLease</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Change a lease to a different leaseId</span><span class="w"></span>
+<span class="n">leaseClient</span><span class="p">.</span><span class="n">changeLease</span><span class="p">(</span><span class="s">&#39;195aaa29-d604-469b-93a4-80af769f4b03&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="c">% Release an active lease</span><span class="w"></span>
+<span class="n">leaseClient</span><span class="p">.</span><span class="n">releaseLease</span><span class="p">();</span><span class="w"></span>
+<span class="c">% Break a lease</span><span class="w"></span>
+<span class="n">leaseClient</span><span class="p">.</span><span class="n">breakLease</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="interacting-with-a-blob-or-blob-container-which-has-a-lease-on-it">
+<h3>Interacting with a Blob or Blob Container which has a lease on it<a class="headerlink" href="#interacting-with-a-blob-or-blob-container-which-has-a-lease-on-it" title="Permalink to this headline"></a></h3>
+<p>When a Blob has a lease on it, certain interactions like deleting it or
+overwriting it with a newly uploaded or copied file are only possible when that
+operation is performed with the correct leaseId. The leaseId can be provided as
+Name-Value input pair to the <code class="docutils literal notranslate"><span class="pre">deleteBlob</span></code>, <code class="docutils literal notranslate"><span class="pre">uploadFromFile</span></code> and <code class="docutils literal notranslate"><span class="pre">copyFromFile</span></code>
+methods of <code class="docutils literal notranslate"><span class="pre">BlobClient</span></code> and the <code class="docutils literal notranslate"><span class="pre">deleteContainer</span></code> method of
+<code class="docutils literal notranslate"><span class="pre">BlobContainerClient</span></code>. So a full workflow could become:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Build a BlobClient</span><span class="w"></span>
+<span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;mycontainer&#39;</span><span class="p">,</span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;myblob&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Build a BlobLeaseClient based on this BlobClient</span><span class="w"></span>
+<span class="n">leaseClientBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">specialized</span><span class="p">.</span><span class="n">BlobLeaseClientBuilder</span><span class="p">;</span><span class="w"></span>
+<span class="n">leaseClientBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClientBuilder</span><span class="p">.</span><span class="n">blobClient</span><span class="p">(</span><span class="n">blobClient</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">leaseClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClientBuilder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+
+<span class="c">% Acquire a lease</span><span class="w"></span>
+<span class="n">leaseId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClient</span><span class="p">.</span><span class="n">acquireLease</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Upload a new file to overwrite the blob</span><span class="w"></span>
+<span class="n">blobClient</span><span class="p">.</span><span class="n">uploadFromFile</span><span class="p">(</span><span class="s">&#39;myfile.txt&#39;</span><span class="p">,</span><span class="s">&#39;overwrite&#39;</span><span class="p">,</span><span class="nb">true</span><span class="p">,</span><span class="s">&#39;leaseId&#39;</span><span class="p">,</span><span class="n">leaseId</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Delete the blob while the lease is active</span><span class="w"></span>
+<span class="n">blobClient</span><span class="p">.</span><span class="n">deleteBlob</span><span class="p">(</span><span class="s">&#39;leaseId&#39;</span><span class="p">,</span><span class="n">leaseId</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="DataLakeStorageGen2.html" class="btn btn-neutral float-left" title="Azure Data Lake Storage Gen2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Queue.html" class="btn btn-neutral float-right" title="Queue Storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
