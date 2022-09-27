@@ -19,7 +19,7 @@ Services it currently supports:
 
 ## Requirements
 
-* [MathWorks®](http://www.mathworks.com) Products
+* [MathWorks®](https://www.mathworks.com) Products
   * MATLAB® release R2019a or later
   * (optional) MATLAB Compiler™ and Compiler SDK™
   * (optional) MATLAB Production Server™
