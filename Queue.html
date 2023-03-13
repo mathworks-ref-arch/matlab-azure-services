@@ -143,22 +143,22 @@ various clients.</p>
 <h2>Queue Service Client<a class="headerlink" href="#queue-service-client" title="Permalink to this headline"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">QueueServiceClient</span></code> can be created using <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> as
 follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>or build on a lower level using <code class="docutils literal notranslate"><span class="pre">QueueServiceClientBuilder</span></code>:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the client&#39;s builder</span><span class="w"></span>
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="n">QueueServiceClientBuilder</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the client&#39;s builder</span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="n">QueueServiceClientBuilder</span><span class="p">();</span>
 
-<span class="c">% configureCredentials is a function that simplifies creating a credentials</span><span class="w"></span>
-<span class="c">% argument for the client&#39;s builder. In this case a Connection String is used to</span><span class="w"></span>
-<span class="c">% authenticate. Other authentication methods may required different build steps,</span><span class="w"></span>
-<span class="c">% e.g. setting an endpoint</span><span class="w"></span>
-<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
+<span class="c">% configureCredentials is a function that simplifies creating a credentials</span>
+<span class="c">% argument for the client&#39;s builder. In this case a Connection String is used to</span>
+<span class="c">% authenticate. Other authentication methods may required different build steps,</span>
+<span class="c">% e.g. setting an endpoint</span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span>
 
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
-<span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span>
+<span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span>
 </pre></div>
 </div>
 <section id="common-service-client-operations">
@@ -166,16 +166,16 @@ follows:</p>
 <p>For a full list of supported service client methods consult the API
 documentation or call <code class="docutils literal notranslate"><span class="pre">methods()</span></code> on the client object or see the
 <a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference.md</span></a> file.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a Queue &amp; its client</span><span class="w"></span>
-<span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a Queue &amp; its client</span>
+<span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% List queues</span><span class="w"></span>
-<span class="n">qList</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">listQueues</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% List queues</span>
+<span class="n">qList</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">listQueues</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Delete a Queue &amp; its client</span><span class="w"></span>
-<span class="n">qsc</span><span class="p">.</span><span class="n">deleteQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Delete a Queue &amp; its client</span>
+<span class="n">qsc</span><span class="p">.</span><span class="n">deleteQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -183,59 +183,59 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
 <section id="queue-client">
 <h2>Queue Client<a class="headerlink" href="#queue-client" title="Permalink to this headline"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">QueueClient</span></code> is created as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span><span class="w"></span>
-<span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;QueueName&#39;</span><span class="p">,</span><span class="s">&#39;myquename-123456&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span>
+<span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;QueueName&#39;</span><span class="p">,</span><span class="s">&#39;myquename-123456&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>or:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the Client&#39;s builder</span><span class="w"></span>
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="n">QueueClientBuilder</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create the Client&#39;s builder</span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="n">QueueClientBuilder</span><span class="p">();</span>
 
-<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span>
 
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span><span class="w"></span>
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span><span class="w"></span>
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">queueName</span><span class="p">(</span><span class="s">&quot;myquename-123456&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">queueName</span><span class="p">(</span><span class="s">&quot;myquename-123456&quot;</span><span class="p">);</span>
+<span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span>
 <span class="w">    </span>
 </pre></div>
 </div>
 <section id="common-queue-client-operations">
 <h3>Common Queue Client operations<a class="headerlink" href="#common-queue-client-operations" title="Permalink to this headline"></a></h3>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Send a message</span><span class="w"></span>
-<span class="n">msgResult</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&#39;my test message&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Send a message</span>
+<span class="n">msgResult</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&#39;my test message&#39;</span><span class="p">);</span>
+<span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get insertion, expiration &amp; next visible times</span><span class="w"></span>
-<span class="n">insertTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getInsertionTime</span><span class="p">();</span><span class="w"></span>
-<span class="n">expireTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getExpirationTime</span><span class="p">();</span><span class="w"></span>
-<span class="n">visibleTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getTimeNextVisible</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get insertion, expiration &amp; next visible times</span>
+<span class="n">insertTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getInsertionTime</span><span class="p">();</span>
+<span class="n">expireTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getExpirationTime</span><span class="p">();</span>
+<span class="n">visibleTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getTimeNextVisible</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Receive a message</span><span class="w"></span>
-<span class="n">msg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">receiveMessage</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Receive a message</span>
+<span class="n">msg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">receiveMessage</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get insertion, expiration &amp; next visible times</span><span class="w"></span>
-<span class="n">insertTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getInsertionTime</span><span class="p">();</span><span class="w"></span>
-<span class="n">expireTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getExpirationTime</span><span class="p">();</span><span class="w"></span>
-<span class="n">visibleTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getTimeNextVisible</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get insertion, expiration &amp; next visible times</span>
+<span class="n">insertTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getInsertionTime</span><span class="p">();</span>
+<span class="n">expireTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getExpirationTime</span><span class="p">();</span>
+<span class="n">visibleTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getTimeNextVisible</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the message count, id and receipt</span><span class="w"></span>
-<span class="nb">count</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getDequeueCount</span><span class="p">();</span><span class="w"></span>
-<span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getMessageId</span><span class="p">();</span><span class="w"></span>
-<span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the message count, id and receipt</span>
+<span class="nb">count</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getDequeueCount</span><span class="p">();</span>
+<span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getMessageId</span><span class="p">();</span>
+<span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the message text itself</span><span class="w"></span>
-<span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getMessageText</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the message text itself</span>
+<span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">getMessageText</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Clear all or delete a single message</span><span class="w"></span>
-<span class="n">qc</span><span class="p">.</span><span class="n">clearMessages</span><span class="p">();</span><span class="w"></span>
-<span class="n">qc</span><span class="p">.</span><span class="n">deleteMessage</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">receipt</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Clear all or delete a single message</span>
+<span class="n">qc</span><span class="p">.</span><span class="n">clearMessages</span><span class="p">();</span>
+<span class="n">qc</span><span class="p">.</span><span class="n">deleteMessage</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">receipt</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>

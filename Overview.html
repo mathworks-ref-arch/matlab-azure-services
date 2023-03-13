@@ -134,7 +134,7 @@ approach.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.mathworks.com">MathWorks®</a> Products</p>
+<li><p><a class="reference external" href="http://www.mathworks.com">MathWorks®</a> Products</p>
 <ul>
 <li><p>MATLAB® release R2019a or later</p></li>
 <li><p>(optional) MATLAB Compiler™ and Compiler SDK™</p></li>
@@ -149,7 +149,7 @@ approach.</p>
 </ul>
 </li>
 </ul>
-<p>This package is primarily tested using Ubuntu™ 20.04 and Windows® 10.</p>
+<p>This package is primarily tested using Ubuntu™ 20.04 and Windows® 11.</p>
 </section>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h2>
@@ -165,33 +165,33 @@ by running <code class="docutils literal notranslate"><span class="pre">startup.
 <section id="create-a-blob-client-and-check-if-a-blob-exists">
 <h4>Create a Blob Client and check if a blob exists<a class="headerlink" href="#create-a-blob-client-and-check-if-a-blob-exists" title="Permalink to this headline"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;myContainer&#39;</span><span class="p">,</span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;myBlob&#39;</span><span class="p">)</span><span class="w"> </span>
-<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span><span class="w"></span>
+<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
 <section id="acquire-a-lease-for-a-blob">
 <h4>Acquire a lease for a blob<a class="headerlink" href="#acquire-a-lease-for-a-blob" title="Permalink to this headline"></a></h4>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">specialized</span><span class="p">.</span><span class="n">BlobLeaseClientBuilder</span><span class="p">;</span><span class="w"></span>
-<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobClient</span><span class="p">(</span><span class="n">blobClient</span><span class="p">);</span><span class="w"></span>
-<span class="c">% Build the BlobLeaseClient</span><span class="w"></span>
-<span class="n">leaseClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span><span class="w"></span>
-<span class="c">% Acquire a lease for 30 seconds</span><span class="w"></span>
-<span class="n">leaseId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClient</span><span class="p">.</span><span class="n">acquireLease</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">specialized</span><span class="p">.</span><span class="n">BlobLeaseClientBuilder</span><span class="p">;</span>
+<span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobClient</span><span class="p">(</span><span class="n">blobClient</span><span class="p">);</span>
+<span class="c">% Build the BlobLeaseClient</span>
+<span class="n">leaseClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildClient</span><span class="p">();</span>
+<span class="c">% Acquire a lease for 30 seconds</span>
+<span class="n">leaseId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">leaseClient</span><span class="p">.</span><span class="n">acquireLease</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="create-queue-service-client-and-create-a-queue">
 <h4>Create Queue Service Client and create a queue<a class="headerlink" href="#create-queue-service-client-and-create-a-queue" title="Permalink to this headline"></a></h4>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">queueServiceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">queueServiceClient</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">queueServiceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span>
+<span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">queueServiceClient</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="create-file-data-lake-file-client-and-check-if-the-file-exists">
 <h4>Create File Data Lake (file) Client and check if the file exists<a class="headerlink" href="#create-file-data-lake-file-client-and-check-if-the-file-exists" title="Permalink to this headline"></a></h4>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">dataLakeFileClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
-<span class="w">               </span><span class="s">&#39;FileName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir/file&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dataLakeFileClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">dataLakeFileClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">               </span><span class="s">&#39;FileName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir/file&#39;</span><span class="p">);</span>
+<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dataLakeFileClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>For further details see: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></p>
@@ -201,22 +201,22 @@ by running <code class="docutils literal notranslate"><span class="pre">startup.
 <h3>Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permalink to this headline"></a></h3>
 <section id="create-a-secret-client-and-get-a-secret-value">
 <h4>Create a Secret Client and get a secret value<a class="headerlink" href="#create-a-secret-client-and-get-a-secret-value" title="Permalink to this headline"></a></h4>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="c">% Get the secret using its name</span><span class="w"></span>
-<span class="n">secret</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">getSecret</span><span class="p">(</span><span class="s">&#39;mySecretName&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="c">% Get the secret value</span><span class="w"></span>
-<span class="n">secretValue</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secret</span><span class="p">.</span><span class="n">getValue</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span>
+<span class="c">% Get the secret using its name</span>
+<span class="n">secret</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">getSecret</span><span class="p">(</span><span class="s">&#39;mySecretName&#39;</span><span class="p">);</span>
+<span class="c">% Get the secret value</span>
+<span class="n">secretValue</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secret</span><span class="p">.</span><span class="n">getValue</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
 <section id="list-keys-in-a-vault">
 <h4>List keys in a vault<a class="headerlink" href="#list-keys-in-a-vault" title="Permalink to this headline"></a></h4>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span><span class="w"></span>
-<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="c">% Get an array of secret properties</span><span class="w"></span>
-<span class="k">properties</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">listPropertiesOfKeys</span><span class="p">();</span><span class="w"></span>
-<span class="c">% Get the name property for the first entry</span><span class="w"></span>
-<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">propList</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span>
+<span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span>
+<span class="c">% Get an array of secret properties</span>
+<span class="k">properties</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">listPropertiesOfKeys</span><span class="p">();</span>
+<span class="c">% Get the name property for the first entry</span>
+<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">propList</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>For further details see: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/KeyVault.html">Azure Key Vault</a></p>

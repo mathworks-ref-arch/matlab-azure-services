@@ -136,9 +136,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-blobcontainerclient">azure.storage.blob.BlobContainerClient</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-blobserviceclient">azure.storage.blob.BlobServiceClient</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-blobclient">azure.storage.blob.BlobClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-listblobsoptions">azure.storage.blob.models.ListBlobsOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-blobitemproperties">azure.storage.blob.models.BlobItemProperties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-blobcontaineritem">azure.storage.blob.models.BlobContainerItem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-blobitem">azure.storage.blob.models.BlobItem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-storageaccountinfo">azure.storage.blob.models.StorageAccountInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-bloblistdetails">azure.storage.blob.models.BlobListDetails</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-models-userdelegationkey">azure.storage.blob.models.UserDelegationKey</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-sas-blobsaspermission">azure.storage.blob.sas.BlobSasPermission</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#azure-storage-blob-sas-blobcontainersaspermission">azure.storage.blob.sas.BlobContainerSasPermission</a></li>
@@ -198,7 +201,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#datetime2offsetdatetime">datetime2OffsetDateTime</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#initialize">initialize</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#loadconfigurationsettings">loadConfigurationSettings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#copyright-2022-the-mathworks-inc">Copyright 2022, The MathWorks, Inc.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copyright-2022-2023-the-mathworks-inc">Copyright 2022-2023, The MathWorks, Inc.</a></li>
 </ul>
 </li>
 </ul>
@@ -331,9 +334,12 @@
 <section id="id6">
 <h3>Classes<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
 <ul class="simple">
+<li><p><a class="reference internal" href="#azure-storage-blob-models-listblobsoptions"><span class="std std-doc">azure.storage.blob.models.ListBlobsOptions</span></a></p></li>
+<li><p><a class="reference internal" href="#azure-storage-blob-models-blobitemproperties"><span class="std std-doc">azure.storage.blob.models.BlobItemProperties</span></a></p></li>
 <li><p><a class="reference internal" href="#azure-storage-blob-models-blobcontaineritem"><span class="std std-doc">azure.storage.blob.models.BlobContainerItem</span></a></p></li>
 <li><p><a class="reference internal" href="#azure-storage-blob-models-blobitem"><span class="std std-doc">azure.storage.blob.models.BlobItem</span></a></p></li>
 <li><p><a class="reference internal" href="#azure-storage-blob-models-storageaccountinfo"><span class="std std-doc">azure.storage.blob.models.StorageAccountInfo</span></a></p></li>
+<li><p><a class="reference internal" href="#azure-storage-blob-models-bloblistdetails"><span class="std std-doc">azure.storage.blob.models.BlobListDetails</span></a></p></li>
 <li><p><a class="reference internal" href="#azure-storage-blob-models-userdelegationkey"><span class="std std-doc">azure.storage.blob.models.UserDelegationKey</span></a></p></li>
 </ul>
 </section>
@@ -1504,6 +1510,12 @@
 
 </pre></div>
 </div>
+<p><em>azure.storage.blob.BlobContainerClient.getAccountUrl</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETACCOUNTURL Get associated account URL
+  A character vector is returned.
+
+</pre></div>
+</div>
 <p><em>azure.storage.blob.BlobContainerClient.getBlobClient</em></p>
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETBLOBCLIENT Initializes a new BlobClient object 
   blobName should be a scalar string or character vector.
@@ -1517,6 +1529,12 @@
 
 </pre></div>
 </div>
+<p><em>azure.storage.blob.BlobContainerClient.getBlobContainerUrl</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETBLOBCONTAINERURL Get associated container URL
+  A character vector is returned.
+
+</pre></div>
+</div>
 <p><em>azure.storage.blob.BlobContainerClient.getServiceClient</em></p>
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETSERVICECLIENT Get a client pointing to the account.
 
@@ -1525,6 +1543,14 @@
 <p><em>azure.storage.blob.BlobContainerClient.listBlobs</em></p>
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  LISTBLOBS Returns a list of blobs in this container
   Folder structures are flattened.
+  An array of BlobItems is returned.
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.BlobContainerClient.listBlobsByHierarchy</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  LISTBLOBSBYHIERARCHY Returns the blobs and directories (prefixes) under the given directory (prefix).
+  Directories will have BlobItem.isPrefix() set to true. 
+  Blob names are returned in lexicographic order.
   An array of BlobItems is returned.
 
 </pre></div>
@@ -1661,7 +1687,10 @@
 </div>
 <p><em>azure.storage.blob.BlobClient.exists</em></p>
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  EXISTS Gets if the blob this client represents exists in Azure
-  A logical is returned.
+  A logical is returned if the Container exists indicating if the blob
+  exists or not. Otherwise an exception is thrown, for example if the
+  container does not exist. Consider using a container client to check for
+  the existance of the container first.
 
 </pre></div>
 </div>
@@ -1715,14 +1744,91 @@
 </pre></div>
 </div>
 </section>
+<section id="azure-storage-blob-models-listblobsoptions">
+<h3>azure.storage.blob.models.ListBlobsOptions<a class="headerlink" href="#azure-storage-blob-models-listblobsoptions" title="Permalink to this headline"></a></h3>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  LISTBLOBSOPTIONS Defines options available to configure the behavior of a call to listBlobs on a BlobContainerClient
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.ListBlobsOptions.getDetails</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETDETAILS Returns a BlobListDetails object
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.ListBlobsOptions.getMaxResultsPerPage</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETDETAILS Returns the maximum number of blobs to return, including all BlobPrefix elements
+  A double is returned.
+  An empty [] is returned if not set.
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.ListBlobsOptions.getPrefix</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.ListBlobsOptions.setDetails</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETDETAILS Returns a ListBlobsOptions object
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.ListBlobsOptions.setMaxResultsPerPage</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETDETAILS Returns a ListBlobsOptions object
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.ListBlobsOptions.setPrefix</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
+
+</pre></div>
+</div>
+</section>
+<section id="azure-storage-blob-models-blobitemproperties">
+<h3>azure.storage.blob.models.BlobItemProperties<a class="headerlink" href="#azure-storage-blob-models-blobitemproperties" title="Permalink to this headline"></a></h3>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  BlobItemProperties Properties of a blob
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItemProperties.getContentMd5</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCONTENTMD5 Get the getContentMd5 property
+  Return the base64 value shown in the Azure portal
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItemProperties.getContentLength</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCONTENTLENGTH Get the contentType property
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItemProperties.getContentType</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCONTENTTYPE Get the getContentType property
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItemProperties.getContentLanguage</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCONTENTLANGUAGE Get the getContentLanguage property
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItemProperties.getContentEncoding</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCONTENTENCODING Get the getContentEncoding property
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItemProperties.getCacheControl</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCACHECONTROL Get the cacheControl property
+
+</pre></div>
+</div>
+</section>
 <section id="azure-storage-blob-models-blobcontaineritem">
 <h3>azure.storage.blob.models.BlobContainerItem<a class="headerlink" href="#azure-storage-blob-models-blobcontaineritem" title="Permalink to this headline"></a></h3>
-<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  BLOBCONTAINERITEM
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  BLOBCONTAINERITEM An Azure Storage container
 
 </pre></div>
 </div>
 <p><em>azure.storage.blob.models.BlobContainerItem.getName</em></p>
-<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETNAME Returns the blob&#39;s name as a character vector
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETNAME Returns the container&#39;s name as a character vector
 
 </pre></div>
 </div>
@@ -1733,8 +1839,43 @@
 
 </pre></div>
 </div>
+<p><em>azure.storage.blob.models.BlobItem.getMetadata</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETMETADATA Get the metadata property
+
+</pre></div>
+</div>
 <p><em>azure.storage.blob.models.BlobItem.getName</em></p>
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETNAME Returns the blob&#39;s name as a character vector
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItem.getProperties</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETPROPERTIES Get the properties property
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItem.getSnapshot</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETSNAPSHOT Returns the blob&#39;s snapshot property as a character vector
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItem.getTags</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETTAGS Get the tags property
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItem.getVersionId</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETVERSIONID Returns the blob&#39;s versionId property as a character vector
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItem.isDeleted</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  isDeleted Get the deleted property, returns a logical
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobItem.isPrefix</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  ISPREFIX Get the isPrefix property: If blobs are named to mimic a directory hierarchy
 
 </pre></div>
 </div>
@@ -1751,6 +1892,113 @@
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETACCOUNTKIND Describes the type of the storage account
   Values: BLOB_STORAGE, BLOCK_BLOB_STORAGE, FILE_STORAGE, STORAGE, STORAGE_V2
   A character vector is returned rather than an enumeration
+
+</pre></div>
+</div>
+</section>
+<section id="azure-storage-blob-models-bloblistdetails">
+<h3>azure.storage.blob.models.BlobListDetails<a class="headerlink" href="#azure-storage-blob-models-bloblistdetails" title="Permalink to this headline"></a></h3>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  BLOBLISTDETAILS Allows users to specify additional information the service should return with each blob when listing blobs
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveVersions</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVEVERSIONS Whether versions should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveUncommittedBlobs</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVEUNCOMMITTEDBLOBS Whether blob tags should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveTags</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVETAGS Whether blob tags should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveSnapshots</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVESNAPSHOTS Whether snapshots should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveMetadata</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVEMETADATA Whether blob metadata should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveLegalHold</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveImmutabilityPolicy</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVEIMMUTABILITYPOLICY Whether immutability policy for the blob should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobsWithVersions</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobs</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.getRetrieveCopy</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveVersions</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVEUNCOMMITTEDBLOBS Whether versions should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveUncommittedBlobs</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVEUNCOMMITTEDBLOBS Whether blob metadata should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveTags</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  setRetrieveTags Whether blob tags should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveSnapshots</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  setRetrieveSnapshots Whether snapshots should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveMetadata</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVEMETADATA Whether blob metadata should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveLegalHold</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveImmutabilityPolicy</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVEIMMUTABILITYPOLICY Whether blobs which have been deleted with versioning should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobsWithVersions</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobs</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
+
+</pre></div>
+</div>
+<p><em>azure.storage.blob.models.BlobListDetails.setRetrieveCopy</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  SETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
 
 </pre></div>
 </div>
@@ -4604,78 +4852,8 @@
 </pre></div>
 </div>
 <p><em>Logger.warning</em></p>
-<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span> WARNING Display warning message; disable or enable warning messages.
-    WARNING(WARNMSG) displays the warning message WARNMSG, unless it has
-    been disabled (see the special identifier &#39;all&#39; in &quot;Controlling Warning
-    Message Display&quot; below). When WARNMSG is the only input to WARNING,
-    WARNING displays it literally, without performing any substitutions
-    (see below) on the characters in WARNMSG.
- 
-    WARNING(WARNMSG, A, B, ...) displays the formatted warning message
-    WARNMSG. The WARNMSG, specified as a character vector or string scalar,
-    may contain escape sequences (such as \t or \n) as well as the C
-    language conversion specifiers (e.g., %s or %d) that are supported by
-    the SPRINTF function. WARNING makes substitutions for the escape
-    sequences and conversion specifiers in the same way that SPRINTF does.
-    Additional arguments A, B, ... provide the values that correspond to
-    the format specifiers and are only required if conversion specifiers
-    appear in WARNMSG. Type HELP SPRINTF for more information on escape
-    sequences and format specifiers. WARNING performs these substitutions
-    on WARNMSG in all cases where more than one input is passed to WARNING.
- 
-    WARNING(WARNID, WARNMSG, A, B, ...) displays the formatted warning
-    message WARNMSG as in the paragraph above, and tags the warning with
-    the warning identifier WARNID. The identifier can be used to enable or
-    disable display of the identified warning (See &quot;Controlling Warning
-    Message Display&quot; below). A warning identifier is a character vector or
-    string scalar of the form &lt;component&gt;[:&lt;component&gt;]:&lt;mnemonic&gt;, where
-    &lt;component&gt; and &lt;mnemonic&gt; are alphanumeric (for example,
-    &#39;MATLAB:singularMatrix&#39;).
- 
-    Controlling Warning Message Display
-    -----------------------------------
-    WARNING(&#39;OFF&#39;, WARNID) and WARNING(&#39;ON&#39;, WARNID) disable and enable the
-    display of any warning tagged with warning identifier WARNID. (Use
-    LASTWARN to determine the identifier of a warning, or use the WARNING
-    VERBOSE feature described below.) WARNING is not case sensitive when
-    matching warning identifiers.
- 
-    S = WARNING(&#39;OFF&#39;, WARNID) and S = WARNING(&#39;ON&#39;, WARNID) additionally
-    return the previous warning state of any warning tagged with warning
-    identifier WARNID. This state information is returned in a structure S
-    with fields &#39;identifier&#39; and &#39;state&#39;.
- 
-    WARNING(&#39;QUERY&#39;, WARNID) displays the state (&#39;on&#39; or &#39;off&#39;) for
-    warnings with identifier WARNID. S = WARNING(&#39;QUERY&#39;, WARNID) returns
-    the state in a structure S with fields &#39;identifier&#39; and &#39;state&#39;.
- 
-    In the three cases above, WARNID can also be &#39;all&#39;, in which case all
-    warnings (including untagged ones) are disabled, enabled, or queried,
-    as well as &#39;last&#39;, in which case the last displayed warning is
-    disabled, enabled, or queried.
- 
-    WARNING ON BACKTRACE and WARNING OFF BACKTRACE control the display of
-    the file and line number that produced a warning when the warning is
-    displayed.
- 
-    WARNING ON VERBOSE and WARNING OFF VERBOSE control the displaying of an
-    extra line of helpful text containing the warning identifier when a
-    warning is displayed.
-  
-    S = WARNING(&#39;QUERY&#39;, ARG) where ARG is either &#39;BACKTRACE&#39; or &#39;VERBOSE&#39;
-    returns a structure S with fields &#39;identifier&#39; containing ARG and
-    &#39;state&#39; containing the current state of ARG.
- 
-    WARNING(S) where S is a structure with fields &#39;identifier&#39; and &#39;state&#39;
-    is equivalent to
- 
-        for k = 1:numel(S), warning(S(k).state, S(k).identifier); end
-        
-    In other words, WARNING accepts as an input the same structure it
-    returns as an output. This restores the states of warnings to their
-    previous values.
- 
-    See also SPRINTF, LASTWARN, DISP, ERROR, ERRORDLG, WARNDLG.
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>Logger.warning is a function.
+    Logger.warning(varargin)
 
 </pre></div>
 </div>
@@ -4914,13 +5092,13 @@
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  CREATEKEYVAULTCLIENT Convenience function for creating KeyClient and
   SecretClient
  
-    client = CREATEKEYVAULTCLIENT(&#39;Type&#39;,&#39;Key&#39;) creates a KeyClient with
+    client = createKeyVaultClient(&#39;Type&#39;,&#39;Key&#39;) creates a KeyClient with
     default options.
  
-    client = CREATEKEYVAULTCLIENT(&#39;Type&#39;,&#39;Secret&#39;) creates SecretClient with
+    client = createKeyVaultClient(&#39;Type&#39;,&#39;Secret&#39;) creates SecretClient with
     default options.
  
-  By default CREATEKEYVAULTCLIENT reads Credential information and the
+  By default createKeyVaultClient reads Credential information and the
   Vault Name from a configuration file named &#39;keyvaultsettings.json&#39;. The
   function automatically searches for this file on the MATLABPATH. It is
   possible to specify a different filename using &#39;ConfigurationFile&#39;. It is
@@ -4932,7 +5110,7 @@
   options:
  
     &#39;ConfigurationFile&#39;, explicitly specify which configuration file to
-        use. This file is used for configuring Credentials (when not 
+        use. This file is used for configuring Credentials (when not
         supplied as input) and/or Account Name (when not supplied as input).
  
         Default Value: &#39;keyvaultsettings.json&#39;
@@ -4940,19 +5118,19 @@
     &#39;Credentials&#39;, explicitly specify credentials to use. This for example
         allows building multiple clients based on the same credentials
         without having to go through (interactive) authentication again. If
-        not specified, CREATEKEYVAULTCLIENT uses configureCredentials with
+        not specified, createKeyVaultClient uses configureCredentials with
         &#39;ConfigurationFile&#39; as input to first configure credentials before
-        building the client. 
-  
+        building the client.
+ 
         Hint: configureCredentials can be used to build valid Credentials.
  
         Example:
             credentials = configureCredentials(&#39;myCredentials.json&#39;);
-            client1 = CREATEKEYVAULTCLIENT(&#39;Credentials&#39;,credentials,&#39;Type&#39;,&#39;Key&#39;)
-            client2 = CREATEKEYVAULTCLIENT(&#39;Credentials&#39;,credentials,&#39;Type&#39;,&#39;Secret&#39;)
-    
+            client1 = createKeyVaultClient(&#39;Credentials&#39;,credentials,&#39;Type&#39;,&#39;Key&#39;)
+            client2 = createKeyVaultClient(&#39;Credentials&#39;,credentials,&#39;Type&#39;,&#39;Secret&#39;)
+ 
     &#39;VaultName&#39;, explicitly specify the Vault name for the client. If not
-        specified CREATEKEYVAULTCLIENT uses loadConfigurationSettings to
+        specified createKeyVaultClient uses loadConfigurationSettings to
         load configuration options from &#39;ConfigurationFile&#39;. This file must
         then contain a &quot;VaultName&quot; setting.
  
@@ -5086,9 +5264,15 @@
  
   See: MATLAB/app/functions/Logger.m for more details.
 
-    Other functions named initialize
+    Other uses of initialize
 
+       matlab.internal.cef.webwindow/initialize
        matlab.net.http.io.ContentConsumer/initialize
+       matlab.net.http.io.ImageConsumer/initialize
+       matlab.net.http.io.JSONConsumer/initialize
+       matlab.net.http.io.MultipartConsumer/initialize
+       matlab.net.http.io.StringConsumer/initialize
+       myDeployedModule/initialize
        SimTimeseries/initialize
 
 </pre></div>
@@ -5106,8 +5290,8 @@
 </div>
 </section>
 <hr class="docutils" />
-<section id="copyright-2022-the-mathworks-inc">
-<h4>Copyright 2022, The MathWorks, Inc.<a class="headerlink" href="#copyright-2022-the-mathworks-inc" title="Permalink to this headline"></a></h4>
+<section id="copyright-2022-2023-the-mathworks-inc">
+<h4>Copyright 2022-2023, The MathWorks, Inc.<a class="headerlink" href="#copyright-2022-2023-the-mathworks-inc" title="Permalink to this headline"></a></h4>
 </section>
 </section>
 </section>

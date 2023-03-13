@@ -153,7 +153,7 @@ specific clients and using the Client <em>Builders</em> instead, the Credential 
 can still first be build using the <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> function (which is in
 fact also used internally by the higher level functions). This function must be
 called with a specific configuration filename as input, e.g.:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;myCredentialConfiguration.json&#39;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;myCredentialConfiguration.json&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Again, see the sections below on what options need to be configured in the file
@@ -184,9 +184,9 @@ supports a number of authentication processes many of which are common to this
 package.</p>
 <section id="sample-myservicespecificsettings-json">
 <h3>Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#sample-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AzureCli&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AzureCli&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>For more information on the CLI see: <a class="reference external" href="https://docs.microsoft.com/en-us/cli/azure/">Azure CLI
@@ -203,9 +203,9 @@ in a compiled MATLAB application or CTF file, rather the application can in
 effect derive its credentials by virtue of the machine hosting it in Azure.</p>
 <section id="managed-identity-myservicespecificsettings-json">
 <h3>Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#managed-identity-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagedIdentity&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagedIdentity&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -217,14 +217,14 @@ a client secret. The secret can be provided in the form as a string specified as
 <code class="docutils literal notranslate"><span class="pre">ClientSecret</span></code> or can be a certificate referred to by <code class="docutils literal notranslate"><span class="pre">pemCertificate</span></code>.</p>
 <section id="client-secret-myservicespecificsettings-json">
 <h3>Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#client-secret-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientSecret&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i6Q&lt;REDACTED&gt;p72&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Either </span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;pemCertificate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c:/path/to/clientCert.pem&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Or</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientSecret&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i6Q&lt;REDACTED&gt;p72&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Either </span>
+<span class="w">    </span><span class="nt">&quot;pemCertificate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c:/path/to/clientCert.pem&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Or</span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -244,10 +244,10 @@ The following combinations of credentials are accepted:</p>
 Additional note the support for a certificate file path.</p>
 <section id="environment-variable-myservicespecificsettings-json">
 <h3>Environment Variable <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#environment-variable-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Environment&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Environment&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -271,14 +271,14 @@ provided as empty object. In this case the default name “msal” is used on
 Windows and “MSALCache” on Linux.</p>
 <section id="shared-token-cache-myservicespecificsettings-json">
 <h3>Shared Token Cache <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#shared-token-cache-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SharedTokenCache&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SharedTokenCache&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w"> </span><span class="c1">//Optional</span>
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -309,16 +309,16 @@ flow will complete without needing any action from the end-user.</p>
 </section>
 <section id="interactive-browser-myservicespecificsettings-json">
 <h3>Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#interactive-browser-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;InteractiveBrowser&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;InteractiveBrowser&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w">    </span>
-<span class="w">    </span><span class="nt">&quot;RedirectUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8765&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w">        </span><span class="c1">//Optional</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;RedirectUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8765&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w">        </span><span class="c1">//Optional</span>
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -367,8 +367,8 @@ authentication flow are printed to the Command Window. An optional
 <code class="docutils literal notranslate"><span class="pre">'DeviceCodeCallback'</span></code> Name-Value input pair can be passed to
 <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> to specify a custom callback function for displaying the
 device code instructions:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;settings_DeviceCode.json&#39;</span><span class="p">,,</span><span class="k">...</span><span class="w"></span>
-<span class="w">    </span><span class="s">&#39;DeviceCodeCallback&#39;</span><span class="p">,@</span><span class="n">myExampleCallbackFunction</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="s">&#39;settings_DeviceCode.json&#39;</span><span class="p">,,</span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;DeviceCodeCallback&#39;</span><span class="p">,@</span><span class="n">myExampleCallbackFunction</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This callback will then be called during the authentication flow with an
@@ -376,13 +376,13 @@ device code instructions:</p>
 this object to display instructions to the end user on how to complete the
 authentication flow. Or for example use this to automatically copy the code to
 clipboard and open a browser:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">myExampleCallbackFunction</span><span class="p">(</span>deviceCodeInfo<span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="c">% Simply still print to instructions to the Command Window</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getMessage</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="c">% But also copy the code to the clipboard</span><span class="w"></span>
-<span class="w">    </span><span class="nb">clipboard</span><span class="p">(</span><span class="s">&quot;copy&quot;</span><span class="p">,</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getUserCode</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c">% And open a browser</span><span class="w"></span>
-<span class="w">    </span><span class="nb">web</span><span class="p">(</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getVerificationUrl</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">myExampleCallbackFunction</span><span class="p">(</span>deviceCodeInfo<span class="p">)</span>
+<span class="w">    </span><span class="c">% Simply still print to instructions to the Command Window</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getMessage</span><span class="p">)</span>
+<span class="w">    </span><span class="c">% But also copy the code to the clipboard</span>
+<span class="w">    </span><span class="nb">clipboard</span><span class="p">(</span><span class="s">&quot;copy&quot;</span><span class="p">,</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getUserCode</span><span class="p">);</span>
+<span class="w">    </span><span class="c">% And open a browser</span>
+<span class="w">    </span><span class="nb">web</span><span class="p">(</span><span class="n">deviceCodeInfo</span><span class="p">.</span><span class="n">getVerificationUrl</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -409,18 +409,18 @@ in the cache, so it sufficient now for <code class="docutils literal notranslate
 </section>
 <section id="device-code-myservicespecificsettings-json">
 <h3>Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#device-code-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DeviceCode&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DeviceCode&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w">    </span>
-<span class="w">    </span><span class="nt">&quot;Scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;https://storage.azure.com/.default&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w">        </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://storage.azure.com/.default&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="w">    </span><span class="nt">&quot;TokenCachePersistenceOptions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myMATLABCache&quot;</span><span class="w">        </span><span class="c1">//Optional</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -445,12 +445,12 @@ AuthorityHost are optional fields depending on which means of authentication is
 expected to be used.</p>
 <section id="default-azure-myservicespecificsettings-json">
 <h3>Default Azure <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#default-azure-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultAzure&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ManagedIdentityClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultAzure&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="w">    </span><span class="nt">&quot;ManagedIdentityClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -474,11 +474,11 @@ keys and the connection string for each key.</p></li>
 </ol>
 <section id="storage-shared-key-myservicespecificsettings-json">
 <h3>Storage Shared Key <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#storage-shared-key-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StorageSharedKey&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AccountKey&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lrd&lt;REDACTED&gt;g==&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AccountName&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a&lt;REDACTED&gt;t&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StorageSharedKey&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AccountKey&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lrd&lt;REDACTED&gt;g==&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AccountName&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a&lt;REDACTED&gt;t&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Connection String is a form of <code class="docutils literal notranslate"><span class="pre">StorageSharedKeyCredential</span></code> where the
@@ -513,10 +513,10 @@ keys and the connection string for each key.</p></li>
 </ol>
 <section id="connection-string-myservicespecificsettings-json">
 <h3>Connection String <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#connection-string-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ConnectionString&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultEndpointsProtocol=https;&lt;REDACTED CONNECTION STRING&gt;g==;EndpointSuffix=core.windows.net&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ConnectionString&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultEndpointsProtocol=https;&lt;REDACTED CONNECTION STRING&gt;g==;EndpointSuffix=core.windows.net&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Alternatively the connection string can be passed as an environment value as
@@ -525,7 +525,7 @@ follows: On Windows using cmd:</p>
 </pre></div>
 </div>
 <p>Or on Linux/macOS using bash:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AZURE_STORAGE_CONNECTION_STRING</span><span class="o">=</span><span class="s2">&quot;&lt;myConnectionString&gt;&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_STORAGE_CONNECTION_STRING</span><span class="o">=</span><span class="s2">&quot;&lt;myConnectionString&gt;&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -539,14 +539,14 @@ Key approaches are not token based. Credentials are built in the usual way but
 rather than being used directly they are <em>added</em> to the
 <code class="docutils literal notranslate"><span class="pre">chainedTokenCredentialBuilder</span></code> in descending order of preference. This
 builder is then built and the result provides the client’s credentials.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">chainedTokenCredentialBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chainedTokenCredentialBuilder</span><span class="p">.</span><span class="n">addLast</span><span class="p">(</span><span class="n">clientSecretCredentials</span><span class="p">);</span><span class="w"></span>
-<span class="n">chainedTokenCredentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chainedTokenCredentialBuilder</span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w"></span>
-<span class="n">serviceClientBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClientBuilder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">chainedTokenCredentials</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">chainedTokenCredentialBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chainedTokenCredentialBuilder</span><span class="p">.</span><span class="n">addLast</span><span class="p">(</span><span class="n">clientSecretCredentials</span><span class="p">);</span>
+<span class="n">chainedTokenCredentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">chainedTokenCredentialBuilder</span><span class="p">.</span><span class="n">build</span><span class="p">();</span>
+<span class="n">serviceClientBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">serviceClientBuilder</span><span class="p">.</span><span class="n">credential</span><span class="p">(</span><span class="n">chainedTokenCredentials</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In this case multiple settings files are used to build the individual
 credentials by passing a specific path e.g.:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">clientSecretCredentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ClientSecret.json&#39;</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">clientSecretCredentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ClientSecret.json&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </section>

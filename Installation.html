@@ -94,7 +94,7 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
 <section id="clone-this-repository">
 <h2>Clone this repository<a class="headerlink" href="#clone-this-repository" title="Permalink to this headline"></a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/mathworks-ref-arch/matlab-azure-services.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mathworks-ref-arch/matlab-azure-services.git
 </pre></div>
 </div>
 </section>
@@ -107,8 +107,8 @@ Maven.</p>
 <p>The build process downloads a number of required 3rd party packages. The
 specifics of which can be derived from the pom file.</p>
 <p>To build the utility using Maven:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Software/Java
-mvn clean package
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Software/Java
+mvn<span class="w"> </span>clean<span class="w"> </span>package
 </pre></div>
 </div>
 <p>The build should produce the file: <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar</span></code></p>
@@ -140,7 +140,7 @@ path in a local MATLAB installation is to add an entry to the
 <code class="docutils literal notranslate"><span class="pre">javaclasspath.txt</span></code> file in MATLAB’s preferences directory. To create or open
 this file in the MATLAB editor you can type the following command in the MATLAB
 Command Window:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">edit</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="nb">prefdir</span><span class="p">,</span><span class="s">&#39;javaclasspath.txt&#39;</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">edit</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="nb">prefdir</span><span class="p">,</span><span class="s">&#39;javaclasspath.txt&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Add the following content to the file, noting:</p>
