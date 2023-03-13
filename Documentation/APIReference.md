@@ -81,9 +81,12 @@ Documentation generation settings:
 
 ### Classes
 
+* [azure.storage.blob.models.ListBlobsOptions](#azurestorageblobmodelslistblobsoptions)
+* [azure.storage.blob.models.BlobItemProperties](#azurestorageblobmodelsblobitemproperties)
 * [azure.storage.blob.models.BlobContainerItem](#azurestorageblobmodelsblobcontaineritem)
 * [azure.storage.blob.models.BlobItem](#azurestorageblobmodelsblobitem)
 * [azure.storage.blob.models.StorageAccountInfo](#azurestorageblobmodelsstorageaccountinfo)
+* [azure.storage.blob.models.BlobListDetails](#azurestorageblobmodelsbloblistdetails)
 * [azure.storage.blob.models.UserDelegationKey](#azurestorageblobmodelsuserdelegationkey)
 
 ### Subpackage  *azure.storage.blob.sas*
@@ -1456,6 +1459,14 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```
 
+*azure.storage.blob.BlobContainerClient.getAccountUrl*
+
+```notalanguage
+  GETACCOUNTURL Get associated account URL
+  A character vector is returned.
+
+```
+
 *azure.storage.blob.BlobContainerClient.getBlobClient*
 
 ```notalanguage
@@ -1473,6 +1484,14 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```
 
+*azure.storage.blob.BlobContainerClient.getBlobContainerUrl*
+
+```notalanguage
+  GETBLOBCONTAINERURL Get associated container URL
+  A character vector is returned.
+
+```
+
 *azure.storage.blob.BlobContainerClient.getServiceClient*
 
 ```notalanguage
@@ -1485,6 +1504,16 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 ```notalanguage
   LISTBLOBS Returns a list of blobs in this container
   Folder structures are flattened.
+  An array of BlobItems is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.listBlobsByHierarchy*
+
+```notalanguage
+  LISTBLOBSBYHIERARCHY Returns the blobs and directories (prefixes) under the given directory (prefix).
+  Directories will have BlobItem.isPrefix() set to true. 
+  Blob names are returned in lexicographic order.
   An array of BlobItems is returned.
 
 ```
@@ -1651,7 +1680,10 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```notalanguage
   EXISTS Gets if the blob this client represents exists in Azure
-  A logical is returned.
+  A logical is returned if the Container exists indicating if the blob
+  exists or not. Otherwise an exception is thrown, for example if the
+  container does not exist. Consider using a container client to check for
+  the existance of the container first.
 
 ```
 
@@ -1717,17 +1749,120 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 ```
 
 
+#### azure.storage.blob.models.ListBlobsOptions
+
+```notalanguage
+  LISTBLOBSOPTIONS Defines options available to configure the behavior of a call to listBlobs on a BlobContainerClient
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.getDetails*
+
+```notalanguage
+  GETDETAILS Returns a BlobListDetails object
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.getMaxResultsPerPage*
+
+```notalanguage
+  GETDETAILS Returns the maximum number of blobs to return, including all BlobPrefix elements
+  A double is returned.
+  An empty [] is returned if not set.
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.getPrefix*
+
+```notalanguage
+  GETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.setDetails*
+
+```notalanguage
+  SETDETAILS Returns a ListBlobsOptions object
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.setMaxResultsPerPage*
+
+```notalanguage
+  SETDETAILS Returns a ListBlobsOptions object
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.setPrefix*
+
+```notalanguage
+  SETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
+
+```
+
+
+#### azure.storage.blob.models.BlobItemProperties
+
+```notalanguage
+  BlobItemProperties Properties of a blob
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentMd5*
+
+```notalanguage
+  GETCONTENTMD5 Get the getContentMd5 property
+  Return the base64 value shown in the Azure portal
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentLength*
+
+```notalanguage
+  GETCONTENTLENGTH Get the contentType property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentType*
+
+```notalanguage
+  GETCONTENTTYPE Get the getContentType property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentLanguage*
+
+```notalanguage
+  GETCONTENTLANGUAGE Get the getContentLanguage property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentEncoding*
+
+```notalanguage
+  GETCONTENTENCODING Get the getContentEncoding property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getCacheControl*
+
+```notalanguage
+  GETCACHECONTROL Get the cacheControl property
+
+```
+
+
 #### azure.storage.blob.models.BlobContainerItem
 
 ```notalanguage
-  BLOBCONTAINERITEM
+  BLOBCONTAINERITEM An Azure Storage container
 
 ```
 
 *azure.storage.blob.models.BlobContainerItem.getName*
 
 ```notalanguage
-  GETNAME Returns the blob's name as a character vector
+  GETNAME Returns the container's name as a character vector
 
 ```
 
@@ -1739,10 +1874,59 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```
 
+*azure.storage.blob.models.BlobItem.getMetadata*
+
+```notalanguage
+  GETMETADATA Get the metadata property
+
+```
+
 *azure.storage.blob.models.BlobItem.getName*
 
 ```notalanguage
   GETNAME Returns the blob's name as a character vector
+
+```
+
+*azure.storage.blob.models.BlobItem.getProperties*
+
+```notalanguage
+  GETPROPERTIES Get the properties property
+
+```
+
+*azure.storage.blob.models.BlobItem.getSnapshot*
+
+```notalanguage
+  GETSNAPSHOT Returns the blob's snapshot property as a character vector
+
+```
+
+*azure.storage.blob.models.BlobItem.getTags*
+
+```notalanguage
+  GETTAGS Get the tags property
+
+```
+
+*azure.storage.blob.models.BlobItem.getVersionId*
+
+```notalanguage
+  GETVERSIONID Returns the blob's versionId property as a character vector
+
+```
+
+*azure.storage.blob.models.BlobItem.isDeleted*
+
+```notalanguage
+  isDeleted Get the deleted property, returns a logical
+
+```
+
+*azure.storage.blob.models.BlobItem.isPrefix*
+
+```notalanguage
+  ISPREFIX Get the isPrefix property: If blobs are named to mimic a directory hierarchy
 
 ```
 
@@ -1762,6 +1946,154 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
   GETACCOUNTKIND Describes the type of the storage account
   Values: BLOB_STORAGE, BLOCK_BLOB_STORAGE, FILE_STORAGE, STORAGE, STORAGE_V2
   A character vector is returned rather than an enumeration
+
+```
+
+
+#### azure.storage.blob.models.BlobListDetails
+
+```notalanguage
+  BLOBLISTDETAILS Allows users to specify additional information the service should return with each blob when listing blobs
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveVersions*
+
+```notalanguage
+  GETRETRIEVEVERSIONS Whether versions should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveUncommittedBlobs*
+
+```notalanguage
+  GETRETRIEVEUNCOMMITTEDBLOBS Whether blob tags should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveTags*
+
+```notalanguage
+  GETRETRIEVETAGS Whether blob tags should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveSnapshots*
+
+```notalanguage
+  GETRETRIEVESNAPSHOTS Whether snapshots should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveMetadata*
+
+```notalanguage
+  GETRETRIEVEMETADATA Whether blob metadata should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveLegalHold*
+
+```notalanguage
+  GETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveImmutabilityPolicy*
+
+```notalanguage
+  GETRETRIEVEIMMUTABILITYPOLICY Whether immutability policy for the blob should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobsWithVersions*
+
+```notalanguage
+  GETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobs*
+
+```notalanguage
+  GETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveCopy*
+
+```notalanguage
+  GETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveVersions*
+
+```notalanguage
+  SETRETRIEVEUNCOMMITTEDBLOBS Whether versions should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveUncommittedBlobs*
+
+```notalanguage
+  SETRETRIEVEUNCOMMITTEDBLOBS Whether blob metadata should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveTags*
+
+```notalanguage
+  setRetrieveTags Whether blob tags should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveSnapshots*
+
+```notalanguage
+  setRetrieveSnapshots Whether snapshots should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveMetadata*
+
+```notalanguage
+  SETRETRIEVEMETADATA Whether blob metadata should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveLegalHold*
+
+```notalanguage
+  SETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveImmutabilityPolicy*
+
+```notalanguage
+  SETRETRIEVEIMMUTABILITYPOLICY Whether blobs which have been deleted with versioning should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobsWithVersions*
+
+```notalanguage
+  SETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobs*
+
+```notalanguage
+  SETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveCopy*
+
+```notalanguage
+  SETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
 
 ```
 
@@ -5270,78 +5602,8 @@ Logger.verbose is a function.
 *Logger.warning*
 
 ```notalanguage
- WARNING Display warning message; disable or enable warning messages.
-    WARNING(WARNMSG) displays the warning message WARNMSG, unless it has
-    been disabled (see the special identifier 'all' in "Controlling Warning
-    Message Display" below). When WARNMSG is the only input to WARNING,
-    WARNING displays it literally, without performing any substitutions
-    (see below) on the characters in WARNMSG.
- 
-    WARNING(WARNMSG, A, B, ...) displays the formatted warning message
-    WARNMSG. The WARNMSG, specified as a character vector or string scalar,
-    may contain escape sequences (such as \t or \n) as well as the C
-    language conversion specifiers (e.g., %s or %d) that are supported by
-    the SPRINTF function. WARNING makes substitutions for the escape
-    sequences and conversion specifiers in the same way that SPRINTF does.
-    Additional arguments A, B, ... provide the values that correspond to
-    the format specifiers and are only required if conversion specifiers
-    appear in WARNMSG. Type HELP SPRINTF for more information on escape
-    sequences and format specifiers. WARNING performs these substitutions
-    on WARNMSG in all cases where more than one input is passed to WARNING.
- 
-    WARNING(WARNID, WARNMSG, A, B, ...) displays the formatted warning
-    message WARNMSG as in the paragraph above, and tags the warning with
-    the warning identifier WARNID. The identifier can be used to enable or
-    disable display of the identified warning (See "Controlling Warning
-    Message Display" below). A warning identifier is a character vector or
-    string scalar of the form <component>[:<component>]:<mnemonic>, where
-    <component> and <mnemonic> are alphanumeric (for example,
-    'MATLAB:singularMatrix').
- 
-    Controlling Warning Message Display
-    -----------------------------------
-    WARNING('OFF', WARNID) and WARNING('ON', WARNID) disable and enable the
-    display of any warning tagged with warning identifier WARNID. (Use
-    LASTWARN to determine the identifier of a warning, or use the WARNING
-    VERBOSE feature described below.) WARNING is not case sensitive when
-    matching warning identifiers.
- 
-    S = WARNING('OFF', WARNID) and S = WARNING('ON', WARNID) additionally
-    return the previous warning state of any warning tagged with warning
-    identifier WARNID. This state information is returned in a structure S
-    with fields 'identifier' and 'state'.
- 
-    WARNING('QUERY', WARNID) displays the state ('on' or 'off') for
-    warnings with identifier WARNID. S = WARNING('QUERY', WARNID) returns
-    the state in a structure S with fields 'identifier' and 'state'.
- 
-    In the three cases above, WARNID can also be 'all', in which case all
-    warnings (including untagged ones) are disabled, enabled, or queried,
-    as well as 'last', in which case the last displayed warning is
-    disabled, enabled, or queried.
- 
-    WARNING ON BACKTRACE and WARNING OFF BACKTRACE control the display of
-    the file and line number that produced a warning when the warning is
-    displayed.
- 
-    WARNING ON VERBOSE and WARNING OFF VERBOSE control the displaying of an
-    extra line of helpful text containing the warning identifier when a
-    warning is displayed.
-  
-    S = WARNING('QUERY', ARG) where ARG is either 'BACKTRACE' or 'VERBOSE'
-    returns a structure S with fields 'identifier' containing ARG and
-    'state' containing the current state of ARG.
- 
-    WARNING(S) where S is a structure with fields 'identifier' and 'state'
-    is equivalent to
- 
-        for k = 1:numel(S), warning(S(k).state, S(k).identifier); end
-        
-    In other words, WARNING accepts as an input the same structure it
-    returns as an output. This restores the states of warnings to their
-    previous values.
- 
-    See also SPRINTF, LASTWARN, DISP, ERROR, ERRORDLG, WARNDLG.
+Logger.warning is a function.
+    Logger.warning(varargin)
 
 ```
 
@@ -5597,13 +5859,13 @@ Logger.verbose is a function.
   CREATEKEYVAULTCLIENT Convenience function for creating KeyClient and
   SecretClient
  
-    client = CREATEKEYVAULTCLIENT('Type','Key') creates a KeyClient with
+    client = createKeyVaultClient('Type','Key') creates a KeyClient with
     default options.
  
-    client = CREATEKEYVAULTCLIENT('Type','Secret') creates SecretClient with
+    client = createKeyVaultClient('Type','Secret') creates SecretClient with
     default options.
  
-  By default CREATEKEYVAULTCLIENT reads Credential information and the
+  By default createKeyVaultClient reads Credential information and the
   Vault Name from a configuration file named 'keyvaultsettings.json'. The
   function automatically searches for this file on the MATLABPATH. It is
   possible to specify a different filename using 'ConfigurationFile'. It is
@@ -5615,7 +5877,7 @@ Logger.verbose is a function.
   options:
  
     'ConfigurationFile', explicitly specify which configuration file to
-        use. This file is used for configuring Credentials (when not 
+        use. This file is used for configuring Credentials (when not
         supplied as input) and/or Account Name (when not supplied as input).
  
         Default Value: 'keyvaultsettings.json'
@@ -5623,19 +5885,19 @@ Logger.verbose is a function.
     'Credentials', explicitly specify credentials to use. This for example
         allows building multiple clients based on the same credentials
         without having to go through (interactive) authentication again. If
-        not specified, CREATEKEYVAULTCLIENT uses configureCredentials with
+        not specified, createKeyVaultClient uses configureCredentials with
         'ConfigurationFile' as input to first configure credentials before
-        building the client. 
-  
+        building the client.
+ 
         Hint: configureCredentials can be used to build valid Credentials.
  
         Example:
             credentials = configureCredentials('myCredentials.json');
-            client1 = CREATEKEYVAULTCLIENT('Credentials',credentials,'Type','Key')
-            client2 = CREATEKEYVAULTCLIENT('Credentials',credentials,'Type','Secret')
-    
+            client1 = createKeyVaultClient('Credentials',credentials,'Type','Key')
+            client2 = createKeyVaultClient('Credentials',credentials,'Type','Secret')
+ 
     'VaultName', explicitly specify the Vault name for the client. If not
-        specified CREATEKEYVAULTCLIENT uses loadConfigurationSettings to
+        specified createKeyVaultClient uses loadConfigurationSettings to
         load configuration options from 'ConfigurationFile'. This file must
         then contain a "VaultName" setting.
  
@@ -5769,9 +6031,15 @@ Logger.verbose is a function.
  
   See: MATLAB/app/functions/Logger.m for more details.
 
-    Other functions named initialize
+    Other uses of initialize
 
+       matlab.internal.cef.webwindow/initialize
        matlab.net.http.io.ContentConsumer/initialize
+       matlab.net.http.io.ImageConsumer/initialize
+       matlab.net.http.io.JSONConsumer/initialize
+       matlab.net.http.io.MultipartConsumer/initialize
+       matlab.net.http.io.StringConsumer/initialize
+       myDeployedModule/initialize
        SimTimeseries/initialize
 
 ```
@@ -5791,4 +6059,4 @@ Logger.verbose is a function.
 
 ------
 
-##### Copyright 2022, The MathWorks, Inc.
+##### Copyright 2022-2023, The MathWorks, Inc.

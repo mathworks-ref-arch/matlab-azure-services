@@ -2,6 +2,12 @@
 
 ## Release Notes
 
+## Release 0.2.0 March 13th 2023
+
+* Added additional blob listing support
+* Increase Azure SDK bom version to 1.2.10
+* Documentation update
+
 ## Release 0.1.1 September 7th 2022
 
 * Published documentation to GitHub pages.

@@ -19,7 +19,7 @@ Services it currently supports:
 
 ## Requirements
 
-* [MathWorks®](https://www.mathworks.com) Products
+* [MathWorks®](http://www.mathworks.com) Products
   * MATLAB® release R2019a or later
   * (optional) MATLAB Compiler™ and Compiler SDK™
   * (optional) MATLAB Production Server™
@@ -28,7 +28,7 @@ Services it currently supports:
   * Maven™ 3.6.1 or later
   * JDK 8 or later
 
-This package is primarily tested using Ubuntu™ 20.04 and Windows® 10.
+This package is primarily tested using Ubuntu™ 20.04 and Windows® 11.
 
 ## Documentation
 

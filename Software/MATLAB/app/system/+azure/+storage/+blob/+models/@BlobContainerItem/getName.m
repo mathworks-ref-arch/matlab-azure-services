@@ -1,7 +1,7 @@
 function name = getName(obj)
-% GETNAME Returns the blob's name as a character vector
+% GETNAME Returns the container's name as a character vector
 
-% Copyright 2020 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 name = char(obj.Handle.getName);
 

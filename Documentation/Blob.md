@@ -251,6 +251,7 @@ results = containerClient.listBlobs;
 % Display the name of the 1st blob assuming the container is not empty
 results(1).getName()
 ```
+See also [Advanced listing support](#advanced-listing-support) below.
 
 #### Create a BlobClient
 
@@ -458,4 +459,151 @@ blobClient.uploadFromFile('myfile.txt','overwrite',true,'leaseId',leaseId);
 blobClient.deleteBlob('leaseId',leaseId);
 ```
 
-[//]: #  (Copyright 2020-2022 The MathWorks, Inc.)
+### Advanced listing support
+
+A basic listing of a container's contents can be done as follows:
+
+```matlab
+% Get a blob name and create a client using it
+results = containerClient.listBlobs;
+% Assume there is a blob with name:
+results(1).getName();
+```
+
+This returns an array of BlobItems in a container, with folder structures flattened. The Java PagedIterable is consumed by the MATLAB `listBlobs` methods, while convenient this makes the method unsuitable for use with containers with very large numbers of blobs. Blob names are returned in lexicographic order.
+
+The `BlobItem.isPrefix` method can be used to determine if an entry is a directory or not.
+
+It is sometimes necessary to provide a more advanced query. This can be done using the following additions:
+
+* A directory name prefix
+* An `azure.storage.blob.models.BlobListDetails` object
+* An `azure.storage.blob.models.ListBlobsOptions` object
+
+#### Using a prefix/directory
+
+`BlobContainerClient.listBlobsByHierarchy(directory)` Returns all the blobs and directories (prefixes) under the given directory (prefix). Directories will have `BlobItem.isPrefix()` set to true. Blob names are returned in lexicographic order. E.g. listing a container containing a 'foo' folder, which contains blobs 'foo1' and 'foo2', and a blob on the root level 'bar', will return the following results when prefix/directory is not set.
+
+* foo/ (isPrefix = true)
+* bar (isPrefix = false)
+
+And will return the following results when prefix="foo/":
+
+* foo/foo1 (isPrefix = false)
+* foo/foo2 (isPrefix = false)
+
+Alternatively the following arguments can be provided `BlobContainerClient.listBlobsByHierarchy(delimiter, options, timeout)`:
+
+* delimiter - The delimiter for blob hierarchy, "/" for hierarchy based on directories. "/" should be used in almost all circumstances.
+* options - `ListBlobsOptions`, see below.
+* timeout - A number of seconds timeout value beyond which a runtime exception will be raised.
+
+#### ListBlobsOptions
+
+A `ListBlobsOptions` object allows the following criteria to be set:
+
+* `setDetails(blobListDetails)` further options see below.
+* `setMaxResultsPerPage(maxResultsPerPage)` Specifies the maximum number of blobs to return, including all BlobPrefix elements. In practice the list methods consume the iterators, so unless working directly with the Java Handle methods this should be ignored.
+* `setPrefix(prefix)` Filters the results to return only blobs whose names begin with the specified prefix.
+
+`set` methods return an updated `ListBlobsOptions` object. `get` methods are also provided.
+
+#### BlobListDetails
+
+Allows specifying of additional information to be returned with each blob when listing blobs in a container (via a BlobContainerClient object). This type is immutable to ensure thread-safety of requests, so changing the details for a different listing operation requires construction of a new object.
+
+`get` methods return logicals and `set` methods return an updated `BlobListDetails` object.
+
+* `getRetrieveCopy()` Whether blob metadata related to any current or previous Copy Blob operation should be included in the response.
+* `getRetrieveDeletedBlobs()` Whether blobs which have been soft deleted should be returned.
+* `getRetrieveDeletedBlobsWithVersions()` Whether blobs which have been deleted with versioning.
+* `getRetrieveImmutabilityPolicy()` Whether immutability policy for the blob should be returned.
+* `getRetrieveLegalHold()` Whether legal hold for the blob should be returned.
+* `getRetrieveMetadata()` Whether blob metadata should be returned.
+* `getRetrieveSnapshots()` Whether snapshots should be returned.
+* `getRetrieveTags()` Whether blob tags should be returned.
+* `getRetrieveUncommittedBlobs()` Whether blobs for which blocks have been uploaded, but which have not been committed using Put Block List, should be included in the response.
+* `getRetrieveVersions()` Whether versions should be returned.
+
+### Blob properties & metadata
+
+A blob's properties can be queried reason about the blob, e.g. check its MD5 or size.
+In this case the file/object is 0 bytes in size.
+
+```matlabsession
+>> myBlob = l(1)
+myBlob = 
+  BlobItem with no properties.
+>> myProps = myBlob.getProperties;
+>> myProps.getContentMd5
+ans =
+    '1B2M2Y8AsgTpgAmY7PhCfg=='
+>> myProps.getContentLength
+ans =
+  int64
+   0
+```
+
+Use `methods()` on a properties object to explore the available data.
+
+```{note}
+`properties` is a reserved word in MATLAB and should not be used as a variable name etc.
+```
+
+In this case the blob has no available metadata, an empty containers.Map is returned:
+
+```matlab
+% Create a Container client
+client = builder.buildClient();
+% Create a BlobListDetails to control what blob details are returned when listing
+b = azure.storage.blob.models.BlobListDetails();
+% Enable Metadata & Tags
+b = b.setRetrieveMetadata(true);
+b = b.setRetrieveTags(true);
+% Create a ListBlobsOptions to hold the BlobListDetails
+l = azure.storage.blob.models.ListBlobsOptions();
+lnew = l.setDetails(b);
+
+% Return a list of blobs, "/" is teh delimiter and 60 is a timeout in seconds
+l = client.listBlobsByHierarchy("/", lnew, 60);
+
+% Pick one of the returned blobs
+myBlob = l(1);
+% Get the Metadata
+md = myBlob.getMetadata
+md = 
+  Map with properties:
+        Count: 1
+      KeyType: char
+    ValueType: char
+% Display the containers.Map content in this case a tag
+md.keys
+ans =
+  1×1 cell array
+    {'barMetadataKey'}
+K>> md.values
+ans =
+  1×1 cell array
+    {'barMetadataVal'}
+
+% Get the tag directly and display the containers.Map content
+tags = myBlob.getTags
+tags = 
+  Map with properties:
+        Count: 1
+      KeyType: char
+    ValueType: char
+tags.keys
+ans =
+  1×1 cell array
+    {'barMetadataKey'}
+tags.values
+ans =
+  1×1 cell array
+    {'barMetadataVal'}
+```
+
+
+For more information, see [https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs()](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs())
+
+[//]: #  (Copyright 2020-2023 The MathWorks, Inc.)

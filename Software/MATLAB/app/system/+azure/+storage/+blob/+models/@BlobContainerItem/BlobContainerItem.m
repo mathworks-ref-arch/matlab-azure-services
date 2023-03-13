@@ -1,7 +1,7 @@
 classdef BlobContainerItem < azure.object
-    % BLOBCONTAINERITEM 
+    % BLOBCONTAINERITEM An Azure Storage container
    
-    % Copyright 2020 The MathWorks, Inc.
+    % Copyright 2020-2023 The MathWorks, Inc.
 
     properties
     end
@@ -15,7 +15,7 @@ classdef BlobContainerItem < azure.object
                 else
                     logObj = Logger.getLogger();
                     write(logObj,'error','Expected argument of type com.azure.storage.blob.models.BlobContainerItem');
-                end                
+                end
             else
                 logObj = Logger.getLogger();
                 write(logObj,'error','Unexpected number of arguments');
