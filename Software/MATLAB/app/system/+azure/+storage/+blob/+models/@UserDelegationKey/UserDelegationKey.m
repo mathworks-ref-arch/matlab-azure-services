@@ -30,7 +30,6 @@ classdef UserDelegationKey < azure.object
             %key is active.
             jOffsetTime = obj.Handle.getSignedStart();
             val = datetime(jOffsetTime.toEpochSecond(), "ConvertFrom", 'posixtime', "TimeZone", 'UTC');
-        end        
+        end
     end
-
 end

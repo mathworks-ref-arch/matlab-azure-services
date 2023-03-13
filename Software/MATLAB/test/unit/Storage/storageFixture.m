@@ -3,6 +3,7 @@ classdef storageFixture < matlab.unittest.fixtures.Fixture
     % facilities unit testing in CI/CD setups
     
     % Copyright 2022 The MathWorks, Inc.
+    
     methods
         function setup(~)
             disp 'Writing Configuration Files'
@@ -32,7 +33,7 @@ classdef storageFixture < matlab.unittest.fixtures.Fixture
                 'ClientSecret',getenv('AZURE_CLIENT_SECRET'),...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
             ));
-            f = fopen(configFile,'w'); fwrite(f,json);fclose(f);            
+            f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
         end
 
         function teardown(~)

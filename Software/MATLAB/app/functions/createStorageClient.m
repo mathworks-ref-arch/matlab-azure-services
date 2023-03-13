@@ -189,7 +189,11 @@ function client = createStorageClient(varargin)
         end
         if isempty(p.Results.AccountName)
             config = loadConfigurationSettings(p.Results.ConfigurationFile);
-            endpoint = sprintf('https://%s.%s.core.windows.net',config.AccountName,resource);
+            if isfield(config, 'AccountName')
+                endpoint = sprintf('https://%s.%s.core.windows.net',config.AccountName,resource);
+            else
+                write(logObj,'error','AccountName not provided as a named argument or set in the JSON configuration file, an AccountName is required.')
+            end
         else
             endpoint = sprintf('https://%s.%s.core.windows.net',p.Results.AccountName,resource);
         end
