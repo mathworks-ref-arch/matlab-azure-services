@@ -728,6 +728,14 @@ azure.identity.CredentialBuilderBase is a class.
 
 ```
 
+*azure.identity.ManagedIdentityCredentialBuilder.resourceId*
+
+```notalanguage
+  RESOURCEID Sets client id
+  An updated ManagedIdentityCredentialBuilder is returned.
+
+```
+
 
 #### azure.identity.ChainedTokenCredential
 
@@ -900,7 +908,7 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```notalanguage
   GETCLIENTID Gets the client ID of user assigned or system assigned identity
-  The accountName is returned as a character vector.
+  The client ID is returned as a character vector.
 
 ```
 
@@ -5749,7 +5757,7 @@ Logger.warning is a function.
   installation of the storage explorer in the configuration file.
  
   By default the MATLAB path will be searched for a configuration file called
-  settings.json, however an alternative filename can be provided as
+  storagesettings.json, however an alternative filename can be provided as
   an argument to this function.
 
 ```
@@ -5828,8 +5836,9 @@ Logger.warning is a function.
     clientSecret
     interactiveBrowser
     deviceCode
+    sharedTokenCache
+    managedIdentity
     azurecli
-    managedIdentityCredentialBuilder
  
   The resulting credential object can then be used by the corresponding client
   builder.
@@ -5945,7 +5954,9 @@ Logger.warning is a function.
   filename using 'ConfigurationFile'. It is also possible to provide
   'Credentials' or 'SASToken' and 'AccountName' as inputs to the function
   directly in case which no configuration file may be needed. See the Name,
-  Value pairs below for more details.
+  Value pairs below for more details. An endpoint can be set if required
+  e.g. if it does not conform to the default https://<AccountName>.<TYPE>.core.windows.net
+  pattern, see below for EndPoint details.
  
   Additional Name, Value pairs can be supplied to configure non-default
   options:
@@ -5997,10 +6008,19 @@ Logger.warning is a function.
         building the client. 
     
     'AccountName', explicitly specify the AccountName used to configure the
-        endpoint for the client. If not specified createStorageClient uses
-        loadConfigurationSettings to load configuration options from 
-        'ConfigurationFile'. This file must then contain a "AccountName" 
-        setting.
+        account and potentially the endpoint for the client.
+        If not specified createStorageClient uses loadConfigurationSettings
+        to load configuration options from 'ConfigurationFile'.
+        This file must then contain a "AccountName" setting.
+ 
+    'EndPoint', enables endpoint naming patterns other than:
+        https://<AccountName>.<TYPE>.core.windows.net
+        by explicitly specify the EndPoint used to configure the client.
+        If 'EndPoint' is not specified as an argument and an 'AccountName' is
+        provided then the 'AccountName' will be used to create a default endpoint.
+        If neither an 'EndPoint' or 'AccountName' argument is provided the
+        corresponding configuration file fields will be used with priority given
+        to "EndPoint".
  
     See also CONFIGURECREDENTIALS, LOADCONFIGURATIONSETTINGS
 
@@ -6033,7 +6053,7 @@ Logger.warning is a function.
 
     Other uses of initialize
 
-       matlab.internal.cef.webwindow/initialize
+       dlnetwork/initialize
        matlab.net.http.io.ContentConsumer/initialize
        matlab.net.http.io.ImageConsumer/initialize
        matlab.net.http.io.JSONConsumer/initialize
@@ -6047,11 +6067,11 @@ Logger.warning is a function.
 ##### loadConfigurationSettings
 
 ```notalanguage
-  LOADCONFIGURATIONSETTINGS Method to read configuration settings from a file
-  By default the file is named settings.json or an alternative name can be
-  as an specified argument. JSON values must be compatible with MATLAB JSON
-  conversion rules. See jsondecode() help for details. A MATLAB struct is
-  returned.
+  LOADCONFIGURATIONSETTINGS Method to read a JSON configuration settings from a file
+  The file name must be as a specified argument.
+  JSON values must be compatible with MATLAB JSON conversion rules.
+  See jsondecode() help for details. A MATLAB struct is returned.
+  Field names are case sensitive.
 
 ```
 

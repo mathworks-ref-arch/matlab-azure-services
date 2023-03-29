@@ -2,11 +2,20 @@
 
 ## Release Notes
 
+## Release 0.3.0 March 27th 2023
+
+* Added EndPoint setting support
+* Documentation updates
+* Added Managed Identity Resource ID support
+* Increase Azure SDK bom version to 1.2.11
+* Standardized ClientId settings field name
+* Standardized PemCertificate settings field name
+
 ## Release 0.2.0 March 13th 2023
 
 * Added additional blob listing support
 * Increase Azure SDK bom version to 1.2.10
-* Documentation update
+* Documentation updates
 
 ## Release 0.1.1 September 7th 2022
 

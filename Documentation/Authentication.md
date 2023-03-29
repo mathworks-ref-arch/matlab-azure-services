@@ -38,15 +38,15 @@ files.
 
 The following authentication approaches are supported:
 
-1.  [Azure CLI](#azure-cli)
-2.  [Managed Identity](#managed-identity)
-3.  [Client Secret](#client-secret)
-4.  [Environment Variable](#environment-variable)
-5.  [Shared Token Cache](#shared-token-cache)
-6.  [Interactive Browser](#interactive-browser)
-7.  [Device Code](#device-code)
-8.  [Default Azure](#default-azure)
-9.  [Storage Shared Key](#storage-shared-key)
+1. [Azure CLI](#azure-cli)
+2. [Managed Identity](#managed-identity)
+3. [Client Secret](#client-secret)
+4. [Environment Variable](#environment-variable)
+5. [Shared Token Cache](#shared-token-cache)
+6. [Interactive Browser](#interactive-browser)
+7. [Device Code](#device-code)
+8. [Default Azure](#default-azure)
+9. [Storage Shared Key](#storage-shared-key)
 10. [Connection String](#connection-string)
 11. [Chained Token](#chained-token)
 
@@ -81,15 +81,24 @@ effect derive its credentials by virtue of the machine hosting it in Azure.
 
 ```json
 {
-    "AuthMethod": "ManagedIdentity"
+    "AuthMethod": "ManagedIdentity",
+    "ClientId" : "811<REDACTED>8ee",
 }
 ```
+
+In the case of a system assigned managed identity the Azure portal refers to the
+ClientId value as the "Application ID". In the case of a user assigned managed
+identity the ClientId value is referred to as a "Client ID" in the Azure portal.
+
+An identity's Resource ID can be provided as an alternative to the Client ID.
+Both should not be provided. The corresponding configuration file setting field
+is ResourceId.
 
 ## Client Secret
 
 A Client Secret credential is an Azure AD credential that acquires a token with
 a client secret. The secret can be provided in the form as a string specified as
-```ClientSecret``` or can be a certificate referred to by ```pemCertificate```.
+```ClientSecret``` or can be a certificate referred to by ```PemCertificate```.
 
 ### Client Secret ```myServiceSpecificSettings.json```
 
@@ -99,7 +108,7 @@ a client secret. The secret can be provided in the form as a string specified as
     "TenantId" : "99d<REDACTED>1e6",
     "ClientId" : "811<REDACTED>8ee",
     "ClientSecret": "i6Q<REDACTED>p72", //Either 
-    "pemCertificate": "c:/path/to/clientCert.pem", //Or
+    "PemCertificate": "c:/path/to/clientCert.pem", //Or
     "AuthorityHost": "https://myauthority.com/" //Optional
 }
 ```
@@ -119,6 +128,7 @@ Environment Variable credentials can often be used in CI/CD based processes.
 Additional note the support for a certificate file path.
 
 ### Environment Variable ```myServiceSpecificSettings.json```
+
 ```json
 {
     "AuthMethod": "Environment",
@@ -169,7 +179,7 @@ authenticate to must have delegated user login permissions and
 have```http://localhost:port``` listed as a valid Redirect URI for the Azure
 App.
 
-### TokenCachePersistenceOptions
+### TokenCachePersistenceOptions (Interactive Browser)
 
 Interactive Browser can optionally be configured with
 `TokenCachePersistenceOptions`. When these are configured,
@@ -270,7 +280,7 @@ function myExampleCallbackFunction(deviceCodeInfo)
     web(deviceCodeInfo.getVerificationUrl);
 ```
 
-### TokenCachePersistenceOptions
+### TokenCachePersistenceOptions (Device Code)
 
 Device Code can optionally be configured with `TokenCachePersistenceOptions`.
 When these are configured, `configureCredentials` will actually build and return
@@ -292,6 +302,7 @@ internal workflow is as follows then:
    `DeviceCodeCredential`.
 
 ### Device Code ```myServiceSpecificSettings.json```
+
 ```json
 {
     "AuthMethod": "DeviceCode",
@@ -327,6 +338,7 @@ AuthorityHost are optional fields depending on which means of authentication is
 expected to be used.
 
 ### Default Azure ```myServiceSpecificSettings.json```
+
 ```json
 {
     "AuthMethod": "DefaultAzure",
@@ -441,4 +453,4 @@ credentials by passing a specific path e.g.:
 clientSecretCredentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'settings_ClientSecret.json'));
 ```
 
-[//]: #  (Copyright 2020-2022 The MathWorks, Inc.)
+[//]: #  (Copyright 2020-2023 The MathWorks, Inc.)

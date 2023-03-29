@@ -1,7 +1,7 @@
 classdef (SharedTestFixtures={storageFixture}) testBlobContainerClient < matlab.unittest.TestCase
 % TESTBLOBCONTAINERCLIENT Tests Blob Container Client
 
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 % TODO deleteBlobContainer
 
@@ -25,7 +25,7 @@ end
 
 methods (Test)
     function testBuilderConstructor(testCase)
-        disp('Running testBuilderConstructor');        
+        disp('Running testBuilderConstructor');
         % Create the Client
         builder = azure.storage.blob.BlobContainerClientBuilder();
         % Check the Handle
@@ -35,8 +35,8 @@ methods (Test)
 
 
     function testBuilderConnectionString(testCase)
-        disp('Running testBuilderConnectionString');        
-        % Create the Client        
+        disp('Running testBuilderConnectionString');
+        % Create the Client
         builder = azure.storage.blob.BlobContainerClientBuilder();
         
         credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
@@ -55,7 +55,7 @@ methods (Test)
 
 
     function testListBlobs(testCase)
-        disp('Running testListBlobs');        
+        disp('Running testListBlobs');
         builder = azure.storage.blob.BlobContainerClientBuilder();
         
         credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
@@ -77,7 +77,7 @@ methods (Test)
     end
     
     function testListNoBlobs(testCase)
-        disp('Running testListNoBlobs');        
+        disp('Running testListNoBlobs');
         builder = azure.storage.blob.BlobContainerClientBuilder();
         
         credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
@@ -101,8 +101,7 @@ methods (Test)
     end
     
     function testSasToken(testCase)
-        disp('Running testSasToken');        
-        
+        disp('Running testSasToken');
         % Generates an AccountSasSignatureValues object that lasts for a day and gives
         % the user read and list access to blob and file shares.
         % UTC is used for the timezone in this case
@@ -127,7 +126,7 @@ methods (Test)
         sas = serviceClient.generateAccountSas(sasValues);
 
         % test the sas with a BlobContainerClient
-        builder = azure.storage.blob.BlobContainerClientBuilder();        
+        builder = azure.storage.blob.BlobContainerClientBuilder();
         builder = builder.sasToken(sas);
         builder = builder.httpClient();
         endpoint = ['https://', credentials.getAccountName(), '.blob.core.windows.net'];
@@ -175,7 +174,7 @@ methods (Test)
         % test the sas with a BlobContainerClient
         settings = loadConfigurationSettings('test_ClientSecret.json');
 
-        builder = azure.storage.blob.BlobContainerClientBuilder();        
+        builder = azure.storage.blob.BlobContainerClientBuilder();
         builder = builder.sasToken(sas);
         builder = builder.httpClient();
         builder = builder.endpoint(sprintf('https://%s.blob.core.windows.net',settings.AccountName));
@@ -189,13 +188,11 @@ methods (Test)
             testCase.verifyTrue(ischar(results(n).getName));
             testCase.verifyFalse(isempty(results(n).getName));
         end
-  
-
     end
 
 
     function testGetBlobContainerName(testCase)
-        disp('Running testGetBlobContainerName');        
+        disp('Running testGetBlobContainerName');
         builder = azure.storage.blob.BlobContainerClientBuilder();
         
         credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
@@ -214,7 +211,7 @@ methods (Test)
 
 
     function testGetAccountName(testCase)
-        disp('Running testGetAccountName');        
+        disp('Running testGetAccountName');
         builder = azure.storage.blob.BlobContainerClientBuilder();
         
         credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
@@ -297,7 +294,7 @@ methods (Test)
     
 
     function testGetBlobClient(testCase)
-        disp('Running testGetBlobClient');          
+        disp('Running testGetBlobClient');
         % Create a container client to create & delete the container
         builder = azure.storage.blob.BlobContainerClientBuilder();
         credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json'));
@@ -316,7 +313,34 @@ methods (Test)
 
         % basic check of the blob client
         testCase.verifyNotEmpty(blobClient.Handle);
-        testCase.verifyClass(blobClient.Handle, 'com.azure.storage.blob.BlobClient');       
+        testCase.verifyClass(blobClient.Handle, 'com.azure.storage.blob.BlobClient');
+    end
+
+    function testEndPointArg(testCase)
+        % Create a client secret based container client
+
+        credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'test_StorageSharedKey.json'));
+        endpoint = ['https://', credentials.getAccountName(), '.blob.core.windows.net'];
+
+        client = createStorageClient('ContainerName','containernotempty',...
+            'ConfigurationFile','test_ClientSecret.json', 'EndPoint', endpoint);
+
+        % Get the corresponding service client
+        sc = client.getServiceClient;
+        % Obtain user delegationkey
+        key = sc.getUserDelegationKey(datetime('now'),datetime('now')+minutes(10));
+        testCase.verifyClass(key,?azure.storage.blob.models.UserDelegationKey);
+
+        % Generate a SAS for reading and listing blobs
+        permissions = azure.storage.blob.sas.BlobContainerSasPermission();
+        permissions = permissions.setListPermission(true);
+        permissions = permissions.setReadPermission(true);
+        sasValues = azure.storage.blob.sas.BlobServiceSasSignatureValues(datetime('now')+minutes(10), permissions);
+        sas = client.generateUserDelegationSas(sasValues,key);
+        
+        testCase.verifyNotEmpty(sas);
+        testCase.verifyClass(sas,'char');
+
     end
 end %methods
 end %class

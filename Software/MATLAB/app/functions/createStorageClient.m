@@ -36,7 +36,9 @@ function client = createStorageClient(varargin)
 % filename using 'ConfigurationFile'. It is also possible to provide
 % 'Credentials' or 'SASToken' and 'AccountName' as inputs to the function
 % directly in case which no configuration file may be needed. See the Name,
-% Value pairs below for more details.
+% Value pairs below for more details. An endpoint can be set if required
+% e.g. if it does not conform to the default https://<AccountName>.<TYPE>.core.windows.net
+% pattern, see below for EndPoint details.
 %
 % Additional Name, Value pairs can be supplied to configure non-default
 % options:
@@ -88,14 +90,23 @@ function client = createStorageClient(varargin)
 %       building the client. 
 %   
 %   'AccountName', explicitly specify the AccountName used to configure the
-%       endpoint for the client. If not specified createStorageClient uses
-%       loadConfigurationSettings to load configuration options from 
-%       'ConfigurationFile'. This file must then contain a "AccountName" 
-%       setting.
+%       account and potentially the endpoint for the client.
+%       If not specified createStorageClient uses loadConfigurationSettings
+%       to load configuration options from 'ConfigurationFile'.
+%       This file must then contain a "AccountName" setting.
+%
+%   'EndPoint', enables endpoint naming patterns other than:
+%       https://<AccountName>.<TYPE>.core.windows.net
+%       by explicitly specify the EndPoint used to configure the client.
+%       If 'EndPoint' is not specified as an argument and an 'AccountName' is
+%       provided then the 'AccountName' will be used to create a default endpoint.
+%       If neither an 'EndPoint' or 'AccountName' argument is provided the
+%       corresponding configuration file fields will be used with priority given
+%       to "EndPoint".
 %
 %   See also CONFIGURECREDENTIALS, LOADCONFIGURATIONSETTINGS
 
-% Copyright 2022 The MathWorks, Inc.
+% Copyright 2022-2023 The MathWorks, Inc.
 
     initialize('displayLevel', 'debug', 'loggerPrefix', 'Azure:ADLSG2');
     logObj = Logger.getLogger();
@@ -105,7 +116,8 @@ function client = createStorageClient(varargin)
     
     p.addParameter('Credentials',[],@(x) ischar(x) || isStringScalar(x) || ...
         isa(x, 'azure.storage.common.StorageSharedKeyCredential') || ...
-        isa(x, 'azure.core.credential.TokenCredential'));
+        isa(x, 'azure.core.credential.TokenCredential') || ...
+        isa(x, 'azure.identity.ManagedIdentityCredential'));
     
     p.addParameter('Type',[],@(x) ischar(x) || isStringScalar(x));
     p.addParameter('ConfigurationFile','storagesettings.json',@(x) ischar(x) || isStringScalar(x))
@@ -117,6 +129,7 @@ function client = createStorageClient(varargin)
     p.addParameter('FileSystemName',[],@(x) ischar(x) || isStringScalar(x));
     p.addParameter('DirectoryName',[],@(x) ischar(x) || isStringScalar(x));
     p.addParameter('FileName',[],@(x) ischar(x) || isStringScalar(x));
+    p.addParameter('EndPoint',[],@(x) ischar(x) || isStringScalar(x));
 
     p.parse(varargin{:});
     
@@ -187,15 +200,24 @@ function client = createStorageClient(varargin)
         else
             builder = builder.sasToken(p.Results.SASToken);
         end
-        if isempty(p.Results.AccountName)
-            config = loadConfigurationSettings(p.Results.ConfigurationFile);
-            if isfield(config, 'AccountName')
-                endpoint = sprintf('https://%s.%s.core.windows.net',config.AccountName,resource);
-            else
-                write(logObj,'error','AccountName not provided as a named argument or set in the JSON configuration file, an AccountName is required.')
-            end
+        
+        if ~isempty(p.Results.EndPoint)
+            endpoint = p.Results.EndPoint;
         else
-            endpoint = sprintf('https://%s.%s.core.windows.net',p.Results.AccountName,resource);
+            if ~isempty(p.Results.AccountName)
+                endpoint = sprintf('https://%s.%s.core.windows.net',p.Results.AccountName,resource);
+            else
+                config = loadConfigurationSettings(p.Results.ConfigurationFile);
+                if isfield(config, 'EndPoint')
+                    endpoint = config.EndPoint;
+                else
+                    if isfield(config, 'AccountName')
+                        endpoint = sprintf('https://%s.%s.core.windows.net',config.AccountName,resource);
+                    else
+                        write(logObj,'error','An EndPoint has not been provided as an argument or via a configuration file, as an AccountName value has also not been provided a default EndPoint value cannot be set.');
+                    end
+                end
+            end
         end
         builder = builder.endpoint(endpoint);
     end
