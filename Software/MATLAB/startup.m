@@ -36,21 +36,38 @@ function startup(varargin)
         };
     addFilteredFolders(commonDirs);
 
+    % Check if the JAR file exists
+    commonJarPath = fullfile(commonRoot, 'Software', 'MATLAB', 'lib', 'jar', azCommonJar);
+    docPath = fullfile(commonRoot, 'Documentation', 'Installation.md');
+    
+    if ~isfile(commonJarPath)
+        error('Azure:Services', 'Could not find required jar file: %s\nSee documentation for details on building the jar file using Maven: %s', commonJarPath, docPath);
+    end
+    
     if useStatic
-        disp('Checking for matlab-azure-common jar on static javaclasspath');
+        % Set JCP file link
+        jcpPath = fullfile(prefdir, 'javaclasspath.txt');
+        jcpLink = sprintf('<a href="matlab: edit(''%s'')">%s</a>', jcpPath, jcpPath);
+        % Get static path contents
+        fprintf('Checking the static Java classpath for: %s\n', commonJarPath);
         staticPath = javaclasspath('-static');
-        azCommonJarPath = fullfile(commonRoot, 'Software', 'MATLAB', 'lib', 'jar', azCommonJar);
-        if ~any(contains(staticPath, azCommonJarPath, 'IgnoreCase', true))
-            error('Azure:Services', '%s not found in static class path: %s', azCommonJar, azCommonJarPath);
+        if any(contains(staticPath, commonJarPath, 'IgnoreCase', true))
+            fprintf('Found: %s\n', azCommonJar);
+            if isunix % includes macOS
+                % Position does not matter on Windows
+                % Does not have to be first but should be near the start,
+                % due to <before>. Needs to be before jna.jar
+                if ~any(strcmpi(staticPath(1:5), commonJarPath))
+                    warning('Azure:Services', '%s was not found at the start of the static Java classpath\nSee documentation for configuration details: %s', commonJarPath, docPath);
+                    fprintf('Edit static Java classpath: %s\n', jcpLink);
+                end
+            end
+        else
+            fprintf('\nEdit static Java classpath: %s\n', jcpLink);
+            error('Azure:Services', 'Required jar file not found on the static Java classpath: %s\nSee documentation for configuration details: %s', commonJarPath, docPath);
         end
     else
-        % Check if the JAR file exists
-        commonJarPath = fullfile(commonRoot,'Software','MATLAB','lib','jar',char(azCommonJar));
-        if exist(commonJarPath,'file')
-            iSafeAddToJavaPath(commonJarPath);
-        else
-            error('Azure:Services', 'Could not find jar file, see documentation for instructions on building the file using Maven: %s', commonJarPath);
-        end
+         iSafeAddToJavaPath(commonJarPath);
     end
 
     disp('Ready');

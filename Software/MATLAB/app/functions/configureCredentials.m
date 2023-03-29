@@ -12,8 +12,9 @@ function credentials = configureCredentials(configFilePath,varargin)
 %   clientSecret
 %   interactiveBrowser
 %   deviceCode
+%   sharedTokenCache
+%   managedIdentity
 %   azurecli
-%   managedIdentityCredentialBuilder
 %
 % The resulting credential object can then be used by the corresponding client
 % builder.
@@ -26,7 +27,7 @@ function credentials = configureCredentials(configFilePath,varargin)
 % allows specifying a custom function for displaying the Device Code login
 % instructions.
 
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 logObj = Logger.getLogger();
 
@@ -50,7 +51,7 @@ if ~isfield(settings, 'AuthMethod')
 else
     if isempty(settings.AuthMethod)
         write(logObj,'error','Expected AuthMethod field to have a value');
-    end        
+    end
 end
 
 switch lower(settings.AuthMethod)
@@ -134,16 +135,25 @@ switch lower(settings.AuthMethod)
         if isfield(settings, 'TenantId') && ~isempty(settings.TenantId)
             builder = builder.tenantId(settings.TenantId);
         end
-        if isfield(settings, 'ManagedIdentityClientId') && ~isempty(settings.ManagedIdentityClientId)
-            builder = builder.managedIdentityClientId(settings.ManagedIdentityClientId);
+        
+        if isfield(settings, 'ClientId') && isfield(settings, 'ResourceId')
+            if strlength(settings.ClientId) > 0 && strlength(settings.ResourceId) > 0
+                write(logObj,'error','Only one of ClientId or ResourceId fields should be used for ManagedIdentityCredential authentication');
+            end
         end
+        if isfield(settings, 'ClientId') && ~isempty(settings.ClientId)
+            builder = builder.managedIdentityClientId(settings.ClientId);
+        end
+        if isfield(settings, 'ResourceId') && ~isempty(settings.ResourceId)
+            builder = builder.managedIdentityResourceId(settings.ResourceId);
+        end
+
         if isfield(settings, 'AuthorityHost') && ~isempty(settings.AuthorityHost)
             builder = builder.authorityHost(settings.AuthorityHost);
         end
         % do the build
         builder = builder.httpClient();
         credentials = builder.build();
-    
 
     case 'clientsecret'
         % TenantId and ClientId are always required
@@ -154,18 +164,18 @@ switch lower(settings.AuthMethod)
             write(logObj,'error','Expected ClientId, TenantId and fields to have values for ClientSecretCredential authentication');
         end
         % The secret can be a pem file or ClientSecret string (other certificate formats are not currently supported, pfx is easy to add)
-        if  ~(isfield(settings, 'pemCertificate') || isfield(settings, 'ClientSecret'))
-            write(logObj,'error','pemCertificate or ClientSecret settings fields are required for clientSecretCredential authentication');
+        if  ~(isfield(settings, 'PemCertificate') || isfield(settings, 'ClientSecret'))
+            write(logObj,'error','PemCertificate or ClientSecret settings fields are required for clientSecretCredential authentication');
         end
-        if  (isempty(settings.ClientId) &&  isempty(settings.pemCertificate))
-            write(logObj,'error','Expected either ClientSecret or pemCertificate fields to have a value for ClientSecretCredential authentication');
+        if  (isempty(settings.ClientId) &&  isempty(settings.PemCertificate))
+            write(logObj,'error','Expected either ClientSecret or PemCertificate fields to have a value for ClientSecretCredential authentication');
         end
         % If a pem file is configured check it exists
         usePemfile = false;
-        if isfield(settings, 'pemCertificate')
-            if ~isempty(settings.pemCertificate)
-                if exist(settings.pemCertificate, 'file') ~= 2
-                    write(logObj,'error',['pem certificate file not found: ', strrep(char(settings.pemCertificate),'\','\\')]);
+        if isfield(settings, 'PemCertificate')
+            if ~isempty(settings.PemCertificate)
+                if exist(settings.PemCertificate, 'file') ~= 2
+                    write(logObj,'error',['pem certificate file not found: ', strrep(char(settings.PemCertificate),'\','\\')]);
                 else
                     usePemfile = true;
                 end
@@ -176,7 +186,7 @@ switch lower(settings.AuthMethod)
         builder = builder.tenantId(settings.TenantId);
         % If a pem file is configured and exists use it else default to the client secret
         if usePemfile
-            builder = builder.pemCertificate(settings.pemCertificate);
+            builder = builder.pemCertificate(settings.PemCertificate);
         else
             if isfield(settings, 'ClientSecret')
                 if ~isempty(settings.ClientSecret)
@@ -217,7 +227,7 @@ switch lower(settings.AuthMethod)
             % Add persistence to existing builder, build and add to chain
             builder = builder.tokenCachePersistenceOptions(tokenCachePersistanceOptions);
             credentials = builder.build();
-            builder = chainedCredentialBuilder.addLast(credentials);            
+            builder = chainedCredentialBuilder.addLast(credentials);
         end
 
         credentials = builder.build();
@@ -245,7 +255,7 @@ switch lower(settings.AuthMethod)
                 % DeviceCodeCredential, it is not needed
             catch
                 % If this failed, create a DeviceCodeCredentialBuiler
-                dvcbuilder = createDeviceCodeCredentialBuiler(settings);
+                dvcbuilder = createDeviceCodeCredentialBuilder(settings);
                 % Add persistence options
                 dvcbuilder = dvcbuilder.tokenCachePersistenceOptions(tokenCachePersistanceOptions);
                 % And authenticate this
@@ -261,7 +271,7 @@ switch lower(settings.AuthMethod)
             credentials = sharedTokenCredential;
         else % If no caching
             % Just build and authorize the standard DeviceCodeCredential
-            builder = createDeviceCodeCredentialBuiler(settings);
+            builder = createDeviceCodeCredentialBuilder(settings);
             if isempty(options.DeviceCodeCallback)
                 credentials = builder.buildAndAuthenticate(trc);
             else
@@ -270,7 +280,7 @@ switch lower(settings.AuthMethod)
         end
 
     case 'sharedtokencache'
-        % TenantId, ClientId aare always required
+        % TenantId, ClientId are always required
         if ~(isfield(settings, 'ClientId') && isfield(settings, 'TenantId'))
             write(logObj,'error','ClientId and TenantId settings fields are required for SharedTokenCacheCredential authentication');
         end
@@ -280,11 +290,25 @@ switch lower(settings.AuthMethod)
         credentials = createSharedTokenCredential(settings);
         
     case 'managedidentity'
-        if ~isfield(settings, 'ManagedIdentityClientId')
-            write(logObj,'error','ManagedIdentityClientId settings field is required for managedIdentityCredential authentication');
+        % See: https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview
+        if ~(isfield(settings, 'ClientId') || isfield(settings, 'ResourceId'))
+            write(logObj,'error','ClientId or ResourceId settings field is required for ManagedIdentityCredential authentication');
         end
         builder = azure.identity.ManagedIdentityCredentialBuilder();
-        builder = builder.clientId(settings.ManagedIdentityClientId);
+
+        if isfield(settings, 'ClientId') && isfield(settings, 'ResourceId')
+            if strlength(settings.ClientId) > 0 && strlength(settings.ResourceId) > 0
+                write(logObj,'error','Only one of ClientId or ResourceId fields should be used for ManagedIdentityCredential authentication');
+            end
+        end
+
+        % If both are set and > 0 will error above, if neither are set assume system assigned
+        if isfield(settings, 'ClientId') && strlength(settings.ClientId) > 0
+            builder = builder.clientId(settings.ClientId);
+        end
+        if isfield(settings, 'ResourceId') && strlength(settings.ResourceId) > 0
+            builder = builder.resourceId(settings.ResourceId);
+        end
         builder = builder.httpClient();
         builder = builder.maxRetry(int32(1));
         credentials = builder.build();
@@ -298,12 +322,12 @@ switch lower(settings.AuthMethod)
         write(logObj,'error','Chained Token Credential configuration not yet implemented');
 
     otherwise
-        write(logObj,'error',['AuthMethod not supported: ', settings.AuthMethod]);
+        write(logObj,'error',['AuthMethod not supported: ', char(settings.AuthMethod)]);
 end
 
 end
 
-function builder = createDeviceCodeCredentialBuiler(settings)
+function builder = createDeviceCodeCredentialBuilder(settings)
     builder = azure.identity.DeviceCodeCredentialBuilder();
     builder = builder.httpClient();
     builder = builder.maxRetry(int32(1));

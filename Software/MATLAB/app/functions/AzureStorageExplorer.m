@@ -4,10 +4,10 @@ function AzureStorageExplorer(varargin)
 % installation of the storage explorer in the configuration file.
 %
 % By default the MATLAB path will be searched for a configuration file called
-% settings.json, however an alternative filename can be provided as
+% storagesettings.json, however an alternative filename can be provided as
 % an argument to this function.
 
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 % Create a logger object
 logObj = Logger.getLogger();
@@ -18,7 +18,7 @@ if length(varargin) > 1
 end
 
 if isempty(varargin)
-    configFile = which('settings.json');
+    configFile = which('storagesettings.json');
 else
     configFile = varargin{1};
 end
@@ -39,8 +39,8 @@ if exist(configFile,'file')==2
             write(logObj,'error',['Storage explorer not found at path: ', sePath]);
         end
     else
-        write(logObj,'error','LocalPathToStorageExplorer not set in settings.json');
+        write(logObj,'error','LocalPathToStorageExplorer not set in storagesettings.json');
     end
 else
-    write(logObj,'error','settings.json with Storage Explorer path not found');
+    write(logObj,'error','storagesettings.json with Storage Explorer path not found');
 end %function

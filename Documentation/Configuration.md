@@ -25,7 +25,7 @@ An example `mysettings.json` file could look something like the following:
 And then in MATLAB this could be used as:
 
 ```matlab
-settings = loadConfigurationSettings('settings.json');
+settings = loadConfigurationSettings('mysettings.json');
 homePage = webread(settings.myURL);
 ```
 
@@ -51,4 +51,4 @@ configuration file name if needed:
 * [Key Vault](KeyVault.md)
 * [Data Lake Storage Gen2](DataLakeStorageGen2.md)
 
-[//]: #  (Copyright 2022 The MathWorks, Inc.)
+[//]: #  (Copyright 2022-2023 The MathWorks, Inc.)
