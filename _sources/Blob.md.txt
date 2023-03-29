@@ -59,8 +59,7 @@ builder = azure.storage.blob.BlobServiceClientBuilder();
 
 % configureCredentials is a convenience method that simplifies creating a credentials
 % argument for the client's builder. In this case a Connection String is used to
-% authenticate. Other authentication methods may required different build steps,
-% e.g. setting an endpoint
+% authenticate. Other authentication methods may required different build steps.
 credentials = configureCredentials(fullfile(AzureCommonRoot, 'config', 'settings_ConnectionString.json'));
 builder = builder.connectionString(credentials);
 
@@ -251,6 +250,7 @@ results = containerClient.listBlobs;
 % Display the name of the 1st blob assuming the container is not empty
 results(1).getName()
 ```
+
 See also [Advanced listing support](#advanced-listing-support) below.
 
 #### Create a BlobClient
@@ -459,7 +459,7 @@ blobClient.uploadFromFile('myfile.txt','overwrite',true,'leaseId',leaseId);
 blobClient.deleteBlob('leaseId',leaseId);
 ```
 
-### Advanced listing support
+## Advanced listing support
 
 A basic listing of a container's contents can be done as follows:
 
@@ -603,7 +603,12 @@ ans =
     {'barMetadataVal'}
 ```
 
-
 For more information, see [https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs()](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs())
+
+## Custom EndPoints
+
+Typically and by default Azure storage endpoints follow the pattern: `https://AccountName.Type.core.windows.net`, e.g. `https://mystorageaccount.blob.core.windows.net`. However, endpoints may vary e.g. if using Azure Government or private endpoints, which are respectively `https://AccountName.Type.core.usgovcloudapi.net` and `https://AccountName.privatelink.Type.core.windows.net`. If configuring a client builder then the `endpoint()` method can be used to set such an endpoint directly. By default if using the `createStorageClient()` function it will use the account name and storage type to create a default endpoint. This can be overridden by passing an `EndPoint` named value argument pair or by setting and "EndPoint" field in the JSON configuration file used to provide settings and credentials.
+
+For details of private endpoint use see: [https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints](https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints)
 
 [//]: #  (Copyright 2020-2023 The MathWorks, Inc.)

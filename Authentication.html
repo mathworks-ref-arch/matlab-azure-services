@@ -71,14 +71,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#interactive-browser">Interactive Browser</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tokencachepersistenceoptions">TokenCachePersistenceOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tokencachepersistenceoptions-interactive-browser">TokenCachePersistenceOptions (Interactive Browser)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#interactive-browser-myservicespecificsettings-json">Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#device-code">Device Code</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#scopes">Scopes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-and-authenticating">Building <em>and</em> authenticating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">TokenCachePersistenceOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tokencachepersistenceoptions-device-code">TokenCachePersistenceOptions (Device Code)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#device-code-myservicespecificsettings-json">Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
 </ul>
 </li>
@@ -204,17 +204,24 @@ effect derive its credentials by virtue of the machine hosting it in Azure.</p>
 <section id="managed-identity-myservicespecificsettings-json">
 <h3>Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#managed-identity-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagedIdentity&quot;</span>
+<span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagedIdentity&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>In the case of a system assigned managed identity the Azure portal refers to the
+ClientId value as the “Application ID”. In the case of a user assigned managed
+identity the ClientId value is referred to as a “Client ID” in the Azure portal.</p>
+<p>An identity’s Resource ID can be provided as an alternative to the Client ID.
+Both should not be provided. The corresponding configuration file setting field
+is ResourceId.</p>
 </section>
 </section>
 <section id="client-secret">
 <h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this headline"></a></h2>
 <p>A Client Secret credential is an Azure AD credential that acquires a token with
 a client secret. The secret can be provided in the form as a string specified as
-<code class="docutils literal notranslate"><span class="pre">ClientSecret</span></code> or can be a certificate referred to by <code class="docutils literal notranslate"><span class="pre">pemCertificate</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">ClientSecret</span></code> or can be a certificate referred to by <code class="docutils literal notranslate"><span class="pre">PemCertificate</span></code>.</p>
 <section id="client-secret-myservicespecificsettings-json">
 <h3>Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#client-secret-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -222,7 +229,7 @@ a client secret. The secret can be provided in the form as a string specified as
 <span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ClientSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;i6Q&lt;REDACTED&gt;p72&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Either </span>
-<span class="w">    </span><span class="nt">&quot;pemCertificate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c:/path/to/clientCert.pem&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Or</span>
+<span class="w">    </span><span class="nt">&quot;PemCertificate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c:/path/to/clientCert.pem&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Or</span>
 <span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span>
 <span class="p">}</span>
 </pre></div>
@@ -292,8 +299,8 @@ credential of the authentication code through the reply URL. The application to
 authenticate to must have delegated user login permissions and
 have<code class="docutils literal notranslate"><span class="pre">http://localhost:port</span></code> listed as a valid Redirect URI for the Azure
 App.</p>
-<section id="tokencachepersistenceoptions">
-<h3>TokenCachePersistenceOptions<a class="headerlink" href="#tokencachepersistenceoptions" title="Permalink to this headline"></a></h3>
+<section id="tokencachepersistenceoptions-interactive-browser">
+<h3>TokenCachePersistenceOptions (Interactive Browser)<a class="headerlink" href="#tokencachepersistenceoptions-interactive-browser" title="Permalink to this headline"></a></h3>
 <p>Interactive Browser can optionally be configured with
 <code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code>. When these are configured,
 <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will actually build and return a <code class="docutils literal notranslate"><span class="pre">ChainedTokenCredential</span></code>
@@ -386,8 +393,8 @@ clipboard and open a browser:</p>
 </pre></div>
 </div>
 </section>
-<section id="id1">
-<h3>TokenCachePersistenceOptions<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<section id="tokencachepersistenceoptions-device-code">
+<h3>TokenCachePersistenceOptions (Device Code)<a class="headerlink" href="#tokencachepersistenceoptions-device-code" title="Permalink to this headline"></a></h3>
 <p>Device Code can optionally be configured with <code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code>.
 When these are configured, <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will actually build and return
 a <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> object instead of a <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code>. The

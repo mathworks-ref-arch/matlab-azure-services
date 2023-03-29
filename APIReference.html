@@ -927,6 +927,12 @@
 
 </pre></div>
 </div>
+<p><em>azure.identity.ManagedIdentityCredentialBuilder.resourceId</em></p>
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  RESOURCEID Sets client id
+  An updated ManagedIdentityCredentialBuilder is returned.
+
+</pre></div>
+</div>
 </section>
 <section id="azure-identity-chainedtokencredential">
 <h3>azure.identity.ChainedTokenCredential<a class="headerlink" href="#azure-identity-chainedtokencredential" title="Permalink to this headline"></a></h3>
@@ -1063,7 +1069,7 @@
 </div>
 <p><em>azure.identity.ManagedIdentityCredential.getClientId</em></p>
 <div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  GETCLIENTID Gets the client ID of user assigned or system assigned identity
-  The accountName is returned as a character vector.
+  The client ID is returned as a character vector.
 
 </pre></div>
 </div>
@@ -4982,7 +4988,7 @@
   installation of the storage explorer in the configuration file.
  
   By default the MATLAB path will be searched for a configuration file called
-  settings.json, however an alternative filename can be provided as
+  storagesettings.json, however an alternative filename can be provided as
   an argument to this function.
 
 </pre></div>
@@ -5061,8 +5067,9 @@
     clientSecret
     interactiveBrowser
     deviceCode
+    sharedTokenCache
+    managedIdentity
     azurecli
-    managedIdentityCredentialBuilder
  
   The resulting credential object can then be used by the corresponding client
   builder.
@@ -5178,7 +5185,9 @@
   filename using &#39;ConfigurationFile&#39;. It is also possible to provide
   &#39;Credentials&#39; or &#39;SASToken&#39; and &#39;AccountName&#39; as inputs to the function
   directly in case which no configuration file may be needed. See the Name,
-  Value pairs below for more details.
+  Value pairs below for more details. An endpoint can be set if required
+  e.g. if it does not conform to the default https://&lt;AccountName&gt;.&lt;TYPE&gt;.core.windows.net
+  pattern, see below for EndPoint details.
  
   Additional Name, Value pairs can be supplied to configure non-default
   options:
@@ -5230,10 +5239,19 @@
         building the client. 
     
     &#39;AccountName&#39;, explicitly specify the AccountName used to configure the
-        endpoint for the client. If not specified createStorageClient uses
-        loadConfigurationSettings to load configuration options from 
-        &#39;ConfigurationFile&#39;. This file must then contain a &quot;AccountName&quot; 
-        setting.
+        account and potentially the endpoint for the client.
+        If not specified createStorageClient uses loadConfigurationSettings
+        to load configuration options from &#39;ConfigurationFile&#39;.
+        This file must then contain a &quot;AccountName&quot; setting.
+ 
+    &#39;EndPoint&#39;, enables endpoint naming patterns other than:
+        https://&lt;AccountName&gt;.&lt;TYPE&gt;.core.windows.net
+        by explicitly specify the EndPoint used to configure the client.
+        If &#39;EndPoint&#39; is not specified as an argument and an &#39;AccountName&#39; is
+        provided then the &#39;AccountName&#39; will be used to create a default endpoint.
+        If neither an &#39;EndPoint&#39; or &#39;AccountName&#39; argument is provided the
+        corresponding configuration file fields will be used with priority given
+        to &quot;EndPoint&quot;.
  
     See also CONFIGURECREDENTIALS, LOADCONFIGURATIONSETTINGS
 
@@ -5266,7 +5284,7 @@
 
     Other uses of initialize
 
-       matlab.internal.cef.webwindow/initialize
+       dlnetwork/initialize
        matlab.net.http.io.ContentConsumer/initialize
        matlab.net.http.io.ImageConsumer/initialize
        matlab.net.http.io.JSONConsumer/initialize
@@ -5280,11 +5298,11 @@
 </section>
 <section id="loadconfigurationsettings">
 <h4>loadConfigurationSettings<a class="headerlink" href="#loadconfigurationsettings" title="Permalink to this headline"></a></h4>
-<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  LOADCONFIGURATIONSETTINGS Method to read configuration settings from a file
-  By default the file is named settings.json or an alternative name can be
-  as an specified argument. JSON values must be compatible with MATLAB JSON
-  conversion rules. See jsondecode() help for details. A MATLAB struct is
-  returned.
+<div class="highlight-notalanguage notranslate"><div class="highlight"><pre><span></span>  LOADCONFIGURATIONSETTINGS Method to read a JSON configuration settings from a file
+  The file name must be as a specified argument.
+  JSON values must be compatible with MATLAB JSON conversion rules.
+  See jsondecode() help for details. A MATLAB struct is returned.
+  Field names are case sensitive.
 
 </pre></div>
 </div>

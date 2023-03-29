@@ -155,8 +155,7 @@ various clients, see: <a class="reference internal" href="DataLakeStorageGen2.ht
 
 <span class="c">% configureCredentials is a convenience method that simplifies creating a credentials</span>
 <span class="c">% argument for the client&#39;s builder. In this case a Connection String is used to</span>
-<span class="c">% authenticate. Other authentication methods may required different build steps,</span>
-<span class="c">% e.g. setting an endpoint</span>
+<span class="c">% authenticate. Other authentication methods may required different build steps.</span>
 <span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_ConnectionString.json&#39;</span><span class="p">));</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">connectionString</span><span class="p">(</span><span class="n">credentials</span><span class="p">);</span>
 
@@ -538,8 +537,9 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 </pre></div>
 </div>
 </section>
+</section>
 <section id="advanced-listing-support">
-<h3>Advanced listing support<a class="headerlink" href="#advanced-listing-support" title="Permalink to this headline"></a></h3>
+<h2>Advanced listing support<a class="headerlink" href="#advanced-listing-support" title="Permalink to this headline"></a></h2>
 <p>A basic listing of a container’s contents can be done as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get a blob name and create a client using it</span>
 <span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">listBlobs</span><span class="p">;</span>
@@ -556,7 +556,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 <li><p>An <code class="docutils literal notranslate"><span class="pre">azure.storage.blob.models.ListBlobsOptions</span></code> object</p></li>
 </ul>
 <section id="using-a-prefix-directory">
-<h4>Using a prefix/directory<a class="headerlink" href="#using-a-prefix-directory" title="Permalink to this headline"></a></h4>
+<h3>Using a prefix/directory<a class="headerlink" href="#using-a-prefix-directory" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">BlobContainerClient.listBlobsByHierarchy(directory)</span></code> Returns all the blobs and directories (prefixes) under the given directory (prefix). Directories will have <code class="docutils literal notranslate"><span class="pre">BlobItem.isPrefix()</span></code> set to true. Blob names are returned in lexicographic order. E.g. listing a container containing a ‘foo’ folder, which contains blobs ‘foo1’ and ‘foo2’, and a blob on the root level ‘bar’, will return the following results when prefix/directory is not set.</p>
 <ul class="simple">
 <li><p>foo/ (isPrefix = true)</p></li>
@@ -575,7 +575,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 </ul>
 </section>
 <section id="listblobsoptions">
-<h4>ListBlobsOptions<a class="headerlink" href="#listblobsoptions" title="Permalink to this headline"></a></h4>
+<h3>ListBlobsOptions<a class="headerlink" href="#listblobsoptions" title="Permalink to this headline"></a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">ListBlobsOptions</span></code> object allows the following criteria to be set:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">setDetails(blobListDetails)</span></code> further options see below.</p></li>
@@ -585,7 +585,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 <p><code class="docutils literal notranslate"><span class="pre">set</span></code> methods return an updated <code class="docutils literal notranslate"><span class="pre">ListBlobsOptions</span></code> object. <code class="docutils literal notranslate"><span class="pre">get</span></code> methods are also provided.</p>
 </section>
 <section id="bloblistdetails">
-<h4>BlobListDetails<a class="headerlink" href="#bloblistdetails" title="Permalink to this headline"></a></h4>
+<h3>BlobListDetails<a class="headerlink" href="#bloblistdetails" title="Permalink to this headline"></a></h3>
 <p>Allows specifying of additional information to be returned with each blob when listing blobs in a container (via a BlobContainerClient object). This type is immutable to ensure thread-safety of requests, so changing the details for a different listing operation requires construction of a new object.</p>
 <p><code class="docutils literal notranslate"><span class="pre">get</span></code> methods return logicals and <code class="docutils literal notranslate"><span class="pre">set</span></code> methods return an updated <code class="docutils literal notranslate"><span class="pre">BlobListDetails</span></code> object.</p>
 <ul class="simple">
@@ -600,7 +600,6 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 <li><p><code class="docutils literal notranslate"><span class="pre">getRetrieveUncommittedBlobs()</span></code> Whether blobs for which blocks have been uploaded, but which have not been committed using Put Block List, should be included in the response.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">getRetrieveVersions()</span></code> Whether versions should be returned.</p></li>
 </ul>
-</section>
 </section>
 <section id="blob-properties-metadata">
 <h3>Blob properties &amp; metadata<a class="headerlink" href="#blob-properties-metadata" title="Permalink to this headline"></a></h3>
@@ -677,6 +676,11 @@ In this case the file/object is 0 bytes in size.</p>
 </div>
 <p>For more information, see <a class="reference external" href="https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs()">https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs()</a></p>
 </section>
+</section>
+<section id="custom-endpoints">
+<h2>Custom EndPoints<a class="headerlink" href="#custom-endpoints" title="Permalink to this headline"></a></h2>
+<p>Typically and by default Azure storage endpoints follow the pattern: <code class="docutils literal notranslate"><span class="pre">https://AccountName.Type.core.windows.net</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">https://mystorageaccount.blob.core.windows.net</span></code>. However, endpoints may vary e.g. if using Azure Government or private endpoints, which are respectively <code class="docutils literal notranslate"><span class="pre">https://AccountName.Type.core.usgovcloudapi.net</span></code> and <code class="docutils literal notranslate"><span class="pre">https://AccountName.privatelink.Type.core.windows.net</span></code>. If configuring a client builder then the <code class="docutils literal notranslate"><span class="pre">endpoint()</span></code> method can be used to set such an endpoint directly. By default if using the <code class="docutils literal notranslate"><span class="pre">createStorageClient()</span></code> function it will use the account name and storage type to create a default endpoint. This can be overridden by passing an <code class="docutils literal notranslate"><span class="pre">EndPoint</span></code> named value argument pair or by setting and “EndPoint” field in the JSON configuration file used to provide settings and credentials.</p>
+<p>For details of private endpoint use see: <a class="reference external" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints">https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints</a></p>
 </section>
 </section>
 
