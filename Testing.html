@@ -66,7 +66,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#storage-azure-data-lake-storage-gen2-unit-tests"><code class="docutils literal notranslate"><span class="pre">/Storage</span></code> Azure Data Lake Storage Gen2 unit tests</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#azure-app-registration">Azure App Registration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storage-storage-account"><code class="docutils literal notranslate"><span class="pre">Storage</span></code> Storage Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage-account">Storage Account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#connection-string-sas-token">Connection String/SAS Token</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#storage-environment-variables"><code class="docutils literal notranslate"><span class="pre">Storage</span></code> environment variables</a></li>
 </ul>
@@ -152,9 +152,11 @@ variables.</p>
 </div></blockquote>
 <section id="common-azure-app-registration">
 <h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> Azure App Registration<a class="headerlink" href="#common-azure-app-registration" title="Permalink to this headline"></a></h3>
-<p>Configure an Azure App for which a Client Secret has been generated as the
-<code class="docutils literal notranslate"><span class="pre">Storage</span></code> App Registration. And if also running the interactive authentication
-tests make sure that for this App:</p>
+<p>Configure an Azure App for which a Client Secret has been generated and a
+Client Certificate has been registered. Ensure this App’s service principal
+is granted access to the storage account used for testing, see also
+<a class="reference internal" href="#storage-account"><span class="std std-doc">Storage Account</span></a> below. And if also running the
+interactive authentication tests make sure that for this App:</p>
 <ul class="simple">
 <li><p>A Redirect Uri has been configured in the form of <code class="docutils literal notranslate"><span class="pre">http://localhost:PORT</span></code>
 where <em>PORT</em> is configurable.</p></li>
@@ -207,8 +209,8 @@ which:</p>
 <li><p>A Client Secret has been generated.</p></li>
 </ul>
 </section>
-<section id="storage-storage-account">
-<h3><code class="docutils literal notranslate"><span class="pre">Storage</span></code> Storage Account<a class="headerlink" href="#storage-storage-account" title="Permalink to this headline"></a></h3>
+<section id="storage-account">
+<h3>Storage Account<a class="headerlink" href="#storage-account" title="Permalink to this headline"></a></h3>
 <p>The storage account should contain three containers:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">containerempty</span></code> which should be empty</p></li>
@@ -260,7 +262,10 @@ increase the validity period in accordance with local security polices.</p>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AZURE_CLIENT_SECRET</span></code></p></td>
 <td><p>Client Secret which has been generated for the App</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AZURE_TENANT_ID</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AZURE_CLIENT_CERTIFICATE</span></code></p></td>
+<td><p>Base64 encoded PEM-format certificate as registered for the App</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AZURE_TENANT_ID</span></code></p></td>
 <td><p>Azure Tenant ID</p></td>
 </tr>
 </tbody>
