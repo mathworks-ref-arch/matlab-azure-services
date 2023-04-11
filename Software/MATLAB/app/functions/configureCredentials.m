@@ -178,10 +178,14 @@ switch lower(settings.AuthMethod)
                     write(logObj,'error',['pem certificate file not found: ', strrep(char(settings.PemCertificate),'\','\\')]);
                 else
                     usePemfile = true;
+                    builder = azure.identity.ClientCertificateCredentialBuilder();
                 end
+            else
+                write(logObj,'error','PemCertificate may not be set to an empty string');
             end
+        else
+            builder = azure.identity.ClientSecretCredentialBuilder();
         end
-        builder = azure.identity.ClientSecretCredentialBuilder();
         builder = builder.clientId(settings.ClientId);
         builder = builder.tenantId(settings.TenantId);
         % If a pem file is configured and exists use it else default to the client secret

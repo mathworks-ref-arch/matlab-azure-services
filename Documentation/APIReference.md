@@ -17,123 +17,35 @@ Documentation generation settings:
 
 * [azure.object](#azureobject)
 
-### Subpackage  *azure.core.credential*
-
-
-### Classes
-
-* [azure.core.credential.TokenRequestContext](#azurecorecredentialtokenrequestcontext)
-* [azure.core.credential.AccessToken](#azurecorecredentialaccesstoken)
-* [azure.core.credential.TokenCredential](#azurecorecredentialtokencredential)
-* [azure.core.credential.AzureSasCredential](#azurecorecredentialazuresascredential)
-
-### Subpackage  *azure.core.util.polling*
-
-
-### Classes
-
-* [azure.core.util.polling.LongRunningOperationStatus](#azurecoreutilpollinglongrunningoperationstatus)
-* [azure.core.util.polling.PollResponse](#azurecoreutilpollingpollresponse)
-* [azure.core.util.polling.SyncPoller](#azurecoreutilpollingsyncpoller)
-
 ### Subpackage  *azure.identity*
 
 
 ### Classes
 
-* [azure.identity.DeviceCodeCredential](#azureidentitydevicecodecredential)
-* [azure.identity.DeviceCodeInfo](#azureidentitydevicecodeinfo)
-* [azure.identity.DefaultAzureCredentialBuilder](#azureidentitydefaultazurecredentialbuilder)
-* [azure.identity.DefaultAzureCredential](#azureidentitydefaultazurecredential)
+* [azure.identity.ClientCertificateCredentialBuilder](#azureidentityclientcertificatecredentialbuilder)
 * [azure.identity.CredentialBuilderBase](#azureidentitycredentialbuilderbase)
-* [azure.identity.EnvironmentCredential](#azureidentityenvironmentcredential)
-* [azure.identity.AzureCliCredential](#azureidentityazureclicredential)
 * [azure.identity.ManagedIdentityCredentialBuilder](#azureidentitymanagedidentitycredentialbuilder)
-* [azure.identity.ChainedTokenCredential](#azureidentitychainedtokencredential)
 * [azure.identity.InteractiveBrowserCredentialBuilder](#azureidentityinteractivebrowsercredentialbuilder)
-* [azure.identity.ChainedTokenCredentialBuilder](#azureidentitychainedtokencredentialbuilder)
-* [azure.identity.ClientSecretCredential](#azureidentityclientsecretcredential)
+* [azure.identity.DeviceCodeCredential](#azureidentitydevicecodecredential)
+* [azure.identity.EnvironmentCredentialBuilder](#azureidentityenvironmentcredentialbuilder)
+* [azure.identity.ManagedIdentityCredential](#azureidentitymanagedidentitycredential)
+* [azure.identity.SharedTokenCacheCredentialBuilder](#azureidentitysharedtokencachecredentialbuilder)
+* [azure.identity.ClientSecretCredentialBuilder](#azureidentityclientsecretcredentialbuilder)
+* [azure.identity.ClientCertificateCredential](#azureidentityclientcertificatecredential)
+* [azure.identity.InteractiveBrowserCredential](#azureidentityinteractivebrowsercredential)
 * [azure.identity.SharedTokenCacheCredential](#azureidentitysharedtokencachecredential)
+* [azure.identity.ChainedTokenCredentialBuilder](#azureidentitychainedtokencredentialbuilder)
+* [azure.identity.EnvironmentCredential](#azureidentityenvironmentcredential)
+* [azure.identity.DefaultAzureCredential](#azureidentitydefaultazurecredential)
+* [azure.identity.AzureCliCredentialBuilder](#azureidentityazureclicredentialbuilder)
+* [azure.identity.DeviceCodeInfo](#azureidentitydevicecodeinfo)
+* [azure.identity.ClientSecretCredential](#azureidentityclientsecretcredential)
+* [azure.identity.DeviceCodeCredentialBuilder](#azureidentitydevicecodecredentialbuilder)
+* [azure.identity.ChainedTokenCredential](#azureidentitychainedtokencredential)
+* [azure.identity.DefaultAzureCredentialBuilder](#azureidentitydefaultazurecredentialbuilder)
+* [azure.identity.AzureCliCredential](#azureidentityazureclicredential)
 * [azure.identity.AuthenticationRecord](#azureidentityauthenticationrecord)
 * [azure.identity.TokenCachePersistenceOptions](#azureidentitytokencachepersistenceoptions)
-* [azure.identity.ManagedIdentityCredential](#azureidentitymanagedidentitycredential)
-* [azure.identity.InteractiveBrowserCredential](#azureidentityinteractivebrowsercredential)
-* [azure.identity.ClientSecretCredentialBuilder](#azureidentityclientsecretcredentialbuilder)
-* [azure.identity.EnvironmentCredentialBuilder](#azureidentityenvironmentcredentialbuilder)
-* [azure.identity.AzureCliCredentialBuilder](#azureidentityazureclicredentialbuilder)
-* [azure.identity.DeviceCodeCredentialBuilder](#azureidentitydevicecodecredentialbuilder)
-* [azure.identity.SharedTokenCacheCredentialBuilder](#azureidentitysharedtokencachecredentialbuilder)
-
-### Subpackage  *azure.storage.blob*
-
-
-### Classes
-
-* [azure.storage.blob.BlobContainerClientBuilder](#azurestorageblobblobcontainerclientbuilder)
-* [azure.storage.blob.BlobServiceClientBuilder](#azurestorageblobblobserviceclientbuilder)
-* [azure.storage.blob.BlobClientBuilder](#azurestorageblobblobclientbuilder)
-* [azure.storage.blob.BlobContainerClient](#azurestorageblobblobcontainerclient)
-* [azure.storage.blob.BlobServiceClient](#azurestorageblobblobserviceclient)
-* [azure.storage.blob.BlobClient](#azurestorageblobblobclient)
-
-### Subpackage  *azure.storage.blob.models*
-
-
-### Classes
-
-* [azure.storage.blob.models.ListBlobsOptions](#azurestorageblobmodelslistblobsoptions)
-* [azure.storage.blob.models.BlobItemProperties](#azurestorageblobmodelsblobitemproperties)
-* [azure.storage.blob.models.BlobContainerItem](#azurestorageblobmodelsblobcontaineritem)
-* [azure.storage.blob.models.BlobItem](#azurestorageblobmodelsblobitem)
-* [azure.storage.blob.models.StorageAccountInfo](#azurestorageblobmodelsstorageaccountinfo)
-* [azure.storage.blob.models.BlobListDetails](#azurestorageblobmodelsbloblistdetails)
-* [azure.storage.blob.models.UserDelegationKey](#azurestorageblobmodelsuserdelegationkey)
-
-### Subpackage  *azure.storage.blob.sas*
-
-
-### Classes
-
-* [azure.storage.blob.sas.BlobSasPermission](#azurestorageblobsasblobsaspermission)
-* [azure.storage.blob.sas.BlobContainerSasPermission](#azurestorageblobsasblobcontainersaspermission)
-* [azure.storage.blob.sas.BlobServiceSasSignatureValues](#azurestorageblobsasblobservicesassignaturevalues)
-
-### Subpackage  *azure.storage.blob.specialized*
-
-
-### Classes
-
-* [azure.storage.blob.specialized.BlobLeaseClient](#azurestorageblobspecializedblobleaseclient)
-* [azure.storage.blob.specialized.BlobLeaseClientBuilder](#azurestorageblobspecializedblobleaseclientbuilder)
-
-### Subpackage  *azure.storage.queue*
-
-
-### Classes
-
-* [azure.storage.queue.QueueClientBuilder](#azurestoragequeuequeueclientbuilder)
-* [azure.storage.queue.QueueClient](#azurestoragequeuequeueclient)
-* [azure.storage.queue.QueueServiceClientBuilder](#azurestoragequeuequeueserviceclientbuilder)
-* [azure.storage.queue.QueueServiceClient](#azurestoragequeuequeueserviceclient)
-
-### Subpackage  *azure.storage.queue.models*
-
-
-### Classes
-
-* [azure.storage.queue.models.SendMessageResult](#azurestoragequeuemodelssendmessageresult)
-* [azure.storage.queue.models.QueueMessageItem](#azurestoragequeuemodelsqueuemessageitem)
-* [azure.storage.queue.models.QueueProperties](#azurestoragequeuemodelsqueueproperties)
-* [azure.storage.queue.models.QueueItem](#azurestoragequeuemodelsqueueitem)
-* [azure.storage.queue.models.PeekedMessageItem](#azurestoragequeuemodelspeekedmessageitem)
-
-### Subpackage  *azure.storage.queue.sas*
-
-
-### Classes
-
-* [azure.storage.queue.sas.QueueServiceSasSignatureValues](#azurestoragequeuesasqueueservicesassignaturevalues)
-* [azure.storage.queue.sas.QueueSasPermission](#azurestoragequeuesasqueuesaspermission)
 
 ### Subpackage  *azure.storage.common*
 
@@ -141,14 +53,6 @@ Documentation generation settings:
 ### Classes
 
 * [azure.storage.common.StorageSharedKeyCredential](#azurestoragecommonstoragesharedkeycredential)
-
-### Subpackage  *azure.storage.common.policy*
-
-
-### Classes
-
-* [azure.storage.common.policy.RequestRetryOptions](#azurestoragecommonpolicyrequestretryoptions)
-* [azure.storage.common.policy.RetryPolicyType](#azurestoragecommonpolicyretrypolicytype)
 
 ### Subpackage  *azure.storage.common.sas*
 
@@ -160,16 +64,53 @@ Documentation generation settings:
 * [azure.storage.common.sas.AccountSasSignatureValues](#azurestoragecommonsasaccountsassignaturevalues)
 * [azure.storage.common.sas.AccountSasPermission](#azurestoragecommonsasaccountsaspermission)
 
+### Subpackage  *azure.storage.common.policy*
+
+
+### Classes
+
+* [azure.storage.common.policy.RequestRetryOptions](#azurestoragecommonpolicyrequestretryoptions)
+* [azure.storage.common.policy.RetryPolicyType](#azurestoragecommonpolicyretrypolicytype)
+
+### Subpackage  *azure.storage.queue*
+
+
+### Classes
+
+* [azure.storage.queue.QueueServiceClientBuilder](#azurestoragequeuequeueserviceclientbuilder)
+* [azure.storage.queue.QueueServiceClient](#azurestoragequeuequeueserviceclient)
+* [azure.storage.queue.QueueClient](#azurestoragequeuequeueclient)
+* [azure.storage.queue.QueueClientBuilder](#azurestoragequeuequeueclientbuilder)
+
+### Subpackage  *azure.storage.queue.models*
+
+
+### Classes
+
+* [azure.storage.queue.models.SendMessageResult](#azurestoragequeuemodelssendmessageresult)
+* [azure.storage.queue.models.PeekedMessageItem](#azurestoragequeuemodelspeekedmessageitem)
+* [azure.storage.queue.models.QueueMessageItem](#azurestoragequeuemodelsqueuemessageitem)
+* [azure.storage.queue.models.QueueProperties](#azurestoragequeuemodelsqueueproperties)
+* [azure.storage.queue.models.QueueItem](#azurestoragequeuemodelsqueueitem)
+
+### Subpackage  *azure.storage.queue.sas*
+
+
+### Classes
+
+* [azure.storage.queue.sas.QueueSasPermission](#azurestoragequeuesasqueuesaspermission)
+* [azure.storage.queue.sas.QueueServiceSasSignatureValues](#azurestoragequeuesasqueueservicesassignaturevalues)
+
 ### Subpackage  *azure.storage.file.datalake*
 
 
 ### Classes
 
-* [azure.storage.file.datalake.DataLakeDirectoryClient](#azurestoragefiledatalakedatalakedirectoryclient)
 * [azure.storage.file.datalake.DataLakeFileClient](#azurestoragefiledatalakedatalakefileclient)
 * [azure.storage.file.datalake.DataLakeFileSystemClientBuilder](#azurestoragefiledatalakedatalakefilesystemclientbuilder)
 * [azure.storage.file.datalake.DataLakeFileSystemClient](#azurestoragefiledatalakedatalakefilesystemclient)
 * [azure.storage.file.datalake.DataLakePathClientBuilder](#azurestoragefiledatalakedatalakepathclientbuilder)
+* [azure.storage.file.datalake.DataLakeDirectoryClient](#azurestoragefiledatalakedatalakedirectoryclient)
 
 ### Subpackage  *azure.storage.file.datalake.models*
 
@@ -185,8 +126,69 @@ Documentation generation settings:
 ### Classes
 
 * [azure.storage.file.datalake.sas.FileSystemSasPermission](#azurestoragefiledatalakesasfilesystemsaspermission)
-* [azure.storage.file.datalake.sas.PathSasPermission](#azurestoragefiledatalakesaspathsaspermission)
 * [azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues](#azurestoragefiledatalakesasdatalakeservicesassignaturevalues)
+* [azure.storage.file.datalake.sas.PathSasPermission](#azurestoragefiledatalakesaspathsaspermission)
+
+### Subpackage  *azure.storage.blob*
+
+
+### Classes
+
+* [azure.storage.blob.BlobClient](#azurestorageblobblobclient)
+* [azure.storage.blob.BlobContainerClient](#azurestorageblobblobcontainerclient)
+* [azure.storage.blob.BlobContainerClientBuilder](#azurestorageblobblobcontainerclientbuilder)
+* [azure.storage.blob.BlobClientBuilder](#azurestorageblobblobclientbuilder)
+* [azure.storage.blob.BlobServiceClient](#azurestorageblobblobserviceclient)
+* [azure.storage.blob.BlobServiceClientBuilder](#azurestorageblobblobserviceclientbuilder)
+
+### Subpackage  *azure.storage.blob.models*
+
+
+### Classes
+
+* [azure.storage.blob.models.BlobContainerItem](#azurestorageblobmodelsblobcontaineritem)
+* [azure.storage.blob.models.UserDelegationKey](#azurestorageblobmodelsuserdelegationkey)
+* [azure.storage.blob.models.ListBlobsOptions](#azurestorageblobmodelslistblobsoptions)
+* [azure.storage.blob.models.BlobItemProperties](#azurestorageblobmodelsblobitemproperties)
+* [azure.storage.blob.models.BlobListDetails](#azurestorageblobmodelsbloblistdetails)
+* [azure.storage.blob.models.BlobItem](#azurestorageblobmodelsblobitem)
+* [azure.storage.blob.models.StorageAccountInfo](#azurestorageblobmodelsstorageaccountinfo)
+
+### Subpackage  *azure.storage.blob.sas*
+
+
+### Classes
+
+* [azure.storage.blob.sas.BlobServiceSasSignatureValues](#azurestorageblobsasblobservicesassignaturevalues)
+* [azure.storage.blob.sas.BlobContainerSasPermission](#azurestorageblobsasblobcontainersaspermission)
+* [azure.storage.blob.sas.BlobSasPermission](#azurestorageblobsasblobsaspermission)
+
+### Subpackage  *azure.storage.blob.specialized*
+
+
+### Classes
+
+* [azure.storage.blob.specialized.BlobLeaseClient](#azurestorageblobspecializedblobleaseclient)
+* [azure.storage.blob.specialized.BlobLeaseClientBuilder](#azurestorageblobspecializedblobleaseclientbuilder)
+
+### Subpackage  *azure.core.credential*
+
+
+### Classes
+
+* [azure.core.credential.TokenCredential](#azurecorecredentialtokencredential)
+* [azure.core.credential.AzureSasCredential](#azurecorecredentialazuresascredential)
+* [azure.core.credential.AccessToken](#azurecorecredentialaccesstoken)
+* [azure.core.credential.TokenRequestContext](#azurecorecredentialtokenrequestcontext)
+
+### Subpackage  *azure.core.util.polling*
+
+
+### Classes
+
+* [azure.core.util.polling.SyncPoller](#azurecoreutilpollingsyncpoller)
+* [azure.core.util.polling.PollResponse](#azurecoreutilpollingpollresponse)
+* [azure.core.util.polling.LongRunningOperationStatus](#azurecoreutilpollinglongrunningoperationstatus)
 
 ### Subpackage  *azure.security.keyvault.secrets*
 
@@ -202,8 +204,8 @@ Documentation generation settings:
 ### Classes
 
 * [azure.security.keyvault.secrets.models.DeletedSecret](#azuresecuritykeyvaultsecretsmodelsdeletedsecret)
-* [azure.security.keyvault.secrets.models.SecretProperties](#azuresecuritykeyvaultsecretsmodelssecretproperties)
 * [azure.security.keyvault.secrets.models.KeyVaultSecret](#azuresecuritykeyvaultsecretsmodelskeyvaultsecret)
+* [azure.security.keyvault.secrets.models.SecretProperties](#azuresecuritykeyvaultsecretsmodelssecretproperties)
 
 ### Subpackage  *azure.security.keyvault.keys*
 
@@ -218,11 +220,11 @@ Documentation generation settings:
 
 ### Classes
 
-* [azure.security.keyvault.keys.models.KeyType](#azuresecuritykeyvaultkeysmodelskeytype)
-* [azure.security.keyvault.keys.models.DeletedKey](#azuresecuritykeyvaultkeysmodelsdeletedkey)
-* [azure.security.keyvault.keys.models.KeyVaultKey](#azuresecuritykeyvaultkeysmodelskeyvaultkey)
-* [azure.security.keyvault.keys.models.KeyProperties](#azuresecuritykeyvaultkeysmodelskeyproperties)
 * [azure.security.keyvault.keys.models.JsonWebKey](#azuresecuritykeyvaultkeysmodelsjsonwebkey)
+* [azure.security.keyvault.keys.models.DeletedKey](#azuresecuritykeyvaultkeysmodelsdeletedkey)
+* [azure.security.keyvault.keys.models.KeyProperties](#azuresecuritykeyvaultkeysmodelskeyproperties)
+* [azure.security.keyvault.keys.models.KeyVaultKey](#azuresecuritykeyvaultkeysmodelskeyvaultkey)
+* [azure.security.keyvault.keys.models.KeyType](#azuresecuritykeyvaultkeysmodelskeytype)
 
 
 ### Standalone Classes
@@ -257,394 +259,50 @@ Documentation generation settings:
 
 ```
 
-*azure.object.setSystemProperties*
+
+#### azure.identity.ClientCertificateCredentialBuilder
 
 ```notalanguage
-azure.object.setSystemProperties is a function.
-    v = azure.object.setSystemProperties
+  CLIENTCERTIFICATECREDENTIALBUILDER Builder for ClientCertificateCredential
 
 ```
 
-
-#### azure.core.credential.TokenRequestContext
-
-```notalanguage
-  TOKENREQUESTCONTEXT Contains details of a request to get a token
-  Can be created based on a corresponding com.azure.core.credential.TokenRequestContext
-  Java object argument or without an argument where further configuration is
-  required to add scopes.
-
-```
-
-*azure.core.credential.TokenRequestContext.addScopes*
-
-```notalanguage
-  ADDSCOPES Adds one or more scopes to the request scopes
-  Scopes should be provided as character vector or scalar string arguments.
-  The updated TokenRequestContext is returned.
-
-```
-
-*azure.core.credential.TokenRequestContext.getClaims*
-
-```notalanguage
-  GETCLAIMS Get the additional claims to be included in the token
-  Returns a character vector.
-
-```
-
-*azure.core.credential.TokenRequestContext.getScopes*
-
-```notalanguage
-  GETSCOPES Gets the scopes required for the token
-  Returns a string array.
-
-```
-
-*azure.core.credential.TokenRequestContext.getTenantId*
-
-```notalanguage
-  GETTENANTID Get the tenant id to be used for the authentication request
-  Returns a character vector.
-
-```
-
-*azure.core.credential.TokenRequestContext.setClaims*
-
-```notalanguage
-  SETCLAIMS Set the additional claims to be included in the token
-  The claims should be provided as a character vector or scalar string.
-  Returns an updated azure.core.credential.TokenRequestContext.
-
-```
-
-*azure.core.credential.TokenRequestContext.setTenantId*
-
-```notalanguage
-  SETTENANTID Set the tenant id to be used for the authentication request
-  The tenantId should be provided as a character vector or scalar string.
-  Returns an updated azure.core.credential.TokenRequestContext.
-
-```
-
-
-#### azure.core.credential.AccessToken
-
-```notalanguage
-  ACCESSTOKEN An immutable access token with a token string and an expiration time
-  Can be created based on a corresponding Java com.azure.core.credential.AccessToken
-  argument or a token string and an expiry datetime (including a timezone).
-
-```
-
-*azure.core.credential.AccessToken.getToken*
-
-```notalanguage
-  GETTOKEN Return token as a character vector.
-
-```
-
-*azure.core.credential.AccessToken.isExpired*
-
-```notalanguage
-  ISEXPIRED Returns a logical if the token has expired or not
-
-```
-
-
-#### azure.core.credential.TokenCredential
-
-```notalanguage
-  TOKENCREDENTIAL Credential that can provide an access token
-
-```
-
-*azure.core.credential.TokenCredential.getToken*
-
-```notalanguage
-  GETTOKEN Retrieves an AccessToken
-  An azure.core.credential.AccessToken is returned.
-
-```
-
-
-#### azure.core.credential.AzureSasCredential
-
-```notalanguage
-  AZURESASCREDENTIAL A credential that uses a shared access signature to authenticate
- 
-  See also: https://azuresdkdocs.blob.core.windows.net/$web/java/azure-core/1.20.0/index.html?com/azure/
-
-```
-
-*azure.core.credential.AzureSasCredential.AzureSasSignature*
-
-```notalanguage
-azure.core.credential.AzureSasCredential/AzureSasSignature is a function.
-    obj = AzureSasSignature(varargin)
-
-```
-
-*azure.core.credential.AzureSasCredential.getSignature*
-
-```notalanguage
-  GETSIGNATURE Retrieves the shared access signature associated to this credential
-  Returns a character vector.
- 
-  Copyright 2021 The MathWorks, Inc.
-
-```
-
-*azure.core.credential.AzureSasCredential.update*
-
-```notalanguage
-  UPDATE Rotates the shared access signature associated to this credential
-  Returns an updated AzureSasCredential object.
-
-```
-
-
-#### azure.core.util.polling.LongRunningOperationStatus
-
-```notalanguage
-  LONGRUNNINGOPERATIONSTATUS Represent states of a long-running operation
-  The poll operation is considered complete when the status is one of:
-  SUCCESSFULLY_COMPLETED, USER_CANCELLED or FAILED.
- 
-  Possible values are:
-     FAILED
-     IN_PROGRESS
-     NOT_STARTED
-     SUCCESSFULLY_COMPLETED
-     USER_CANCELLED
-
-```
-
-*azure.core.util.polling.LongRunningOperationStatus.fromString*
-
-```notalanguage
-  FROMSTRING Creates a LongRunningOperationStatus from its string representation
-  A name argument of type character vector or scalar string is required.
-  A logical isComplete argument is required.
-  A azure.core.util.LongRunningOperationStatus is returned.
-
-```
-
-*azure.core.util.polling.LongRunningOperationStatus.isComplete*
-
-```notalanguage
-  ISCOMPLETE Returns a logical to represent if in a completed state or not
-
-```
-
-*azure.core.util.polling.LongRunningOperationStatus.toString*
-
-```notalanguage
-  TOSTRING Returns a string representation of LongRunningOperationStatus
-  Expected values are:
-     FAILED
-     IN_PROGRESS
-     NOT_STARTED
-     SUCCESSFULLY_COMPLETED
-     USER_CANCELLED
- 
-  A character vector is returned.
-
-```
-
-
-#### azure.core.util.polling.PollResponse
-
-```notalanguage
-  POLLRESPONSE Represents a response from long-running polling operation
-  It provides information such as the current status of the long-running
-  operation and any value returned in the poll.
- 
-  Can be created based on a corresponding com.azure.core.util.polling.PollResponse
-  Java object argument or a com.azure.core.util.polling.LongRunningOperationStatus
-  or azure.core.util.polling.LongRunningOperationStatus status argument and a
-  message argument of type character vector or scalar string.
-
-```
-
-*azure.core.util.polling.PollResponse.getRetryAfter*
-
-```notalanguage
-  GETRETRYAFTER Gets requested delay until next polling operation is performed
-  If a negative value is returned the poller should determine on its own when
-  the next poll operation is to occur.
-
-```
-
-*azure.core.util.polling.PollResponse.getStatus*
-
-```notalanguage
-  GETSTATUS Gets status of a long-running operation at last polling operation
-
-```
-
-*azure.core.util.polling.PollResponse.getValue*
-
-```notalanguage
-  GETVALUE The value returned as a result of the last successful poll operation
-  This can be any custom user defined object, or null if no value was returned
-  from the service. The return value will be subject to standard MATLAB to Java
-  data type conversion and the following conversions:
-     java.lang.String -> character vector
-
-```
-
-
-#### azure.core.util.polling.SyncPoller
-
-```notalanguage
-  SYNCPOLLER Simplifies executing long-running operations against Azure
-  There is no constructor as this is based on a Java interface. A SyncPoller
-  must be created based on the underlying SyncPoller Java object.
-
-```
-
-*azure.core.util.polling.SyncPoller.cancelOperation*
-
-```notalanguage
-  CANCELOPERATION Cancels the remote long-running operation
-  Requires cancellation to be supported by the service.
-
-```
-
-*azure.core.util.polling.SyncPoller.poll*
-
-```notalanguage
-  POLL Poll once and return the poll response received
-  A azure.core.util.polling.PollResponse is returned.
-
-```
-
-*azure.core.util.polling.SyncPoller.waitForCompletion*
-
-```notalanguage
-  WAITFORCOMPLETION Wait for polling to complete with optional timeout
-  A azure.core.util.polling.PollResponse is returned.
-  An optional timeout can be provided as a scalar number of seconds to
-  wait for polling to complete. The value will be converted to an integer value
-  of seconds.
-
-```
-
-
-#### azure.identity.DeviceCodeCredential
-
-```notalanguage
-  DEVICECODECREDENTIAL AAD credential acquires token with device code for AAD application
-
-```
-
-*azure.identity.DeviceCodeCredential.authenticate*
-
-```notalanguage
-  AUTHENTICATE  Authenticates a user via the device code flow
-  Can take a azure.core.credential.TokenRequestContext as an optional argument.
-  Returns a reactor.core.publisher.Mono as a azure.identity.AuthenticationRecord.
-
-```
-
-
-#### azure.identity.DeviceCodeInfo
-
-```notalanguage
-  DEVICECODEINFO Contains details of a device code request.
-
-```
-
-*azure.identity.DeviceCodeInfo.getExpiresOn*
-
-```notalanguage
-  GETEXPIRESON Gets the expiration time of device code.
-  Returns a datetime object.
-
-```
-
-*azure.identity.DeviceCodeInfo.getMessage*
-
-```notalanguage
-  GETMESSAGE Gets the message which should be displayed to the user.
-  Returns a character vector.
-
-```
-
-*azure.identity.DeviceCodeInfo.getUserCode*
-
-```notalanguage
-  GETUSERCODE Gets the code which user needs to provide when authenticating
-  at the verification URL. 
-  Returns a character vector.
-
-```
-
-*azure.identity.DeviceCodeInfo.getVerificationUrl*
-
-```notalanguage
-  GETVERIFICATIONURL Gets the URL where user can authenticate.
-  Returns a character vector.
-
-```
-
-
-#### azure.identity.DefaultAzureCredentialBuilder
-
-```notalanguage
-  DEFAULTAZURECREDENTIALBUILDER Credential builder for DefaultAzureCredential
-
-```
-
-*azure.identity.DefaultAzureCredentialBuilder.authorityHost*
+*azure.identity.ClientCertificateCredentialBuilder.authorityHost*
 
 ```notalanguage
   AUTHORITYHOST Specifies the Azure Active Directory endpoint to acquire tokens
-  An updated DefaultAzureCredentialBuilder is returned.
+  An updated ClientCertificateCredentialBuilder is returned.
 
 ```
 
-*azure.identity.DefaultAzureCredentialBuilder.build*
+*azure.identity.ClientCertificateCredentialBuilder.build*
 
 ```notalanguage
-  BUILD Creates new DefaultAzureCredential with the configured options set
+  BUILD Creates new ClientCertificateCredential with the configured options set
 
 ```
 
-*azure.identity.DefaultAzureCredentialBuilder.managedIdentityClientId*
+*azure.identity.ClientCertificateCredentialBuilder.clientId*
 
 ```notalanguage
-  MANAGEDIDENTITYCLIENTID Specifies client ID of user or system assigned identity
-  This credential can be used when in an environment with managed identities.
-  If unset, the value in the AZURE_CLIENT_ID environment variable will be used.
-  If neither is set, the default value is null and will only work with system
-  assigned managed identities and not user assigned managed identities.
-  An updated DefaultAzureCredentialBuilder is returned.
+  CLIENTID Sets client id
+  An updated ClientCertificateCredentialBuilder is returned.
 
 ```
 
-*azure.identity.DefaultAzureCredentialBuilder.tenantId*
+*azure.identity.ClientCertificateCredentialBuilder.pemCertificate*
 
 ```notalanguage
-  TENANTID Sets tenant id of user to authenticate through DefaultAzureCredential
-  An updated DefaultAzureCredentialBuilder is returned.
+  PEMCERTIFICATE Sets the path of the PEM certificate for authenticating to AAD
+  An updated ClientCertificateCredentialBuilder is returned.
 
 ```
 
-
-#### azure.identity.DefaultAzureCredential
+*azure.identity.ClientCertificateCredentialBuilder.tenantId*
 
 ```notalanguage
-  DEFAULTAZURECREDENTIAL Creates credential from environment or the shared token
-  It tries to create a valid credential in the following order:
-   EnvironmentCredential
-   ManagedIdentityCredential
-   SharedTokenCacheCredential
-   IntelliJCredential
-   VisualStudioCodeCredential
-   AzureCliCredential
-   Fails if none of the credentials above could be created.
+  TENANTID Sets tenant id to authenticate through ClientCertificateCredential
+  An updated ClientCertificateCredentialBuilder is returned.
 
 ```
 
@@ -663,38 +321,6 @@ azure.identity.CredentialBuilderBase is a class.
   HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
   Currently the Netty client is configured by default.
   An updated builder object is returned.
-
-```
-
-
-#### azure.identity.EnvironmentCredential
-
-```notalanguage
-  ENVIRONMENTCREDENTIAL Provides token credentials based on environment variables
-   The environment variables expected are:
-     AZURE_CLIENT_ID
-     AZURE_CLIENT_SECRET
-     AZURE_TENANT_ID
-  or:
-     AZURE_CLIENT_ID
-     AZURE_CLIENT_CERTIFICATE_PATH
-     AZURE_TENANT_ID
-  or:
-     AZURE_CLIENT_ID
-     AZURE_USERNAME
-     AZURE_PASSWORD
-
-```
-
-
-#### azure.identity.AzureCliCredential
-
-```notalanguage
-  AZURECLICREDENTIAL Provides token credentials based on Azure CLI command
-  If the CLI is installed and authenticated there is no need to further
-  authenticate within MATLAB.
-  A object is created based on a corresponding Java com.azure.identity.AzureCliCredential
-  object.
 
 ```
 
@@ -733,14 +359,6 @@ azure.identity.CredentialBuilderBase is a class.
 ```notalanguage
   RESOURCEID Sets client id
   An updated ManagedIdentityCredentialBuilder is returned.
-
-```
-
-
-#### azure.identity.ChainedTokenCredential
-
-```notalanguage
-  CHAINEDTOKENCREDENTIAL Provides a credential from a list of providers
 
 ```
 
@@ -798,101 +416,42 @@ azure.identity.CredentialBuilderBase is a class.
 ```
 
 
-#### azure.identity.ChainedTokenCredentialBuilder
+#### azure.identity.DeviceCodeCredential
 
 ```notalanguage
-  CHAINEDTOKENCREDENTIALBUILDER Builder for instantiating a ChainedTokenCredential
+  DEVICECODECREDENTIAL AAD credential acquires token with device code for AAD application
 
 ```
 
-*azure.identity.ChainedTokenCredentialBuilder.addLast*
+*azure.identity.DeviceCodeCredential.authenticate*
 
 ```notalanguage
-  ADDLAST Adds a credential to try to authenticate at the end of the chain
-
-```
-
-*azure.identity.ChainedTokenCredentialBuilder.build*
-
-```notalanguage
-  BUILD Creates new ChainedTokenCredential with the configured options set
+  AUTHENTICATE  Authenticates a user via the device code flow
+  Can take a azure.core.credential.TokenRequestContext as an optional argument.
+  Returns a reactor.core.publisher.Mono as a azure.identity.AuthenticationRecord.
 
 ```
 
 
-#### azure.identity.ClientSecretCredential
+#### azure.identity.EnvironmentCredentialBuilder
 
 ```notalanguage
-  CLIENTSECRETCREDENTIAL AAD credential acquires a token with a client secret
+  ENVIRONMENTCREDENTIALBUILDER Builder for EnvironmentCredentialBuilder
 
 ```
 
-
-#### azure.identity.SharedTokenCacheCredential
+*azure.identity.EnvironmentCredentialBuilder.authorityHost*
 
 ```notalanguage
-  DEVICECODECREDENTIAL A credential provider that provides token
-  credentials from the MSAL shared token cache.
+  AUTHORITYHOST Specifies the Azure Active Directory endpoint to acquire tokens
+  An updated EnvironmentCredentialBuilder is returned.
 
 ```
 
-*azure.identity.SharedTokenCacheCredential.restGetSas*
+*azure.identity.EnvironmentCredentialBuilder.build*
 
 ```notalanguage
-azure.identity.SharedTokenCacheCredential.restGetSas is an undocumented builtin static method or package function.
-
-```
-
-*azure.identity.SharedTokenCacheCredential.restFlow*
-
-```notalanguage
-azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin static method or package function.
-
-```
-
-
-#### azure.identity.AuthenticationRecord
-
-```notalanguage
-  Represents the account information relating to an authentication request
-  Held as a Java reactor.core.publisher.MonoMap.
-
-```
-
-*azure.identity.AuthenticationRecord.subscribe*
-
-```notalanguage
-  SUBSCRIBE Subscribe to this Mono and request unbounded demand
-  Used to trigger the device code challenge flow.
-  Returns a Java reactor.core.publisher.LambdaMonoSubscriber object.
-  The return value is not normally required.
-
-```
-
-
-#### azure.identity.TokenCachePersistenceOptions
-
-```notalanguage
-  TOKENREQUESTCONTEXT Contains details of a request to get a token
-  Can be created based on a corresponding com.azure.core.credential.TokenRequestContext
-  Java object argument or without an argument where further configuration is
-  required to add scopes.
-
-```
-
-*azure.identity.TokenCachePersistenceOptions.getName*
-
-```notalanguage
-  GETNAME Get the name.
-  Returns a character vector.
-
-```
-
-*azure.identity.TokenCachePersistenceOptions.setName*
-
-```notalanguage
-  SETNAME Set the name.
-  Returns an updated azure.core.identity.TokenCachePersistenceOptions.
+  BUILD Creates new EnvironmentCredential with the configured options set
 
 ```
 
@@ -913,16 +472,48 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 ```
 
 
-#### azure.identity.InteractiveBrowserCredential
+#### azure.identity.SharedTokenCacheCredentialBuilder
 
 ```notalanguage
-  INTERACTIVEBROWSERCREDENTIAL Prompt the login in the default browser
-  An AAD credential that acquires a token for an AAD application by prompting
-  the login in the default browser.
-  The oauth2 flow will notify the credential of the authentication code through
-  the reply URL.
-  The application to authenticate to must have delegated user login permissions 
-  and have http://localhost:{port} listed as a valid reply URL.
+  SHAREDTOKENCACHECREDENTIALBUILDER Builder for SharedTokenCacheCredential
+
+```
+
+*azure.identity.SharedTokenCacheCredentialBuilder.authorityHost*
+
+```notalanguage
+  AUTHORITYHOST Specifies the Azure Active Directory endpoint to acquire tokens
+  An updated SharedTokenCacheCredentialBuilder is returned.
+
+```
+
+*azure.identity.SharedTokenCacheCredentialBuilder.build*
+
+```notalanguage
+  BUILD Creates new SharedTokenCacheCredential with the configured options set
+
+```
+
+*azure.identity.SharedTokenCacheCredentialBuilder.clientId*
+
+```notalanguage
+  CLIENTID Sets client id
+  An updated SharedTokenCacheCredentialBuilder is returned.
+
+```
+
+*azure.identity.SharedTokenCacheCredentialBuilder.tenantId*
+
+```notalanguage
+  TENANTID Sets tenant id to authenticate through SharedTokenCacheCredential
+  An updated SharedTokenCacheCredentialBuilder is returned.
+
+```
+
+*azure.identity.SharedTokenCacheCredentialBuilder.tokenCachePersistenceOptions*
+
+```notalanguage
+  TOKENCACHEPERSISTENCEOPTIONS Sets tokenCachePersistenceOptions.
 
 ```
 
@@ -965,14 +556,6 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```
 
-*azure.identity.ClientSecretCredentialBuilder.pemCertificate*
-
-```notalanguage
-  PEMCERTIFICATE Sets the path of the PEM certificate for authenticating to AAD
-  An updated ClientSecretCredentialBuilder is returned.
-
-```
-
 *azure.identity.ClientSecretCredentialBuilder.tenantId*
 
 ```notalanguage
@@ -982,25 +565,105 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 ```
 
 
-#### azure.identity.EnvironmentCredentialBuilder
+#### azure.identity.ClientCertificateCredential
 
 ```notalanguage
-  ENVIRONMENTCREDENTIALBUILDER Builder for EnvironmentCredentialBuilder
+  CLIENTCERTIFICATECREDENTIAL AAD credential acquires a token with a client certificate
 
 ```
 
-*azure.identity.EnvironmentCredentialBuilder.authorityHost*
+
+#### azure.identity.InteractiveBrowserCredential
 
 ```notalanguage
-  AUTHORITYHOST Specifies the Azure Active Directory endpoint to acquire tokens
-  An updated EnvironmentCredentialBuilder is returned.
+  INTERACTIVEBROWSERCREDENTIAL Prompt the login in the default browser
+  An AAD credential that acquires a token for an AAD application by prompting
+  the login in the default browser.
+  The oauth2 flow will notify the credential of the authentication code through
+  the reply URL.
+  The application to authenticate to must have delegated user login permissions 
+  and have http://localhost:{port} listed as a valid reply URL.
 
 ```
 
-*azure.identity.EnvironmentCredentialBuilder.build*
+
+#### azure.identity.SharedTokenCacheCredential
 
 ```notalanguage
-  BUILD Creates new EnvironmentCredential with the configured options set
+  DEVICECODECREDENTIAL A credential provider that provides token
+  credentials from the MSAL shared token cache.
+
+```
+
+*azure.identity.SharedTokenCacheCredential.restGetSas*
+
+```notalanguage
+azure.identity.SharedTokenCacheCredential.restGetSas is an undocumented builtin static method or package function.
+
+```
+
+*azure.identity.SharedTokenCacheCredential.restFlow*
+
+```notalanguage
+azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin static method or package function.
+
+```
+
+
+#### azure.identity.ChainedTokenCredentialBuilder
+
+```notalanguage
+  CHAINEDTOKENCREDENTIALBUILDER Builder for instantiating a ChainedTokenCredential
+
+```
+
+*azure.identity.ChainedTokenCredentialBuilder.addLast*
+
+```notalanguage
+  ADDLAST Adds a credential to try to authenticate at the end of the chain
+
+```
+
+*azure.identity.ChainedTokenCredentialBuilder.build*
+
+```notalanguage
+  BUILD Creates new ChainedTokenCredential with the configured options set
+
+```
+
+
+#### azure.identity.EnvironmentCredential
+
+```notalanguage
+  ENVIRONMENTCREDENTIAL Provides token credentials based on environment variables
+   The environment variables expected are:
+     AZURE_CLIENT_ID
+     AZURE_CLIENT_SECRET
+     AZURE_TENANT_ID
+  or:
+     AZURE_CLIENT_ID
+     AZURE_CLIENT_CERTIFICATE_PATH
+     AZURE_TENANT_ID
+  or:
+     AZURE_CLIENT_ID
+     AZURE_USERNAME
+     AZURE_PASSWORD
+
+```
+
+
+#### azure.identity.DefaultAzureCredential
+
+```notalanguage
+  DEFAULTAZURECREDENTIAL Creates credential from environment or the shared token
+  It tries to create a valid credential in the following order:
+   EnvironmentCredential
+   ManagedIdentityCredential
+   SharedTokenCacheCredential
+   IntelliJCredential
+   VisualStudioCodeCredential
+   AzureCliCredential
+   Fails if none of the credentials above could be created.
 
 ```
 
@@ -1016,6 +679,55 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 
 ```notalanguage
   BUILD Creates new AzureCliCredential with the configured options set
+
+```
+
+
+#### azure.identity.DeviceCodeInfo
+
+```notalanguage
+  DEVICECODEINFO Contains details of a device code request.
+
+```
+
+*azure.identity.DeviceCodeInfo.getExpiresOn*
+
+```notalanguage
+  GETEXPIRESON Gets the expiration time of device code.
+  Returns a datetime object.
+
+```
+
+*azure.identity.DeviceCodeInfo.getMessage*
+
+```notalanguage
+  GETMESSAGE Gets the message which should be displayed to the user.
+  Returns a character vector.
+
+```
+
+*azure.identity.DeviceCodeInfo.getUserCode*
+
+```notalanguage
+  GETUSERCODE Gets the code which user needs to provide when authenticating
+  at the verification URL. 
+  Returns a character vector.
+
+```
+
+*azure.identity.DeviceCodeInfo.getVerificationUrl*
+
+```notalanguage
+  GETVERIFICATIONURL Gets the URL where user can authenticate.
+  Returns a character vector.
+
+```
+
+
+#### azure.identity.ClientSecretCredential
+
+```notalanguage
+  CLIENTSECRETCREDENTIAL AAD credential acquires a token with a client secret
 
 ```
 
@@ -1122,2130 +834,111 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 ```
 
 
-#### azure.identity.SharedTokenCacheCredentialBuilder
+#### azure.identity.ChainedTokenCredential
 
 ```notalanguage
-  SHAREDTOKENCACHECREDENTIALBUILDER Builder for SharedTokenCacheCredential
+  CHAINEDTOKENCREDENTIAL Provides a credential from a list of providers
 
 ```
 
-*azure.identity.SharedTokenCacheCredentialBuilder.authorityHost*
+
+#### azure.identity.DefaultAzureCredentialBuilder
+
+```notalanguage
+  DEFAULTAZURECREDENTIALBUILDER Credential builder for DefaultAzureCredential
+
+```
+
+*azure.identity.DefaultAzureCredentialBuilder.authorityHost*
 
 ```notalanguage
   AUTHORITYHOST Specifies the Azure Active Directory endpoint to acquire tokens
-  An updated SharedTokenCacheCredentialBuilder is returned.
+  An updated DefaultAzureCredentialBuilder is returned.
 
 ```
 
-*azure.identity.SharedTokenCacheCredentialBuilder.build*
+*azure.identity.DefaultAzureCredentialBuilder.build*
 
 ```notalanguage
-  BUILD Creates new SharedTokenCacheCredential with the configured options set
+  BUILD Creates new DefaultAzureCredential with the configured options set
 
 ```
 
-*azure.identity.SharedTokenCacheCredentialBuilder.clientId*
+*azure.identity.DefaultAzureCredentialBuilder.managedIdentityClientId*
 
 ```notalanguage
-  CLIENTID Sets client id
-  An updated SharedTokenCacheCredentialBuilder is returned.
+  MANAGEDIDENTITYCLIENTID Specifies client ID of user or system assigned identity
+  This credential can be used when in an environment with managed identities.
+  If unset, the value in the AZURE_CLIENT_ID environment variable will be used.
+  If neither is set, the default value is null and will only work with system
+  assigned managed identities and not user assigned managed identities.
+  An updated DefaultAzureCredentialBuilder is returned.
 
 ```
 
-*azure.identity.SharedTokenCacheCredentialBuilder.tenantId*
+*azure.identity.DefaultAzureCredentialBuilder.tenantId*
 
 ```notalanguage
-  TENANTID Sets tenant id to authenticate through SharedTokenCacheCredential
-  An updated SharedTokenCacheCredentialBuilder is returned.
+  TENANTID Sets tenant id of user to authenticate through DefaultAzureCredential
+  An updated DefaultAzureCredentialBuilder is returned.
 
 ```
 
-*azure.identity.SharedTokenCacheCredentialBuilder.tokenCachePersistenceOptions*
 
-```notalanguage
-  TOKENCACHEPERSISTENCEOPTIONS Sets tokenCachePersistenceOptions.
-
-```
-
-
-#### azure.storage.blob.BlobContainerClientBuilder
-
-```notalanguage
-  BLOBCONTAINERCLIENTBUILDER Aids construction of BlobContinerClients
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.buildClient*
-
-```notalanguage
-  BUILDCLIENT Creates a BlobContainerClient based on options set in the builder
-  A built BlobContainerClient object is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.connectionString*
-
-```notalanguage
-  CONNECTIONSTRING Sets the connection string to connect to the service
-  connectionString should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.containerName*
-
-```notalanguage
-  CONTAINERNAME Sets the name of the container
-  containerName should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.credential*
-
-```notalanguage
-  CREDENTIAL Sets the credential used to authorize requests
-  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.endpoint*
-
-```notalanguage
-  ENDPOINT Sets the blob container endpoint
-  The endpoint is also parsed for additional information i.e. the SAS token
-  endpoint should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.httpClient*
-
-```notalanguage
-  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
-  Currently the Netty client is configured by default.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClientBuilder.sasToken*
-
-```notalanguage
-  sasToken Sets the SAS token used to authorize requests
-  sasToken should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-
-#### azure.storage.blob.BlobServiceClientBuilder
-
-```notalanguage
-  BLOBSERVICECLIENTBUILDER Aids construction of BlobServiceClients
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.buildClient*
-
-```notalanguage
-  BUILDCLIENT Creates a BlobServiceClient based on options set in the builder
-  A built BlobServiceClient object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.connectionString*
-
-```notalanguage
-  CONNECTIONSTRING Sets the connection string to connect to the service
-  connectionString should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.credential*
-
-```notalanguage
-  CREDENTIAL Sets the credential used to authorize requests
-  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.endpoint*
-
-```notalanguage
-  ENDPOINT Sets the blob service endpoint
-  The endpoint is also parsed for additional information i.e. the SAS token
-  endpoint should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.httpClient*
-
-```notalanguage
-  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
-  Currently the Netty client is configured by default.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.retryOptions*
-
-```notalanguage
-  RETRYOPTIONS Sets request retry options for all requests made through the client
-  retryOptions may be either a com.azure.storage.common.policy.RequestRetryOptions
-  or a azure.storage.common.policy.RequestRetryOptions object.
-  An updated azure.storage.blob.BlobServiceClientBuilder object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClientBuilder.sasToken*
-
-```notalanguage
-  SASTOKEN Sets the SAS token used to authorize requests
-  sasToken should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-
-#### azure.storage.blob.BlobClientBuilder
-
-```notalanguage
-  BLOBCLIENTBUILDER Aids the configuration and instantiation of BlobClients
-
-```
-
-*azure.storage.blob.BlobClientBuilder.blobName*
-
-```notalanguage
-  BLOBNAME Sets the name of the blob
-  blobName should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.buildClient*
-
-```notalanguage
-  BUILDCLIENT Creates a BlobClient based on options set in the builder
-  A built BlobClient object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.connectionString*
-
-```notalanguage
-  CONNECTIONSTRING Sets the connection string to connect to the service
-  connectionString should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.containerName*
-
-```notalanguage
-  CONTAINERNAME Sets the name of the container that contains the blob
-  containerName should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.credential*
-
-```notalanguage
-  CREDENTIAL Sets the credential used to authorize requests
-  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential
-  or azure.core.credential.TokenCredential.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.endpoint*
-
-```notalanguage
-  ENDPOINT Sets the client endpoint
-  The endpoint is also parsed for additional information i.e. the SAS token
-  endpoint should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.httpClient*
-
-```notalanguage
-  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
-  Currently the Netty client is configured by default.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.sasToken*
-
-```notalanguage
-  sasToken Sets the SAS token used to authorize requests
-  sasToken should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.blob.BlobClientBuilder.setAnonymousAccess*
-
-```notalanguage
-  SETANONYMOUSACCESS Clears the credential used to authorize the request
-  An updated builder object is returned.
-
-```
-
-
-#### azure.storage.blob.BlobContainerClient
-
-```notalanguage
-  BLOBCONTAINERCLIENT Client to a container
-
-```
-
-*azure.storage.blob.BlobContainerClient.delete*
-
-```notalanguage
-  DELETE BlobContainerClient destructor - in MATLAB delete is a
-  reserved method name for the class destructor. This method
-  does not delete Blob Containers on Azure. To delete the Azure
-  Blob Container use the deleteContainer method in MATLAB.
-
-```
-
-*azure.storage.blob.BlobContainerClient.create*
-
-```notalanguage
-  CREATE Creates a new container within a storage account
-
-```
-
-*azure.storage.blob.BlobContainerClient.deleteContainer*
-
-```notalanguage
-  DELETECONTAINER Deletes the container - this is the equivalent of the
-  "delete" method in the Azure Java API but because "delete" is a
-  reserved method name in MATLAB, the method is named DELETECONTAINER.
- 
-  If a lease is active on the blob, parameter 'leaseId' and the
-  actual lease id as value can be provided.
- 
-  Example:
-    client.deleteContainer('leaseId','f6eb8bda-cf33-4da1-8e50-11d1a6dd8797')
-
-```
-
-*azure.storage.blob.BlobContainerClient.exists*
-
-```notalanguage
-  EXISTS Tests if the container this client represents exists in Azure
-  A logical is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.generateUserDelegationSas*
-
-```notalanguage
-  GENERATEUSERDELEGATIONSAS Generates a user delegation SAS for the
-  container using the specified BlobServiceSasSignatureValues and
-  UserDelegationKey. The UserDelegationKey can be obtained through the
-  getUserDelegationKey method of a BlobServiceClient.
- 
-  The SAS is returned as a character vector.
-
-```
-
-*azure.storage.blob.BlobContainerClient.getAccountName*
-
-```notalanguage
-  GETACCOUNTNAME Get associated account name
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.getAccountUrl*
-
-```notalanguage
-  GETACCOUNTURL Get associated account URL
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.getBlobClient*
-
-```notalanguage
-  GETBLOBCLIENT Initializes a new BlobClient object 
-  blobName should be a scalar string or character vector.
-  A BlobClient is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.getBlobContainerName*
-
-```notalanguage
-  GETCONTAINERNAME Get the container name
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.getBlobContainerUrl*
-
-```notalanguage
-  GETBLOBCONTAINERURL Get associated container URL
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.getServiceClient*
-
-```notalanguage
-  GETSERVICECLIENT Get a client pointing to the account.
-
-```
-
-*azure.storage.blob.BlobContainerClient.listBlobs*
-
-```notalanguage
-  LISTBLOBS Returns a list of blobs in this container
-  Folder structures are flattened.
-  An array of BlobItems is returned.
-
-```
-
-*azure.storage.blob.BlobContainerClient.listBlobsByHierarchy*
-
-```notalanguage
-  LISTBLOBSBYHIERARCHY Returns the blobs and directories (prefixes) under the given directory (prefix).
-  Directories will have BlobItem.isPrefix() set to true. 
-  Blob names are returned in lexicographic order.
-  An array of BlobItems is returned.
-
-```
-
-
-#### azure.storage.blob.BlobServiceClient
-
-```notalanguage
-  BLOBSERVICECLIENT
-
-```
-
-*azure.storage.blob.BlobServiceClient.createBlobContainer*
-
-```notalanguage
-  CREATEBLOBCONTAINER Creates a new container within a storage account
-  If a container with the same name already exists, the operation fails.
-  The name of the container to create should be passed as a character vector or
-  scalar string.
-  If the container already exists an empty azure.storage.blob.BlobContainerClient
-  is returned otherwise a non empty azure.storage.blob.BlobContainerClient is
-  returned.
-  In verbose logging mode a message is logged.
-
-```
-
-*azure.storage.blob.BlobServiceClient.deleteBlobContainer*
-
-```notalanguage
-  DELETEBLOBCONTAINER Deletes the specified container in the storage account
-  The name of the container to create should be passed as a character vector or
-  scalar string.
-
-```
-
-*azure.storage.blob.BlobServiceClient.generateAccountSas*
-
-```notalanguage
-  GENERATEACCOUNTSAS Generates an account SAS for the Azure Storage account
-  The client must be authenticated via StorageSharedKeyCredential
-  The SAS is returned as a character vector.
-
-```
-
-*azure.storage.blob.BlobServiceClient.getAccountInfo*
-
-```notalanguage
-  GETACCOUNTINFO Returns the sku name and account kind for the account
-  A StorageAccountInfo object is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClient.getAccountName*
-
-```notalanguage
-  GETACCOUNTNAME Get associated account name
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClient.getAccountUrl*
-
-```notalanguage
-  GETACCOUNTURL Get associated account URL
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobServiceClient.getUserDelegationKey*
-
-```notalanguage
-  GETUSERDELEGATIONKEY Gets a user delegation key for use with this
-  account's blob storage. 
-  
-  Note: This method call is only valid when using TokenCredential. I.e. not
-  when working with ConnectionString or StorageSharedKey authentication
-  approaches.
- 
-  The function takes two datetime objects as input, the start and expiry
-  time of the key's validity.
- 
-  Returns a UserDelegationKey object.
- 
-  Example:
- 
-    key = sc.getUserDelegationKey(datetime('now'),datetime('now')+hours(1))
-
-```
-
-*azure.storage.blob.BlobServiceClient.listBlobContainers*
-
-```notalanguage
-  LISTBLOBCONTAINERS
-
-```
-
-*azure.storage.blob.BlobServiceClient.setAnonymousAccess*
-
-```notalanguage
-  SETANONYMOUSACCESS Clears the credential used to authorize the request
-  An updated builder object is returned.
-
-```
-
-
-#### azure.storage.blob.BlobClient
-
-```notalanguage
-  BLOBCLIENT Client performs generic blob operations
-
-```
-
-*azure.storage.blob.BlobClient.delete*
-
-```notalanguage
-  DELETE BlobClient destructor - in MATLAB delete is a reserved
-  method name for the class destructor. This method does not delete
-  Blobs on Azure. To delete the Azure Blob use the deleteBlob
-  method in MATLAB.
-
-```
-
-*azure.storage.blob.BlobClient.copyFromUrl*
-
-```notalanguage
-  COPYFROMURL Copies the data at the source URL to a blob
-  The call waits for the copy to complete before returning a response.
-  A copyId is returned as a character vector it can apply for certain long
-  running operations.
- 
-  If a lease is active on the blob, parameter 'leaseId' and the
-  actual lease id as value can be provided.
-
-```
-
-*azure.storage.blob.BlobClient.deleteBlob*
-
-```notalanguage
-  DELETEBLOB Deletes the blob - this is the equivalent of the "delete"
-  method in the Azure Java API but because "delete" is a reserved
-  method name in MATLAB, the method is named deleteBlob.
- 
-  If a lease is active on the blob, parameter 'leaseId' and the
-  actual lease id as value can be provided.
- 
-  Example:
-    client.deleteBlob('leaseId','f6eb8bda-cf33-4da1-8e50-11d1a6dd8797')
-
-```
-
-*azure.storage.blob.BlobClient.downloadToFile*
-
-```notalanguage
-  DOWNLOADTOFILE Downloads the entire blob into a file specified by filePath
-  To overwrite an existing file use a parameter 'overwrite' and a logical true.
-  By default a file is not overwritten.
- 
-  Example:
-    blobClient.downloadToFile('/mydir/myfile.txt', 'overwrite', true);
-
-```
-
-*azure.storage.blob.BlobClient.exists*
-
-```notalanguage
-  EXISTS Gets if the blob this client represents exists in Azure
-  A logical is returned if the Container exists indicating if the blob
-  exists or not. Otherwise an exception is thrown, for example if the
-  container does not exist. Consider using a container client to check for
-  the existance of the container first.
-
-```
-
-*azure.storage.blob.BlobClient.generateSas*
-
-```notalanguage
-  GENERATESAS Generates a SAS for the blob
-  The client must be authenticated via StorageSharedKeyCredential
-  The SAS is returned as a character vector.
-
-```
-
-*azure.storage.blob.BlobClient.generateUserDelegationSas*
-
-```notalanguage
-  GENERATEUSERDELEGATIONSAS Generates a user delegation SAS for the
-  blob using the specified BlobServiceSasSignatureValues and
-  UserDelegationKey. The UserDelegationKey can be obtained through the
-  getUserDelegationKey method of a BlobServiceClient.
- 
-  The SAS is returned as a character vector.
-
-```
-
-*azure.storage.blob.BlobClient.getAccountName*
-
-```notalanguage
-  GETACCOUNTNAME Get associated account name
-  A character vector is returned.
-
-```
-
-*azure.storage.blob.BlobClient.getBlobUrl*
-
-```notalanguage
-  GETBLOBURL Gets the URL of the blob represented by this client
-  The URL is returned as a character vector.
-
-```
-
-*azure.storage.blob.BlobClient.getContainerClient*
-
-```notalanguage
-  GETCONTAINERCLIENT Gets a client pointing to the parent container.
-
-```
-
-*azure.storage.blob.BlobClient.uploadFromFile*
-
-```notalanguage
-  UPLOADFROMFILE Creates a or updates a block blob To overwrite an
-  existing blob use a parameter 'overwrite' and a logical true. By
-  default a blob is not overwritten.
- 
-  If a lease is active on the blob, parameter 'leaseId' and the
-  actual lease id as value can be provided.
- 
-  Example:
-    blobClient.uploadFromFile('/mydir/myfile.txt',...
-        'overwrite', true,...
-        'leaseId','f6eb8bda-cf33-4da1-8e50-11d1a6dd8797');
-
-```
-
-
-#### azure.storage.blob.models.ListBlobsOptions
-
-```notalanguage
-  LISTBLOBSOPTIONS Defines options available to configure the behavior of a call to listBlobs on a BlobContainerClient
-
-```
-
-*azure.storage.blob.models.ListBlobsOptions.getDetails*
-
-```notalanguage
-  GETDETAILS Returns a BlobListDetails object
-
-```
-
-*azure.storage.blob.models.ListBlobsOptions.getMaxResultsPerPage*
-
-```notalanguage
-  GETDETAILS Returns the maximum number of blobs to return, including all BlobPrefix elements
-  A double is returned.
-  An empty [] is returned if not set.
-
-```
-
-*azure.storage.blob.models.ListBlobsOptions.getPrefix*
-
-```notalanguage
-  GETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
-
-```
-
-*azure.storage.blob.models.ListBlobsOptions.setDetails*
-
-```notalanguage
-  SETDETAILS Returns a ListBlobsOptions object
-
-```
-
-*azure.storage.blob.models.ListBlobsOptions.setMaxResultsPerPage*
-
-```notalanguage
-  SETDETAILS Returns a ListBlobsOptions object
-
-```
-
-*azure.storage.blob.models.ListBlobsOptions.setPrefix*
-
-```notalanguage
-  SETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
-
-```
-
-
-#### azure.storage.blob.models.BlobItemProperties
-
-```notalanguage
-  BlobItemProperties Properties of a blob
-
-```
-
-*azure.storage.blob.models.BlobItemProperties.getContentMd5*
-
-```notalanguage
-  GETCONTENTMD5 Get the getContentMd5 property
-  Return the base64 value shown in the Azure portal
-
-```
-
-*azure.storage.blob.models.BlobItemProperties.getContentLength*
-
-```notalanguage
-  GETCONTENTLENGTH Get the contentType property
-
-```
-
-*azure.storage.blob.models.BlobItemProperties.getContentType*
-
-```notalanguage
-  GETCONTENTTYPE Get the getContentType property
-
-```
-
-*azure.storage.blob.models.BlobItemProperties.getContentLanguage*
-
-```notalanguage
-  GETCONTENTLANGUAGE Get the getContentLanguage property
-
-```
-
-*azure.storage.blob.models.BlobItemProperties.getContentEncoding*
-
-```notalanguage
-  GETCONTENTENCODING Get the getContentEncoding property
-
-```
-
-*azure.storage.blob.models.BlobItemProperties.getCacheControl*
-
-```notalanguage
-  GETCACHECONTROL Get the cacheControl property
-
-```
-
-
-#### azure.storage.blob.models.BlobContainerItem
-
-```notalanguage
-  BLOBCONTAINERITEM An Azure Storage container
-
-```
-
-*azure.storage.blob.models.BlobContainerItem.getName*
-
-```notalanguage
-  GETNAME Returns the container's name as a character vector
-
-```
-
-
-#### azure.storage.blob.models.BlobItem
-
-```notalanguage
-  BlobItem
-
-```
-
-*azure.storage.blob.models.BlobItem.getMetadata*
-
-```notalanguage
-  GETMETADATA Get the metadata property
-
-```
-
-*azure.storage.blob.models.BlobItem.getName*
-
-```notalanguage
-  GETNAME Returns the blob's name as a character vector
-
-```
-
-*azure.storage.blob.models.BlobItem.getProperties*
-
-```notalanguage
-  GETPROPERTIES Get the properties property
-
-```
-
-*azure.storage.blob.models.BlobItem.getSnapshot*
-
-```notalanguage
-  GETSNAPSHOT Returns the blob's snapshot property as a character vector
-
-```
-
-*azure.storage.blob.models.BlobItem.getTags*
-
-```notalanguage
-  GETTAGS Get the tags property
-
-```
-
-*azure.storage.blob.models.BlobItem.getVersionId*
-
-```notalanguage
-  GETVERSIONID Returns the blob's versionId property as a character vector
-
-```
-
-*azure.storage.blob.models.BlobItem.isDeleted*
-
-```notalanguage
-  isDeleted Get the deleted property, returns a logical
-
-```
-
-*azure.storage.blob.models.BlobItem.isPrefix*
-
-```notalanguage
-  ISPREFIX Get the isPrefix property: If blobs are named to mimic a directory hierarchy
-
-```
-
-
-#### azure.storage.blob.models.StorageAccountInfo
-
-```notalanguage
-  STORAGEACCOUNTINFO Holds information related to the storage account
-  Currently only constructing an object based on and existing java object of
-  type StorageAccountInfo is supported.
-
-```
-
-*azure.storage.blob.models.StorageAccountInfo.getAccountKind*
-
-```notalanguage
-  GETACCOUNTKIND Describes the type of the storage account
-  Values: BLOB_STORAGE, BLOCK_BLOB_STORAGE, FILE_STORAGE, STORAGE, STORAGE_V2
-  A character vector is returned rather than an enumeration
-
-```
-
-
-#### azure.storage.blob.models.BlobListDetails
-
-```notalanguage
-  BLOBLISTDETAILS Allows users to specify additional information the service should return with each blob when listing blobs
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveVersions*
-
-```notalanguage
-  GETRETRIEVEVERSIONS Whether versions should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveUncommittedBlobs*
-
-```notalanguage
-  GETRETRIEVEUNCOMMITTEDBLOBS Whether blob tags should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveTags*
-
-```notalanguage
-  GETRETRIEVETAGS Whether blob tags should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveSnapshots*
-
-```notalanguage
-  GETRETRIEVESNAPSHOTS Whether snapshots should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveMetadata*
-
-```notalanguage
-  GETRETRIEVEMETADATA Whether blob metadata should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveLegalHold*
-
-```notalanguage
-  GETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveImmutabilityPolicy*
-
-```notalanguage
-  GETRETRIEVEIMMUTABILITYPOLICY Whether immutability policy for the blob should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobsWithVersions*
-
-```notalanguage
-  GETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobs*
-
-```notalanguage
-  GETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.getRetrieveCopy*
-
-```notalanguage
-  GETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveVersions*
-
-```notalanguage
-  SETRETRIEVEUNCOMMITTEDBLOBS Whether versions should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveUncommittedBlobs*
-
-```notalanguage
-  SETRETRIEVEUNCOMMITTEDBLOBS Whether blob metadata should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveTags*
-
-```notalanguage
-  setRetrieveTags Whether blob tags should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveSnapshots*
-
-```notalanguage
-  setRetrieveSnapshots Whether snapshots should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveMetadata*
-
-```notalanguage
-  SETRETRIEVEMETADATA Whether blob metadata should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveLegalHold*
-
-```notalanguage
-  SETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveImmutabilityPolicy*
-
-```notalanguage
-  SETRETRIEVEIMMUTABILITYPOLICY Whether blobs which have been deleted with versioning should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobsWithVersions*
-
-```notalanguage
-  SETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobs*
-
-```notalanguage
-  SETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
-
-```
-
-*azure.storage.blob.models.BlobListDetails.setRetrieveCopy*
-
-```notalanguage
-  SETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
-
-```
-
-
-#### azure.storage.blob.models.UserDelegationKey
-
-```notalanguage
-  USERDELEGATIONKEY A user delegation key.
-
-```
-
-*azure.storage.blob.models.UserDelegationKey.getSignedStart*
-
-```notalanguage
- GETSIGNEDSTART Get the signedStart property: The date-time the
- key is active.
-
-```
-
-*azure.storage.blob.models.UserDelegationKey.getSignedExpiry*
-
-```notalanguage
-  GETSIGNEDEXPIRY Get the signedExpiry property: The date-time
-  the key expires.
-
-```
-
-
-#### azure.storage.blob.sas.BlobSasPermission
-
-```notalanguage
-  BLOBSASPERMISSION Constructs a string of permissions granted by Account SAS
-  Setting a value to true means that any SAS which uses these permissions will
-  grant permissions for that operation.
-  Once the required values are set, the object should be serialized with
-  toString and set as the permissions field on a BlobSasSignatureValues
-  object
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.parse*
-
-```notalanguage
-  PARSE Creates a BlobSasPermission from the specified permissions string
-  A azure.storage.blob.sas.BlobSasPermission object is returned.
-  permString should be of type scalar string or character vector.
-  Throws an IllegalArgumentException if it encounters a character that does
-  not correspond to a valid permission.
-  This is a static method.
-  Expected characters are r, a, c, w, or d.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.hasAddPermission*
-
-```notalanguage
-  HASADDPERMISSION Returns the add permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.hasCreatePermission*
-
-```notalanguage
-  HASCREATEPERMISSION Returns the create permission status
-  The result is returned as a logical
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.hasDeletePermission*
-
-```notalanguage
-  HASDELETEPERMISSION Returns the delete permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.hasReadPermission*
-
-```notalanguage
-  HASREADPERMISSION Returns the read permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.hasWritePermission*
-
-```notalanguage
-  HASWRITEPERMISSION Returns the write permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.setAddPermission*
-
-```notalanguage
-  SETADDPERMISSION Sets the add permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.setCreatePermission*
-
-```notalanguage
-  SETCREATEPERMISSION Sets the create permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.setDeletePermission*
-
-```notalanguage
-  SETDELETEPERMISSION Sets the delete permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.setReadPermission*
-
-```notalanguage
-  SETREADPERMISSION Sets the read permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.setWritePermission*
-
-```notalanguage
-  SETWRITEPERMISSION Sets the write permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobSasPermission.toString*
-
-```notalanguage
-  TOSTRING Converts the given permissions to a String
-  A character vector is returned.
-
-```
-
-
-#### azure.storage.blob.sas.BlobContainerSasPermission
-
-```notalanguage
-  BLOBCONTAINERSASPERMISSION Constructs a string of permissions granted by Account SAS
-  Setting a value to true means that any SAS which uses these permissions will
-  grant permissions for that operation.
-  Once the required values are set, the object should be serialized with
-  toString and set as the permissions field on a BlobSasSignatureValues
-  object
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.parse*
-
-```notalanguage
-  PARSE Creates a BlobContainerSasPermission from the specified permissions string
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-  permString should be of type scalar string or character vector.
-  Throws an IllegalArgumentException if it encounters a character that does
-  not correspond to a valid permission.
-  This is a static method.
-  Expected characters are r, a, c, w, or d.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.hasAddPermission*
-
-```notalanguage
-  HASADDPERMISSION Returns the add permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.hasCreatePermission*
-
-```notalanguage
-  HASCREATEPERMISSION Returns the create permission status
-  The result is returned as a logical
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.hasDeletePermission*
-
-```notalanguage
-  HASDELETEPERMISSION Returns the delete permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.hasListPermission*
-
-```notalanguage
-  HASLISTPERMISSION Returns the list permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.hasReadPermission*
-
-```notalanguage
-  HASREADPERMISSION Returns the read permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.hasWritePermission*
-
-```notalanguage
-  HASWRITEPERMISSION Returns the write permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.setAddPermission*
-
-```notalanguage
-  SETADDPERMISSION Sets the add permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.setCreatePermission*
-
-```notalanguage
-  SETCREATEPERMISSION Sets the create permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.setDeletePermission*
-
-```notalanguage
-  SETDELETEPERMISSION Sets the delete permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.setListPermission*
-
-```notalanguage
-  SETLISTPERMISSION Sets the list permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.setReadPermission*
-
-```notalanguage
-  SETREADPERMISSION Sets the read permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.setWritePermission*
-
-```notalanguage
-  SETWRITEPERMISSION Sets the write permission status
-  The permission argument should be of type logical.
-  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
-
-```
-
-*azure.storage.blob.sas.BlobContainerSasPermission.toString*
-
-```notalanguage
-  TOSTRING Converts the given permissions to a String
-  A character vector is returned.
-
-```
-
-
-#### azure.storage.blob.sas.BlobServiceSasSignatureValues
-
-```notalanguage
-  BLOBSERVICESASSIGNATUREVALUES Used to initialize a SAS for a Blob service
-  When the values are set, use the generateSas method on the desired service
-  client to obtain a representation of the SAS which can then be applied to a
-  new client using the .sasToken(String) method on the desired client builder.
- 
-  Example
-    bsssv = azure.storage.blob.sas.BlobServiceSasSignatureValues(expiryTime, permissions);
- 
-  Argument types:
-    expiryTime:  datetime ideally with defined TimeZone to avoid any 
-                 confusion, if TimeZone is not set, 'local' is assumed
-    permissions: azure.storage.blob.sas.BlobSasPermission or
-                 BlobContainerSasPermission
-
-```
-
-
-#### azure.storage.blob.specialized.BlobLeaseClient
-
-```notalanguage
-  BLOBLEASECLIENT This class provides a client that contains all the
-  leasing operations for BlobContainerClient and BlobClient. This client
-  acts as a supplement to those clients and only handles leasing
-  operations.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.breakLease*
-
-```notalanguage
-  BREAKLEASE Breaks the previously acquired lease, if it
-  exists.
- 
-  Returns the remaining time in the broken lease in seconds.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.changeLease*
-
-```notalanguage
-  CHANGELEASE Changes the lease ID.
- 
-  Returns the new lease ID.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.releaseLease*
-
-```notalanguage
-  RELEASELEASE Releases the previously acquired lease.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.renewLease*
-
-```notalanguage
-  RENEWLEASE Renews the previously acquired lease.
- 
-  Returns the renewed lease ID.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.acquireLease*
-
-```notalanguage
-  ACQUIRELEASE Acquires a lease for write and delete
-  operations. The lease duration must be between 15 to 60
-  seconds or -1 for an infinite duration.
- 
-  Returns the lease ID.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.getResourceUrl*
-
-```notalanguage
-  GETRESOURCEURL Gets the URL of the lease client.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClient.getLeaseId*
-
-```notalanguage
-  GETLEASEID Get the lease ID for this lease.
-
-```
-
-
-#### azure.storage.blob.specialized.BlobLeaseClientBuilder
-
-```notalanguage
-  BLOBCLIENTBUILDER This class provides a fluent builder API to help aid
-  the configuration and instantiation of Storage Lease clients.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClientBuilder.buildClient*
-
-```notalanguage
-  BUILDCLIENT Creates a BlobLeaseClient based on the
-  configurations set in the builder.
- 
-  Returns a BlobLeaseClient based on the configurations in this
-  builder.
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClientBuilder.leaseId*
-
-```notalanguage
-  CONTAINERCLIENT Configures the builder based on the passed
-  BlobContainerClient. This will set the HttpPipeline and URL
-  that are used to interact with the service.
- 
-  Returns the updated BlobLeaseClientBuilder object
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClientBuilder.containerClient*
-
-```notalanguage
-  CONTAINERCLIENT Configures the builder based on the passed
-  BlobContainerClient. This will set the HttpPipeline and URL
-  that are used to interact with the service.
- 
-  Returns the updated BlobLeaseClientBuilder object
-
-```
-
-*azure.storage.blob.specialized.BlobLeaseClientBuilder.blobClient*
-
-```notalanguage
-  BLOBCLIENT Configures the builder based on the passed
-  BlobClient. This will set the HttpPipeline and URL that are
-  used to interact with the service.
- 
-  Returns the updated BlobLeaseClientBuilder object
-
-```
-
-
-#### azure.storage.queue.QueueClientBuilder
-
-```notalanguage
-  QUEUECLIENTBUILDER Aids the configuration and instantiation of QueueClients
-
-```
-
-*azure.storage.queue.QueueClientBuilder.buildClient*
-
-```notalanguage
-  BUILDCLIENT Creates a QueueClient based on options set in the builder
-  A built QueueClient object is returned.
-
-```
-
-*azure.storage.queue.QueueClientBuilder.connectionString*
-
-```notalanguage
-  CONNECTIONSTRING Sets the connection string to connect to the service
-  connectionString should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueClientBuilder.credential*
-
-```notalanguage
-  CREDENTIAL Sets the credential used to authorize requests
-  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueClientBuilder.endpoint*
-
-```notalanguage
-  ENDPOINT Sets the client endpoint
-  The endpoint is also parsed for additional information i.e. the SAS token
-  endpoint should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueClientBuilder.httpClient*
-
-```notalanguage
-  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
-  Currently the Netty client is configured by default.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueClientBuilder.queueName*
-
-```notalanguage
-  QUEUENAME Sets the name of the container that contains the queue
-  containerName should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueClientBuilder.sasToken*
-
-```notalanguage
-  sasToken Sets the SAS token used to authorize requests
-  sasToken should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-
-#### azure.storage.queue.QueueClient
-
-```notalanguage
-  QUEUECLIENT Client performs generic queue operations
-
-```
-
-*azure.storage.queue.QueueClient.delete*
-
-```notalanguage
-  DELETE QueueClient destructor - in MATLAB delete is a
-  reserved method name for the class destructor. This method
-  does not delete Queues on Azure. To delete the Azure
-  Queue use the deleteQueue method in MATLAB.
-
-```
-
-*azure.storage.queue.QueueClient.clearMessages*
-
-```notalanguage
-  CLEARMESSAGES Deletes all messages in the queue
-
-```
-
-*azure.storage.queue.QueueClient.create*
-
-```notalanguage
-  CREATE Creates a new queue
-
-```
-
-*azure.storage.queue.QueueClient.deleteMessage*
-
-```notalanguage
-  DELETEMESSAGE Deletes the specified message from the queue
-  The messageId and popReceipt arguments should be of type character vector or
-  scalar string
-
-```
-
-*azure.storage.queue.QueueClient.deleteQueue*
-
-```notalanguage
-  DELETEQUEUE Deletes the queue
-
-```
-
-*azure.storage.queue.QueueClient.generateSas*
-
-```notalanguage
-  GENERATESAS Generates a SAS for the queue
-  The client must be authenticated via StorageSharedKeyCredential
-  The SAS is returned as a character vector.
-
-```
-
-*azure.storage.queue.QueueClient.getAccountName*
-
-```notalanguage
-  GETACCOUNTNAME Get associated account name
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.QueueClient.getQueueName*
-
-```notalanguage
-  GETQUEUENAME Get associated account name
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.QueueClient.getQueueUrl*
-
-```notalanguage
-  GETQUEUEURL Get associated URL
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.QueueClient.peekMessage*
-
-```notalanguage
-  PEEKMESSAGE Peeks the first message in the queue
-  A peek request retrieves a message from the front of the queue without
-  changing its visibility. If no message is found an empty double is
-  returned.
-
-```
-
-*azure.storage.queue.QueueClient.receiveMessage*
-
-```notalanguage
-  RECEIVEMESSAGE Retrieves the first message in the queue
-  The message is hidden from other operations for 30 seconds.
-  If no message is found an empty double is returned.
-
-```
-
-*azure.storage.queue.QueueClient.sendMessage*
-
-```notalanguage
-  SENDMESSAGE Sends a message that has a time-to-live of 7 days
-  The message is instantly visible.
-  A SendMessageResult is returned.
-
-```
-
-
-#### azure.storage.queue.QueueServiceClientBuilder
-
-```notalanguage
-  QUEUESERVICECLIENTBUILDER Aids configuration & instantiation of QueueServiceClients
-
-```
-
-*azure.storage.queue.QueueServiceClientBuilder.buildClient*
-
-```notalanguage
-  BUILDCLIENT Creates a QueueServiceClient based on options set in the builder
-  A built QueueServiceClient object is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClientBuilder.connectionString*
-
-```notalanguage
-  CONNECTIONSTRING Sets the connection string to connect to the service
-  connectionString should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClientBuilder.credential*
-
-```notalanguage
-  CREDENTIAL Sets the credential used to authorize requests
-  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClientBuilder.endpoint*
-
-```notalanguage
-  ENDPOINT Sets the client endpoint
-  The endpoint is also parsed for additional information i.e. the SAS token
-  endpoint should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClientBuilder.httpClient*
-
-```notalanguage
-  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
-  Currently the Netty client is configured by default.
-  An updated builder object is returned.
-
-```
+#### azure.identity.AzureCliCredential
 
-*azure.storage.queue.QueueServiceClientBuilder.sasToken*
-
-```notalanguage
-  sasToken Sets the SAS token used to authorize requests
-  sasToken should be of type character vector or scalar string.
-  An updated builder object is returned.
-
-```
-
-
-#### azure.storage.queue.QueueServiceClient
-
-```notalanguage
-  QUEUESERVICECLIENT Service client performs generic queue operations
-
-```
-
-*azure.storage.queue.QueueServiceClient.createQueue*
-
-```notalanguage
-  CREATEQUEUE Creates a queue in with the specified name
-  A QueueClient is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClient.deleteQueue*
-
-```notalanguage
-  DELETEQUEUE Deletes a queue in with the specified name
-
-```
-
-*azure.storage.queue.QueueServiceClient.generateAccountSas*
-
-```notalanguage
-  GENERATEACCOUNTSAS Generates an account SAS for the Azure Storage account
-  The client must be authenticated via StorageSharedKeyCredential
-  The SAS is returned as a character vector.
-
-```
-
-*azure.storage.queue.QueueServiceClient.getAccountName*
-
-```notalanguage
-  GETACCOUNTNAME Get associated account name
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClient.getQueueClient*
-
-```notalanguage
-  GETQUEUECLIENT Constructs a QueueClient that interacts with the specified queue
-  A QueueClient is returned.
-
-```
-
-*azure.storage.queue.QueueServiceClient.getQueueServiceUrl*
-
-```notalanguage
-  GETQUEUESERVICEURL Gets the URL of the storage queue
-
-```
-
-*azure.storage.queue.QueueServiceClient.listQueues*
-
-```notalanguage
-  Lists all queues in the storage account without their metadata
-  TODO listQueues probably SDK bug - Only the fist page of queues is 
-  currently listed.
-
-```
-
-
-#### azure.storage.queue.models.SendMessageResult
-
-```notalanguage
-  SENDMESSAGERESULT Returned in the QueueMessageList array when calling Put Message on a Queue
-
-```
-
-*azure.storage.queue.models.SendMessageResult.getExpirationTime*
-
-```notalanguage
-  GETEXPIRATIONTIME Time the Message will expire and be automatically deleted
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.SendMessageResult.getInsertionTime*
-
-```notalanguage
-  GETINSERTIONTIME Get the time the Message was inserted into the queue
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.SendMessageResult.getPopReceipt*
-
-```notalanguage
-  GETPOPRECEIPT Get the popReceipt, this value is required to delete the Message
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.models.SendMessageResult.getTimeNextVisible*
-
-```notalanguage
-  GETTIMENEXTVISIBLE Get the timeNextVisible property
-  The time that the message will again become visible in the Queue.
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-
-#### azure.storage.queue.models.QueueMessageItem
-
-```notalanguage
-  QUEUEMESSAGEITEM Returned when calling Get Messages on a queue
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getDequeueCount*
-
-```notalanguage
-  GETDEQUEUECOUNT Get the number of times the message has been dequeued
-  An int64 is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getExpirationTime*
-
-```notalanguage
-  GETEXPIRATIONTIME Get the time the Message was inserted into the queue
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getInsertionTime*
-
-```notalanguage
-  GETINSERTIONTIME Get the time the Message was inserted into the queue
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getMessageId*
-
-```notalanguage
-  GETMESSAGEID Get the Id of the Message
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getMessageText*
-
-```notalanguage
-  GETMESSAGETEXT Get the content of the Message
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getPopReceipt*
-
-```notalanguage
-  GETPOPRECEIPT Get the popReceipt, this value is required to delete the Message
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.getTimeNextVisible*
-
-```notalanguage
-  GETTIMENEXTVISIBLE Get the timeNextVisible property
-  The time that the message will again become visible in the Queue.
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setDequeueCount*
-
-```notalanguage
-  SETDEQUEUECOUNT Set the DequeueCount property
-  The DequeueCount may be of type integer
-  A QueueMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setExpirationTime*
-
-```notalanguage
-  SETEXPIRATIONTIME  The time the Message was inserted into the Queue
-  Expiration time should be of type datetime with a time zone set.
-  A QueueMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setInsertionTime*
-
-```notalanguage
-  SETINSERTIONTIME  The time the Message was inserted into the Queue
-  Insertion time should be of type datetime with a time zone set.
-  A QueueMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setMessageId*
-
-```notalanguage
-  SETMESSAGEID Set the messageId property
-  The messageId may be of type character vector or scalar string
-  A QueueMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setMessageText*
-
-```notalanguage
-  SETMESSAGETEXT Set the messageId property
-  The messageText may be of type character vector or scalar string
-  A QueueMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setPopReceipt*
-
-```notalanguage
-  SETPOPRECEIPT Set the messageId property
-  The popReceipt may be of type character vector or scalar string
-  A QueueMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.QueueMessageItem.setTimeNextVisible*
-
-```notalanguage
-  SETTIMENEXTVISIBLE Set the timeNextVisible property
-  The time that the message will again become visible in the Queue.
-  The time should be of type datetime with a time zone set.
-  A QueueMessageItem is returned.
-
-```
-
-
-#### azure.storage.queue.models.QueueProperties
-
-```notalanguage
-  QUEUEPROPERTIES Class containing properties of a specific queue
-
-```
-
-*azure.storage.queue.models.QueueProperties.getApproximateMessageCount*
-
-```notalanguage
-  GETAPPROXIMATEMESSAGECOUNT Gets the approximate number of messages  in the queue
-  Applies at the time of properties retrieval.
-  An int64 is returned.
-
-```
-
-
-#### azure.storage.queue.models.QueueItem
-
-```notalanguage
-  QUEUEITEM Azure Storage Queue
-
-```
-
-*azure.storage.queue.models.QueueItem.getName*
-
-```notalanguage
-  GETNAME Returns the queue's name as a character vector
-
-```
-
-
-#### azure.storage.queue.models.PeekedMessageItem
-
-```notalanguage
-  PEEKEDMESSAGEITEM Returned when calling Peek Messages on a queue
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.getDequeueCount*
-
-```notalanguage
-  GETDEQUEUECOUNT Get the number of times the message has been dequeued
-  An int64 is returned.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.getExpirationTime*
-
-```notalanguage
-  GETEXPIRATIONTIME Get the time the Message was inserted into the queue
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.getInsertionTime*
-
-```notalanguage
-  GETINSERTIONTIME Get the time the Message was inserted into the queue
-  A datetime value is returned, with time zone configured for UTC.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.getMessageId*
-
 ```notalanguage
-  GETMESSAGEID Get the Id of the Message
-  A character vector is returned.
+  AZURECLICREDENTIAL Provides token credentials based on Azure CLI command
+  If the CLI is installed and authenticated there is no need to further
+  authenticate within MATLAB.
+  A object is created based on a corresponding Java com.azure.identity.AzureCliCredential
+  object.
 
 ```
 
-*azure.storage.queue.models.PeekedMessageItem.getMessageText*
 
-```notalanguage
-  GETMESSAGETEXT Get the content of the Message
-  A character vector is returned.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.setDequeueCount*
-
-```notalanguage
-  SETDEQUEUECOUNT Set the DequeueCount property
-  The DequeueCount may be of type integer
-  A PeekedMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.setExpirationTime*
-
-```notalanguage
-  SETEXPIRATIONTIME  The time the Message was inserted into the Queue
-  Expiration time should be of type datetime with a time zone set.
-  A PeekedMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.setInsertionTime*
-
-```notalanguage
-  SETINSERTIONTIME  The time the Message was inserted into the Queue
-  Insertion time should be of type datetime with a time zone set.
-  A PeekedMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.setMessageId*
-
-```notalanguage
-  SETMESSAGEID Set the messageId property
-  The messageId may be of type character vector or scalar string
-  A PeekedMessageItem is returned.
-
-```
-
-*azure.storage.queue.models.PeekedMessageItem.setMessageText*
-
-```notalanguage
-  SETMESSAGETEXT Set the messageId property
-  The messageText may be of type character vector or scalar string
-  A PeekedMessageItem is returned.
-
-```
-
-
-#### azure.storage.queue.sas.QueueServiceSasSignatureValues
-
-```notalanguage
-  QUEUESERVICESASSIGNATUREVALUES Used to initialize a SAS for a Queue service
-  When the values are set, use the generateSas method on the desired service
-  client to obtain a representation of the SAS which can then be applied to a
-  new client using the .sasToken(String) method on the desired client builder.
- 
-  Example
-    qsssv = azure.storage.queue.sas.QueueServiceSasSignatureValues(expiryTime, permissions);
- 
-  Argument types:
-    expiryTime: datetime
-    permissions: azure.storage.queue.sas.QueueSasPermission
+#### azure.identity.AuthenticationRecord
 
-```
-
-
-#### azure.storage.queue.sas.QueueSasPermission
-
-```notalanguage
-  QUEUESASPERMISSION Constructs a string of permissions granted by Account SAS
-  Setting a value to true means that any SAS which uses these permissions will
-  grant permissions for that operation.
-  Once the required values are set, the object should be serialized with
-  toString and set as the permissions field on a QueueSasSignatureValues
-  object
-
-```
-
-*azure.storage.queue.sas.QueueSasPermission.parse*
-
-```notalanguage
-  PARSE Creates a QueueSasPermission from the specified permissions string
-  A azure.storage.queue.sas.QueueSasPermission object is returned.
-  permString should be of type scalar string or character vector.
-  Throws an IllegalArgumentException if it encounters a character that does
-  not correspond to a valid permission.
-  This is a static method.
-  Expected characters are r, a, u, or p.
-
-```
-
-*azure.storage.queue.sas.QueueSasPermission.hasAddPermission*
-
-```notalanguage
-  HASADDPERMISSION Returns the add permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.queue.sas.QueueSasPermission.hasProcessPermission*
-
-```notalanguage
-  HASPROCESSPERMISSION Returns the process permission status
-  The result is returned as a logical.
-
-```
-
-*azure.storage.queue.sas.QueueSasPermission.hasReadPermission*
-
 ```notalanguage
-  HASREADPERMISSION Returns the read permission status
-  The result is returned as a logical.
+  Represents the account information relating to an authentication request
+  Held as a Java reactor.core.publisher.MonoMap.
 
 ```
 
-*azure.storage.queue.sas.QueueSasPermission.hasUpdatePermission*
+*azure.identity.AuthenticationRecord.subscribe*
 
 ```notalanguage
-  HASUPDATEPERMISSION Returns the update permission status
-  The result is returned as a logical
+  SUBSCRIBE Subscribe to this Mono and request unbounded demand
+  Used to trigger the device code challenge flow.
+  Returns a Java reactor.core.publisher.LambdaMonoSubscriber object.
+  The return value is not normally required.
 
 ```
 
-*azure.storage.queue.sas.QueueSasPermission.setAddPermission*
-
-```notalanguage
-  SETADDPERMISSION Sets the add permission status
-  The permission argument should be of type logical.
-  A azure.storage.queue.sas.QueueSasPermission object is returned.
-
-```
-
-*azure.storage.queue.sas.QueueSasPermission.setProcessPermission*
-
-```notalanguage
-  SETPROCESSPERMISSION Sets the read permission status
-  The permission argument should be of type logical.
-  A azure.storage.queue.sas.QueueSasPermission object is returned.
-
-```
 
-*azure.storage.queue.sas.QueueSasPermission.setReadPermission*
+#### azure.identity.TokenCachePersistenceOptions
 
 ```notalanguage
-  SETREADPERMISSION Sets the read permission status
-  The permission argument should be of type logical.
-  A azure.storage.queue.sas.QueueSasPermission object is returned.
+  TOKENREQUESTCONTEXT Contains details of a request to get a token
+  Can be created based on a corresponding com.azure.core.credential.TokenRequestContext
+  Java object argument or without an argument where further configuration is
+  required to add scopes.
 
 ```
 
-*azure.storage.queue.sas.QueueSasPermission.setUpdatePermission*
+*azure.identity.TokenCachePersistenceOptions.getName*
 
 ```notalanguage
-  SETUPDATEPERMISSION Sets the read permission status
-  The permission argument should be of type logical.
-  A azure.storage.queue.sas.QueueSasPermission object is returned.
+  GETNAME Get the name.
+  Returns a character vector.
 
 ```
 
-*azure.storage.queue.sas.QueueSasPermission.toString*
+*azure.identity.TokenCachePersistenceOptions.setName*
 
 ```notalanguage
-  TOSTRING Converts the given permissions to a String
-  A character vector is returned.
+  SETNAME Set the name.
+  Returns an updated azure.core.identity.TokenCachePersistenceOptions.
 
 ```
 
@@ -3263,77 +956,6 @@ azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin st
 ```notalanguage
   GETACCOUNTNAME Gets the account name associated with the request
   The accountName is returned as a character vector.
-
-```
-
-
-#### azure.storage.common.policy.RequestRetryOptions
-
-```notalanguage
-  REQUESTRETRYOPTIONS Options for configuring the RequestRetryFactory
-  The default constructor azure.storage.common.policy.RequestRetryOptions() returns an
-  object with retry values:
- 
-      retryPolicyType: Optional azure.storage.common.policy.RetryPolicyType Optional
-                       A RetryPolicyType specifying the type of retry pattern
-                       to use, default value is EXPONENTIAL
- 
-             maxTries: Optional int32
-                       Maximum number of attempts an operation will be retried
-                       default is 4
- 
-  tryTimeoutInSeconds: Optional int32
-                       Specifies the maximum time allowed before a request is
-                       cancelled and assumed failed, default is intmax s
- 
-       retryDelayInMs: Optional int64
-                       Specifies the amount of delay to use before retrying an
-                       operation, default value is 4ms
- 
-    maxRetryDelayInMs: Optional int64
-                       Specifies the maximum delay allowed before retrying an
-                       operation, default value is 120ms
- 
-        secondaryHost: Optional character vector or scalar string
-
-```
-
-
-#### azure.storage.common.policy.RetryPolicyType
-
-```notalanguage
-  RetryPolicyType Defines holds possible options for retry backoff algorithms
-  They may be used with RequestRetryOptions.
-  Values are EXPONENTIAL & FIXED
-
-```
-
-
-```notalanguage
-Enumeration:
-  EXPONENTIAL
-  FIXED
-```
-
-*azure.storage.common.policy.RetryPolicyType.valueOf*
-
-```notalanguage
-  VALUEOF Returns the enum constant of this type with the specified name
-
-```
-
-*azure.storage.common.policy.RetryPolicyType.toJava*
-
-```notalanguage
-  TOJAVA Converts to a com.azure.storage.common.policy.RetryPolicyType Java object
-
-```
-
-*azure.storage.common.policy.RetryPolicyType.toString*
-
-```notalanguage
-  TOSTRING Returns text form of a RetryPolicyType
-  A character vector is returned.
 
 ```
 
@@ -3720,126 +1342,794 @@ Enumeration:
 ```
 
 
-#### azure.storage.file.datalake.DataLakeDirectoryClient
+#### azure.storage.common.policy.RequestRetryOptions
 
 ```notalanguage
-  DATALAKEDIRECTORYCLIENT Client that contains directory operations for Azure Storage Data Lake
-  This client is instantiated through DataLakePathClientBuilder
-
-```
-
-*azure.storage.file.datalake.DataLakeDirectoryClient.delete*
-
-```notalanguage
-  DELETE DataLakeDirectoryClient destructor - in MATLAB delete is a reserved
-  method name for the class destructor. This method does not delete
-  files on Azure. To delete the Azure files use the deleteDirectory
-  method in MATLAB.
-
-```
-
-*azure.storage.file.datalake.DataLakeDirectoryClient.createFile*
-
-```notalanguage
-  CREATEFILE Creates a new file within a directory
-  By default, this method will not overwrite an existing file.
-  To enable overwrite set an overwrite argument to true.
-  A azure.storage.file.datalake.DataLakeDirectoryClient is returned.
-
-```
-
-*azure.storage.file.datalake.DataLakeDirectoryClient.deleteDirectory*
-
-```notalanguage
-  DELETEDIRECTORY Deletes the directory - this is the equivalent of the "delete"
-  method in the Azure Java API but because "delete" is a reserved
-  method name in MATLAB, the method is named deleteDirectory.
+  REQUESTRETRYOPTIONS Options for configuring the RequestRetryFactory
+  The default constructor azure.storage.common.policy.RequestRetryOptions() returns an
+  object with retry values:
  
-  Example:
-    client.deleteDirectory()
-
-```
-
-*azure.storage.file.datalake.DataLakeDirectoryClient.deleteFile*
-
-```notalanguage
-  DELETEFILE Deletes the file - this is the equivalent of the "delete"
-  method in the Azure Java API but because "delete" is a reserved
-  method name in MATLAB, the method is named deleteFile.
+      retryPolicyType: Optional azure.storage.common.policy.RetryPolicyType Optional
+                       A RetryPolicyType specifying the type of retry pattern
+                       to use, default value is EXPONENTIAL
  
-  Example:
-    client.deleteFile('myfile.txt')
+             maxTries: Optional int32
+                       Maximum number of attempts an operation will be retried
+                       default is 4
+ 
+  tryTimeoutInSeconds: Optional int32
+                       Specifies the maximum time allowed before a request is
+                       cancelled and assumed failed, default is intmax s
+ 
+       retryDelayInMs: Optional int64
+                       Specifies the amount of delay to use before retrying an
+                       operation, default value is 4ms
+ 
+    maxRetryDelayInMs: Optional int64
+                       Specifies the maximum delay allowed before retrying an
+                       operation, default value is 120ms
+ 
+        secondaryHost: Optional character vector or scalar string
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.deleteSubdirectory*
+
+#### azure.storage.common.policy.RetryPolicyType
 
 ```notalanguage
-  DELETESUBDIRECTORY Deletes the specified sub-directory in the directory
-  If the sub-directory doesn't exist or is not empty the operation fails.
-  subdirectoryName is provided as a character vector or scalar string.
+  RetryPolicyType Defines holds possible options for retry backoff algorithms
+  They may be used with RequestRetryOptions.
+  Values are EXPONENTIAL & FIXED
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.exists*
 
 ```notalanguage
-  EXISTS Gets if the path this client represents exists in Azure
-  This does not guarantee that the path type (file/directory) matches expectations.
-  E.g. a DataLakeFileClient representing a path to a datalake directory will
-  return true, and vice versa.
-  A logical is returned.
+Enumeration:
+  EXPONENTIAL
+  FIXED
+```
+
+*azure.storage.common.policy.RetryPolicyType.valueOf*
+
+```notalanguage
+  VALUEOF Returns the enum constant of this type with the specified name
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.getDirectoryPath*
+*azure.storage.common.policy.RetryPolicyType.toJava*
 
 ```notalanguage
-  GETDIRECTORYPATH Gets the path of this file, not including the name of the resource itself
+  TOJAVA Converts to a com.azure.storage.common.policy.RetryPolicyType Java object
+
+```
+
+*azure.storage.common.policy.RetryPolicyType.toString*
+
+```notalanguage
+  TOSTRING Returns text form of a RetryPolicyType
   A character vector is returned.
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.getDirectoryUrl*
+
+#### azure.storage.queue.QueueServiceClientBuilder
 
 ```notalanguage
-  GETDIRECTORYURL Gets the URL of the directory represented by this client
-  A matlab.net.URI is returned.
+  QUEUESERVICECLIENTBUILDER Aids configuration & instantiation of QueueServiceClients
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.getFileClient*
+*azure.storage.queue.QueueServiceClientBuilder.buildClient*
 
 ```notalanguage
-  GETFILECLIENT Create a DataLakeFileClient concatenating fileName to the DataLakeDirectoryClient
+  BUILDCLIENT Creates a QueueServiceClient based on options set in the builder
+  A built QueueServiceClient object is returned.
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.listPaths*
+*azure.storage.queue.QueueServiceClientBuilder.connectionString*
 
 ```notalanguage
-  LISTPATHS Returns a list of files/directories in this account
-  Paths are returned as an array of 
-  azure.storage.file.datalake.models.PathItem objects.
-  If there are no keys an empty array is returned.
+  CONNECTIONSTRING Sets the connection string to connect to the service
+  connectionString should be of type character vector or scalar string.
+  An updated builder object is returned.
 
 ```
 
-*azure.storage.file.datalake.DataLakeDirectoryClient.rename*
+*azure.storage.queue.QueueServiceClientBuilder.credential*
 
 ```notalanguage
-  RENAME Moves the directory to another location within the file system
-  Arguments must be scalar strings or character vectors.
+  CREDENTIAL Sets the credential used to authorize requests
+  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueServiceClientBuilder.endpoint*
+
+```notalanguage
+  ENDPOINT Sets the client endpoint
+  The endpoint is also parsed for additional information i.e. the SAS token
+  endpoint should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueServiceClientBuilder.httpClient*
+
+```notalanguage
+  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
+  Currently the Netty client is configured by default.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueServiceClientBuilder.sasToken*
+
+```notalanguage
+  sasToken Sets the SAS token used to authorize requests
+  sasToken should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+
+#### azure.storage.queue.QueueServiceClient
+
+```notalanguage
+  QUEUESERVICECLIENT Service client performs generic queue operations
+
+```
+
+*azure.storage.queue.QueueServiceClient.createQueue*
+
+```notalanguage
+  CREATEQUEUE Creates a queue in with the specified name
+  A QueueClient is returned.
+
+```
+
+*azure.storage.queue.QueueServiceClient.deleteQueue*
+
+```notalanguage
+  DELETEQUEUE Deletes a queue in with the specified name
+
+```
+
+*azure.storage.queue.QueueServiceClient.generateAccountSas*
+
+```notalanguage
+  GENERATEACCOUNTSAS Generates an account SAS for the Azure Storage account
+  The client must be authenticated via StorageSharedKeyCredential
+  The SAS is returned as a character vector.
+
+```
+
+*azure.storage.queue.QueueServiceClient.getAccountName*
+
+```notalanguage
+  GETACCOUNTNAME Get associated account name
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.QueueServiceClient.getQueueClient*
+
+```notalanguage
+  GETQUEUECLIENT Constructs a QueueClient that interacts with the specified queue
+  A QueueClient is returned.
+
+```
+
+*azure.storage.queue.QueueServiceClient.getQueueServiceUrl*
+
+```notalanguage
+  GETQUEUESERVICEURL Gets the URL of the storage queue
+
+```
+
+*azure.storage.queue.QueueServiceClient.listQueues*
+
+```notalanguage
+  Lists all queues in the storage account without their metadata
+  TODO listQueues probably SDK bug - Only the fist page of queues is 
+  currently listed.
+
+```
+
+
+#### azure.storage.queue.QueueClient
+
+```notalanguage
+  QUEUECLIENT Client performs generic queue operations
+
+```
+
+*azure.storage.queue.QueueClient.delete*
+
+```notalanguage
+  DELETE QueueClient destructor - in MATLAB delete is a
+  reserved method name for the class destructor. This method
+  does not delete Queues on Azure. To delete the Azure
+  Queue use the deleteQueue method in MATLAB.
+
+```
+
+*azure.storage.queue.QueueClient.clearMessages*
+
+```notalanguage
+  CLEARMESSAGES Deletes all messages in the queue
+
+```
+
+*azure.storage.queue.QueueClient.create*
+
+```notalanguage
+  CREATE Creates a new queue
+
+```
+
+*azure.storage.queue.QueueClient.deleteMessage*
+
+```notalanguage
+  DELETEMESSAGE Deletes the specified message from the queue
+  The messageId and popReceipt arguments should be of type character vector or
+  scalar string
+
+```
+
+*azure.storage.queue.QueueClient.deleteQueue*
+
+```notalanguage
+  DELETEQUEUE Deletes the queue
+
+```
+
+*azure.storage.queue.QueueClient.generateSas*
+
+```notalanguage
+  GENERATESAS Generates a SAS for the queue
+  The client must be authenticated via StorageSharedKeyCredential
+  The SAS is returned as a character vector.
+
+```
+
+*azure.storage.queue.QueueClient.getAccountName*
+
+```notalanguage
+  GETACCOUNTNAME Get associated account name
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.QueueClient.getQueueName*
+
+```notalanguage
+  GETQUEUENAME Get associated account name
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.QueueClient.getQueueUrl*
+
+```notalanguage
+  GETQUEUEURL Get associated URL
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.QueueClient.peekMessage*
+
+```notalanguage
+  PEEKMESSAGE Peeks the first message in the queue
+  A peek request retrieves a message from the front of the queue without
+  changing its visibility. If no message is found an empty double is
+  returned.
+
+```
+
+*azure.storage.queue.QueueClient.receiveMessage*
+
+```notalanguage
+  RECEIVEMESSAGE Retrieves the first message in the queue
+  The message is hidden from other operations for 30 seconds.
+  If no message is found an empty double is returned.
+
+```
+
+*azure.storage.queue.QueueClient.sendMessage*
+
+```notalanguage
+  SENDMESSAGE Sends a message that has a time-to-live of 7 days
+  The message is instantly visible.
+  A SendMessageResult is returned.
+
+```
+
+
+#### azure.storage.queue.QueueClientBuilder
+
+```notalanguage
+  QUEUECLIENTBUILDER Aids the configuration and instantiation of QueueClients
+
+```
+
+*azure.storage.queue.QueueClientBuilder.buildClient*
+
+```notalanguage
+  BUILDCLIENT Creates a QueueClient based on options set in the builder
+  A built QueueClient object is returned.
+
+```
+
+*azure.storage.queue.QueueClientBuilder.connectionString*
+
+```notalanguage
+  CONNECTIONSTRING Sets the connection string to connect to the service
+  connectionString should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueClientBuilder.credential*
+
+```notalanguage
+  CREDENTIAL Sets the credential used to authorize requests
+  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueClientBuilder.endpoint*
+
+```notalanguage
+  ENDPOINT Sets the client endpoint
+  The endpoint is also parsed for additional information i.e. the SAS token
+  endpoint should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueClientBuilder.httpClient*
+
+```notalanguage
+  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
+  Currently the Netty client is configured by default.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueClientBuilder.queueName*
+
+```notalanguage
+  QUEUENAME Sets the name of the container that contains the queue
+  containerName should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.queue.QueueClientBuilder.sasToken*
+
+```notalanguage
+  sasToken Sets the SAS token used to authorize requests
+  sasToken should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+
+#### azure.storage.queue.models.SendMessageResult
+
+```notalanguage
+  SENDMESSAGERESULT Returned in the QueueMessageList array when calling Put Message on a Queue
+
+```
+
+*azure.storage.queue.models.SendMessageResult.getExpirationTime*
+
+```notalanguage
+  GETEXPIRATIONTIME Time the Message will expire and be automatically deleted
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.SendMessageResult.getInsertionTime*
+
+```notalanguage
+  GETINSERTIONTIME Get the time the Message was inserted into the queue
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.SendMessageResult.getPopReceipt*
+
+```notalanguage
+  GETPOPRECEIPT Get the popReceipt, this value is required to delete the Message
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.models.SendMessageResult.getTimeNextVisible*
+
+```notalanguage
+  GETTIMENEXTVISIBLE Get the timeNextVisible property
+  The time that the message will again become visible in the Queue.
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+
+#### azure.storage.queue.models.PeekedMessageItem
+
+```notalanguage
+  PEEKEDMESSAGEITEM Returned when calling Peek Messages on a queue
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.getDequeueCount*
+
+```notalanguage
+  GETDEQUEUECOUNT Get the number of times the message has been dequeued
+  An int64 is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.getExpirationTime*
+
+```notalanguage
+  GETEXPIRATIONTIME Get the time the Message was inserted into the queue
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.getInsertionTime*
+
+```notalanguage
+  GETINSERTIONTIME Get the time the Message was inserted into the queue
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.getMessageId*
+
+```notalanguage
+  GETMESSAGEID Get the Id of the Message
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.getMessageText*
+
+```notalanguage
+  GETMESSAGETEXT Get the content of the Message
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.setDequeueCount*
+
+```notalanguage
+  SETDEQUEUECOUNT Set the DequeueCount property
+  The DequeueCount may be of type integer
+  A PeekedMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.setExpirationTime*
+
+```notalanguage
+  SETEXPIRATIONTIME  The time the Message was inserted into the Queue
+  Expiration time should be of type datetime with a time zone set.
+  A PeekedMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.setInsertionTime*
+
+```notalanguage
+  SETINSERTIONTIME  The time the Message was inserted into the Queue
+  Insertion time should be of type datetime with a time zone set.
+  A PeekedMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.setMessageId*
+
+```notalanguage
+  SETMESSAGEID Set the messageId property
+  The messageId may be of type character vector or scalar string
+  A PeekedMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.PeekedMessageItem.setMessageText*
+
+```notalanguage
+  SETMESSAGETEXT Set the messageId property
+  The messageText may be of type character vector or scalar string
+  A PeekedMessageItem is returned.
+
+```
+
+
+#### azure.storage.queue.models.QueueMessageItem
+
+```notalanguage
+  QUEUEMESSAGEITEM Returned when calling Get Messages on a queue
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getDequeueCount*
+
+```notalanguage
+  GETDEQUEUECOUNT Get the number of times the message has been dequeued
+  An int64 is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getExpirationTime*
+
+```notalanguage
+  GETEXPIRATIONTIME Get the time the Message was inserted into the queue
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getInsertionTime*
+
+```notalanguage
+  GETINSERTIONTIME Get the time the Message was inserted into the queue
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getMessageId*
+
+```notalanguage
+  GETMESSAGEID Get the Id of the Message
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getMessageText*
+
+```notalanguage
+  GETMESSAGETEXT Get the content of the Message
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getPopReceipt*
+
+```notalanguage
+  GETPOPRECEIPT Get the popReceipt, this value is required to delete the Message
+  A character vector is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.getTimeNextVisible*
+
+```notalanguage
+  GETTIMENEXTVISIBLE Get the timeNextVisible property
+  The time that the message will again become visible in the Queue.
+  A datetime value is returned, with time zone configured for UTC.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setDequeueCount*
+
+```notalanguage
+  SETDEQUEUECOUNT Set the DequeueCount property
+  The DequeueCount may be of type integer
+  A QueueMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setExpirationTime*
+
+```notalanguage
+  SETEXPIRATIONTIME  The time the Message was inserted into the Queue
+  Expiration time should be of type datetime with a time zone set.
+  A QueueMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setInsertionTime*
+
+```notalanguage
+  SETINSERTIONTIME  The time the Message was inserted into the Queue
+  Insertion time should be of type datetime with a time zone set.
+  A QueueMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setMessageId*
+
+```notalanguage
+  SETMESSAGEID Set the messageId property
+  The messageId may be of type character vector or scalar string
+  A QueueMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setMessageText*
+
+```notalanguage
+  SETMESSAGETEXT Set the messageId property
+  The messageText may be of type character vector or scalar string
+  A QueueMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setPopReceipt*
+
+```notalanguage
+  SETPOPRECEIPT Set the messageId property
+  The popReceipt may be of type character vector or scalar string
+  A QueueMessageItem is returned.
+
+```
+
+*azure.storage.queue.models.QueueMessageItem.setTimeNextVisible*
+
+```notalanguage
+  SETTIMENEXTVISIBLE Set the timeNextVisible property
+  The time that the message will again become visible in the Queue.
+  The time should be of type datetime with a time zone set.
+  A QueueMessageItem is returned.
+
+```
+
+
+#### azure.storage.queue.models.QueueProperties
+
+```notalanguage
+  QUEUEPROPERTIES Class containing properties of a specific queue
+
+```
+
+*azure.storage.queue.models.QueueProperties.getApproximateMessageCount*
+
+```notalanguage
+  GETAPPROXIMATEMESSAGECOUNT Gets the approximate number of messages  in the queue
+  Applies at the time of properties retrieval.
+  An int64 is returned.
+
+```
+
+
+#### azure.storage.queue.models.QueueItem
+
+```notalanguage
+  QUEUEITEM Azure Storage Queue
+
+```
+
+*azure.storage.queue.models.QueueItem.getName*
+
+```notalanguage
+  GETNAME Returns the queue's name as a character vector
+
+```
+
+
+#### azure.storage.queue.sas.QueueSasPermission
+
+```notalanguage
+  QUEUESASPERMISSION Constructs a string of permissions granted by Account SAS
+  Setting a value to true means that any SAS which uses these permissions will
+  grant permissions for that operation.
+  Once the required values are set, the object should be serialized with
+  toString and set as the permissions field on a QueueSasSignatureValues
+  object
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.parse*
+
+```notalanguage
+  PARSE Creates a QueueSasPermission from the specified permissions string
+  A azure.storage.queue.sas.QueueSasPermission object is returned.
+  permString should be of type scalar string or character vector.
+  Throws an IllegalArgumentException if it encounters a character that does
+  not correspond to a valid permission.
+  This is a static method.
+  Expected characters are r, a, u, or p.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.hasAddPermission*
+
+```notalanguage
+  HASADDPERMISSION Returns the add permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.hasProcessPermission*
+
+```notalanguage
+  HASPROCESSPERMISSION Returns the process permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.hasReadPermission*
+
+```notalanguage
+  HASREADPERMISSION Returns the read permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.hasUpdatePermission*
+
+```notalanguage
+  HASUPDATEPERMISSION Returns the update permission status
+  The result is returned as a logical
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.setAddPermission*
+
+```notalanguage
+  SETADDPERMISSION Sets the add permission status
+  The permission argument should be of type logical.
+  A azure.storage.queue.sas.QueueSasPermission object is returned.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.setProcessPermission*
+
+```notalanguage
+  SETPROCESSPERMISSION Sets the read permission status
+  The permission argument should be of type logical.
+  A azure.storage.queue.sas.QueueSasPermission object is returned.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.setReadPermission*
+
+```notalanguage
+  SETREADPERMISSION Sets the read permission status
+  The permission argument should be of type logical.
+  A azure.storage.queue.sas.QueueSasPermission object is returned.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.setUpdatePermission*
+
+```notalanguage
+  SETUPDATEPERMISSION Sets the read permission status
+  The permission argument should be of type logical.
+  A azure.storage.queue.sas.QueueSasPermission object is returned.
+
+```
+
+*azure.storage.queue.sas.QueueSasPermission.toString*
+
+```notalanguage
+  TOSTRING Converts the given permissions to a String
+  A character vector is returned.
+
+```
+
+
+#### azure.storage.queue.sas.QueueServiceSasSignatureValues
+
+```notalanguage
+  QUEUESERVICESASSIGNATUREVALUES Used to initialize a SAS for a Queue service
+  When the values are set, use the generateSas method on the desired service
+  client to obtain a representation of the SAS which can then be applied to a
+  new client using the .sasToken(String) method on the desired client builder.
  
-  destinationFileSystem is the file system of the destination within the account.
-  Use an empty array [] to use the current file system.
+  Example
+    qsssv = azure.storage.queue.sas.QueueServiceSasSignatureValues(expiryTime, permissions);
  
-  destinationPath Relative path from the file system to rename the directory to.
-  This excludes the file system name, e.g. to move a directory with:
-     fileSystem = "myfilesystem", path = "mydir/mysubdir"
-  to another path in myfilesystem e.g.: newdir then set the destinationPath to "newdir"
- 
-  A DataLakeDirectoryClient used to interact with the newly created directory is returned.
+  Argument types:
+    expiryTime: datetime
+    permissions: azure.storage.queue.sas.QueueSasPermission
 
 ```
 
@@ -4158,6 +2448,130 @@ Enumeration:
 ```
 
 
+#### azure.storage.file.datalake.DataLakeDirectoryClient
+
+```notalanguage
+  DATALAKEDIRECTORYCLIENT Client that contains directory operations for Azure Storage Data Lake
+  This client is instantiated through DataLakePathClientBuilder
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.delete*
+
+```notalanguage
+  DELETE DataLakeDirectoryClient destructor - in MATLAB delete is a reserved
+  method name for the class destructor. This method does not delete
+  files on Azure. To delete the Azure files use the deleteDirectory
+  method in MATLAB.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.createFile*
+
+```notalanguage
+  CREATEFILE Creates a new file within a directory
+  By default, this method will not overwrite an existing file.
+  To enable overwrite set an overwrite argument to true.
+  A azure.storage.file.datalake.DataLakeDirectoryClient is returned.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.deleteDirectory*
+
+```notalanguage
+  DELETEDIRECTORY Deletes the directory - this is the equivalent of the "delete"
+  method in the Azure Java API but because "delete" is a reserved
+  method name in MATLAB, the method is named deleteDirectory.
+ 
+  Example:
+    client.deleteDirectory()
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.deleteFile*
+
+```notalanguage
+  DELETEFILE Deletes the file - this is the equivalent of the "delete"
+  method in the Azure Java API but because "delete" is a reserved
+  method name in MATLAB, the method is named deleteFile.
+ 
+  Example:
+    client.deleteFile('myfile.txt')
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.deleteSubdirectory*
+
+```notalanguage
+  DELETESUBDIRECTORY Deletes the specified sub-directory in the directory
+  If the sub-directory doesn't exist or is not empty the operation fails.
+  subdirectoryName is provided as a character vector or scalar string.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.exists*
+
+```notalanguage
+  EXISTS Gets if the path this client represents exists in Azure
+  This does not guarantee that the path type (file/directory) matches expectations.
+  E.g. a DataLakeFileClient representing a path to a datalake directory will
+  return true, and vice versa.
+  A logical is returned.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.getDirectoryPath*
+
+```notalanguage
+  GETDIRECTORYPATH Gets the path of this file, not including the name of the resource itself
+  A character vector is returned.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.getDirectoryUrl*
+
+```notalanguage
+  GETDIRECTORYURL Gets the URL of the directory represented by this client
+  A matlab.net.URI is returned.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.getFileClient*
+
+```notalanguage
+  GETFILECLIENT Create a DataLakeFileClient concatenating fileName to the DataLakeDirectoryClient
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.listPaths*
+
+```notalanguage
+  LISTPATHS Returns a list of files/directories in this account
+  Paths are returned as an array of 
+  azure.storage.file.datalake.models.PathItem objects.
+  If there are no keys an empty array is returned.
+
+```
+
+*azure.storage.file.datalake.DataLakeDirectoryClient.rename*
+
+```notalanguage
+  RENAME Moves the directory to another location within the file system
+  Arguments must be scalar strings or character vectors.
+ 
+  destinationFileSystem is the file system of the destination within the account.
+  Use an empty array [] to use the current file system.
+ 
+  destinationPath Relative path from the file system to rename the directory to.
+  This excludes the file system name, e.g. to move a directory with:
+     fileSystem = "myfilesystem", path = "mydir/mysubdir"
+  to another path in myfilesystem e.g.: newdir then set the destinationPath to "newdir"
+ 
+  A DataLakeDirectoryClient used to interact with the newly created directory is returned.
+
+```
+
+
 #### azure.storage.file.datalake.models.PathItem
 
 ```notalanguage
@@ -4390,6 +2804,34 @@ Enumeration:
 ```
 
 
+#### azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues
+
+```notalanguage
+  DATALAKESERVICESASSIGNATUREVALUES Used to initialize a SAS for Data Lake Storage
+  When the values are set, use the generateSas method on the desired service
+  client to obtain a representation of the SAS which can then be applied to a
+  new client using the .sasToken(String) method on the desired client builder.
+ 
+  Example
+    dlsssv = azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues(expiryTime, permissions);
+ 
+  Argument types:
+    expiryTime:  datetime ideally with defined TimeZone to avoid any 
+                 confusion, if TimeZone is not set, 'local' is assumed
+    permissions: azure.storage.file.datalake.sas.PathSasPermission or
+                 FileSystemSasPermission
+  Or
+ 
+    dlsssv = azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues(identifier);
+ 
+  Argument types:
+    identifier:  Creates an object with the specified identifier.
+                 NOTE: Identifier can not be used for a UserDelegationKey SAS.
+                 Type character vector or scalar string.
+
+```
+
+
 #### azure.storage.file.datalake.sas.PathSasPermission
 
 ```notalanguage
@@ -4590,30 +3032,1629 @@ Enumeration:
 ```
 
 
-#### azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues
+#### azure.storage.blob.BlobClient
 
 ```notalanguage
-  DATALAKESERVICESASSIGNATUREVALUES Used to initialize a SAS for Data Lake Storage
+  BLOBCLIENT Client performs generic blob operations
+
+```
+
+*azure.storage.blob.BlobClient.delete*
+
+```notalanguage
+  DELETE BlobClient destructor - in MATLAB delete is a reserved
+  method name for the class destructor. This method does not delete
+  Blobs on Azure. To delete the Azure Blob use the deleteBlob
+  method in MATLAB.
+
+```
+
+*azure.storage.blob.BlobClient.copyFromUrl*
+
+```notalanguage
+  COPYFROMURL Copies the data at the source URL to a blob
+  The call waits for the copy to complete before returning a response.
+  A copyId is returned as a character vector it can apply for certain long
+  running operations.
+ 
+  If a lease is active on the blob, parameter 'leaseId' and the
+  actual lease id as value can be provided.
+
+```
+
+*azure.storage.blob.BlobClient.deleteBlob*
+
+```notalanguage
+  DELETEBLOB Deletes the blob - this is the equivalent of the "delete"
+  method in the Azure Java API but because "delete" is a reserved
+  method name in MATLAB, the method is named deleteBlob.
+ 
+  If a lease is active on the blob, parameter 'leaseId' and the
+  actual lease id as value can be provided.
+ 
+  Example:
+    client.deleteBlob('leaseId','f6eb8bda-cf33-4da1-8e50-11d1a6dd8797')
+
+```
+
+*azure.storage.blob.BlobClient.downloadToFile*
+
+```notalanguage
+  DOWNLOADTOFILE Downloads the entire blob into a file specified by filePath
+  To overwrite an existing file use a parameter 'overwrite' and a logical true.
+  By default a file is not overwritten.
+ 
+  Example:
+    blobClient.downloadToFile('/mydir/myfile.txt', 'overwrite', true);
+
+```
+
+*azure.storage.blob.BlobClient.exists*
+
+```notalanguage
+  EXISTS Gets if the blob this client represents exists in Azure
+  A logical is returned if the Container exists indicating if the blob
+  exists or not. Otherwise an exception is thrown, for example if the
+  container does not exist. Consider using a container client to check for
+  the existance of the container first.
+
+```
+
+*azure.storage.blob.BlobClient.generateSas*
+
+```notalanguage
+  GENERATESAS Generates a SAS for the blob
+  The client must be authenticated via StorageSharedKeyCredential
+  The SAS is returned as a character vector.
+
+```
+
+*azure.storage.blob.BlobClient.generateUserDelegationSas*
+
+```notalanguage
+  GENERATEUSERDELEGATIONSAS Generates a user delegation SAS for the
+  blob using the specified BlobServiceSasSignatureValues and
+  UserDelegationKey. The UserDelegationKey can be obtained through the
+  getUserDelegationKey method of a BlobServiceClient.
+ 
+  The SAS is returned as a character vector.
+
+```
+
+*azure.storage.blob.BlobClient.getAccountName*
+
+```notalanguage
+  GETACCOUNTNAME Get associated account name
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobClient.getBlobUrl*
+
+```notalanguage
+  GETBLOBURL Gets the URL of the blob represented by this client
+  The URL is returned as a character vector.
+
+```
+
+*azure.storage.blob.BlobClient.getContainerClient*
+
+```notalanguage
+  GETCONTAINERCLIENT Gets a client pointing to the parent container.
+
+```
+
+*azure.storage.blob.BlobClient.uploadFromFile*
+
+```notalanguage
+  UPLOADFROMFILE Creates a or updates a block blob To overwrite an
+  existing blob use a parameter 'overwrite' and a logical true. By
+  default a blob is not overwritten.
+ 
+  If a lease is active on the blob, parameter 'leaseId' and the
+  actual lease id as value can be provided.
+ 
+  Example:
+    blobClient.uploadFromFile('/mydir/myfile.txt',...
+        'overwrite', true,...
+        'leaseId','f6eb8bda-cf33-4da1-8e50-11d1a6dd8797');
+
+```
+
+
+#### azure.storage.blob.BlobContainerClient
+
+```notalanguage
+  BLOBCONTAINERCLIENT Client to a container
+
+```
+
+*azure.storage.blob.BlobContainerClient.delete*
+
+```notalanguage
+  DELETE BlobContainerClient destructor - in MATLAB delete is a
+  reserved method name for the class destructor. This method
+  does not delete Blob Containers on Azure. To delete the Azure
+  Blob Container use the deleteContainer method in MATLAB.
+
+```
+
+*azure.storage.blob.BlobContainerClient.create*
+
+```notalanguage
+  CREATE Creates a new container within a storage account
+
+```
+
+*azure.storage.blob.BlobContainerClient.deleteContainer*
+
+```notalanguage
+  DELETECONTAINER Deletes the container - this is the equivalent of the
+  "delete" method in the Azure Java API but because "delete" is a
+  reserved method name in MATLAB, the method is named DELETECONTAINER.
+ 
+  If a lease is active on the blob, parameter 'leaseId' and the
+  actual lease id as value can be provided.
+ 
+  Example:
+    client.deleteContainer('leaseId','f6eb8bda-cf33-4da1-8e50-11d1a6dd8797')
+
+```
+
+*azure.storage.blob.BlobContainerClient.exists*
+
+```notalanguage
+  EXISTS Tests if the container this client represents exists in Azure
+  A logical is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.generateUserDelegationSas*
+
+```notalanguage
+  GENERATEUSERDELEGATIONSAS Generates a user delegation SAS for the
+  container using the specified BlobServiceSasSignatureValues and
+  UserDelegationKey. The UserDelegationKey can be obtained through the
+  getUserDelegationKey method of a BlobServiceClient.
+ 
+  The SAS is returned as a character vector.
+
+```
+
+*azure.storage.blob.BlobContainerClient.getAccountName*
+
+```notalanguage
+  GETACCOUNTNAME Get associated account name
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.getAccountUrl*
+
+```notalanguage
+  GETACCOUNTURL Get associated account URL
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.getBlobClient*
+
+```notalanguage
+  GETBLOBCLIENT Initializes a new BlobClient object 
+  blobName should be a scalar string or character vector.
+  A BlobClient is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.getBlobContainerName*
+
+```notalanguage
+  GETCONTAINERNAME Get the container name
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.getBlobContainerUrl*
+
+```notalanguage
+  GETBLOBCONTAINERURL Get associated container URL
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.getServiceClient*
+
+```notalanguage
+  GETSERVICECLIENT Get a client pointing to the account.
+
+```
+
+*azure.storage.blob.BlobContainerClient.listBlobs*
+
+```notalanguage
+  LISTBLOBS Returns a list of blobs in this container
+  Folder structures are flattened.
+  An array of BlobItems is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClient.listBlobsByHierarchy*
+
+```notalanguage
+  LISTBLOBSBYHIERARCHY Returns the blobs and directories (prefixes) under the given directory (prefix).
+  Directories will have BlobItem.isPrefix() set to true. 
+  Blob names are returned in lexicographic order.
+  An array of BlobItems is returned.
+
+```
+
+
+#### azure.storage.blob.BlobContainerClientBuilder
+
+```notalanguage
+  BLOBCONTAINERCLIENTBUILDER Aids construction of BlobContinerClients
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.buildClient*
+
+```notalanguage
+  BUILDCLIENT Creates a BlobContainerClient based on options set in the builder
+  A built BlobContainerClient object is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.connectionString*
+
+```notalanguage
+  CONNECTIONSTRING Sets the connection string to connect to the service
+  connectionString should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.containerName*
+
+```notalanguage
+  CONTAINERNAME Sets the name of the container
+  containerName should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.credential*
+
+```notalanguage
+  CREDENTIAL Sets the credential used to authorize requests
+  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.endpoint*
+
+```notalanguage
+  ENDPOINT Sets the blob container endpoint
+  The endpoint is also parsed for additional information i.e. the SAS token
+  endpoint should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.httpClient*
+
+```notalanguage
+  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
+  Currently the Netty client is configured by default.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobContainerClientBuilder.sasToken*
+
+```notalanguage
+  sasToken Sets the SAS token used to authorize requests
+  sasToken should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+
+#### azure.storage.blob.BlobClientBuilder
+
+```notalanguage
+  BLOBCLIENTBUILDER Aids the configuration and instantiation of BlobClients
+
+```
+
+*azure.storage.blob.BlobClientBuilder.blobName*
+
+```notalanguage
+  BLOBNAME Sets the name of the blob
+  blobName should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.buildClient*
+
+```notalanguage
+  BUILDCLIENT Creates a BlobClient based on options set in the builder
+  A built BlobClient object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.connectionString*
+
+```notalanguage
+  CONNECTIONSTRING Sets the connection string to connect to the service
+  connectionString should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.containerName*
+
+```notalanguage
+  CONTAINERNAME Sets the name of the container that contains the blob
+  containerName should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.credential*
+
+```notalanguage
+  CREDENTIAL Sets the credential used to authorize requests
+  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential
+  or azure.core.credential.TokenCredential.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.endpoint*
+
+```notalanguage
+  ENDPOINT Sets the client endpoint
+  The endpoint is also parsed for additional information i.e. the SAS token
+  endpoint should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.httpClient*
+
+```notalanguage
+  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
+  Currently the Netty client is configured by default.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.sasToken*
+
+```notalanguage
+  sasToken Sets the SAS token used to authorize requests
+  sasToken should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobClientBuilder.setAnonymousAccess*
+
+```notalanguage
+  SETANONYMOUSACCESS Clears the credential used to authorize the request
+  An updated builder object is returned.
+
+```
+
+
+#### azure.storage.blob.BlobServiceClient
+
+```notalanguage
+  BLOBSERVICECLIENT
+
+```
+
+*azure.storage.blob.BlobServiceClient.createBlobContainer*
+
+```notalanguage
+  CREATEBLOBCONTAINER Creates a new container within a storage account
+  If a container with the same name already exists, the operation fails.
+  The name of the container to create should be passed as a character vector or
+  scalar string.
+  If the container already exists an empty azure.storage.blob.BlobContainerClient
+  is returned otherwise a non empty azure.storage.blob.BlobContainerClient is
+  returned.
+  In verbose logging mode a message is logged.
+
+```
+
+*azure.storage.blob.BlobServiceClient.deleteBlobContainer*
+
+```notalanguage
+  DELETEBLOBCONTAINER Deletes the specified container in the storage account
+  The name of the container to create should be passed as a character vector or
+  scalar string.
+
+```
+
+*azure.storage.blob.BlobServiceClient.generateAccountSas*
+
+```notalanguage
+  GENERATEACCOUNTSAS Generates an account SAS for the Azure Storage account
+  The client must be authenticated via StorageSharedKeyCredential
+  The SAS is returned as a character vector.
+
+```
+
+*azure.storage.blob.BlobServiceClient.getAccountInfo*
+
+```notalanguage
+  GETACCOUNTINFO Returns the sku name and account kind for the account
+  A StorageAccountInfo object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClient.getAccountName*
+
+```notalanguage
+  GETACCOUNTNAME Get associated account name
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClient.getAccountUrl*
+
+```notalanguage
+  GETACCOUNTURL Get associated account URL
+  A character vector is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClient.getUserDelegationKey*
+
+```notalanguage
+  GETUSERDELEGATIONKEY Gets a user delegation key for use with this
+  account's blob storage. 
+  
+  Note: This method call is only valid when using TokenCredential. I.e. not
+  when working with ConnectionString or StorageSharedKey authentication
+  approaches.
+ 
+  The function takes two datetime objects as input, the start and expiry
+  time of the key's validity.
+ 
+  Returns a UserDelegationKey object.
+ 
+  Example:
+ 
+    key = sc.getUserDelegationKey(datetime('now'),datetime('now')+hours(1))
+
+```
+
+*azure.storage.blob.BlobServiceClient.listBlobContainers*
+
+```notalanguage
+  LISTBLOBCONTAINERS
+
+```
+
+*azure.storage.blob.BlobServiceClient.setAnonymousAccess*
+
+```notalanguage
+  SETANONYMOUSACCESS Clears the credential used to authorize the request
+  An updated builder object is returned.
+
+```
+
+
+#### azure.storage.blob.BlobServiceClientBuilder
+
+```notalanguage
+  BLOBSERVICECLIENTBUILDER Aids construction of BlobServiceClients
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.buildClient*
+
+```notalanguage
+  BUILDCLIENT Creates a BlobServiceClient based on options set in the builder
+  A built BlobServiceClient object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.connectionString*
+
+```notalanguage
+  CONNECTIONSTRING Sets the connection string to connect to the service
+  connectionString should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.credential*
+
+```notalanguage
+  CREDENTIAL Sets the credential used to authorize requests
+  Credential argument should be of type azure.storage.common.StorageSharedKeyCredential.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.endpoint*
+
+```notalanguage
+  ENDPOINT Sets the blob service endpoint
+  The endpoint is also parsed for additional information i.e. the SAS token
+  endpoint should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.httpClient*
+
+```notalanguage
+  HTTPCLIENT Sets the HttpClient to use for sending a receiving requests
+  Currently the Netty client is configured by default.
+  An updated builder object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.retryOptions*
+
+```notalanguage
+  RETRYOPTIONS Sets request retry options for all requests made through the client
+  retryOptions may be either a com.azure.storage.common.policy.RequestRetryOptions
+  or a azure.storage.common.policy.RequestRetryOptions object.
+  An updated azure.storage.blob.BlobServiceClientBuilder object is returned.
+
+```
+
+*azure.storage.blob.BlobServiceClientBuilder.sasToken*
+
+```notalanguage
+  SASTOKEN Sets the SAS token used to authorize requests
+  sasToken should be of type character vector or scalar string.
+  An updated builder object is returned.
+
+```
+
+
+#### azure.storage.blob.models.BlobContainerItem
+
+```notalanguage
+  BLOBCONTAINERITEM An Azure Storage container
+
+```
+
+*azure.storage.blob.models.BlobContainerItem.getName*
+
+```notalanguage
+  GETNAME Returns the container's name as a character vector
+
+```
+
+
+#### azure.storage.blob.models.UserDelegationKey
+
+```notalanguage
+  USERDELEGATIONKEY A user delegation key.
+
+```
+
+*azure.storage.blob.models.UserDelegationKey.getSignedStart*
+
+```notalanguage
+ GETSIGNEDSTART Get the signedStart property: The date-time the
+ key is active.
+
+```
+
+*azure.storage.blob.models.UserDelegationKey.getSignedExpiry*
+
+```notalanguage
+  GETSIGNEDEXPIRY Get the signedExpiry property: The date-time
+  the key expires.
+
+```
+
+
+#### azure.storage.blob.models.ListBlobsOptions
+
+```notalanguage
+  LISTBLOBSOPTIONS Defines options available to configure the behavior of a call to listBlobs on a BlobContainerClient
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.getDetails*
+
+```notalanguage
+  GETDETAILS Returns a BlobListDetails object
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.getMaxResultsPerPage*
+
+```notalanguage
+  GETDETAILS Returns the maximum number of blobs to return, including all BlobPrefix elements
+  A double is returned.
+  An empty [] is returned if not set.
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.getPrefix*
+
+```notalanguage
+  GETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.setDetails*
+
+```notalanguage
+  SETDETAILS Returns a ListBlobsOptions object
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.setMaxResultsPerPage*
+
+```notalanguage
+  SETDETAILS Returns a ListBlobsOptions object
+
+```
+
+*azure.storage.blob.models.ListBlobsOptions.setPrefix*
+
+```notalanguage
+  SETPREFIX Filters the results to return only blobs whose names begin with the specified prefix
+
+```
+
+
+#### azure.storage.blob.models.BlobItemProperties
+
+```notalanguage
+  BlobItemProperties Properties of a blob
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentMd5*
+
+```notalanguage
+  GETCONTENTMD5 Get the getContentMd5 property
+  Return the base64 value shown in the Azure portal
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentLength*
+
+```notalanguage
+  GETCONTENTLENGTH Get the contentType property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentType*
+
+```notalanguage
+  GETCONTENTTYPE Get the getContentType property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentLanguage*
+
+```notalanguage
+  GETCONTENTLANGUAGE Get the getContentLanguage property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getContentEncoding*
+
+```notalanguage
+  GETCONTENTENCODING Get the getContentEncoding property
+
+```
+
+*azure.storage.blob.models.BlobItemProperties.getCacheControl*
+
+```notalanguage
+  GETCACHECONTROL Get the cacheControl property
+
+```
+
+
+#### azure.storage.blob.models.BlobListDetails
+
+```notalanguage
+  BLOBLISTDETAILS Allows users to specify additional information the service should return with each blob when listing blobs
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveVersions*
+
+```notalanguage
+  GETRETRIEVEVERSIONS Whether versions should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveUncommittedBlobs*
+
+```notalanguage
+  GETRETRIEVEUNCOMMITTEDBLOBS Whether blob tags should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveTags*
+
+```notalanguage
+  GETRETRIEVETAGS Whether blob tags should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveSnapshots*
+
+```notalanguage
+  GETRETRIEVESNAPSHOTS Whether snapshots should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveMetadata*
+
+```notalanguage
+  GETRETRIEVEMETADATA Whether blob metadata should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveLegalHold*
+
+```notalanguage
+  GETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveImmutabilityPolicy*
+
+```notalanguage
+  GETRETRIEVEIMMUTABILITYPOLICY Whether immutability policy for the blob should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobsWithVersions*
+
+```notalanguage
+  GETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveDeletedBlobs*
+
+```notalanguage
+  GETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.getRetrieveCopy*
+
+```notalanguage
+  GETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveVersions*
+
+```notalanguage
+  SETRETRIEVEUNCOMMITTEDBLOBS Whether versions should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveUncommittedBlobs*
+
+```notalanguage
+  SETRETRIEVEUNCOMMITTEDBLOBS Whether blob metadata should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveTags*
+
+```notalanguage
+  setRetrieveTags Whether blob tags should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveSnapshots*
+
+```notalanguage
+  setRetrieveSnapshots Whether snapshots should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveMetadata*
+
+```notalanguage
+  SETRETRIEVEMETADATA Whether blob metadata should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveLegalHold*
+
+```notalanguage
+  SETRETRIEVELEGALHOLD Whether legal hold for the blob should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveImmutabilityPolicy*
+
+```notalanguage
+  SETRETRIEVEIMMUTABILITYPOLICY Whether blobs which have been deleted with versioning should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobsWithVersions*
+
+```notalanguage
+  SETRETRIEVEDELETEDBLOBSWITHVERSIONS Whether blobs which have been deleted with versioning should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveDeletedBlobs*
+
+```notalanguage
+  SETRETRIEVEDELETEDBLOBS Whether blobs which have been soft deleted should be returned
+
+```
+
+*azure.storage.blob.models.BlobListDetails.setRetrieveCopy*
+
+```notalanguage
+  SETRETRIEVECOPY Whether blob metadata related to any current or previous Copy Blob operation should be included in the response
+
+```
+
+
+#### azure.storage.blob.models.BlobItem
+
+```notalanguage
+  BlobItem
+
+```
+
+*azure.storage.blob.models.BlobItem.getMetadata*
+
+```notalanguage
+  GETMETADATA Get the metadata property
+
+```
+
+*azure.storage.blob.models.BlobItem.getName*
+
+```notalanguage
+  GETNAME Returns the blob's name as a character vector
+
+```
+
+*azure.storage.blob.models.BlobItem.getProperties*
+
+```notalanguage
+  GETPROPERTIES Get the properties property
+
+```
+
+*azure.storage.blob.models.BlobItem.getSnapshot*
+
+```notalanguage
+  GETSNAPSHOT Returns the blob's snapshot property as a character vector
+
+```
+
+*azure.storage.blob.models.BlobItem.getTags*
+
+```notalanguage
+  GETTAGS Get the tags property
+
+```
+
+*azure.storage.blob.models.BlobItem.getVersionId*
+
+```notalanguage
+  GETVERSIONID Returns the blob's versionId property as a character vector
+
+```
+
+*azure.storage.blob.models.BlobItem.isDeleted*
+
+```notalanguage
+  isDeleted Get the deleted property, returns a logical
+
+```
+
+*azure.storage.blob.models.BlobItem.isPrefix*
+
+```notalanguage
+  ISPREFIX Get the isPrefix property: If blobs are named to mimic a directory hierarchy
+
+```
+
+
+#### azure.storage.blob.models.StorageAccountInfo
+
+```notalanguage
+  STORAGEACCOUNTINFO Holds information related to the storage account
+  Currently only constructing an object based on and existing java object of
+  type StorageAccountInfo is supported.
+
+```
+
+*azure.storage.blob.models.StorageAccountInfo.getAccountKind*
+
+```notalanguage
+  GETACCOUNTKIND Describes the type of the storage account
+  Values: BLOB_STORAGE, BLOCK_BLOB_STORAGE, FILE_STORAGE, STORAGE, STORAGE_V2
+  A character vector is returned rather than an enumeration
+
+```
+
+
+#### azure.storage.blob.sas.BlobServiceSasSignatureValues
+
+```notalanguage
+  BLOBSERVICESASSIGNATUREVALUES Used to initialize a SAS for a Blob service
   When the values are set, use the generateSas method on the desired service
   client to obtain a representation of the SAS which can then be applied to a
   new client using the .sasToken(String) method on the desired client builder.
  
   Example
-    dlsssv = azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues(expiryTime, permissions);
+    bsssv = azure.storage.blob.sas.BlobServiceSasSignatureValues(expiryTime, permissions);
  
   Argument types:
     expiryTime:  datetime ideally with defined TimeZone to avoid any 
                  confusion, if TimeZone is not set, 'local' is assumed
-    permissions: azure.storage.file.datalake.sas.PathSasPermission or
-                 FileSystemSasPermission
-  Or
+    permissions: azure.storage.blob.sas.BlobSasPermission or
+                 BlobContainerSasPermission
+
+```
+
+
+#### azure.storage.blob.sas.BlobContainerSasPermission
+
+```notalanguage
+  BLOBCONTAINERSASPERMISSION Constructs a string of permissions granted by Account SAS
+  Setting a value to true means that any SAS which uses these permissions will
+  grant permissions for that operation.
+  Once the required values are set, the object should be serialized with
+  toString and set as the permissions field on a BlobSasSignatureValues
+  object
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.parse*
+
+```notalanguage
+  PARSE Creates a BlobContainerSasPermission from the specified permissions string
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+  permString should be of type scalar string or character vector.
+  Throws an IllegalArgumentException if it encounters a character that does
+  not correspond to a valid permission.
+  This is a static method.
+  Expected characters are r, a, c, w, or d.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.hasAddPermission*
+
+```notalanguage
+  HASADDPERMISSION Returns the add permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.hasCreatePermission*
+
+```notalanguage
+  HASCREATEPERMISSION Returns the create permission status
+  The result is returned as a logical
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.hasDeletePermission*
+
+```notalanguage
+  HASDELETEPERMISSION Returns the delete permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.hasListPermission*
+
+```notalanguage
+  HASLISTPERMISSION Returns the list permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.hasReadPermission*
+
+```notalanguage
+  HASREADPERMISSION Returns the read permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.hasWritePermission*
+
+```notalanguage
+  HASWRITEPERMISSION Returns the write permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.setAddPermission*
+
+```notalanguage
+  SETADDPERMISSION Sets the add permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.setCreatePermission*
+
+```notalanguage
+  SETCREATEPERMISSION Sets the create permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.setDeletePermission*
+
+```notalanguage
+  SETDELETEPERMISSION Sets the delete permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.setListPermission*
+
+```notalanguage
+  SETLISTPERMISSION Sets the list permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.setReadPermission*
+
+```notalanguage
+  SETREADPERMISSION Sets the read permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.setWritePermission*
+
+```notalanguage
+  SETWRITEPERMISSION Sets the write permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobContainerSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobContainerSasPermission.toString*
+
+```notalanguage
+  TOSTRING Converts the given permissions to a String
+  A character vector is returned.
+
+```
+
+
+#### azure.storage.blob.sas.BlobSasPermission
+
+```notalanguage
+  BLOBSASPERMISSION Constructs a string of permissions granted by Account SAS
+  Setting a value to true means that any SAS which uses these permissions will
+  grant permissions for that operation.
+  Once the required values are set, the object should be serialized with
+  toString and set as the permissions field on a BlobSasSignatureValues
+  object
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.parse*
+
+```notalanguage
+  PARSE Creates a BlobSasPermission from the specified permissions string
+  A azure.storage.blob.sas.BlobSasPermission object is returned.
+  permString should be of type scalar string or character vector.
+  Throws an IllegalArgumentException if it encounters a character that does
+  not correspond to a valid permission.
+  This is a static method.
+  Expected characters are r, a, c, w, or d.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.hasAddPermission*
+
+```notalanguage
+  HASADDPERMISSION Returns the add permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.hasCreatePermission*
+
+```notalanguage
+  HASCREATEPERMISSION Returns the create permission status
+  The result is returned as a logical
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.hasDeletePermission*
+
+```notalanguage
+  HASDELETEPERMISSION Returns the delete permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.hasReadPermission*
+
+```notalanguage
+  HASREADPERMISSION Returns the read permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.hasWritePermission*
+
+```notalanguage
+  HASWRITEPERMISSION Returns the write permission status
+  The result is returned as a logical.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.setAddPermission*
+
+```notalanguage
+  SETADDPERMISSION Sets the add permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.setCreatePermission*
+
+```notalanguage
+  SETCREATEPERMISSION Sets the create permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.setDeletePermission*
+
+```notalanguage
+  SETDELETEPERMISSION Sets the delete permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.setReadPermission*
+
+```notalanguage
+  SETREADPERMISSION Sets the read permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.setWritePermission*
+
+```notalanguage
+  SETWRITEPERMISSION Sets the write permission status
+  The permission argument should be of type logical.
+  A azure.storage.blob.sas.BlobSasPermission object is returned.
+
+```
+
+*azure.storage.blob.sas.BlobSasPermission.toString*
+
+```notalanguage
+  TOSTRING Converts the given permissions to a String
+  A character vector is returned.
+
+```
+
+
+#### azure.storage.blob.specialized.BlobLeaseClient
+
+```notalanguage
+  BLOBLEASECLIENT This class provides a client that contains all the
+  leasing operations for BlobContainerClient and BlobClient. This client
+  acts as a supplement to those clients and only handles leasing
+  operations.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.breakLease*
+
+```notalanguage
+  BREAKLEASE Breaks the previously acquired lease, if it
+  exists.
  
-    dlsssv = azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues(identifier);
+  Returns the remaining time in the broken lease in seconds.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.changeLease*
+
+```notalanguage
+  CHANGELEASE Changes the lease ID.
  
-  Argument types:
-    identifier:  Creates an object with the specified identifier.
-                 NOTE: Identifier can not be used for a UserDelegationKey SAS.
-                 Type character vector or scalar string.
+  Returns the new lease ID.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.releaseLease*
+
+```notalanguage
+  RELEASELEASE Releases the previously acquired lease.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.renewLease*
+
+```notalanguage
+  RENEWLEASE Renews the previously acquired lease.
+ 
+  Returns the renewed lease ID.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.acquireLease*
+
+```notalanguage
+  ACQUIRELEASE Acquires a lease for write and delete
+  operations. The lease duration must be between 15 to 60
+  seconds or -1 for an infinite duration.
+ 
+  Returns the lease ID.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.getResourceUrl*
+
+```notalanguage
+  GETRESOURCEURL Gets the URL of the lease client.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClient.getLeaseId*
+
+```notalanguage
+  GETLEASEID Get the lease ID for this lease.
+
+```
+
+
+#### azure.storage.blob.specialized.BlobLeaseClientBuilder
+
+```notalanguage
+  BLOBCLIENTBUILDER This class provides a fluent builder API to help aid
+  the configuration and instantiation of Storage Lease clients.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClientBuilder.buildClient*
+
+```notalanguage
+  BUILDCLIENT Creates a BlobLeaseClient based on the
+  configurations set in the builder.
+ 
+  Returns a BlobLeaseClient based on the configurations in this
+  builder.
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClientBuilder.leaseId*
+
+```notalanguage
+  CONTAINERCLIENT Configures the builder based on the passed
+  BlobContainerClient. This will set the HttpPipeline and URL
+  that are used to interact with the service.
+ 
+  Returns the updated BlobLeaseClientBuilder object
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClientBuilder.containerClient*
+
+```notalanguage
+  CONTAINERCLIENT Configures the builder based on the passed
+  BlobContainerClient. This will set the HttpPipeline and URL
+  that are used to interact with the service.
+ 
+  Returns the updated BlobLeaseClientBuilder object
+
+```
+
+*azure.storage.blob.specialized.BlobLeaseClientBuilder.blobClient*
+
+```notalanguage
+  BLOBCLIENT Configures the builder based on the passed
+  BlobClient. This will set the HttpPipeline and URL that are
+  used to interact with the service.
+ 
+  Returns the updated BlobLeaseClientBuilder object
+
+```
+
+
+#### azure.core.credential.TokenCredential
+
+```notalanguage
+  TOKENCREDENTIAL Credential that can provide an access token
+
+```
+
+*azure.core.credential.TokenCredential.getToken*
+
+```notalanguage
+  GETTOKEN Retrieves an AccessToken
+  An azure.core.credential.AccessToken is returned.
+
+```
+
+
+#### azure.core.credential.AzureSasCredential
+
+```notalanguage
+  AZURESASCREDENTIAL A credential that uses a shared access signature to authenticate
+ 
+  See also: https://azuresdkdocs.blob.core.windows.net/$web/java/azure-core/1.20.0/index.html?com/azure/
+
+```
+
+*azure.core.credential.AzureSasCredential.AzureSasSignature*
+
+```notalanguage
+azure.core.credential.AzureSasCredential/AzureSasSignature is a function.
+    obj = AzureSasSignature(varargin)
+
+```
+
+*azure.core.credential.AzureSasCredential.getSignature*
+
+```notalanguage
+  GETSIGNATURE Retrieves the shared access signature associated to this credential
+  Returns a character vector.
+ 
+  Copyright 2021 The MathWorks, Inc.
+
+```
+
+*azure.core.credential.AzureSasCredential.update*
+
+```notalanguage
+  UPDATE Rotates the shared access signature associated to this credential
+  Returns an updated AzureSasCredential object.
+
+```
+
+
+#### azure.core.credential.AccessToken
+
+```notalanguage
+  ACCESSTOKEN An immutable access token with a token string and an expiration time
+  Can be created based on a corresponding Java com.azure.core.credential.AccessToken
+  argument or a token string and an expiry datetime (including a timezone).
+
+```
+
+*azure.core.credential.AccessToken.getToken*
+
+```notalanguage
+  GETTOKEN Return token as a character vector.
+
+```
+
+*azure.core.credential.AccessToken.isExpired*
+
+```notalanguage
+  ISEXPIRED Returns a logical if the token has expired or not
+
+```
+
+
+#### azure.core.credential.TokenRequestContext
+
+```notalanguage
+  TOKENREQUESTCONTEXT Contains details of a request to get a token
+  Can be created based on a corresponding com.azure.core.credential.TokenRequestContext
+  Java object argument or without an argument where further configuration is
+  required to add scopes.
+
+```
+
+*azure.core.credential.TokenRequestContext.addScopes*
+
+```notalanguage
+  ADDSCOPES Adds one or more scopes to the request scopes
+  Scopes should be provided as character vector or scalar string arguments.
+  The updated TokenRequestContext is returned.
+
+```
+
+*azure.core.credential.TokenRequestContext.getClaims*
+
+```notalanguage
+  GETCLAIMS Get the additional claims to be included in the token
+  Returns a character vector.
+
+```
+
+*azure.core.credential.TokenRequestContext.getScopes*
+
+```notalanguage
+  GETSCOPES Gets the scopes required for the token
+  Returns a string array.
+
+```
+
+*azure.core.credential.TokenRequestContext.getTenantId*
+
+```notalanguage
+  GETTENANTID Get the tenant id to be used for the authentication request
+  Returns a character vector.
+
+```
+
+*azure.core.credential.TokenRequestContext.setClaims*
+
+```notalanguage
+  SETCLAIMS Set the additional claims to be included in the token
+  The claims should be provided as a character vector or scalar string.
+  Returns an updated azure.core.credential.TokenRequestContext.
+
+```
+
+*azure.core.credential.TokenRequestContext.setTenantId*
+
+```notalanguage
+  SETTENANTID Set the tenant id to be used for the authentication request
+  The tenantId should be provided as a character vector or scalar string.
+  Returns an updated azure.core.credential.TokenRequestContext.
+
+```
+
+
+#### azure.core.util.polling.SyncPoller
+
+```notalanguage
+  SYNCPOLLER Simplifies executing long-running operations against Azure
+  There is no constructor as this is based on a Java interface. A SyncPoller
+  must be created based on the underlying SyncPoller Java object.
+
+```
+
+*azure.core.util.polling.SyncPoller.cancelOperation*
+
+```notalanguage
+  CANCELOPERATION Cancels the remote long-running operation
+  Requires cancellation to be supported by the service.
+
+```
+
+*azure.core.util.polling.SyncPoller.poll*
+
+```notalanguage
+  POLL Poll once and return the poll response received
+  A azure.core.util.polling.PollResponse is returned.
+
+```
+
+*azure.core.util.polling.SyncPoller.waitForCompletion*
+
+```notalanguage
+  WAITFORCOMPLETION Wait for polling to complete with optional timeout
+  A azure.core.util.polling.PollResponse is returned.
+  An optional timeout can be provided as a scalar number of seconds to
+  wait for polling to complete. The value will be converted to an integer value
+  of seconds.
+
+```
+
+
+#### azure.core.util.polling.PollResponse
+
+```notalanguage
+  POLLRESPONSE Represents a response from long-running polling operation
+  It provides information such as the current status of the long-running
+  operation and any value returned in the poll.
+ 
+  Can be created based on a corresponding com.azure.core.util.polling.PollResponse
+  Java object argument or a com.azure.core.util.polling.LongRunningOperationStatus
+  or azure.core.util.polling.LongRunningOperationStatus status argument and a
+  message argument of type character vector or scalar string.
+
+```
+
+*azure.core.util.polling.PollResponse.getRetryAfter*
+
+```notalanguage
+  GETRETRYAFTER Gets requested delay until next polling operation is performed
+  If a negative value is returned the poller should determine on its own when
+  the next poll operation is to occur.
+
+```
+
+*azure.core.util.polling.PollResponse.getStatus*
+
+```notalanguage
+  GETSTATUS Gets status of a long-running operation at last polling operation
+
+```
+
+*azure.core.util.polling.PollResponse.getValue*
+
+```notalanguage
+  GETVALUE The value returned as a result of the last successful poll operation
+  This can be any custom user defined object, or null if no value was returned
+  from the service. The return value will be subject to standard MATLAB to Java
+  data type conversion and the following conversions:
+     java.lang.String -> character vector
+
+```
+
+
+#### azure.core.util.polling.LongRunningOperationStatus
+
+```notalanguage
+  LONGRUNNINGOPERATIONSTATUS Represent states of a long-running operation
+  The poll operation is considered complete when the status is one of:
+  SUCCESSFULLY_COMPLETED, USER_CANCELLED or FAILED.
+ 
+  Possible values are:
+     FAILED
+     IN_PROGRESS
+     NOT_STARTED
+     SUCCESSFULLY_COMPLETED
+     USER_CANCELLED
+
+```
+
+*azure.core.util.polling.LongRunningOperationStatus.fromString*
+
+```notalanguage
+  FROMSTRING Creates a LongRunningOperationStatus from its string representation
+  A name argument of type character vector or scalar string is required.
+  A logical isComplete argument is required.
+  A azure.core.util.LongRunningOperationStatus is returned.
+
+```
+
+*azure.core.util.polling.LongRunningOperationStatus.isComplete*
+
+```notalanguage
+  ISCOMPLETE Returns a logical to represent if in a completed state or not
+
+```
+
+*azure.core.util.polling.LongRunningOperationStatus.toString*
+
+```notalanguage
+  TOSTRING Returns a string representation of LongRunningOperationStatus
+  Expected values are:
+     FAILED
+     IN_PROGRESS
+     NOT_STARTED
+     SUCCESSFULLY_COMPLETED
+     USER_CANCELLED
+ 
+  A character vector is returned.
 
 ```
 
@@ -4882,52 +4923,6 @@ Enumeration:
 ```
 
 
-#### azure.security.keyvault.secrets.models.SecretProperties
-
-```notalanguage
-  SECRETPROPERTIES Contains the properties of the secret but not its value
- 
-  Example:
-      secretClient = createKeyVaultClient('Type','Secret');
-      propList = secretClient.listPropertiesOfSecrets();
-      % Look at a name in a returned property
-      name = propList(1).getName();
-
-```
-
-*azure.security.keyvault.secrets.models.SecretProperties.getId*
-
-```notalanguage
-  GETID Get the secret identifier
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.secrets.models.SecretProperties.getKeyId*
-
-```notalanguage
-  GETKEYID Get the keyId identifier
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.secrets.models.SecretProperties.getName*
-
-```notalanguage
-  GETNAME Get the secret name
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.secrets.models.SecretProperties.getVersion*
-
-```notalanguage
-  GETVERSION Get the keyId identifier
-  A character vector is returned.
-
-```
-
-
 #### azure.security.keyvault.secrets.models.KeyVaultSecret
 
 ```notalanguage
@@ -4986,6 +4981,52 @@ Enumeration:
       sc = createKeyVaultClient('Type','Secret');
       secret = sc.getSecret('mySecretName');
       secretValue = secret.getValue();
+
+```
+
+
+#### azure.security.keyvault.secrets.models.SecretProperties
+
+```notalanguage
+  SECRETPROPERTIES Contains the properties of the secret but not its value
+ 
+  Example:
+      secretClient = createKeyVaultClient('Type','Secret');
+      propList = secretClient.listPropertiesOfSecrets();
+      % Look at a name in a returned property
+      name = propList(1).getName();
+
+```
+
+*azure.security.keyvault.secrets.models.SecretProperties.getId*
+
+```notalanguage
+  GETID Get the secret identifier
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.secrets.models.SecretProperties.getKeyId*
+
+```notalanguage
+  GETKEYID Get the keyId identifier
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.secrets.models.SecretProperties.getName*
+
+```notalanguage
+  GETNAME Get the secret name
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.secrets.models.SecretProperties.getVersion*
+
+```notalanguage
+  GETVERSION Get the keyId identifier
+  A character vector is returned.
 
 ```
 
@@ -5215,207 +5256,6 @@ Enumeration:
 ```
 
 
-#### azure.security.keyvault.keys.models.KeyType
-
-```notalanguage
-  KEYTYPE Defines enumeration values for KeyType
-  Values are EC, EC_HSM, OCT, OCT_HSM, RSA & RSA_HSM
-
-```
-
-
-```notalanguage
-Enumeration:
-  EC
-  EC_HSM
-  OCT
-  OCT_HSM
-  RSA
-  RSA_HSM
-```
-
-*azure.security.keyvault.keys.models.KeyType.fromString*
-
-```notalanguage
-  FROMSTRING Creates or finds a KeyType from its string representation
-  A azure.security.keyvault.keys.models.KeyType is returned.
-  Input may be a character vector or scalar string.
-  Input is not case sensitive.
-  Accepted values are: EC, EC_HSM, OCT, OCT_HSM, RSA & RSA_HSM.
-  This is a static method.
-
-```
-
-*azure.security.keyvault.keys.models.KeyType.toJava*
-
-```notalanguage
-  TOJAVA Converts to a com.azure.security.keyvault.keys.models.KeyType Java object
-
-```
-
-*azure.security.keyvault.keys.models.KeyType.toString*
-
-```notalanguage
-  TOSTRING Returns text form of a azure.security.keyvault.keys.models.KeyType
-  A character vector is returned.
-
-```
-
-
-#### azure.security.keyvault.keys.models.DeletedKey
-
-```notalanguage
-  DELETEDKEY Deleted Key is the resource consisting of name, recovery
-  id, deleted date, scheduled purge date and its attributes inherited
-  from KeyVaultKey. It is managed by Key Service.
- 
-  DeletedKey follows the Azure KeyVault Java SDK design, meaning that
-  DeletedKey inherits from KeyVaultKey, giving DeletedKey methods like
-  getKey and getName. It appears however that some of those methods do
-  not actually return a value for deleted keys and it even appears to
-  depend on how the DeletedKey was obtained. A DeletedKey obtained
-  through getDeletedKey *does* appear to return a name when calling
-  getName whereas DeletedKey obtained through listDeletedKeys does
-  *not*. These are all behaviors of the underlying Azure KeyVault Java
-  SDK and not MATLAB specific behaviors.
- 
-  In that sense, to determine the name of a deleted key, it appears the
-  best option is to call getRecoveryId and parse the name from the URI
-  this returns.
-
-```
-
-*azure.security.keyvault.keys.models.DeletedKey.getScheduledPurgeDate*
-
-```notalanguage
-  GETSCHEDULEDPURGEDATE Get the scheduled purge UTC time.
-  A datetime object is returned.
-
-```
-
-*azure.security.keyvault.keys.models.DeletedKey.getRecoveryId*
-
-```notalanguage
-  GETRECOVERYID Get the recoveryId identifier.
-  The URI is returned as character array.
-
-```
-
-*azure.security.keyvault.keys.models.DeletedKey.getDeletedOn*
-
-```notalanguage
-  GETDELETEDON Get the deleted UTC time. 
-  A datetime object is returned.
-
-```
-
-
-#### azure.security.keyvault.keys.models.KeyVaultKey
-
-```notalanguage
-  KEYVAULTSECRET KeyVaultKey class
-  Creates a azure.security.keyvault.keys.models.KeyVaultKey object.
-  A com.azure.security.keyvault.keys.models.KeyVaultKey java object is a required
-  input argument. A number of methods return KeyVaultKey objects.
- 
-  Example
-      % Get a KeyVaultKey object
-      key = keyClient.getKey('myKeyName');
-      keyType = key.getKeyType();
-      jsonWebKey = key.getKey();
-
-```
-
-*azure.security.keyvault.keys.models.KeyVaultKey.getId*
-
-```notalanguage
-  GETID Returns the ID value of the key
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.keys.models.KeyVaultKey.getKey*
-
-```notalanguage
-  GETKEY Get the public part of the latest version of the key
-  A azure.security.keyvault.keys.models.JsonWebKey is returned
- 
-  Example:
-      jsonWebKey = key.getKey();
-
-```
-
-*azure.security.keyvault.keys.models.KeyVaultKey.getKeyType*
-
-```notalanguage
-  GETKEYTYPE Returns the type of a key
-  Returns a azure.security.keyvault.keys.models.KeyType
-
-```
-
-*azure.security.keyvault.keys.models.KeyVaultKey.getName*
-
-```notalanguage
-  GETNAME Returns the key name
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.keys.models.KeyVaultKey.getProperties*
-
-```notalanguage
-  GETPROPERTIES Get the key properties
-  A azure.security.keyvault.keys.models.KeyProperties is returned.
-
-```
-
-
-#### azure.security.keyvault.keys.models.KeyProperties
-
-```notalanguage
-  KEYPROPERTIES Contains the properties of the secret except its value
- 
-  Example
-      keyClient = createKeyVaultClient('Type','Key');
-      propList = keyClient.listPropertiesOfKeys();
-      % Look at a name in a returned property
-      name = propList(1).getName();
-
-```
-
-*azure.security.keyvault.keys.models.KeyProperties.getId*
-
-```notalanguage
-  GETID Get the secret identifier
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.keys.models.KeyProperties.getKeyId*
-
-```notalanguage
-  GETKEYID Get the keyId identifier
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.keys.models.KeyProperties.getName*
-
-```notalanguage
-  GETNAME Get the key name
-  A character vector is returned.
-
-```
-
-*azure.security.keyvault.keys.models.KeyProperties.getVersion*
-
-```notalanguage
-  GETVERSION Get the key version
-  A character vector is returned.
-
-```
-
-
 #### azure.security.keyvault.keys.models.JsonWebKey
 
 ```notalanguage
@@ -5514,6 +5354,207 @@ Enumeration:
 
 ```notalanguage
   TOSTRING Return as a character vector
+
+```
+
+
+#### azure.security.keyvault.keys.models.DeletedKey
+
+```notalanguage
+  DELETEDKEY Deleted Key is the resource consisting of name, recovery
+  id, deleted date, scheduled purge date and its attributes inherited
+  from KeyVaultKey. It is managed by Key Service.
+ 
+  DeletedKey follows the Azure KeyVault Java SDK design, meaning that
+  DeletedKey inherits from KeyVaultKey, giving DeletedKey methods like
+  getKey and getName. It appears however that some of those methods do
+  not actually return a value for deleted keys and it even appears to
+  depend on how the DeletedKey was obtained. A DeletedKey obtained
+  through getDeletedKey *does* appear to return a name when calling
+  getName whereas DeletedKey obtained through listDeletedKeys does
+  *not*. These are all behaviors of the underlying Azure KeyVault Java
+  SDK and not MATLAB specific behaviors.
+ 
+  In that sense, to determine the name of a deleted key, it appears the
+  best option is to call getRecoveryId and parse the name from the URI
+  this returns.
+
+```
+
+*azure.security.keyvault.keys.models.DeletedKey.getScheduledPurgeDate*
+
+```notalanguage
+  GETSCHEDULEDPURGEDATE Get the scheduled purge UTC time.
+  A datetime object is returned.
+
+```
+
+*azure.security.keyvault.keys.models.DeletedKey.getRecoveryId*
+
+```notalanguage
+  GETRECOVERYID Get the recoveryId identifier.
+  The URI is returned as character array.
+
+```
+
+*azure.security.keyvault.keys.models.DeletedKey.getDeletedOn*
+
+```notalanguage
+  GETDELETEDON Get the deleted UTC time. 
+  A datetime object is returned.
+
+```
+
+
+#### azure.security.keyvault.keys.models.KeyProperties
+
+```notalanguage
+  KEYPROPERTIES Contains the properties of the secret except its value
+ 
+  Example
+      keyClient = createKeyVaultClient('Type','Key');
+      propList = keyClient.listPropertiesOfKeys();
+      % Look at a name in a returned property
+      name = propList(1).getName();
+
+```
+
+*azure.security.keyvault.keys.models.KeyProperties.getId*
+
+```notalanguage
+  GETID Get the secret identifier
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.keys.models.KeyProperties.getKeyId*
+
+```notalanguage
+  GETKEYID Get the keyId identifier
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.keys.models.KeyProperties.getName*
+
+```notalanguage
+  GETNAME Get the key name
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.keys.models.KeyProperties.getVersion*
+
+```notalanguage
+  GETVERSION Get the key version
+  A character vector is returned.
+
+```
+
+
+#### azure.security.keyvault.keys.models.KeyVaultKey
+
+```notalanguage
+  KEYVAULTSECRET KeyVaultKey class
+  Creates a azure.security.keyvault.keys.models.KeyVaultKey object.
+  A com.azure.security.keyvault.keys.models.KeyVaultKey java object is a required
+  input argument. A number of methods return KeyVaultKey objects.
+ 
+  Example
+      % Get a KeyVaultKey object
+      key = keyClient.getKey('myKeyName');
+      keyType = key.getKeyType();
+      jsonWebKey = key.getKey();
+
+```
+
+*azure.security.keyvault.keys.models.KeyVaultKey.getId*
+
+```notalanguage
+  GETID Returns the ID value of the key
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.keys.models.KeyVaultKey.getKey*
+
+```notalanguage
+  GETKEY Get the public part of the latest version of the key
+  A azure.security.keyvault.keys.models.JsonWebKey is returned
+ 
+  Example:
+      jsonWebKey = key.getKey();
+
+```
+
+*azure.security.keyvault.keys.models.KeyVaultKey.getKeyType*
+
+```notalanguage
+  GETKEYTYPE Returns the type of a key
+  Returns a azure.security.keyvault.keys.models.KeyType
+
+```
+
+*azure.security.keyvault.keys.models.KeyVaultKey.getName*
+
+```notalanguage
+  GETNAME Returns the key name
+  A character vector is returned.
+
+```
+
+*azure.security.keyvault.keys.models.KeyVaultKey.getProperties*
+
+```notalanguage
+  GETPROPERTIES Get the key properties
+  A azure.security.keyvault.keys.models.KeyProperties is returned.
+
+```
+
+
+#### azure.security.keyvault.keys.models.KeyType
+
+```notalanguage
+  KEYTYPE Defines enumeration values for KeyType
+  Values are EC, EC_HSM, OCT, OCT_HSM, RSA & RSA_HSM
+
+```
+
+
+```notalanguage
+Enumeration:
+  EC
+  EC_HSM
+  OCT
+  OCT_HSM
+  RSA
+  RSA_HSM
+```
+
+*azure.security.keyvault.keys.models.KeyType.fromString*
+
+```notalanguage
+  FROMSTRING Creates or finds a KeyType from its string representation
+  A azure.security.keyvault.keys.models.KeyType is returned.
+  Input may be a character vector or scalar string.
+  Input is not case sensitive.
+  Accepted values are: EC, EC_HSM, OCT, OCT_HSM, RSA & RSA_HSM.
+  This is a static method.
+
+```
+
+*azure.security.keyvault.keys.models.KeyType.toJava*
+
+```notalanguage
+  TOJAVA Converts to a com.azure.security.keyvault.keys.models.KeyType Java object
+
+```
+
+*azure.security.keyvault.keys.models.KeyType.toString*
+
+```notalanguage
+  TOSTRING Returns text form of a azure.security.keyvault.keys.models.KeyType
+  A character vector is returned.
 
 ```
 
@@ -6054,13 +6095,23 @@ Logger.warning is a function.
     Other uses of initialize
 
        dlnetwork/initialize
+       idnlfun/initialize
+       lidar.labeler.AutomationAlgorithm/initialize
+       matlab.internal.cef.webwindow/initialize
        matlab.net.http.io.ContentConsumer/initialize
        matlab.net.http.io.ImageConsumer/initialize
        matlab.net.http.io.JSONConsumer/initialize
        matlab.net.http.io.MultipartConsumer/initialize
        matlab.net.http.io.StringConsumer/initialize
        myDeployedModule/initialize
+       particleFilter/initialize
+       PointTracker/initialize
        SimTimeseries/initialize
+       slTunable/initialize
+       socIPCore/initialize
+       stateEstimatorPF/initialize
+       trackingEKF/initialize
+       vision.labeler.AutomationAlgorithm/initialize
 
 ```
 

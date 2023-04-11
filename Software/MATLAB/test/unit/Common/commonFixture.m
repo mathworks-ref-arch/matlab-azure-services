@@ -57,6 +57,18 @@ classdef commonFixture < matlab.unittest.fixtures.Fixture
             ));
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
             
+            configFile = fullfile(AzureCommonRoot, 'config', 'test_ClientCertificate.json');
+            certFile = fullfile(AzureCommonRoot, 'config', 'test_cert.pem');
+            json = jsonencode(struct(...
+                'AuthMethod','ClientSecret',...
+                'TenantId',getenv('AZURE_TENANT_ID'),...
+                'ClientId',getenv('AZURE_CLIENT_ID'),...
+                'PemCertificate',certFile,...
+                'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
+            ));
+            f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
+            f = fopen(certFile,'w'); fwrite(f,matlab.net.base64decode(getenv('AZURE_CLIENT_CERTIFICATE')));fclose(f);
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_DeviceCode.json');
             json = jsonencode(struct(...
                 'AuthMethod','DeviceCode',...
@@ -79,6 +91,7 @@ classdef commonFixture < matlab.unittest.fixtures.Fixture
         function teardown(~)
             disp 'Removing Configuration Files'
             delete(fullfile(AzureCommonRoot,'config','test_*.json'))
+            delete(fullfile(AzureCommonRoot,'config','test_cert.pem'))
         end
     end
 end

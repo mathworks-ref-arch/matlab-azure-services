@@ -1,6 +1,6 @@
-function clientSecretCredentialBuilder = pemCertificate(obj, certificatePath)
+function clientCertificateCredentialBuilder = pemCertificate(obj, certificatePath)
 % PEMCERTIFICATE Sets the path of the PEM certificate for authenticating to AAD
-% An updated ClientSecretCredentialBuilder is returned.
+% An updated ClientCertificateCredentialBuilder is returned.
 
 % Copyright 2020 The MathWorks, Inc.
 
@@ -14,7 +14,7 @@ if exist(certificatePath, 'file') ~= 2
     write(logObj,'error',['File not found: ', strrep(char(certificatePath),'\','\\')]);
 end 
 
-clientSecretCredentialBuilderj = obj.Handle.pemCertificate(certificatePath);
-clientSecretCredentialBuilder = azure.identity.ClientSecretCredentialBuilder(clientSecretCredentialBuilderj);
+clientCertificateCredentialBuilderj = obj.Handle.pemCertificate(certificatePath);
+clientCertificateCredentialBuilder = azure.identity.ClientCertificateCredentialBuilder(clientCertificateCredentialBuilderj);
 
 end
