@@ -47,9 +47,11 @@ features like proxy settings.
 
 ### `Common` Azure App Registration
 
-Configure an Azure App for which a Client Secret has been generated as the
-`Storage` App Registration. And if also running the interactive authentication
-tests make sure that for this App:
+Configure an Azure App for which a Client Secret has been generated and a
+Client Certificate has been registered. Ensure this App's service principal
+is granted access to the storage account used for testing, see also
+[Storage Account](#storage-account) below. And if also running the
+interactive authentication tests make sure that for this App:
 
 * A Redirect Uri has been configured in the form of `http://localhost:PORT`
   where *PORT* is configurable.
@@ -92,7 +94,7 @@ which:
 
 * A Client Secret has been generated.
 
-### `Storage` Storage Account
+### Storage Account
 
 The storage account should contain three containers:
 
@@ -134,6 +136,7 @@ Once generated note down the "Connection string" and "SAS token".
 | `STORAGE_ACCOUNT_NAME`      | Name of the storage account                    |
 | `AZURE_CLIENT_ID`           | Client ID of the Azure App                     |
 | `AZURE_CLIENT_SECRET`       | Client Secret which has been generated for the App |
+| `AZURE_CLIENT_CERTIFICATE`  | Base64 encoded PEM-format certificate as registered for the App |
 | `AZURE_TENANT_ID`           | Azure Tenant ID                                |
 
 ## `/KeyVault` Azure Key Vault unit tests
@@ -174,4 +177,4 @@ A Key Vault account needs to exist:
 | `KEYVAULT_TENANT_ID`    | Azure Tenant ID                                    |
 | `KEYVAULT_VAULT_NAME`   | Name of the Key Vault                              |
 
-[//]: #  (Copyright 2021-2022 The MathWorks, Inc.)
+[//]: #  (Copyright 2021-2023 The MathWorks, Inc.)

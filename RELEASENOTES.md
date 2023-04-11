@@ -2,6 +2,10 @@
 
 ## Release Notes
 
+## Release 0.3.1 April 11th 2023
+
+* Fixes issue with client certificate authentication
+
 ## Release 0.3.0 March 27th 2023
 
 * Added EndPoint setting support

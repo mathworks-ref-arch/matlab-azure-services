@@ -164,6 +164,16 @@ classdef (SharedTestFixtures={commonFixture}) testCredentials < matlab.unittest.
             testCase.interactWithClient(Client,credentials,configFile);
         end
         
+        function testBuilderClientCertificate(testCase,Client)
+            disp('Running testBuilderClientCertificate');
+            configFile = fullfile(AzureCommonRoot, 'config', 'test_ClientCertificate.json');
+            % Configure ClientSecret credentials
+            credentials = configureCredentials(configFile);
+            testCase.verifyClass(credentials, 'azure.identity.ClientCertificateCredential');
+            
+            testCase.interactWithClient(Client,credentials,configFile);
+        end
+                
         
         function testBuilderInteractiveBrowser(testCase,Client) 
             disp('Running testBuilderInteractiveBrowser');
