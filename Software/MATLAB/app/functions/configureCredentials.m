@@ -339,7 +339,7 @@ function builder = createDeviceCodeCredentialBuilder(settings)
     builder = builder.tenantId(settings.TenantId);
 
     if isfield(settings, 'AuthorityHost') && ~isempty(settings.AuthorityHost)
-        builder = builder.authorityHost(settings.authorityHost);
+        builder = builder.authorityHost(settings.AuthorityHost);
     end 
 end
 

@@ -2,6 +2,10 @@
 
 ## Release Notes
 
+## Release 0.3.2 April 14th 2023
+
+* Typo fix in `configureCredentials`.
+
 ## Release 0.3.1 April 11th 2023
 
 * Fixes issue with client certificate authentication
