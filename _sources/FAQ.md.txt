@@ -1,10 +1,12 @@
 # Frequently Asked Questions
 
-## How to change the underlying library logging level
+## Azure Java SDK
+
+### How to change the underlying library logging level
 
 The Azure® interfaces rely on an number of underlying libraries which are
 included in the `Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar` Jar file.
-Many of these libraries use slf4j as a logging mechanism. Further, MATLAB itself
+Many of these libraries use slf4j as a logging mechanism. Further, MATLAB® itself
 also includes slf4j and MATLAB configures it to use log4j as backend. So when
 used in MATLAB, these libraries end up using sl4j with log4j as backend. Which
 exact log4j version is used, depends on the MATLAB release. MATLAB releases up
@@ -16,14 +18,30 @@ The logging level and destination of log4j versions 1.x can be controlled using
 `Software/MATLAB/lib/jar/log4j2.xml`. By default they log at the `ERROR` level.
 To change this to `INFO` for example use the following in `log4j.properties`:
 
-```
+```text
 log4j.rootLogger=INFO, stdout
 ```
 
 or the following in `log4j2.xml`:
 
-```
+```xml
 <Root level="info" additivity="false">
 ```
 
-[//]: #  (Copyright 2020-2022 The MathWorks, Inc.)
+## Azure Data Explorer
+
+### BadRequest_StreamingIngestionPolicyNotEnabled error
+
+This error indicates a need to configure streaming ingestion on your Azure Data Explorer cluster.
+See: [https://learn.microsoft.com/en-us/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp#choose-the-appropriate-streaming-ingestion-type](https://learn.microsoft.com/en-us/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp#choose-the-appropriate-streaming-ingestion-type)
+
+The queries described can be issued using this package.
+
+### Unable to resolve the name 'com.azure.identity.InteractiveBrowserCredentialBuilder'
+
+This error is likely to be proceeded by `Getting ingestion resources`, the probable cause in that
+the Azure Services SDK jar file which is required for interactive authentication is not found
+of the Java static classpath, review the output of the startup command which may refer to this
+also.
+
+[//]: #  (Copyright 2020-2024 The MathWorks, Inc.)

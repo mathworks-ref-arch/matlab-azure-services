@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Queue Storage &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>Queue Storage &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,37 +47,49 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="Blob.html">Blob Storage</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Queue Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Queue Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#queue-clients">Queue Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queue-service-client">Queue Service Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-service-client-operations">Common Service Client operations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#queue-client">Queue Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-queue-client-operations">Common Queue Client operations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -82,17 +99,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
-          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
-      <li>Queue Storage</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+      <li class="breadcrumb-item active">Queue Storage</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Queue.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -103,7 +119,7 @@
            <div itemprop="articleBody">
              
   <section id="queue-storage">
-<h1>Queue Storage<a class="headerlink" href="#queue-storage" title="Permalink to this headline"></a></h1>
+<h1>Queue Storage<a class="headerlink" href="#queue-storage" title="Permalink to this heading"></a></h1>
 <p>QueueStorage is designed to provide durable message queueing for large
 workloads. This package provides a low-level interface to queue storage and
 provides capabilities not available in shipping MATLAB. This package supersedes
@@ -116,7 +132,7 @@ strongly recommended that this interface be used when working with Gen2 blob
 storage. While conceptually quite similar the APIs are not backwardly compatible
 as a consequence of significant changes in the underlying Azure APIs.</p>
 <section id="queue-clients">
-<h2>Queue Clients<a class="headerlink" href="#queue-clients" title="Permalink to this headline"></a></h2>
+<h2>Queue Clients<a class="headerlink" href="#queue-clients" title="Permalink to this heading"></a></h2>
 <p>The concept of a <em>Client</em> is central to how queue storage is accessed. A
 hierarchy of clients exist that target different levels of the storage
 hierarchy:</p>
@@ -136,11 +152,11 @@ use cases in an extensible way.</p>
 various clients.</p>
 </section>
 <section id="createstorageclient-function">
-<h2><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function<a class="headerlink" href="#createstorageclient-function" title="Permalink to this headline"></a></h2>
-<p>See the <a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> description</span></a> for more details.</p>
+<h2><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function<a class="headerlink" href="#createstorageclient-function" title="Permalink to this heading"></a></h2>
+<p>See the <a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> description</span></a> for more details.</p>
 </section>
 <section id="queue-service-client">
-<h2>Queue Service Client<a class="headerlink" href="#queue-service-client" title="Permalink to this headline"></a></h2>
+<h2>Queue Service Client<a class="headerlink" href="#queue-service-client" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">QueueServiceClient</span></code> can be created using <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> as
 follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span>
@@ -162,10 +178,10 @@ follows:</p>
 </pre></div>
 </div>
 <section id="common-service-client-operations">
-<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this heading"></a></h3>
 <p>For a full list of supported service client methods consult the API
 documentation or call <code class="docutils literal notranslate"><span class="pre">methods()</span></code> on the client object or see the
-<a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference.md</span></a> file.</p>
+<a class="reference internal" href="APIReference.html"><span class="std std-doc">APIReference.md</span></a> file.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a Queue &amp; its client</span>
 <span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span>
 </pre></div>
@@ -181,7 +197,7 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
 </section>
 </section>
 <section id="queue-client">
-<h2>Queue Client<a class="headerlink" href="#queue-client" title="Permalink to this headline"></a></h2>
+<h2>Queue Client<a class="headerlink" href="#queue-client" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">QueueClient</span></code> is created as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span>
 <span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;QueueName&#39;</span><span class="p">,</span><span class="s">&#39;myquename-123456&#39;</span><span class="p">);</span>
@@ -201,7 +217,7 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <section id="common-queue-client-operations">
-<h3>Common Queue Client operations<a class="headerlink" href="#common-queue-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Queue Client operations<a class="headerlink" href="#common-queue-client-operations" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Send a message</span>
 <span class="n">msgResult</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&#39;my test message&#39;</span><span class="p">);</span>
 <span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span>
@@ -253,7 +269,7 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

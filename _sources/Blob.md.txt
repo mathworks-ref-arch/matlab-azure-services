@@ -2,7 +2,7 @@
 
 Blob storage is the most common use case for Azure® Data Lake Storage Gen2. This
 package provides a low-level interface to blob storage and provides capabilities
-not available in shipping MATLAB. This package supersedes a previously published
+not available in shipping MATLAB®. This package supersedes a previously published
 blob storage low-level interface
 [https://github.com/mathworks-ref-arch/matlab-azure-blob](https://github.com/mathworks-ref-arch/matlab-azure-blob).
 Specifically this interface targets Gen2 storage APIs and the Azure v12 SDK
@@ -480,7 +480,7 @@ It is sometimes necessary to provide a more advanced query. This can be done usi
 * An `azure.storage.blob.models.BlobListDetails` object
 * An `azure.storage.blob.models.ListBlobsOptions` object
 
-#### Using a prefix/directory
+### Using a prefix/directory
 
 `BlobContainerClient.listBlobsByHierarchy(directory)` Returns all the blobs and directories (prefixes) under the given directory (prefix). Directories will have `BlobItem.isPrefix()` set to true. Blob names are returned in lexicographic order. E.g. listing a container containing a 'foo' folder, which contains blobs 'foo1' and 'foo2', and a blob on the root level 'bar', will return the following results when prefix/directory is not set.
 
@@ -498,7 +498,7 @@ Alternatively the following arguments can be provided `BlobContainerClient.listB
 * options - `ListBlobsOptions`, see below.
 * timeout - A number of seconds timeout value beyond which a runtime exception will be raised.
 
-#### ListBlobsOptions
+### ListBlobsOptions
 
 A `ListBlobsOptions` object allows the following criteria to be set:
 
@@ -508,7 +508,7 @@ A `ListBlobsOptions` object allows the following criteria to be set:
 
 `set` methods return an updated `ListBlobsOptions` object. `get` methods are also provided.
 
-#### BlobListDetails
+### BlobListDetails
 
 Allows specifying of additional information to be returned with each blob when listing blobs in a container (via a BlobContainerClient object). This type is immutable to ensure thread-safety of requests, so changing the details for a different listing operation requires construction of a new object.
 
@@ -525,7 +525,7 @@ Allows specifying of additional information to be returned with each blob when l
 * `getRetrieveUncommittedBlobs()` Whether blobs for which blocks have been uploaded, but which have not been committed using Put Block List, should be included in the response.
 * `getRetrieveVersions()` Whether versions should be returned.
 
-### Blob properties & metadata
+## Blob properties & metadata
 
 A blob's properties can be queried reason about the blob, e.g. check its MD5 or size.
 In this case the file/object is 0 bytes in size.
@@ -611,4 +611,4 @@ Typically and by default Azure storage endpoints follow the pattern: `https://Ac
 
 For details of private endpoint use see: [https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints](https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints)
 
-[//]: #  (Copyright 2020-2023 The MathWorks, Inc.)
+[//]: #  (Copyright 2020-2024 The MathWorks, Inc.)

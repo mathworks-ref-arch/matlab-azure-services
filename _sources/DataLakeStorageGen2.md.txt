@@ -19,7 +19,6 @@ interfaces, e.g. the ```dir``` command supports accessing remote data:
 Where MATLAB supports the required operations directly it is recommended to use
 that built in functionality.
 
-
 ## `createStorageClient` function
 
 The `createStorageClient` function can be used for creating BlobServiceClient,
@@ -147,7 +146,9 @@ is recommended:
 * [https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)
 
 ## Low Level Interfaces
+
 % This section includes the relevant sub pages in the HTML version of the documentation, please ignore when viewing the Markdown page itself.
+
 ```{toctree}
 ---
 maxdepth: 1
@@ -157,5 +158,4 @@ Queue
 File
 ```
 
-[//]: #  (Copyright 2020-2022 The MathWorks, Inc.)
-
+[//]: #  (Copyright 2020-2024 The MathWorks, Inc.)

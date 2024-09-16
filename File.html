@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Data Lake Storage &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>File Data Lake Storage &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,14 +12,15 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Azure Key Vault" href="KeyVault.html" />
+    <link rel="next" title="MATLAB Compiler (SDK) Deployment" href="Deployment.html" />
     <link rel="prev" title="Queue Storage" href="Queue.html" /> 
 </head>
 
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,37 +47,47 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="Blob.html">Blob Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">File Data Lake Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-data-lake-clients">File Data Lake Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#high-level-client-creation">High-level Client Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#url-format">URL Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-a-filesystem-client">Build a Filesystem Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-a-filesystem-client-to-work-with-sass">Build a Filesystem Client to work with SASs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sas-permissions">SAS Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#directory-clients-misc-operations">Directory Clients &amp; misc. operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -82,17 +97,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
-          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
-      <li>File Data Lake Storage</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+      <li class="breadcrumb-item active">File Data Lake Storage</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/File.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -103,7 +117,7 @@
            <div itemprop="articleBody">
              
   <section id="file-data-lake-storage">
-<h1>File Data Lake Storage<a class="headerlink" href="#file-data-lake-storage" title="Permalink to this headline"></a></h1>
+<h1>File Data Lake Storage<a class="headerlink" href="#file-data-lake-storage" title="Permalink to this heading"></a></h1>
 <p>The File Data Lake API currently has less implemented functionality than the equivalent
 Blob and Queue APIs, where additional API calls are needed contact MathWorks.</p>
 <p>Relevant Azure® API/service documentation:</p>
@@ -112,7 +126,7 @@ Blob and Queue APIs, where additional API calls are needed contact MathWorks.</p
 <li><p><a class="reference external" href="https://docs.microsoft.com/en-us/java/api/overview/azure/storage-file-datalake-readme?view=azure-java-stable">https://docs.microsoft.com/en-us/java/api/overview/azure/storage-file-datalake-readme?view=azure-java-stable</a></p></li>
 </ul>
 <section id="file-data-lake-clients">
-<h2>File Data Lake Clients<a class="headerlink" href="#file-data-lake-clients" title="Permalink to this headline"></a></h2>
+<h2>File Data Lake Clients<a class="headerlink" href="#file-data-lake-clients" title="Permalink to this heading"></a></h2>
 <p>The concept of a <em>Client</em> is central to how file storage is accessed. A
 hierarchy of clients exist that target different levels of the storage
 hierarchy:</p>
@@ -124,7 +138,7 @@ hierarchy:</p>
 </ol>
 </section>
 <section id="high-level-client-creation">
-<h2>High-level Client Creation<a class="headerlink" href="#high-level-client-creation" title="Permalink to this headline"></a></h2>
+<h2>High-level Client Creation<a class="headerlink" href="#high-level-client-creation" title="Permalink to this heading"></a></h2>
 <p>As with other services both high-level and low-level approaches for creating
 various clients are supported.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% creates a DataLakeFileSystemClient with default options</span>
@@ -144,14 +158,14 @@ various clients are supported.</p>
 <p>Additional Name, Value pairs can be supplied to configure non-default options. See: <code class="docutils literal notranslate"><span class="pre">doc</span> <span class="pre">createStorageClient</span></code> for more details.</p>
 </section>
 <section id="url-format">
-<h2>URL Format<a class="headerlink" href="#url-format" title="Permalink to this headline"></a></h2>
+<h2>URL Format<a class="headerlink" href="#url-format" title="Permalink to this heading"></a></h2>
 <p>File path are addressable using the following URL format:</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://myaccount.dfs.core.windows.net/myfilesystem/myfilepath</span></code></p>
 <p>Filesystems can be thought of as being similar to Blob Containers and Paths for
 files or Directories as being similar to Blobs.</p>
 </section>
 <section id="build-a-filesystem-client">
-<h2>Build a Filesystem Client<a class="headerlink" href="#build-a-filesystem-client" title="Permalink to this headline"></a></h2>
+<h2>Build a Filesystem Client<a class="headerlink" href="#build-a-filesystem-client" title="Permalink to this heading"></a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Read a shared storage key from a file</span>
 <span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;myStorageSharedKey.json&#39;</span><span class="p">));</span>
 
@@ -172,7 +186,7 @@ files or Directories as being similar to Blobs.</p>
 <p>A very similar Path class, <code class="docutils literal notranslate"><span class="pre">azure.storage.file.datalake.DataLakePathClientBuilder()</span></code> exists.</p>
 </section>
 <section id="build-a-filesystem-client-to-work-with-sass">
-<h2>Build a Filesystem Client to work with SASs<a class="headerlink" href="#build-a-filesystem-client-to-work-with-sass" title="Permalink to this headline"></a></h2>
+<h2>Build a Filesystem Client to work with SASs<a class="headerlink" href="#build-a-filesystem-client-to-work-with-sass" title="Permalink to this heading"></a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create some minimal permissions</span>
 <span class="n">FSSP</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">FileSystemSasPermission</span><span class="p">();</span>
 <span class="n">FSSP</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">FSSP</span><span class="p">.</span><span class="n">setListPermission</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
@@ -216,7 +230,7 @@ files or Directories as being similar to Blobs.</p>
 </div>
 </section>
 <section id="sas-permissions">
-<h2>SAS Permissions<a class="headerlink" href="#sas-permissions" title="Permalink to this headline"></a></h2>
+<h2>SAS Permissions<a class="headerlink" href="#sas-permissions" title="Permalink to this heading"></a></h2>
 <p>A <em>Path</em> SAS Permission is created as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">psp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">sas</span><span class="p">.</span><span class="n">PathSasPermission</span><span class="p">();</span>
 </pre></div>
@@ -245,7 +259,7 @@ and updated permission:</p>
 </div>
 </section>
 <section id="directory-clients-misc-operations">
-<h2>Directory Clients &amp; misc. operations<a class="headerlink" href="#directory-clients-misc-operations" title="Permalink to this headline"></a></h2>
+<h2>Directory Clients &amp; misc. operations<a class="headerlink" href="#directory-clients-misc-operations" title="Permalink to this heading"></a></h2>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Begin by creating a Path Client</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakePathClientBuilder</span><span class="p">();</span>
 <span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;myStorageSharedKey.json&#39;</span><span class="p">));</span>
@@ -258,7 +272,7 @@ and updated permission:</p>
 <span class="n">dirClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">buildDirectoryClient</span><span class="p">();</span>
 
 <span class="c">% Check if the path exists</span>
-<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Client</span><span class="p">.</span><span class="n">exists</span><span class="p">());</span>
+<span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Client</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span>
 
 <span class="c">% Create a Directory Client from a Filesystem Client</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">file</span><span class="p">.</span><span class="n">datalake</span><span class="p">.</span><span class="n">DataLakeFileSystemClientBuilder</span><span class="p">();</span>
@@ -299,7 +313,7 @@ and updated permission:</p>
 </div>
 </section>
 <section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <p>This API does not support storage accounts where hierarchical namespace (HNS) is disabled.</p>
 </section>
 </section>
@@ -309,13 +323,13 @@ and updated permission:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Queue.html" class="btn btn-neutral float-left" title="Queue Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="KeyVault.html" class="btn btn-neutral float-right" title="Azure Key Vault" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Deployment.html" class="btn btn-neutral float-right" title="MATLAB Compiler (SDK) Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

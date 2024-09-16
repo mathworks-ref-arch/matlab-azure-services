@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unit Tests &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>Unit Tests &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,18 +47,32 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Unit Tests</a><ul>
@@ -80,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -89,15 +109,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Unit Tests</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Unit Tests</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Testing.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -108,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="unit-tests">
-<h1>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline"></a></h1>
+<h1>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this heading"></a></h1>
 <p>The package includes various MATLAB® Unit Tests for testing the different
 interfaces and clients for the different Azure® services. These tests can be
 found in <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/test/unit</span></code> and they are further split into directories
@@ -117,6 +137,7 @@ for different Azure services as well as a <code class="docutils literal notransl
 <li><p><code class="docutils literal notranslate"><span class="pre">/Common</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/KeyVault</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/Storage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/Adx</span></code></p></li>
 </ul>
 <p>The unit tests for the different services may have different requirements. These
 are documented on a per service basis below.</p>
@@ -137,7 +158,7 @@ value to point to the same App.</p>
 user interaction). These tests are automatically skipped if environment variable
 <code class="docutils literal notranslate"><span class="pre">GITLAB_CI</span></code>=<code class="docutils literal notranslate"><span class="pre">true</span></code> is set.</p>
 <section id="common-unit-tests">
-<h2><code class="docutils literal notranslate"><span class="pre">/Common</span></code> unit tests<a class="headerlink" href="#common-unit-tests" title="Permalink to this headline"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">/Common</span></code> unit tests<a class="headerlink" href="#common-unit-tests" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Common</span></code> tests various common features like authentication and networking
 features like proxy settings.</p>
 <blockquote>
@@ -151,11 +172,11 @@ tests also require a storage account resource and corresponding environment
 variables.</p>
 </div></blockquote>
 <section id="common-azure-app-registration">
-<h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> Azure App Registration<a class="headerlink" href="#common-azure-app-registration" title="Permalink to this headline"></a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> Azure App Registration<a class="headerlink" href="#common-azure-app-registration" title="Permalink to this heading"></a></h3>
 <p>Configure an Azure App for which a Client Secret has been generated and a
 Client Certificate has been registered. Ensure this App’s service principal
 is granted access to the storage account used for testing, see also
-<a class="reference internal" href="#storage-account"><span class="std std-doc">Storage Account</span></a> below. And if also running the
+<a class="reference internal" href="#storage-account">Storage Account</a> below. And if also running the
 interactive authentication tests make sure that for this App:</p>
 <ul class="simple">
 <li><p>A Redirect Uri has been configured in the form of <code class="docutils literal notranslate"><span class="pre">http://localhost:PORT</span></code>
@@ -166,7 +187,7 @@ configured.</p></li>
 </ul>
 </section>
 <section id="azure-cli">
-<h3>Azure CLI<a class="headerlink" href="#azure-cli" title="Permalink to this headline"></a></h3>
+<h3>Azure CLI<a class="headerlink" href="#azure-cli" title="Permalink to this heading"></a></h3>
 <p>In order to be able to test Azure CLI credentials, Azure CLI must have been
 installed and a user must have have already successfully logged in using <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">login</span></code>.</p>
 <blockquote>
@@ -175,7 +196,7 @@ installed and a user must have have already successfully logged in using <code c
 </div></blockquote>
 </section>
 <section id="common-storage-account">
-<h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> Storage Account<a class="headerlink" href="#common-storage-account" title="Permalink to this headline"></a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> Storage Account<a class="headerlink" href="#common-storage-account" title="Permalink to this heading"></a></h3>
 <p>Configure a storage account as discussed under <code class="docutils literal notranslate"><span class="pre">Storage</span></code> Storage Account.</p>
 <p>When also running the interactive tests (including Azure CLI test), the
 interactive user which you are logging in as, will also require <code class="docutils literal notranslate"><span class="pre">Contributor</span></code>,
@@ -183,8 +204,8 @@ interactive user which you are logging in as, will also require <code class="doc
 the storage account.</p>
 </section>
 <section id="common-environment-variables">
-<h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> environment variables<a class="headerlink" href="#common-environment-variables" title="Permalink to this headline"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3><code class="docutils literal notranslate"><span class="pre">Common</span></code> environment variables<a class="headerlink" href="#common-environment-variables" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable Name</p></th>
 <th class="head"><p>Description</p></th>
@@ -200,9 +221,9 @@ the storage account.</p>
 </section>
 </section>
 <section id="storage-azure-data-lake-storage-gen2-unit-tests">
-<h2><code class="docutils literal notranslate"><span class="pre">/Storage</span></code> Azure Data Lake Storage Gen2 unit tests<a class="headerlink" href="#storage-azure-data-lake-storage-gen2-unit-tests" title="Permalink to this headline"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">/Storage</span></code> Azure Data Lake Storage Gen2 unit tests<a class="headerlink" href="#storage-azure-data-lake-storage-gen2-unit-tests" title="Permalink to this heading"></a></h2>
 <section id="azure-app-registration">
-<h3>Azure App Registration<a class="headerlink" href="#azure-app-registration" title="Permalink to this headline"></a></h3>
+<h3>Azure App Registration<a class="headerlink" href="#azure-app-registration" title="Permalink to this heading"></a></h3>
 <p>In order to be able to run the Storage tests an App registration is required for
 which:</p>
 <ul class="simple">
@@ -210,7 +231,7 @@ which:</p>
 </ul>
 </section>
 <section id="storage-account">
-<h3>Storage Account<a class="headerlink" href="#storage-account" title="Permalink to this headline"></a></h3>
+<h3>Storage Account<a class="headerlink" href="#storage-account" title="Permalink to this heading"></a></h3>
 <p>The storage account should contain three containers:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">containerempty</span></code> which should be empty</p></li>
@@ -223,7 +244,7 @@ which:</p>
 roles on this account.</p>
 </section>
 <section id="connection-string-sas-token">
-<h3>Connection String/SAS Token<a class="headerlink" href="#connection-string-sas-token" title="Permalink to this headline"></a></h3>
+<h3>Connection String/SAS Token<a class="headerlink" href="#connection-string-sas-token" title="Permalink to this heading"></a></h3>
 <p>Under “Shared access signature” generate a signature with:</p>
 <ul class="simple">
 <li><p>Allowed Services: “Blob” and “Queue”</p></li>
@@ -239,8 +260,8 @@ increase the validity period in accordance with local security polices.</p>
 <p>Once generated note down the “Connection string” and “SAS token”.</p>
 </section>
 <section id="storage-environment-variables">
-<h3><code class="docutils literal notranslate"><span class="pre">Storage</span></code> environment variables<a class="headerlink" href="#storage-environment-variables" title="Permalink to this headline"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3><code class="docutils literal notranslate"><span class="pre">Storage</span></code> environment variables<a class="headerlink" href="#storage-environment-variables" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable Name</p></th>
 <th class="head"><p>Description</p></th>
@@ -273,11 +294,11 @@ increase the validity period in accordance with local security polices.</p>
 </section>
 </section>
 <section id="keyvault-azure-key-vault-unit-tests">
-<h2><code class="docutils literal notranslate"><span class="pre">/KeyVault</span></code> Azure Key Vault unit tests<a class="headerlink" href="#keyvault-azure-key-vault-unit-tests" title="Permalink to this headline"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">/KeyVault</span></code> Azure Key Vault unit tests<a class="headerlink" href="#keyvault-azure-key-vault-unit-tests" title="Permalink to this heading"></a></h2>
 <p>All KeyVault Unit Tests are performed using Client Secret authentication. There
 are no interactive tests.</p>
 <section id="key-vault-azure-app-registration">
-<h3>Key Vault Azure App Registration<a class="headerlink" href="#key-vault-azure-app-registration" title="Permalink to this headline"></a></h3>
+<h3>Key Vault Azure App Registration<a class="headerlink" href="#key-vault-azure-app-registration" title="Permalink to this heading"></a></h3>
 <p>In order to be able to run the Key Vault tests an App registration is required
 for which:</p>
 <ul class="simple">
@@ -285,7 +306,7 @@ for which:</p>
 </ul>
 </section>
 <section id="key-vault-account">
-<h3>Key Vault Account<a class="headerlink" href="#key-vault-account" title="Permalink to this headline"></a></h3>
+<h3>Key Vault Account<a class="headerlink" href="#key-vault-account" title="Permalink to this heading"></a></h3>
 <p>A Key Vault account needs to exist:</p>
 <ul class="simple">
 <li><p>On which soft-delete is enabled.</p></li>
@@ -299,8 +320,8 @@ irrelevant).</p></li>
 </ul>
 </section>
 <section id="keyvault-environment-variables">
-<h3><code class="docutils literal notranslate"><span class="pre">KeyVault</span></code> environment variables<a class="headerlink" href="#keyvault-environment-variables" title="Permalink to this headline"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3><code class="docutils literal notranslate"><span class="pre">KeyVault</span></code> environment variables<a class="headerlink" href="#keyvault-environment-variables" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable Name</p></th>
 <th class="head"><p>Description</p></th>
@@ -336,7 +357,7 @@ irrelevant).</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authentication &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>Authentication &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,14 +12,15 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Usage Per Service" href="Services.html" />
+    <link rel="next" title="Azure Key Vault" href="KeyVault.html" />
     <link rel="prev" title="Configuration" href="Configuration.html" /> 
 </head>
 
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,13 +47,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#azure-cli">Azure CLI</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sample-myservicespecificsettings-json">Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
@@ -97,14 +108,70 @@
 <li class="toctree-l2"><a class="reference internal" href="#chained-token">Chained Token</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#azure-cli">Azure CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-myservicespecificsettings-json">Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managed-identity">Managed Identity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#managed-identity-myservicespecificsettings-json">Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#client-secret">Client Secret</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client-secret-myservicespecificsettings-json">Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variable">Environment Variable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variable-myservicespecificsettings-json">Environment Variable <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#shared-token-cache">Shared Token Cache</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shared-token-cache-myservicespecificsettings-json">Shared Token Cache <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-browser">Interactive Browser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tokencachepersistenceoptions-interactive-browser">TokenCachePersistenceOptions (Interactive Browser)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-browser-myservicespecificsettings-json">Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#device-code">Device Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scopes">Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-and-authenticating">Building <em>and</em> authenticating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tokencachepersistenceoptions-device-code">TokenCachePersistenceOptions (Device Code)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-code-myservicespecificsettings-json">Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#default-azure">Default Azure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-azure-myservicespecificsettings-json">Default Azure <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#storage-shared-key">Storage Shared Key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#storage-shared-key-myservicespecificsettings-json">Storage Shared Key <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-string">Connection String</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connection-string-myservicespecificsettings-json">Connection String <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chained-token">Chained Token</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -114,15 +181,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Authentication</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Authentication</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Authentication.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -133,14 +200,16 @@
            <div itemprop="articleBody">
              
   <section id="authentication">
-<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h1>
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading"></a></h1>
 <p>Azure® supports a variety of authentication methods. These can be invoked
 specifically or as a series of failover attempts in a so-called provider-chain.</p>
+<p>Azure Data Explorer authentication support includes some of the features described
+below, it is described in more detail in <a class="reference internal" href="ADXAuthentication.html"><span class="std std-doc">ADXAuthentication.md</span></a>.</p>
 <p>When working with high level functions like <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> or
 <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code>, these will automatically perform the authentication and
 then use these credentials to automatically create the service specific clients.
 The authentication details are read from JSON Configuration files as also
-discussed in <a class="reference internal" href="Configuration.html"><span class="doc std std-doc">Configuration.md</span></a>. Each service has its own
+discussed in <a class="reference internal" href="Configuration.html"><span class="std std-doc">Configuration.md</span></a>. Each service has its own
 filename for its default JSON configuration file. Most functions also accept an
 alternative configuration filename as input. The configuration files may contain
 service specific non-authentication related options as well.</p>
@@ -159,31 +228,31 @@ called with a specific configuration filename as input, e.g.:</p>
 <p>Again, see the sections below on what options need to be configured in the file
 for the different authentication methods.</p>
 <p>Lastly, it is also possible to build Credential objects on the lowest level with
-the help of Credential <em>Builders</em>; see the <a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference</span></a> for
+the help of Credential <em>Builders</em>; see the <a class="reference internal" href="APIReference.html"><span class="std std-doc">APIReference</span></a> for
 more details on these classes. This approach does not require any configuration
 files.</p>
 <p>The following authentication approaches are supported:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="#azure-cli"><span class="std std-doc">Azure CLI</span></a></p></li>
-<li><p><a class="reference internal" href="#managed-identity"><span class="std std-doc">Managed Identity</span></a></p></li>
-<li><p><a class="reference internal" href="#client-secret"><span class="std std-doc">Client Secret</span></a></p></li>
-<li><p><a class="reference internal" href="#environment-variable"><span class="std std-doc">Environment Variable</span></a></p></li>
-<li><p><a class="reference internal" href="#shared-token-cache"><span class="std std-doc">Shared Token Cache</span></a></p></li>
-<li><p><a class="reference internal" href="#interactive-browser"><span class="std std-doc">Interactive Browser</span></a></p></li>
-<li><p><a class="reference internal" href="#device-code"><span class="std std-doc">Device Code</span></a></p></li>
-<li><p><a class="reference internal" href="#default-azure"><span class="std std-doc">Default Azure</span></a></p></li>
-<li><p><a class="reference internal" href="#storage-shared-key"><span class="std std-doc">Storage Shared Key</span></a></p></li>
-<li><p><a class="reference internal" href="#connection-string"><span class="std std-doc">Connection String</span></a></p></li>
-<li><p><a class="reference internal" href="#chained-token"><span class="std std-doc">Chained Token</span></a></p></li>
+<li><p><a class="reference internal" href="#azure-cli">Azure CLI</a></p></li>
+<li><p><a class="reference internal" href="#managed-identity">Managed Identity</a></p></li>
+<li><p><a class="reference internal" href="#client-secret">Client Secret</a></p></li>
+<li><p><a class="reference internal" href="#environment-variable">Environment Variable</a></p></li>
+<li><p><a class="reference internal" href="#shared-token-cache">Shared Token Cache</a></p></li>
+<li><p><a class="reference internal" href="#interactive-browser">Interactive Browser</a></p></li>
+<li><p><a class="reference internal" href="#device-code">Device Code</a></p></li>
+<li><p><a class="reference internal" href="#default-azure">Default Azure</a></p></li>
+<li><p><a class="reference internal" href="#storage-shared-key">Storage Shared Key</a></p></li>
+<li><p><a class="reference internal" href="#connection-string">Connection String</a></p></li>
+<li><p><a class="reference internal" href="#chained-token">Chained Token</a></p></li>
 </ol>
 <section id="azure-cli">
-<h2>Azure CLI<a class="headerlink" href="#azure-cli" title="Permalink to this headline"></a></h2>
+<h2>Azure CLI<a class="headerlink" href="#azure-cli" title="Permalink to this heading"></a></h2>
 <p>This approach uses credentials used to previously authenticate to the Azure CLI
 tool when the <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">login</span></code> command is used. The Azure CLI login process
 supports a number of authentication processes many of which are common to this
 package.</p>
 <section id="sample-myservicespecificsettings-json">
-<h3>Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#sample-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Sample <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#sample-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AzureCli&quot;</span>
 <span class="p">}</span>
@@ -194,15 +263,15 @@ site</a></p>
 </section>
 </section>
 <section id="managed-identity">
-<h2>Managed Identity<a class="headerlink" href="#managed-identity" title="Permalink to this headline"></a></h2>
+<h2>Managed Identity<a class="headerlink" href="#managed-identity" title="Permalink to this heading"></a></h2>
 <p>Managed identities provide an identity for the Azure resource in Azure Active
 Directory (Azure AD) and use it to obtain Azure AD tokens. Thus identities do
 not have to be directly managed by the developer or end user. This can be
 particularly useful in a deployed scenario as credentials should not be embedded
-in a compiled MATLAB application or CTF file, rather the application can in
+in a compiled MATLAB® application or CTF file, rather the application can in
 effect derive its credentials by virtue of the machine hosting it in Azure.</p>
 <section id="managed-identity-myservicespecificsettings-json">
-<h3>Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#managed-identity-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Managed Identity <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#managed-identity-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ManagedIdentity&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ClientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;811&lt;REDACTED&gt;8ee&quot;</span><span class="p">,</span>
@@ -218,12 +287,12 @@ is ResourceId.</p>
 </section>
 </section>
 <section id="client-secret">
-<h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this headline"></a></h2>
+<h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this heading"></a></h2>
 <p>A Client Secret credential is an Azure AD credential that acquires a token with
 a client secret. The secret can be provided in the form as a string specified as
 <code class="docutils literal notranslate"><span class="pre">ClientSecret</span></code> or can be a certificate referred to by <code class="docutils literal notranslate"><span class="pre">PemCertificate</span></code>.</p>
 <section id="client-secret-myservicespecificsettings-json">
-<h3>Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#client-secret-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Client Secret <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#client-secret-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientSecret&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
@@ -237,7 +306,7 @@ a client secret. The secret can be provided in the form as a string specified as
 </section>
 </section>
 <section id="environment-variable">
-<h2>Environment Variable<a class="headerlink" href="#environment-variable" title="Permalink to this headline"></a></h2>
+<h2>Environment Variable<a class="headerlink" href="#environment-variable" title="Permalink to this heading"></a></h2>
 <p>With Environment Variable based credentials the variables must be set in the
 process used to start MATLAB® such that the variables apply to the JVM which is
 configured when MATLAB starts and is not affected by MATLAB <code class="docutils literal notranslate"><span class="pre">setenv</span></code> calls.
@@ -250,7 +319,7 @@ The following combinations of credentials are accepted:</p>
 <p>Environment Variable credentials can often be used in CI/CD based processes.
 Additional note the support for a certificate file path.</p>
 <section id="environment-variable-myservicespecificsettings-json">
-<h3>Environment Variable <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#environment-variable-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Environment Variable <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#environment-variable-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Environment&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;AuthorityHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://myauthority.com/&quot;</span><span class="w"> </span><span class="c1">//Optional</span>
@@ -260,7 +329,7 @@ Additional note the support for a certificate file path.</p>
 </section>
 </section>
 <section id="shared-token-cache">
-<h2>Shared Token Cache<a class="headerlink" href="#shared-token-cache" title="Permalink to this headline"></a></h2>
+<h2>Shared Token Cache<a class="headerlink" href="#shared-token-cache" title="Permalink to this heading"></a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code>, credentials are read from a cache saved on
 disk (Windows®) or GNOME keyring (Linux). It <em>is</em> possible to work with Shared
 Token Cache directly, in which case the tokens need to already exist in the
@@ -277,7 +346,7 @@ and they can complete without user interaction.</p>
 provided as empty object. In this case the default name “msal” is used on
 Windows and “MSALCache” on Linux.</p>
 <section id="shared-token-cache-myservicespecificsettings-json">
-<h3>Shared Token Cache <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#shared-token-cache-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Shared Token Cache <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#shared-token-cache-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SharedTokenCache&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
@@ -291,7 +360,7 @@ Windows and “MSALCache” on Linux.</p>
 </section>
 </section>
 <section id="interactive-browser">
-<h2>Interactive Browser<a class="headerlink" href="#interactive-browser" title="Permalink to this headline"></a></h2>
+<h2>Interactive Browser<a class="headerlink" href="#interactive-browser" title="Permalink to this heading"></a></h2>
 <p>When Interactive Browser credentials are used an Azure Active Directory
 credential acquires a token for an Azure AD application by prompting the login
 in the default browser. When authenticated, the oauth2 flow will notify the
@@ -300,7 +369,7 @@ authenticate to must have delegated user login permissions and
 have<code class="docutils literal notranslate"><span class="pre">http://localhost:port</span></code> listed as a valid Redirect URI for the Azure
 App.</p>
 <section id="tokencachepersistenceoptions-interactive-browser">
-<h3>TokenCachePersistenceOptions (Interactive Browser)<a class="headerlink" href="#tokencachepersistenceoptions-interactive-browser" title="Permalink to this headline"></a></h3>
+<h3>TokenCachePersistenceOptions (Interactive Browser)<a class="headerlink" href="#tokencachepersistenceoptions-interactive-browser" title="Permalink to this heading"></a></h3>
 <p>Interactive Browser can optionally be configured with
 <code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code>. When these are configured,
 <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will actually build and return a <code class="docutils literal notranslate"><span class="pre">ChainedTokenCredential</span></code>
@@ -315,7 +384,7 @@ used again later, the token <em>can</em> be read from the cache and the authenti
 flow will complete without needing any action from the end-user.</p>
 </section>
 <section id="interactive-browser-myservicespecificsettings-json">
-<h3>Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#interactive-browser-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Interactive Browser <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#interactive-browser-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;InteractiveBrowser&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
@@ -331,7 +400,7 @@ flow will complete without needing any action from the end-user.</p>
 </section>
 </section>
 <section id="device-code">
-<h2>Device Code<a class="headerlink" href="#device-code" title="Permalink to this headline"></a></h2>
+<h2>Device Code<a class="headerlink" href="#device-code" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code> enables authentication to Azure AD using a device code
 that the user can enter into
 <a class="reference external" href="https://microsoft.com/devicelogin">https://microsoft.com/devicelogin</a>.</p>
@@ -347,7 +416,7 @@ client to automatically request the correct scope by itself and therefore it is
 required to specify the correct scopes in the configuration file. Scopes are
 entered as an array of strings.</p>
 <section id="scopes">
-<h3>Scopes<a class="headerlink" href="#scopes" title="Permalink to this headline"></a></h3>
+<h3>Scopes<a class="headerlink" href="#scopes" title="Permalink to this heading"></a></h3>
 <p>Azure DataLake Storage Gen2 typically requires the
 <code class="docutils literal notranslate"><span class="pre">https://storage.azure.com/.default</span></code> scope.</p>
 <p>Key Vault typically requires the <code class="docutils literal notranslate"><span class="pre">https://vault.azure.net/.default</span></code> scope.</p>
@@ -364,7 +433,7 @@ passed to the different Clients.</p>
 </div></blockquote>
 </section>
 <section id="building-and-authenticating">
-<h3>Building <em>and</em> authenticating<a class="headerlink" href="#building-and-authenticating" title="Permalink to this headline"></a></h3>
+<h3>Building <em>and</em> authenticating<a class="headerlink" href="#building-and-authenticating" title="Permalink to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will automatically build the <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code>
 object <em>and</em> authenticate it for the scopes configured in the settings file. The
 <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code> object which is returned will be “pre-authenticated” in
@@ -394,7 +463,7 @@ clipboard and open a browser:</p>
 </div>
 </section>
 <section id="tokencachepersistenceoptions-device-code">
-<h3>TokenCachePersistenceOptions (Device Code)<a class="headerlink" href="#tokencachepersistenceoptions-device-code" title="Permalink to this headline"></a></h3>
+<h3>TokenCachePersistenceOptions (Device Code)<a class="headerlink" href="#tokencachepersistenceoptions-device-code" title="Permalink to this heading"></a></h3>
 <p>Device Code can optionally be configured with <code class="docutils literal notranslate"><span class="pre">TokenCachePersistenceOptions</span></code>.
 When these are configured, <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> will actually build and return
 a <code class="docutils literal notranslate"><span class="pre">SharedTokenCacheCredential</span></code> object instead of a <code class="docutils literal notranslate"><span class="pre">DeviceCodeCredential</span></code>. The
@@ -415,7 +484,7 @@ in the cache, so it sufficient now for <code class="docutils literal notranslate
 </ol>
 </section>
 <section id="device-code-myservicespecificsettings-json">
-<h3>Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#device-code-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Device Code <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#device-code-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DeviceCode&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span>
@@ -433,7 +502,7 @@ in the cache, so it sufficient now for <code class="docutils literal notranslate
 </section>
 </section>
 <section id="default-azure">
-<h2>Default Azure<a class="headerlink" href="#default-azure" title="Permalink to this headline"></a></h2>
+<h2>Default Azure<a class="headerlink" href="#default-azure" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">DefaultAzureProviderCredential</span></code> attempts to create a credential using
 environment variables or the shared token cache. It tries to create a valid
 credential in the following order:</p>
@@ -451,7 +520,7 @@ Note in the following JSON config file the ManagedIdentityClientId, TenantId and
 AuthorityHost are optional fields depending on which means of authentication is
 expected to be used.</p>
 <section id="default-azure-myservicespecificsettings-json">
-<h3>Default Azure <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#default-azure-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Default Azure <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#default-azure-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultAzure&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;TenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99d&lt;REDACTED&gt;1e6&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//Optional</span>
@@ -463,7 +532,7 @@ expected to be used.</p>
 </section>
 </section>
 <section id="storage-shared-key">
-<h2>Storage Shared Key<a class="headerlink" href="#storage-shared-key" title="Permalink to this headline"></a></h2>
+<h2>Storage Shared Key<a class="headerlink" href="#storage-shared-key" title="Permalink to this heading"></a></h2>
 <p>This approach is only supported/relevant when working with Azure Storage
 workflows and can for example <em>not</em> be used when working with Azure Key Vault
 workflows.</p>
@@ -480,7 +549,7 @@ keys and the connection string for each key.</p></li>
 <li><p>Select the “Key” string value for key1 or key2 and copy the value.</p></li>
 </ol>
 <section id="storage-shared-key-myservicespecificsettings-json">
-<h3>Storage Shared Key <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#storage-shared-key-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Storage Shared Key <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#storage-shared-key-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StorageSharedKey&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;AccountKey&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lrd&lt;REDACTED&gt;g==&quot;</span><span class="p">,</span>
@@ -493,7 +562,7 @@ credential is simply the connection string.</p>
 </section>
 </section>
 <section id="connection-string">
-<h2>Connection String<a class="headerlink" href="#connection-string" title="Permalink to this headline"></a></h2>
+<h2>Connection String<a class="headerlink" href="#connection-string" title="Permalink to this heading"></a></h2>
 <p>This approach is only supported/relevant when working with Azure Storage
 workflows and can for example not be used when working with Azure Key Vault
 workflows.</p>
@@ -519,7 +588,7 @@ keys and the connection string for each key.</p></li>
 <li><p>Select the “Connection string” value and copy the value.</p></li>
 </ol>
 <section id="connection-string-myservicespecificsettings-json">
-<h3>Connection String <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#connection-string-myservicespecificsettings-json" title="Permalink to this headline"></a></h3>
+<h3>Connection String <code class="docutils literal notranslate"><span class="pre">myServiceSpecificSettings.json</span></code><a class="headerlink" href="#connection-string-myservicespecificsettings-json" title="Permalink to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;AuthMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ConnectionString&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DefaultEndpointsProtocol=https;&lt;REDACTED CONNECTION STRING&gt;g==;EndpointSuffix=core.windows.net&quot;</span>
@@ -538,7 +607,7 @@ follows: On Windows using cmd:</p>
 </section>
 </section>
 <section id="chained-token">
-<h2>Chained Token<a class="headerlink" href="#chained-token" title="Permalink to this headline"></a></h2>
+<h2>Chained Token<a class="headerlink" href="#chained-token" title="Permalink to this heading"></a></h2>
 <p>Using a Chained Token provider allows a list of token based credential providers
 to be built such that the authentication process will fall through the providers
 until successful or the list is exhausted. Connection String and Storage Shared
@@ -564,13 +633,13 @@ credentials by passing a specific path e.g.:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Configuration.html" class="btn btn-neutral float-left" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Services.html" class="btn btn-neutral float-right" title="Usage Per Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="KeyVault.html" class="btn btn-neutral float-right" title="Azure Key Vault" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

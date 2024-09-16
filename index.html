@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MATLAB Interface for Azure Services &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>MATLAB Interface for Azure Services &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="#" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -41,22 +46,37 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -66,15 +86,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">MATLAB Interface for Azure Services Package</a>
+          <a href="#">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>MATLAB Interface <em>for Azure Services</em></li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">MATLAB Interface <em>for Azure Services</em></li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/index.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -85,15 +105,18 @@
            <div itemprop="articleBody">
              
   <section id="matlab-interface-for-azure-services">
-<h1>MATLAB Interface <em>for Azure Services</em><a class="headerlink" href="#matlab-interface-for-azure-services" title="Permalink to this headline"></a></h1>
+<h1>MATLAB Interface <em>for Azure Services</em><a class="headerlink" href="#matlab-interface-for-azure-services" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Overview.html#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Overview.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Overview.html#documentation">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Overview.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview.html#azure-data-lake-storage-gen2-examples">Azure Data Lake Storage Gen2 examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview.html#azure-key-vault">Azure Key Vault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview.html#azure-data-explorer">Azure Data Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview.html#configuration-authentication">Configuration &amp; authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Overview.html#license">License</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Overview.html#enhancement-request">Enhancement Request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Overview.html#support">Support</a></li>
@@ -102,53 +125,38 @@
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Installation.html#clone-this-repository">Clone this repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installation.html#build-matlab-azure-sdk-jar">Build MATLAB Azure SDK Jar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Installation.html#configuring-the-matlab-java-class-path">Configuring the MATLAB Java class path</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Configuration.html#authentication">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Configuration.html#service-specific-settings">Service specific settings</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#azure-cli">Azure CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#managed-identity">Managed Identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#client-secret">Client Secret</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#environment-variable">Environment Variable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#shared-token-cache">Shared Token Cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#interactive-browser">Interactive Browser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#device-code">Device Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#default-azure">Default Azure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#storage-shared-key">Storage Shared Key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#connection-string">Connection String</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Authentication.html#chained-token">Chained Token</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="APIReference.html#id1">API Reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="APIReference.html#package-azure">Package  <em>azure</em></a></li>
-<li class="toctree-l2"><a class="reference internal" href="APIReference.html#api-help">API Help</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Deployment.html#option-one-compile-the-jar-file-into-the-standalone-component">Option One: Compile the JAR-file <em>into</em> the standalone component</a></li>
@@ -163,7 +171,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FAQ.html#how-to-change-the-underlying-library-logging-level">How to change the underlying library logging level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#azure-java-sdk">Azure Java SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html#azure-data-explorer">Azure Data Explorer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="APIReference.html#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="APIReference.html#help">Help</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a><ul>
@@ -185,7 +199,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

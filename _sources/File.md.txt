@@ -4,9 +4,9 @@ The File Data Lake API currently has less implemented functionality than the equ
 Blob and Queue APIs, where additional API calls are needed contact MathWorks.
 
 Relevant Azure® API/service documentation:
+
 * [https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)
 * [https://docs.microsoft.com/en-us/java/api/overview/azure/storage-file-datalake-readme?view=azure-java-stable](https://docs.microsoft.com/en-us/java/api/overview/azure/storage-file-datalake-readme?view=azure-java-stable)
-
 
 ## File Data Lake Clients
 
@@ -51,7 +51,6 @@ File path are addressable using the following URL format:
 
 Filesystems can be thought of as being similar to Blob Containers and Paths for
 files or Directories as being similar to Blobs.
-
 
 ## Build a Filesystem Client
 
@@ -170,7 +169,7 @@ builder = builder.pathName('mydirectoryname');
 dirClient = builder.buildDirectoryClient();
 
 % Check if the path exists
-tf = Client.exists());
+tf = Client.exists();
 
 % Create a Directory Client from a Filesystem Client
 builder = azure.storage.file.datalake.DataLakeFileSystemClientBuilder();
@@ -209,10 +208,8 @@ nullVal = [];
 renamedDirClient = srcDirClient.rename(nullVal, 'dstDir');
 ```
 
-
 ## Notes
 
 This API does not support storage accounts where hierarchical namespace (HNS) is disabled.
 
-
-[//]: #  (Copyright 2022 The MathWorks, Inc.)
+[//]: #  (Copyright 2022-2024 The MathWorks, Inc.)

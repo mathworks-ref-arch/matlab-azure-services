@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azure Key Vault &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>Azure Key Vault &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,15 +12,16 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Reference" href="APIReference.html" />
-    <link rel="prev" title="File Data Lake Storage" href="File.html" /> 
+    <link rel="next" title="Azure Data Lake Storage Gen2" href="DataLakeStorageGen2.html" />
+    <link rel="prev" title="Authentication" href="Authentication.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,55 +47,66 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Azure Key Vault</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-options">Configuration options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#createkeyvaultclient-function"><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#name-value-pairs">Name, Value pairs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-secret-client">Creating a secret client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listing-secrets-in-a-vault">Listing secrets in a vault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-a-secret">Accessing a secret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-secret">Creating a secret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-a-secret">Deleting a secret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled">Additional operations on secrets in Key Vaults with soft-delete enabled</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#listing-deleted-secrets">Listing deleted secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovering-a-deleted-secret">Recovering a deleted secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#purging-a-deleted-secret">Purging a deleted secret</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-key-client">Creating a key client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listing-keys-in-a-vault">Listing keys in a vault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-a-key">Accessing a Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-key">Creating a key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-a-key">Deleting a key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled">Additional operations on keys in Key Vaults with soft-delete enabled</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#listing-deleted-keys">Listing deleted keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recovering-a-deleted-key">Recovering a deleted key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#purging-a-deleted-key">Purging a deleted key</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Azure Key Vault</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-options">Configuration options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#createkeyvaultclient-function"><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#name-value-pairs">Name, Value pairs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
 </ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-secret-client">Creating a secret client</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#listing-secrets-in-a-vault">Listing secrets in a vault</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#accessing-a-secret">Accessing a secret</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-secret">Creating a secret</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deleting-a-secret">Deleting a secret</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled">Additional operations on secrets in Key Vaults with soft-delete enabled</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#listing-deleted-secrets">Listing deleted secrets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#recovering-a-deleted-secret">Recovering a deleted secret</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#purging-a-deleted-secret">Purging a deleted secret</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-key-client">Creating a key client</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#listing-keys-in-a-vault">Listing keys in a vault</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#accessing-a-key">Accessing a Key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-a-key">Creating a key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deleting-a-key">Deleting a key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled">Additional operations on keys in Key Vaults with soft-delete enabled</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#listing-deleted-keys">Listing deleted keys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#recovering-a-deleted-key">Recovering a deleted key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#purging-a-deleted-key">Purging a deleted key</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -100,16 +116,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
-      <li>Azure Key Vault</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Azure Key Vault</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/KeyVault.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -120,13 +135,13 @@
            <div itemprop="articleBody">
              
   <section id="azure-key-vault">
-<h1>Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permalink to this headline"></a></h1>
+<h1>Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permalink to this heading"></a></h1>
 <p>The MATLAB® Azure® Key Vault Interface enables the manipulation of Key Vault
 Secrets and Keys from within MATLAB. Certificates are not currently supported.</p>
 <section id="configuration-options">
-<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline"></a></h2>
+<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this heading"></a></h2>
 <p>The higher-level client functions for this service use the same kind of configuration
-options as discussed in <a class="reference internal" href="Configuration.html"><span class="doc std std-doc">Configuration.md</span></a>. The service
+options as discussed in <a class="reference internal" href="Configuration.html"><span class="std std-doc">Configuration.md</span></a>. The service
 specific options are discussed below.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function may use <code class="docutils literal notranslate"><span class="pre">VaultName</span></code> if not
 specified in the call to <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code>, for example:</p>
@@ -138,7 +153,7 @@ specified in the call to <code class="docutils literal notranslate"><span class=
 <p>The default name of the JSON file which <code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> works with is <code class="docutils literal notranslate"><span class="pre">keyvaultsettings.json</span></code>.</p>
 </section>
 <section id="createkeyvaultclient-function">
-<h2><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function<a class="headerlink" href="#createkeyvaultclient-function" title="Permalink to this headline"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> function<a class="headerlink" href="#createkeyvaultclient-function" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">createKeyVaultClient</span></code> is a higher-level function for creating a <code class="docutils literal notranslate"><span class="pre">KeyClient</span></code> or
 <code class="docutils literal notranslate"><span class="pre">SecretClient</span></code></p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a KeyClient with default options</span>
@@ -155,7 +170,7 @@ provide <code class="docutils literal notranslate"><span class="pre">'Credential
 which case no configuration file may be needed. See the Name, Value pairs below
 for more details.</p>
 <section id="name-value-pairs">
-<h3>Name, Value pairs<a class="headerlink" href="#name-value-pairs" title="Permalink to this headline"></a></h3>
+<h3>Name, Value pairs<a class="headerlink" href="#name-value-pairs" title="Permalink to this heading"></a></h3>
 <p>Additional Name, Value pairs can be supplied to configure non-default options:</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">'ConfigurationFile'</span></code></strong>, explicitly specify which configuration file to use.
 This file is used for configuring Credentials (when not supplied as input)
@@ -180,7 +195,7 @@ configuration options from <code class="docutils literal notranslate"><span clas
 </section>
 </section>
 <section id="creating-a-secret-client">
-<h2>Creating a secret client<a class="headerlink" href="#creating-a-secret-client" title="Permalink to this headline"></a></h2>
+<h2>Creating a secret client<a class="headerlink" href="#creating-a-secret-client" title="Permalink to this heading"></a></h2>
 <p>A client is used to access secrets or keys in Key Vault. Certificates are not
 currently supported.</p>
 <p>A number of steps are required to build a client. A higher-level function
@@ -223,7 +238,7 @@ wrapper function similar to <em>createKeyVaultClient()</em> is recommended:</p>
 </div>
 </section>
 <section id="listing-secrets-in-a-vault">
-<h2>Listing secrets in a vault<a class="headerlink" href="#listing-secrets-in-a-vault" title="Permalink to this headline"></a></h2>
+<h2>Listing secrets in a vault<a class="headerlink" href="#listing-secrets-in-a-vault" title="Permalink to this heading"></a></h2>
 <p>Secrets and keys have properties that can be obtained from Key Vault.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span>
 <span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span>
@@ -237,7 +252,7 @@ wrapper function similar to <em>createKeyVaultClient()</em> is recommended:</p>
 </div>
 </section>
 <section id="accessing-a-secret">
-<h2>Accessing a secret<a class="headerlink" href="#accessing-a-secret" title="Permalink to this headline"></a></h2>
+<h2>Accessing a secret<a class="headerlink" href="#accessing-a-secret" title="Permalink to this heading"></a></h2>
 <p>A secret value is easily accessed using the client. Note it is best practice to
 clear a secretValue from memory once it is no longer needed and consider
 carefully how that value is used, e.g. written to a file etc. Also use
@@ -253,7 +268,7 @@ console or other logs.</p>
 </div>
 </section>
 <section id="creating-a-secret">
-<h2>Creating a secret<a class="headerlink" href="#creating-a-secret" title="Permalink to this headline"></a></h2>
+<h2>Creating a secret<a class="headerlink" href="#creating-a-secret" title="Permalink to this heading"></a></h2>
 <p>Secrets are easily created using a name value pair. Note it is good practice to
 <em>NOT</em> include hardcoded secret values in code, contrary to this trivial example.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span>
@@ -262,7 +277,7 @@ console or other logs.</p>
 </div>
 </section>
 <section id="deleting-a-secret">
-<h2>Deleting a secret<a class="headerlink" href="#deleting-a-secret" title="Permalink to this headline"></a></h2>
+<h2>Deleting a secret<a class="headerlink" href="#deleting-a-secret" title="Permalink to this heading"></a></h2>
 <p>Deleting a secret is an asynchronous operation and a <code class="docutils literal notranslate"><span class="pre">SyncPoller</span></code> object is
 returned. This can be used in a number of ways but in this simple example the
 code blocks until completion or it times out. Deleting a secret is normally a
@@ -279,13 +294,13 @@ quick operation.</p>
 </div>
 </section>
 <section id="additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled">
-<h2>Additional operations on secrets in Key Vaults with soft-delete enabled<a class="headerlink" href="#additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled" title="Permalink to this headline"></a></h2>
+<h2>Additional operations on secrets in Key Vaults with soft-delete enabled<a class="headerlink" href="#additional-operations-on-secrets-in-key-vaults-with-soft-delete-enabled" title="Permalink to this heading"></a></h2>
 <p>When working with key vaults with soft-delete enabled, deleted secrets can be
 listed and recovered for a limited time, the default is 90 days but this can be
 configured on a per key vault basis, or they can purged explicitly before this
 time expires unless purge protection is enabled.</p>
 <section id="listing-deleted-secrets">
-<h3>Listing deleted secrets<a class="headerlink" href="#listing-deleted-secrets" title="Permalink to this headline"></a></h3>
+<h3>Listing deleted secrets<a class="headerlink" href="#listing-deleted-secrets" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Obtain the list of deleted secrets</span>
 <span class="n">deletedSecrets</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">listDeletedSecrets</span><span class="p">();</span>
 <span class="c">% Get the name of the first deleted secret</span>
@@ -307,7 +322,7 @@ of the recovered secret.</p>
 </div></blockquote>
 </section>
 <section id="recovering-a-deleted-secret">
-<h3>Recovering a deleted secret<a class="headerlink" href="#recovering-a-deleted-secret" title="Permalink to this headline"></a></h3>
+<h3>Recovering a deleted secret<a class="headerlink" href="#recovering-a-deleted-secret" title="Permalink to this heading"></a></h3>
 <p>Recovering a secret is an asynchronous operation and a <code class="docutils literal notranslate"><span class="pre">SyncPoller</span></code> object is
 returned. This can be used in a number of ways but in this simple example the
 code blocks until completion or it times out. Recovering a secret is normally a
@@ -321,7 +336,7 @@ quick operation.</p>
 </div>
 </section>
 <section id="purging-a-deleted-secret">
-<h3>Purging a deleted secret<a class="headerlink" href="#purging-a-deleted-secret" title="Permalink to this headline"></a></h3>
+<h3>Purging a deleted secret<a class="headerlink" href="#purging-a-deleted-secret" title="Permalink to this heading"></a></h3>
 <p>Key vault names are globally unique. The names of secrets stored in a key vault
 are also unique. So it is not possible to reuse the name of a secret that exists
 in the soft-deleted state. Hence it can be preferred to purge a secret before it
@@ -333,7 +348,7 @@ is purged automatically on its scheduled purge date.</p>
 </section>
 </section>
 <section id="creating-a-key-client">
-<h2>Creating a key client<a class="headerlink" href="#creating-a-key-client" title="Permalink to this headline"></a></h2>
+<h2>Creating a key client<a class="headerlink" href="#creating-a-key-client" title="Permalink to this heading"></a></h2>
 <p>A key client can be created as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Here an optional non default configuration file path is provided.</span>
 <span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">,</span><span class="s">&#39;ConfigurationFile&#39;</span><span class="p">,</span><span class="s">&#39;C:\myFiles\matlab-azure-services\Software\MATLAB\config\ClientSecret.json&#39;</span><span class="p">)</span>
@@ -361,7 +376,7 @@ script similar to <em>createKeyVaultClient()</em> is recommended:</p>
 </div>
 </section>
 <section id="listing-keys-in-a-vault">
-<h2>Listing keys in a vault<a class="headerlink" href="#listing-keys-in-a-vault" title="Permalink to this headline"></a></h2>
+<h2>Listing keys in a vault<a class="headerlink" href="#listing-keys-in-a-vault" title="Permalink to this heading"></a></h2>
 <p>Keys have properties that can be obtained from Key Vault.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span>
 <span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span>
@@ -375,7 +390,7 @@ script similar to <em>createKeyVaultClient()</em> is recommended:</p>
 </div>
 </section>
 <section id="accessing-a-key">
-<h2>Accessing a Key<a class="headerlink" href="#accessing-a-key" title="Permalink to this headline"></a></h2>
+<h2>Accessing a Key<a class="headerlink" href="#accessing-a-key" title="Permalink to this heading"></a></h2>
 <p>A key can be returned in a number of forms, see
 azure.security.keyvault.keys.models.JsonWebKey <em>to</em> methods. For
 interoperability with other security libraries these methods return a Java key
@@ -390,7 +405,7 @@ object of varying types.</p>
 </div>
 </section>
 <section id="creating-a-key">
-<h2>Creating a key<a class="headerlink" href="#creating-a-key" title="Permalink to this headline"></a></h2>
+<h2>Creating a key<a class="headerlink" href="#creating-a-key" title="Permalink to this heading"></a></h2>
 <p>Keys are easily created using a name and key type.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span>
 <span class="n">rsaKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">security</span><span class="p">.</span><span class="n">keyvault</span><span class="p">.</span><span class="n">keys</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">KeyType</span><span class="p">.</span><span class="n">RSA</span><span class="p">;</span>
@@ -399,7 +414,7 @@ object of varying types.</p>
 </div>
 </section>
 <section id="deleting-a-key">
-<h2>Deleting a key<a class="headerlink" href="#deleting-a-key" title="Permalink to this headline"></a></h2>
+<h2>Deleting a key<a class="headerlink" href="#deleting-a-key" title="Permalink to this heading"></a></h2>
 <p>Deleting a key is an asynchronous operation and a <em>SyncPoller</em> object is
 returned. This can be used in a number of ways but in this simple example the
 code blocks until completion or it times out. Deleting a key is normally a quick
@@ -416,13 +431,13 @@ operation.</p>
 </div>
 </section>
 <section id="additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled">
-<h2>Additional operations on keys in Key Vaults with soft-delete enabled<a class="headerlink" href="#additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled" title="Permalink to this headline"></a></h2>
+<h2>Additional operations on keys in Key Vaults with soft-delete enabled<a class="headerlink" href="#additional-operations-on-keys-in-key-vaults-with-soft-delete-enabled" title="Permalink to this heading"></a></h2>
 <p>When working with key vaults with soft-delete enabled, deleted keys can be
 listed and recovered for a limited time, the default is 90 days but this can be
 configured on a per key vault basis, or purged explicitly before this time
 expires unless purge protection is enabled.</p>
 <section id="listing-deleted-keys">
-<h3>Listing deleted keys<a class="headerlink" href="#listing-deleted-keys" title="Permalink to this headline"></a></h3>
+<h3>Listing deleted keys<a class="headerlink" href="#listing-deleted-keys" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Obtain the list of deleted keys</span>
 <span class="n">deletedKeys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">keyClient</span><span class="p">.</span><span class="n">listDeletedKeys</span><span class="p">();</span>
 <span class="c">% Get the recovery ID of the first deleted key</span>
@@ -452,7 +467,7 @@ the best option to obtain the name of a deleted key appears to be to use
 </div></blockquote>
 </section>
 <section id="recovering-a-deleted-key">
-<h3>Recovering a deleted key<a class="headerlink" href="#recovering-a-deleted-key" title="Permalink to this headline"></a></h3>
+<h3>Recovering a deleted key<a class="headerlink" href="#recovering-a-deleted-key" title="Permalink to this heading"></a></h3>
 <p>Recovering a key is an asynchronous operation and a <code class="docutils literal notranslate"><span class="pre">SyncPoller</span></code> object is
 returned. This can be used in a number of ways but in this simple example the
 code blocks until completion or times out. Recovering a key is normally a quick
@@ -466,7 +481,7 @@ operation.</p>
 </div>
 </section>
 <section id="purging-a-deleted-key">
-<h3>Purging a deleted key<a class="headerlink" href="#purging-a-deleted-key" title="Permalink to this headline"></a></h3>
+<h3>Purging a deleted key<a class="headerlink" href="#purging-a-deleted-key" title="Permalink to this heading"></a></h3>
 <p>Key vault names are globally unique. The names of keys stored in a key vault are
 also unique. So it is not possible to reuse the name of a key that exists in the
 soft-deleted state. Hence it can be preferred to purge a key before it is purged
@@ -483,14 +498,14 @@ automatically on its scheduled purge date.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="File.html" class="btn btn-neutral float-left" title="File Data Lake Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="APIReference.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Authentication.html" class="btn btn-neutral float-left" title="Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="DataLakeStorageGen2.html" class="btn btn-neutral float-right" title="Azure Data Lake Storage Gen2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

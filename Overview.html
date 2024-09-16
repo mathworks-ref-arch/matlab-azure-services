@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MATLAB Interface for Azure Services &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>MATLAB Interface for Azure Services &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,14 +12,15 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="Installation.html" />
+    <link rel="next" title="Getting Started" href="ADXGettingStarted.html" />
     <link rel="prev" title="MATLAB Interface for Azure Services" href="index.html" /> 
 </head>
 
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -41,24 +46,30 @@
               <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MATLAB Interface <em>for Azure Services</em></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#azure-data-lake-storage-gen2">Azure Data Lake Storage Gen2</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-blob-client-and-check-if-a-blob-exists">Create a Blob Client and check if a blob exists</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#acquire-a-lease-for-a-blob">Acquire a lease for a blob</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create-queue-service-client-and-create-a-queue">Create Queue Service Client and create a queue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create-file-data-lake-file-client-and-check-if-the-file-exists">Create File Data Lake (file) Client and check if the file exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-data-lake-storage-gen2-examples">Azure Data Lake Storage Gen2 examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-blob-client-and-check-if-a-blob-exists">Create a Blob Client and check if a blob exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acquire-a-lease-for-a-blob">Acquire a lease for a blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-queue-service-client-and-create-a-queue">Create Queue Service Client and create a queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-file-data-lake-file-client-and-check-if-the-file-exists">Create File Data Lake (file) Client and check if the file exists</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#azure-key-vault">Azure Key Vault</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-secret-client-and-get-a-secret-value">Create a Secret Client and get a secret value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#list-keys-in-a-vault">List keys in a vault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-key-vault">Azure Key Vault</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-secret-client-and-get-a-secret-value">Create a Secret Client and get a secret value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-keys-in-a-vault">List keys in a vault</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-data-explorer">Azure Data Explorer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#return-hello-world-using-a-kusto-query">Return “Hello World” using a Kusto query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-query-to-count-the-number-of-rows-in-a-table">A query to count the number of rows in a table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#return-some-rows-in-a-table">Return some rows in a table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-authentication">Configuration &amp; authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#azure-data-lake-storage-gen2-azure-key-vault-setup">Azure Data Lake Storage Gen2 &amp; Azure Key Vault setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-data-explorer-setup">Azure Data Explorer setup</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
@@ -67,22 +78,37 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Services.html">Usage Per Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -92,15 +118,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>MATLAB Interface <em>for Azure Services</em></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">MATLAB Interface <em>for Azure Services</em></li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Overview.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -111,66 +137,63 @@
            <div itemprop="articleBody">
              
   <section id="matlab-interface-for-azure-services">
-<h1>MATLAB Interface <em>for Azure Services</em><a class="headerlink" href="#matlab-interface-for-azure-services" title="Permalink to this headline"></a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
-<p>This package offers MATLAB™ interfaces that connect to various Microsoft Azure®
-Services it currently supports:</p>
+<h1>MATLAB Interface <em>for Azure Services</em><a class="headerlink" href="#matlab-interface-for-azure-services" title="Permalink to this heading"></a></h1>
+<p>This package provides MATLAB® interfaces that connect to various Microsoft Azure®
+Services, it currently supports:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></p></li>
 <li><p><a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/KeyVault.html">Azure Key Vault</a></p></li>
+<li><p><a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/DataExplorer.html">Azure Data Explorer</a></p></li>
 </ul>
 <blockquote>
 <div><p>Note, very many of MATLAB’s IO operations support Blob Storage via builtin functions.
 For example <code class="docutils literal notranslate"><span class="pre">dir</span></code> supports accessing remote data:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.mathworks.com/help/matlab/ref/dir.html">https://www.mathworks.com/help/matlab/ref/dir.html</a>,</p></li>
-<li><p><a class="reference external" href="https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html">https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html</a>.</p></li>
+<li><p><a class="reference external" href="https://www.mathworks.com/help/matlab/ref/dir.html">https://www.mathworks.com/help/matlab/ref/dir.html</a></p></li>
+<li><p><a class="reference external" href="https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html">https://www.mathworks.com/help/matlab/import_export/work-with-remote-data.html</a></p></li>
 </ul>
-<p>Where MATLAB supports the required operations directly that is the recommended
-approach.</p>
+<p>Where MATLAB supports the required operations, it is recommended to use the builtin
+support, particularly in preference to this package’s Azure Data Lake Storage Gen2
+lower level capabilities.</p>
 </div></blockquote>
-</section>
 <section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.mathworks.com">MathWorks®</a> Products</p>
 <ul>
-<li><p>MATLAB® release R2019a or later</p></li>
-<li><p>(optional) MATLAB Compiler™ and Compiler SDK™</p></li>
-<li><p>(optional) MATLAB Production Server™</p></li>
-<li><p>(optional) MATLAB Parallel Server™</p></li>
+<li><p>MATLAB® R2019a or later</p></li>
+<li><p>MATLAB® R2021a or later if using Azure Data Explorer</p></li>
 </ul>
 </li>
-<li><p>3rd party products</p>
+<li><p>3rd party products (Required to build the Azure SDK jar file)</p>
 <ul>
 <li><p>Maven™ 3.6.1 or later</p></li>
-<li><p>JDK 8 or later</p></li>
+<li><p>JDK v8 or greater and less than v18</p></li>
 </ul>
 </li>
 </ul>
-<p>This package is primarily tested using Ubuntu™ 20.04 and Windows® 11.</p>
 </section>
 <section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h2>
-<p>The main documentation for this package is available at:</p>
-<p><a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services">https://mathworks-ref-arch.github.io/matlab-azure-services</a></p>
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h2>
+<p>The primary documentation for this package is available at: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services">https://mathworks-ref-arch.github.io/matlab-azure-services</a></p>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
-<p>Once <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/Installation.html">installed</a> the interface is added to the MATLAB path
-by running <code class="docutils literal notranslate"><span class="pre">startup.m</span></code> from the <code class="docutils literal notranslate"><span class="pre">Software/MATLAB</span></code> directory.</p>
-<section id="azure-data-lake-storage-gen2">
-<h3>Azure Data Lake Storage Gen2<a class="headerlink" href="#azure-data-lake-storage-gen2" title="Permalink to this headline"></a></h3>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>Once <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/Installation.html">installed</a>
+the interface can be added to the MATLAB path by running <code class="docutils literal notranslate"><span class="pre">startup.m</span></code> from the <code class="docutils literal notranslate"><span class="pre">Software/MATLAB</span></code> directory.
+Also refer to configuration and authentication details below.</p>
+</section>
+<section id="azure-data-lake-storage-gen2-examples">
+<h2>Azure Data Lake Storage Gen2 examples<a class="headerlink" href="#azure-data-lake-storage-gen2-examples" title="Permalink to this heading"></a></h2>
 <section id="create-a-blob-client-and-check-if-a-blob-exists">
-<h4>Create a Blob Client and check if a blob exists<a class="headerlink" href="#create-a-blob-client-and-check-if-a-blob-exists" title="Permalink to this headline"></a></h4>
+<h3>Create a Blob Client and check if a blob exists<a class="headerlink" href="#create-a-blob-client-and-check-if-a-blob-exists" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">blobClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;ContainerName&#39;</span><span class="p">,</span><span class="s">&#39;myContainer&#39;</span><span class="p">,</span><span class="s">&#39;BlobName&#39;</span><span class="p">,</span><span class="s">&#39;myBlob&#39;</span><span class="p">)</span><span class="w"> </span>
 <span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
 <section id="acquire-a-lease-for-a-blob">
-<h4>Acquire a lease for a blob<a class="headerlink" href="#acquire-a-lease-for-a-blob" title="Permalink to this headline"></a></h4>
+<h3>Acquire a lease for a blob<a class="headerlink" href="#acquire-a-lease-for-a-blob" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">specialized</span><span class="p">.</span><span class="n">BlobLeaseClientBuilder</span><span class="p">;</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">blobClient</span><span class="p">(</span><span class="n">blobClient</span><span class="p">);</span>
 <span class="c">% Build the BlobLeaseClient</span>
@@ -181,14 +204,14 @@ by running <code class="docutils literal notranslate"><span class="pre">startup.
 </div>
 </section>
 <section id="create-queue-service-client-and-create-a-queue">
-<h4>Create Queue Service Client and create a queue<a class="headerlink" href="#create-queue-service-client-and-create-a-queue" title="Permalink to this headline"></a></h4>
+<h3>Create Queue Service Client and create a queue<a class="headerlink" href="#create-queue-service-client-and-create-a-queue" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">queueServiceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span>
 <span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">queueServiceClient</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="create-file-data-lake-file-client-and-check-if-the-file-exists">
-<h4>Create File Data Lake (file) Client and check if the file exists<a class="headerlink" href="#create-file-data-lake-file-client-and-check-if-the-file-exists" title="Permalink to this headline"></a></h4>
+<h3>Create File Data Lake (file) Client and check if the file exists<a class="headerlink" href="#create-file-data-lake-file-client-and-check-if-the-file-exists" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">dataLakeFileClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;FileSystemName&#39;</span><span class="p">,</span><span class="s">&#39;myFileSystem&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">               </span><span class="s">&#39;FileName&#39;</span><span class="p">,</span><span class="s">&#39;my/dir/file&#39;</span><span class="p">);</span>
 <span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dataLakeFileClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span>
@@ -198,9 +221,9 @@ by running <code class="docutils literal notranslate"><span class="pre">startup.
 </section>
 </section>
 <section id="azure-key-vault">
-<h3>Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permalink to this headline"></a></h3>
+<h2>Azure Key Vault<a class="headerlink" href="#azure-key-vault" title="Permalink to this heading"></a></h2>
 <section id="create-a-secret-client-and-get-a-secret-value">
-<h4>Create a Secret Client and get a secret value<a class="headerlink" href="#create-a-secret-client-and-get-a-secret-value" title="Permalink to this headline"></a></h4>
+<h3>Create a Secret Client and get a secret value<a class="headerlink" href="#create-a-secret-client-and-get-a-secret-value" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">secretClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Secret&#39;</span><span class="p">);</span>
 <span class="c">% Get the secret using its name</span>
 <span class="n">secret</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">secretClient</span><span class="p">.</span><span class="n">getSecret</span><span class="p">(</span><span class="s">&#39;mySecretName&#39;</span><span class="p">);</span>
@@ -210,7 +233,7 @@ by running <code class="docutils literal notranslate"><span class="pre">startup.
 </div>
 </section>
 <section id="list-keys-in-a-vault">
-<h4>List keys in a vault<a class="headerlink" href="#list-keys-in-a-vault" title="Permalink to this headline"></a></h4>
+<h3>List keys in a vault<a class="headerlink" href="#list-keys-in-a-vault" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client</span>
 <span class="n">keyClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createKeyVaultClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;Key&#39;</span><span class="p">);</span>
 <span class="c">% Get an array of secret properties</span>
@@ -222,38 +245,113 @@ by running <code class="docutils literal notranslate"><span class="pre">startup.
 <p>For further details see: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/KeyVault.html">Azure Key Vault</a></p>
 </section>
 </section>
-<section id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h3>
+<section id="azure-data-explorer">
+<h2>Azure Data Explorer<a class="headerlink" href="#azure-data-explorer" title="Permalink to this heading"></a></h2>
+<p>This package provides access to Azure Data Explorer related features from within MATLAB.
+Lower-level interfaces to the Azure Data Explorer REST APIs are provided along with
+some higher-level interfaces for common tasks.
+The Control plane REST API client is automatically generated based upon the OpenAPI spec.
+provided in <a class="reference external" href="https://github.com/Azure/azure-rest-api-specs/tree/main/specification">https://github.com/Azure/azure-rest-api-specs/tree/main/specification</a>.</p>
+<section id="return-hello-world-using-a-kusto-query">
+<h3>Return “Hello World” using a Kusto query<a class="headerlink" href="#return-hello-world-using-a-kusto-query" title="Permalink to this heading"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">&#39;print myColumn=&quot;Hello World&quot;&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span><span class="nb">table</span>
+<span class="w">      </span><span class="n">myColumn</span><span class="w">    </span>
+<span class="w">    </span><span class="n">_____________</span>
+<span class="w">    </span><span class="s">&quot;Hello World&quot;</span>
+<span class="n">success</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span><span class="nb">logical</span>
+<span class="w">   </span><span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="a-query-to-count-the-number-of-rows-in-a-table">
+<h3>A query to count the number of rows in a table<a class="headerlink" href="#a-query-to-count-the-number-of-rows-in-a-table" title="Permalink to this heading"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">rowCount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&quot;myTableName | count&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tableName</span><span class="p">))</span>
+<span class="n">rowCount</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span><span class="nb">table</span>
+<span class="w">    </span><span class="n">Count</span><span class="w"> </span>
+<span class="w">    </span><span class="n">______</span>
+<span class="w">    </span><span class="mi">123523</span>
+</pre></div>
+</div>
+</section>
+<section id="return-some-rows-in-a-table">
+<h3>Return some rows in a table<a class="headerlink" href="#return-some-rows-in-a-table" title="Permalink to this heading"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">firstRows</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">&quot;myTableName | take 5&quot;</span><span class="p">)</span>
+<span class="n">firstRows</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span>5<span class="n">x27</span><span class="w"> </span><span class="nb">table</span>
+<span class="w">       </span><span class="n">Date</span><span class="w">        </span><span class="n">DayOfWeek</span><span class="w">          </span><span class="n">DepTime</span><span class="w">                </span><span class="n">CRSDepTime</span>
+<span class="w">    </span><span class="n">___________</span><span class="w">    </span><span class="n">_________</span><span class="w">    </span><span class="n">____________________</span><span class="w">    </span><span class="n">____________________</span>
+<span class="w">    </span><span class="mi">21</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w">        </span><span class="mi">3</span><span class="w">        </span><span class="mi">21</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">06</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">00</span><span class="w">    </span><span class="mi">21</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">06</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span>
+<span class="w">    </span><span class="mi">26</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w">        </span><span class="mi">1</span><span class="w">        </span><span class="mi">26</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">00</span><span class="w">    </span><span class="mi">26</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">00</span>
+<span class="w">    </span><span class="mi">23</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w">        </span><span class="mi">5</span><span class="w">        </span><span class="mi">23</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">20</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">00</span><span class="w">    </span><span class="mi">23</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">20</span><span class="p">:</span><span class="mi">35</span><span class="p">:</span><span class="mi">00</span>
+<span class="w">    </span><span class="mi">23</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w">        </span><span class="mi">5</span><span class="w">        </span><span class="mi">23</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">00</span><span class="w">    </span><span class="mi">23</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">00</span>
+<span class="w">    </span><span class="mi">22</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w">        </span><span class="mi">4</span><span class="w">        </span><span class="mi">22</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">06</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">00</span><span class="w">    </span><span class="mi">22</span><span class="o">-</span><span class="n">Oct</span><span class="o">-</span><span class="mi">1987</span><span class="w"> </span><span class="mi">06</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuration-authentication">
+<h2>Configuration &amp; authentication<a class="headerlink" href="#configuration-authentication" title="Permalink to this heading"></a></h2>
+<p>While the packages share some common configuration and authentication code they
+also have separate configuration details to record preferred default endpoints
+and authentication methods.</p>
+<section id="azure-data-lake-storage-gen2-azure-key-vault-setup">
+<h3>Azure Data Lake Storage Gen2 &amp; Azure Key Vault setup<a class="headerlink" href="#azure-data-lake-storage-gen2-azure-key-vault-setup" title="Permalink to this heading"></a></h3>
+<p>First change to the <code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB</span></code> directory and run the
+startup command to configure paths.</p>
 <p>The package offers a <code class="docutils literal notranslate"><span class="pre">loadConfigurationSettings</span></code> function which allows reading
 configuration settings from a short JSON format file. This offers a convenient
 way for you to configure various settings (like endpoint URLs) as well as
 authentication configurations without having to hardcode these into your MATLAB
 code. For more details see: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/Configuration.html">Configuration</a></p>
-</section>
-<section id="authentication">
-<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h3>
 <p>Virtually all interactions with Azure will require some form of authentication.
-The authentication workflows are common to all services. The package offers
-various Builder classes as well as a higher-level function <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code>
-to aid performing the authentication. For more details see: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/Authentication.html">Authentication</a></p>
+The package offers various Builder classes as well as a higher-level function
+<code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> to aid performing the authentication. For more details
+see: <a class="reference external" href="https://mathworks-ref-arch.github.io/matlab-azure-services/Authentication.html">Authentication</a></p>
+</section>
+<section id="azure-data-explorer-setup">
+<h3>Azure Data Explorer setup<a class="headerlink" href="#azure-data-explorer-setup" title="Permalink to this heading"></a></h3>
+<p>First change to the <code class="docutils literal notranslate"><span class="pre">matlab-azure-services/Software/MATLAB</span></code> directory and run the
+startup command to configure paths.</p>
+<p>Initially run <code class="docutils literal notranslate"><span class="pre">mathworks.adx.buildSettingsFile</span></code>, to configure credentials &amp; settings.
+For more details see: <a class="reference internal" href="ADXAuthentication.html"><span class="std std-doc">ADXAuthentication.md</span></a>.
+A number of authentication methods are supported.</p>
+<p>Assuming Client Secret authentication, the simplest to configure, this should result
+in a file: <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/config/adx.Client.Settings.json</span></code> similar to:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;preferredAuthMethod&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;clientSecret&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subscriptionId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;clientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;clientSecret&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;database&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;defaultDatabaseName&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;resourceGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;resourceGroupName&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cluster&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://&lt;defaultClusterName&gt;.&lt;region&gt;.kusto.windows.net&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline"></a></h2>
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
 <p>The license for the MATLAB Interface for Azure Services is available in the
-<span class="xref myst">License.txt</span> file in this repository. This package uses certain
+<a class="reference internal" href="#License.txt"><span class="xref myst">License.txt</span></a> file in this repository. This package uses certain
 third-party content which is licensed under separate license agreements.
 See the pom.xml in the <code class="docutils literal notranslate"><span class="pre">Software/Java</span></code> directory of this package for details of
 third-party software downloaded at build time.</p>
 </section>
 <section id="enhancement-request">
-<h2>Enhancement Request<a class="headerlink" href="#enhancement-request" title="Permalink to this headline"></a></h2>
+<h2>Enhancement Request<a class="headerlink" href="#enhancement-request" title="Permalink to this heading"></a></h2>
 <p>Provide suggestions for additional features or capabilities using the following
 link: <a class="reference external" href="https://www.mathworks.com/products/reference-architectures/request-new-reference-architectures.html">https://www.mathworks.com/products/reference-architectures/request-new-reference-architectures.html</a></p>
 </section>
 <section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <p>Please create a GitHub issue.</p>
+<p>Microsoft Azure Data Explorer, Azure Data Lake Storage &amp; Azure Key Vault are trademarks of the Microsoft group of companies.</p>
 </section>
 </section>
 
@@ -262,13 +360,13 @@ link: <a class="reference external" href="https://www.mathworks.com/products/ref
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="MATLAB Interface for Azure Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ADXGettingStarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Data &mdash; MATLAB Interface for Azure Services  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Performance" href="Performance.html" />
+    <link rel="prev" title="Null data" href="NullData.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Dynamic Data</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Dynamics.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dynamic-data">
+<h1>Dynamic Data<a class="headerlink" href="#dynamic-data" title="Permalink to this heading"></a></h1>
+<p>The Azure Data Explorer® Documentations describes the dynamic data type as follows:</p>
+<p>The dynamic scalar data type is special in that it can take on any value of other
+scalar data types from the list below, as well as arrays and property bags.
+Specifically, a dynamic value can be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Null.
+* A value of any of the primitive scalar data types: bool, datetime, guid, int, long, real, string, and timespan.
+* An array of dynamic values, holding zero or more values with zero-based indexing.
+* A property bag that maps unique string values to dynamic values. The property bag has zero or more such mappings (called &quot;slots&quot;), indexed by the unique string values. The slots are unordered.
+</pre></div>
+</div>
+<p>For further details see: <a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/dynamic">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/dynamic</a></p>
+<p>When ADX returns dynamic data to MATLAB® the potentially varied nature of that data
+means that such a column in a results table will be of type cell.
+For reasons that will be described it may be preferred to not attempt convert the
+dynamic data to an underlying type(s) but rather to simply return the value
+of the the dynamic as a character vector. The optional argument <code class="docutils literal notranslate"><span class="pre">convertDynamics</span></code>
+can be used to control this behavior, the default value is true, i.e. attempt to
+convert the dynamic data.</p>
+<p>If automatic decoding of a value does not give the desired result it is recommended
+that the values not be decoded and custom logic be implemented to do so using the
+returned character vector values.</p>
+<p>If a dynamic is <em>not</em> to be converted the following approach is taken.</p>
+<ul class="simple">
+<li><p>If the value is presents as a JSON array or object, the character vector value
+is returned.</p></li>
+<li><p>If the value is a JSON null, the <code class="docutils literal notranslate"><span class="pre">NullPolicy</span></code> is applied, by default a <code class="docutils literal notranslate"><span class="pre">missing</span></code>
+will be returned.</p></li>
+<li><p>Otherwise the character vector value is returned.</p></li>
+</ul>
+<p>If the dynamic value is to be converted this cannot be handled with the same certainty
+as the conversion of other data types. The metadata returned from ADX does not
+describe the contents of the value or provide a schema that might be used to decode
+it. ADX does not have such information. Thus the automatic decoding should be
+considered a best effort. When decoding dynamics the following steps are taken in
+sequence:</p>
+<ul class="simple">
+<li><p>If the value is a JSON primitive, Booleans will be converted to logicals and numbers
+will be converted to doubles. Null policy is applied. Strings will be passed to MATLAB’s <code class="docutils literal notranslate"><span class="pre">jsondecode</span></code>
+function. If the <code class="docutils literal notranslate"><span class="pre">jsondecode</span></code> call fails the value will be returned as a character vector.</p></li>
+<li><p>If the value is a JSON null <code class="docutils literal notranslate"><span class="pre">NullPolicy</span></code> is applied and by default a <code class="docutils literal notranslate"><span class="pre">missing</span></code>
+is returned.</p></li>
+<li><p>If the value is an empty JSON array <code class="docutils literal notranslate"><span class="pre">NullPolicy</span></code> is applied and by default a missing
+is returned. Non empty JSON arrays are decoded using <code class="docutils literal notranslate"><span class="pre">jsondecode</span></code>, if that fails
+the character vector value is returned.</p></li>
+<li><p>If the value is a JSON object is decoded using decoded using <code class="docutils literal notranslate"><span class="pre">jsondecode</span></code>, if that fails
+the character vector value is returned.</p></li>
+</ul>
+<p><em>Note:</em></p>
+<ul class="simple">
+<li><p>For more information on MATLAB’s <code class="docutils literal notranslate"><span class="pre">jsondecode</span></code> function see:
+<a class="reference external" href="https://www.mathworks.com/help/matlab/ref/jsondecode.html">https://www.mathworks.com/help/matlab/ref/jsondecode.html</a> noting that it has limitations</p></li>
+<li><p>For further details on the handling of null values see <a class="reference internal" href="NullData.html"><span class="std std-doc">NullData.md</span></a>.</p></li>
+<li><p>The additional processing of dynamic values as described inevitably has a performance
+impact, if this is a concern consider approaches that alter the data being queried
+or queries themselves such that non dynamic data types are used.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">testDynamic</span></code> test function in <code class="docutils literal notranslate"><span class="pre">/matlab-azure-adx/Software/MATLAB/test/unit/testDataTypes.m</span></code>
+shows some simple queries that used for dynamic testing purposes.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NullData.html" class="btn btn-neutral float-left" title="Null data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Performance.html" class="btn btn-neutral float-right" title="Performance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

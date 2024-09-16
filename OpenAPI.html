@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azure Data Explorer OpenAPI Spec &mdash; MATLAB Interface for Azure Services  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="Installation.html" />
+    <link rel="prev" title="Performance" href="Performance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Azure Data Explorer OpenAPI Spec</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#spec-download">Spec download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autorest">AutoRest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-autorest">Install AutoRest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-spec">Convert Spec</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-a-client-using-a-matlab-client">Generate a client using a MATLAB client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-a-client-with-npx">Generate a client with npx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customize-the-client">Customize the Client</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Azure Data Explorer OpenAPI Spec</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/OpenAPI.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="azure-data-explorer-openapi-spec">
+<h1>Azure Data Explorer OpenAPI Spec<a class="headerlink" href="#azure-data-explorer-openapi-spec" title="Permalink to this heading"></a></h1>
+<p>This file documents the process of building the control plane OpenAPI based client.
+<em>It is not expected that end users should need to use or be familiar with this workflow.</em></p>
+<section id="spec-download">
+<h2>Spec download<a class="headerlink" href="#spec-download" title="Permalink to this heading"></a></h2>
+<p>See: <a class="reference external" href="https://github.com/microsoft/azure-rest-api-specs/tree/kusto-demo/specification/azure-kusto/resource-manager">https://github.com/microsoft/azure-rest-api-specs/tree/kusto-demo/specification/azure-kusto/resource-manager</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Azure/azure-rest-api-specs.git
+</pre></div>
+</div>
+</section>
+<section id="autorest">
+<h2>AutoRest<a class="headerlink" href="#autorest" title="Permalink to this heading"></a></h2>
+<p>AutoRest is required to convert the spec from 2.0 to 3</p>
+<section id="install-autorest">
+<h3>Install AutoRest<a class="headerlink" href="#install-autorest" title="Permalink to this heading"></a></h3>
+<p>See: <a class="reference external" href="https://github.com/Azure/autorest/blob/main/docs/install/readme.md">https://github.com/Azure/autorest/blob/main/docs/install/readme.md</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>autorest
+</pre></div>
+</div>
+</section>
+<section id="convert-spec">
+<h3>Convert Spec<a class="headerlink" href="#convert-spec" title="Permalink to this heading"></a></h3>
+<p>Use AutoRest to generate a spec. in v3.0 format</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>azure-rest-api-specs/specification/azure-kusto/resource-manager
+npx<span class="w"> </span>autorest<span class="w"> </span>--output-converted-oai3
+</pre></div>
+</div>
+<p>Creates a spec in: <code class="docutils literal notranslate"><span class="pre">azure-rest-api-specs/specification/azure-kusto/resource-manager/generated/azure-kusto/resource-manager/Microsoft.Kusto/stable/&lt;2022-11-11&gt;</span></code>
+where the data is the latest release folder</p>
+</section>
+</section>
+<section id="generate-a-client-using-a-matlab-client">
+<h2>Generate a client using a MATLAB client<a class="headerlink" href="#generate-a-client-using-a-matlab-client" title="Permalink to this heading"></a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Assuming the Java files have been built using maven</span>
+<span class="c">% In the openAPI Code generator package&#39;s directory</span>
+<span class="c">% cd Software/Java</span>
+<span class="c">% !mvn clean package</span>
+
+<span class="c">% Run startup to configure the package&#39;s MATLAB paths</span>
+<span class="nb">cd</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ADX</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">directory</span><span class="o">&gt;</span><span class="n">Software</span><span class="o">/</span><span class="n">MATLAB</span>
+<span class="nb">startup</span>
+
+<span class="n">buildControlPlaneClient</span>
+</pre></div>
+</div>
+</section>
+<section id="generate-a-client-with-npx">
+<h2>Generate a client with npx<a class="headerlink" href="#generate-a-client-with-npx" title="Permalink to this heading"></a></h2>
+<p>Generally this approach is not required or preferred.</p>
+<p>Check openapitools version are at version 6.2.1 or greater.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>@openapitools/openapi-generator-cli<span class="w"> </span>version
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change to OpenAPI client generation package directory</span>
+<span class="c1"># Call the client generator</span>
+npx<span class="w"> </span>@openapitools/openapi-generator-cli<span class="w"> </span>--custom-generator<span class="w"> </span>./Java/target/classes<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>generate<span class="w"> </span>-g<span class="w"> </span>MATLAB<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>-i<span class="w"> </span>/home/&lt;username&gt;/git/azure-rest-api-specs/specification/azure-kusto/resource-manager/generated/azure-kusto/resource-manager/Microsoft.Kusto/stable/&lt;release<span class="w"> </span>date&gt;/kusto.json<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>-o<span class="w"> </span>KustoClient<span class="w"> </span>--package-name<span class="w"> </span>kusto<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>gen.log
+</pre></div>
+</div>
+</section>
+<section id="customize-the-client">
+<h2>Customize the Client<a class="headerlink" href="#customize-the-client" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>For now use find and replace across the generated files to get rid of apiVersion and subscriptionId such that they are no longer inputs and object properties instead.</p></li>
+<li><p>Remove “object” as a type in SkuDescription.</p></li>
+<li><p>Add auth to <code class="docutils literal notranslate"><span class="pre">presend()</span></code>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Performance.html" class="btn btn-neutral float-left" title="Performance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

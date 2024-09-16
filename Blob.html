@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blob Storage &mdash; MATLAB Interface for Azure Services Package  documentation</title>
+  <title>Blob Storage &mdash; MATLAB Interface for Azure Services  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services Package
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,37 +47,59 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Installation &amp; Configuration</span></p>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Services.html">Usage Per Service</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Blob Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataLakeStorageGen2.html#configuration-options">Configuration options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DataLakeStorageGen2.html#multi-protocol-access">Multi-protocol access</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="DataLakeStorageGen2.html#low-level-interfaces">Low Level Interfaces</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Blob Storage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#blob-clients">Blob Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blob-service-client">Blob Service Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shared-access-signature-generation">Shared Access Signature Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blob-container-client">Blob Container Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blob-client">Blob Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blob-lease-client">Blob Lease Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-listing-support">Advanced listing support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blob-properties-metadata">Blob properties &amp; metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-endpoints">Custom EndPoints</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="APIReference.html">API Reference</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
 </ul>
 
@@ -82,17 +109,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MATLAB Interface for Azure Services Package</a>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="Services.html">Usage Per Service</a> &raquo;</li>
-          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
-      <li>Blob Storage</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+      <li class="breadcrumb-item active">Blob Storage</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Blob.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -103,10 +129,10 @@
            <div itemprop="articleBody">
              
   <section id="blob-storage">
-<h1>Blob Storage<a class="headerlink" href="#blob-storage" title="Permalink to this headline"></a></h1>
+<h1>Blob Storage<a class="headerlink" href="#blob-storage" title="Permalink to this heading"></a></h1>
 <p>Blob storage is the most common use case for Azure® Data Lake Storage Gen2. This
 package provides a low-level interface to blob storage and provides capabilities
-not available in shipping MATLAB. This package supersedes a previously published
+not available in shipping MATLAB®. This package supersedes a previously published
 blob storage low-level interface
 <a class="reference external" href="https://github.com/mathworks-ref-arch/matlab-azure-blob">https://github.com/mathworks-ref-arch/matlab-azure-blob</a>.
 Specifically this interface targets Gen2 storage APIs and the Azure v12 SDK
@@ -116,7 +142,7 @@ strongly recommended that this interface be used when working with Gen2 blob
 storage. While conceptually quite similar the APIs are not backwardly compatible
 as a consequence of significant changes in the underlying Azure APIs.</p>
 <section id="blob-clients">
-<h2>Blob Clients<a class="headerlink" href="#blob-clients" title="Permalink to this headline"></a></h2>
+<h2>Blob Clients<a class="headerlink" href="#blob-clients" title="Permalink to this heading"></a></h2>
 <p>The concept of a <em>Client</em> is central to how blob storage is accessed. A
 hierarchy of clients exist that target different levels of the storage
 hierarchy:</p>
@@ -141,10 +167,10 @@ SDK</a>.
 This interface exposes a subset of the available functionality to cover common
 use cases in an extensible way.</p>
 <p>A higher-level function <em>createStorageClient()</em> is provided to help build the
-various clients, see: <a class="reference internal" href="DataLakeStorageGen2.html"><span class="doc std std-doc">DataLakeStorageGen2.md</span></a></p>
+various clients, see: <a class="reference internal" href="DataLakeStorageGen2.html"><span class="std std-doc">DataLakeStorageGen2.md</span></a></p>
 </section>
 <section id="blob-service-client">
-<h2>Blob Service Client<a class="headerlink" href="#blob-service-client" title="Permalink to this headline"></a></h2>
+<h2>Blob Service Client<a class="headerlink" href="#blob-service-client" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">BlobServiceClient</span></code> can be created using <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">serviceClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">();</span>
 </pre></div>
@@ -167,10 +193,10 @@ various clients, see: <a class="reference internal" href="DataLakeStorageGen2.ht
 </pre></div>
 </div>
 <section id="common-service-client-operations">
-<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this heading"></a></h3>
 <p>For a full list of supported service client methods consult the API
 documentation or call <code class="docutils literal notranslate"><span class="pre">methods()</span></code> on the client object or see the
-<a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference.md</span></a> file.</p>
+<a class="reference internal" href="APIReference.html"><span class="std std-doc">APIReference.md</span></a> file.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Listing containers</span>
 
 <span class="c">% Returns an array of BlobContainerItem objects that describe the containers in</span>
@@ -198,21 +224,21 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
 </section>
 </section>
 <section id="shared-access-signature-generation">
-<h2>Shared Access Signature Generation<a class="headerlink" href="#shared-access-signature-generation" title="Permalink to this headline"></a></h2>
+<h2>Shared Access Signature Generation<a class="headerlink" href="#shared-access-signature-generation" title="Permalink to this heading"></a></h2>
 <p>In Azure, Shared Access Signatures or SASs are an important means of granting
 access to resources via URLs and strings that are easily shared. There are
 various types of SASs, see:</p>
 <p><a class="reference external" href="https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature">https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature</a></p>
 <p>Which type of SAS you can generate depends on how the client is authenticated:</p>
 <ul class="simple">
-<li><p>When authenticated with <a class="reference internal" href="Authentication.html#storage-shared-key"><span class="std std-doc">Storage Shared
+<li><p>When authenticated with <a class="reference internal" href="Authentication.html#storage-shared-key"><span class="std std-ref">Storage Shared
 Key</span></a> you can generate <em>account-level</em>
 and <em>service-level</em> SAS using <code class="docutils literal notranslate"><span class="pre">BlobServiceClient.generateAccountSas</span></code> and
 <code class="docutils literal notranslate"><span class="pre">BlobClient.generateSas</span></code>.</p></li>
-<li><p>When authenticated with <a class="reference internal" href="Authentication.html#connection-string"><span class="std std-doc">Connection
+<li><p>When authenticated with <a class="reference internal" href="Authentication.html#connection-string"><span class="std std-ref">Connection
 String</span></a> (which is basically “using a
-SAS”) or <a class="reference internal" href="#create-a-client-using-a-sas-for-authentication"><span class="std std-doc">with a SAS
-directly</span></a> you cannot
+SAS”) or <a class="reference internal" href="#create-a-client-using-a-sas-for-authentication">with a SAS
+directly</a> you cannot
 <em>generate</em> any SAS at all but the SAS which you already have may simply be
 reusable.</p></li>
 <li><p>When authenticated using any other method (in which the client is essentially
@@ -301,7 +327,7 @@ specific Blob:</p>
 </div>
 </section>
 <section id="blob-container-client">
-<h2>Blob Container Client<a class="headerlink" href="#blob-container-client" title="Permalink to this headline"></a></h2>
+<h2>Blob Container Client<a class="headerlink" href="#blob-container-client" title="Permalink to this heading"></a></h2>
 <p>A <em>BlobContainerClient</em> appears very similar to a service client both in
 creation and operation.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span>
@@ -322,9 +348,9 @@ creation and operation.</p>
 </pre></div>
 </div>
 <section id="common-container-client-operations">
-<h3>Common Container Client operations<a class="headerlink" href="#common-container-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Container Client operations<a class="headerlink" href="#common-container-client-operations" title="Permalink to this heading"></a></h3>
 <section id="list-blobs-in-a-container">
-<h4>List blobs in a container<a class="headerlink" href="#list-blobs-in-a-container" title="Permalink to this headline"></a></h4>
+<h4>List blobs in a container<a class="headerlink" href="#list-blobs-in-a-container" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% With the client in place it can be used to list the blobs within its corresponding</span>
 <span class="c">% container</span>
 
@@ -334,10 +360,10 @@ creation and operation.</p>
 <span class="n">results</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">getName</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="#advanced-listing-support"><span class="std std-doc">Advanced listing support</span></a> below.</p>
+<p>See also <a class="reference internal" href="#advanced-listing-support">Advanced listing support</a> below.</p>
 </section>
 <section id="create-a-blobclient">
-<h4>Create a BlobClient<a class="headerlink" href="#create-a-blobclient" title="Permalink to this headline"></a></h4>
+<h4>Create a BlobClient<a class="headerlink" href="#create-a-blobclient" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get a blob name and create a client using it</span>
 <span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">listBlobs</span><span class="p">;</span>
 <span class="c">% Assume there is a blob with name:</span>
@@ -351,7 +377,7 @@ creation and operation.</p>
 </section>
 </section>
 <section id="blob-client">
-<h2>Blob Client<a class="headerlink" href="#blob-client" title="Permalink to this headline"></a></h2>
+<h2>Blob Client<a class="headerlink" href="#blob-client" title="Permalink to this heading"></a></h2>
 <p>The <em>BlobClient</em> appears very similar to the other clients in creation and
 operation.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span>
@@ -375,21 +401,21 @@ operation.</p>
 </pre></div>
 </div>
 <section id="common-blob-client-operations">
-<h3>Common Blob Client operations<a class="headerlink" href="#common-blob-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Blob Client operations<a class="headerlink" href="#common-blob-client-operations" title="Permalink to this heading"></a></h3>
 <section id="test-if-a-blob-exists">
-<h4>Test if a blob exists<a class="headerlink" href="#test-if-a-blob-exists" title="Permalink to this headline"></a></h4>
+<h4>Test if a blob exists<a class="headerlink" href="#test-if-a-blob-exists" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">exists</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
 <section id="get-a-url-for-a-blob">
-<h4>Get a URL for a blob<a class="headerlink" href="#get-a-url-for-a-blob" title="Permalink to this headline"></a></h4>
+<h4>Get a URL for a blob<a class="headerlink" href="#get-a-url-for-a-blob" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">urlStr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">blobClient</span><span class="p">.</span><span class="n">getBlobUrl</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
 <section id="create-a-client-using-a-sas-for-authentication">
-<h4>Create a client using a SAS for authentication<a class="headerlink" href="#create-a-client-using-a-sas-for-authentication" title="Permalink to this headline"></a></h4>
+<h4>Create a client using a SAS for authentication<a class="headerlink" href="#create-a-client-using-a-sas-for-authentication" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobClientBuilder</span><span class="p">();</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">sasToken</span><span class="p">(</span><span class="n">sas</span><span class="p">);</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">httpClient</span><span class="p">();</span>
@@ -401,7 +427,7 @@ operation.</p>
 </div>
 </section>
 <section id="upload-download-a-blob">
-<h4>Upload &amp; download a blob<a class="headerlink" href="#upload-download-a-blob" title="Permalink to this headline"></a></h4>
+<h4>Upload &amp; download a blob<a class="headerlink" href="#upload-download-a-blob" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">uploadFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;C:\mydir\myfile.mat&#39;</span><span class="p">;</span>
 <span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="nb">fileName</span><span class="p">,</span><span class="w"> </span><span class="n">ext</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fileparts</span><span class="p">(</span><span class="n">uploadFile</span><span class="p">);</span>
 <span class="c">% The blob name and filename need not match but they typically do</span>
@@ -423,7 +449,7 @@ operation.</p>
 </div>
 </section>
 <section id="copy-a-blob-using-a-sas">
-<h4>Copy a blob using a SAS<a class="headerlink" href="#copy-a-blob-using-a-sas" title="Permalink to this headline"></a></h4>
+<h4>Copy a blob using a SAS<a class="headerlink" href="#copy-a-blob-using-a-sas" title="Permalink to this heading"></a></h4>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a client for the source blob</span>
 <span class="n">builder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">azure</span><span class="p">.</span><span class="n">storage</span><span class="p">.</span><span class="n">blob</span><span class="p">.</span><span class="n">BlobClientBuilder</span><span class="p">();</span>
 <span class="n">credentials</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">configureCredentials</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="n">AzureCommonRoot</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;config&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;settings_StorageSharedKey.json&#39;</span><span class="p">));</span>
@@ -462,7 +488,7 @@ operation.</p>
 </section>
 </section>
 <section id="blob-lease-client">
-<h2>Blob Lease Client<a class="headerlink" href="#blob-lease-client" title="Permalink to this headline"></a></h2>
+<h2>Blob Lease Client<a class="headerlink" href="#blob-lease-client" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">BlobLeaseClient</span></code> is created using <code class="docutils literal notranslate"><span class="pre">BlobLeaseClientBuilder</span></code> which can then build
 the client based on an existing <code class="docutils literal notranslate"><span class="pre">BlobClient</span></code> or <code class="docutils literal notranslate"><span class="pre">BlobContainerClient</span></code>.
 Optionally the <code class="docutils literal notranslate"><span class="pre">BlobLeaseClient</span></code> can be configured with a specific leaseId (e.g.
@@ -491,7 +517,7 @@ or for which the <code class="docutils literal notranslate"><span class="pre">Bl
 </pre></div>
 </div>
 <section id="acquiring-renewing-changing-releasing-and-breaking-leases">
-<h3>Acquiring, renewing, changing, releasing and breaking leases<a class="headerlink" href="#acquiring-renewing-changing-releasing-and-breaking-leases" title="Permalink to this headline"></a></h3>
+<h3>Acquiring, renewing, changing, releasing and breaking leases<a class="headerlink" href="#acquiring-renewing-changing-releasing-and-breaking-leases" title="Permalink to this heading"></a></h3>
 <p>The interface supports all Lease Blob operations as specified in the <a class="reference external" href="https://docs.microsoft.com/en-us/rest/api/storageservices/lease-blob">Azure
 documentation</a>.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Acquire a lease for 30 seconds</span>
@@ -510,7 +536,7 @@ documentation</a>.</p>
 </div>
 </section>
 <section id="interacting-with-a-blob-or-blob-container-which-has-a-lease-on-it">
-<h3>Interacting with a Blob or Blob Container which has a lease on it<a class="headerlink" href="#interacting-with-a-blob-or-blob-container-which-has-a-lease-on-it" title="Permalink to this headline"></a></h3>
+<h3>Interacting with a Blob or Blob Container which has a lease on it<a class="headerlink" href="#interacting-with-a-blob-or-blob-container-which-has-a-lease-on-it" title="Permalink to this heading"></a></h3>
 <p>When a Blob has a lease on it, certain interactions like deleting it or
 overwriting it with a newly uploaded or copied file are only possible when that
 operation is performed with the correct leaseId. The leaseId can be provided as
@@ -539,7 +565,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 </section>
 </section>
 <section id="advanced-listing-support">
-<h2>Advanced listing support<a class="headerlink" href="#advanced-listing-support" title="Permalink to this headline"></a></h2>
+<h2>Advanced listing support<a class="headerlink" href="#advanced-listing-support" title="Permalink to this heading"></a></h2>
 <p>A basic listing of a container’s contents can be done as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get a blob name and create a client using it</span>
 <span class="n">results</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">containerClient</span><span class="p">.</span><span class="n">listBlobs</span><span class="p">;</span>
@@ -556,7 +582,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 <li><p>An <code class="docutils literal notranslate"><span class="pre">azure.storage.blob.models.ListBlobsOptions</span></code> object</p></li>
 </ul>
 <section id="using-a-prefix-directory">
-<h3>Using a prefix/directory<a class="headerlink" href="#using-a-prefix-directory" title="Permalink to this headline"></a></h3>
+<h3>Using a prefix/directory<a class="headerlink" href="#using-a-prefix-directory" title="Permalink to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">BlobContainerClient.listBlobsByHierarchy(directory)</span></code> Returns all the blobs and directories (prefixes) under the given directory (prefix). Directories will have <code class="docutils literal notranslate"><span class="pre">BlobItem.isPrefix()</span></code> set to true. Blob names are returned in lexicographic order. E.g. listing a container containing a ‘foo’ folder, which contains blobs ‘foo1’ and ‘foo2’, and a blob on the root level ‘bar’, will return the following results when prefix/directory is not set.</p>
 <ul class="simple">
 <li><p>foo/ (isPrefix = true)</p></li>
@@ -575,7 +601,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 </ul>
 </section>
 <section id="listblobsoptions">
-<h3>ListBlobsOptions<a class="headerlink" href="#listblobsoptions" title="Permalink to this headline"></a></h3>
+<h3>ListBlobsOptions<a class="headerlink" href="#listblobsoptions" title="Permalink to this heading"></a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">ListBlobsOptions</span></code> object allows the following criteria to be set:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">setDetails(blobListDetails)</span></code> further options see below.</p></li>
@@ -585,7 +611,7 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 <p><code class="docutils literal notranslate"><span class="pre">set</span></code> methods return an updated <code class="docutils literal notranslate"><span class="pre">ListBlobsOptions</span></code> object. <code class="docutils literal notranslate"><span class="pre">get</span></code> methods are also provided.</p>
 </section>
 <section id="bloblistdetails">
-<h3>BlobListDetails<a class="headerlink" href="#bloblistdetails" title="Permalink to this headline"></a></h3>
+<h3>BlobListDetails<a class="headerlink" href="#bloblistdetails" title="Permalink to this heading"></a></h3>
 <p>Allows specifying of additional information to be returned with each blob when listing blobs in a container (via a BlobContainerClient object). This type is immutable to ensure thread-safety of requests, so changing the details for a different listing operation requires construction of a new object.</p>
 <p><code class="docutils literal notranslate"><span class="pre">get</span></code> methods return logicals and <code class="docutils literal notranslate"><span class="pre">set</span></code> methods return an updated <code class="docutils literal notranslate"><span class="pre">BlobListDetails</span></code> object.</p>
 <ul class="simple">
@@ -601,8 +627,9 @@ methods of <code class="docutils literal notranslate"><span class="pre">BlobClie
 <li><p><code class="docutils literal notranslate"><span class="pre">getRetrieveVersions()</span></code> Whether versions should be returned.</p></li>
 </ul>
 </section>
+</section>
 <section id="blob-properties-metadata">
-<h3>Blob properties &amp; metadata<a class="headerlink" href="#blob-properties-metadata" title="Permalink to this headline"></a></h3>
+<h2>Blob properties &amp; metadata<a class="headerlink" href="#blob-properties-metadata" title="Permalink to this heading"></a></h2>
 <p>A blob’s properties can be queried reason about the blob, e.g. check its MD5 or size.
 In this case the file/object is 0 bytes in size.</p>
 <div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="n">myBlob</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">l</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -676,9 +703,8 @@ In this case the file/object is 0 bytes in size.</p>
 </div>
 <p>For more information, see <a class="reference external" href="https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs()">https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.21.0/com/azure/storage/blob/BlobContainerClient.html#listBlobs()</a></p>
 </section>
-</section>
 <section id="custom-endpoints">
-<h2>Custom EndPoints<a class="headerlink" href="#custom-endpoints" title="Permalink to this headline"></a></h2>
+<h2>Custom EndPoints<a class="headerlink" href="#custom-endpoints" title="Permalink to this heading"></a></h2>
 <p>Typically and by default Azure storage endpoints follow the pattern: <code class="docutils literal notranslate"><span class="pre">https://AccountName.Type.core.windows.net</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">https://mystorageaccount.blob.core.windows.net</span></code>. However, endpoints may vary e.g. if using Azure Government or private endpoints, which are respectively <code class="docutils literal notranslate"><span class="pre">https://AccountName.Type.core.usgovcloudapi.net</span></code> and <code class="docutils literal notranslate"><span class="pre">https://AccountName.privatelink.Type.core.windows.net</span></code>. If configuring a client builder then the <code class="docutils literal notranslate"><span class="pre">endpoint()</span></code> method can be used to set such an endpoint directly. By default if using the <code class="docutils literal notranslate"><span class="pre">createStorageClient()</span></code> function it will use the account name and storage type to create a default endpoint. This can be overridden by passing an <code class="docutils literal notranslate"><span class="pre">EndPoint</span></code> named value argument pair or by setting and “EndPoint” field in the JSON configuration file used to provide settings and credentials.</p>
 <p>For details of private endpoint use see: <a class="reference external" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints">https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints</a></p>
 </section>
@@ -695,7 +721,7 @@ In this case the file/object is 0 bytes in size.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, MathWorks, Inc..</p>
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

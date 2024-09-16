@@ -4,11 +4,11 @@ When compiling MATLAB™ code, in general, [MATLAB Compiler™](https://www.math
 
 Three options are discussed below for making the correct JAR-files available to the deployed component.
 
-*   The [first option](#option-one-compile-the-jar-file-into-the-standalone-component) is the easiest but will add the JAR-file to the *end* of the static class path; see the [installation documentation](Installation.md#configuring-the-matlab-java-class-path) to learn more about what limitations this may introduce depending on the platform.
+* The [first option](#option-one-compile-the-jar-file-into-the-standalone-component) is the easiest but will add the JAR-file to the *end* of the static class path; see the [installation documentation](Installation.md#configuring-the-matlab-java-class-path) to learn more about what limitations this may introduce depending on the platform.
 
-*   The [second option](#option-two-modified-javaclasspathtxt-and-distribute-jar-file-next-to-component) can add the JAR-file to the *front* of the static Java class path but is more involved.
+* The [second option](#option-two-modified-javaclasspathtxt-and-distribute-jar-file-next-to-component) can add the JAR-file to the *front* of the static Java class path but is more involved.
 
-*   The [last option](#option-three-make-jar-file-available-in-matlab-runtime) adds the JAR-file to the MATLAB Runtime installation rather than include it with the component, making it available to all standalone components using that MATLAB Runtime installation. 
+* The [last option](#option-three-make-jar-file-available-in-matlab-runtime) adds the JAR-file to the MATLAB Runtime installation rather than include it with the component, making it available to all standalone components using that MATLAB Runtime installation.
 
 ```{hint}
 Contact us at [mwlab@mathworks.com](mailto:mwlab@mathworks.com) if you require additional advice on your specific use-case of deploying MATLAB Code which makes use of the "MATLAB Interface *for Azure Services*". 
@@ -20,11 +20,11 @@ Any JAR-file which is compiled into a MATLAB Compiler (SDK) standalone component
 
 To compile the JAR-files into the component, in the Application- or Library Compiler App under "Files required for your application to run" (or when working with `mcc`, using the `-a` argument), explicitly add the following files to the component, they will not be added by automatic dependency analysis:
 
-- `matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar`
-- `matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties`
-- `matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml`
-- `$MATLABROOT/java/jarext/slf4j/slf4j-api.jar`
-- `$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar` 
+* `matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar`
+* `matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties`
+* `matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml`
+* `$MATLABROOT/java/jarext/slf4j/slf4j-api.jar`
+* `$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar`
 
 Where `$MATLABROOT` stands for the MATLAB installation directory as returned by running the `matlabroot` function in the MATLAB Command Window.
 
@@ -56,17 +56,17 @@ Now when compiling a standalone component with this updated `javaclasspath.txt`,
 
 Further, for this workflow, in the Application- or Library Compiler App under "Files required for your application to run" (or when working with `mcc`, using the `-a` argument), explicitly add the following files to the component:
 
-- `matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties`
-- `matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml`
-- `$MATLABROOT/java/jarext/slf4j/slf4j-api.jar`
-- `$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar` 
-- `$PREFDIR/javaclasspath.txt`
+* `matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties`
+* `matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml`
+* `$MATLABROOT/java/jarext/slf4j/slf4j-api.jar`
+* `$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar`
+* `$PREFDIR/javaclasspath.txt`
 
 Where `$PREFDIR` stands for the MATLAB preferences directory as returned by running the `prefdir` function in the MATLAB Command Windows. Depending on the exact MATLAB Compiler version, *some* versions may already include `$PREFDIR/javaclasspath.txt` *automatically*; by adding it *explicitly* though, this approach should work in *all* supported releases.
 
 And then, if working with [MATLAB Compiler (SDK) packaged installers](https://www.mathworks.com/help/compiler/files-generated-after-packaging-application-compiler.html), under "Files installed for your end user", add:
 
-- `matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar`
+* `matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar`
 
 The packaged installer will then place the JAR-file next to the standalone component during installation. Alternatively, if not working with the packaged installers, simply manually distribute `azure-common-sdk-0.2.0.jar` next to the standalone component itself, in the same directory.
 
@@ -78,14 +78,14 @@ In some situation, for example when working with multiple MATLAB Compiler Java/.
 
 First, at compile time, again add the following two files to the "Files required for your application to run" (or using `mcc`'s `-a` flag):
 
-- `matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties`
-- `matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml`
+* `matlab-azure-services/Software/MATLAB/lib/jar/log4j.properties`
+* `matlab-azure-services/Software/MATLAB/lib/jar/log4j2.xml`
 
 Then, manually copy the following three files to the target machine onto which the component will be deployed:
 
-- `matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar`
-- `$MATLABROOT/java/jarext/slf4j/slf4j-api.jar`
-- `$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar`
+* `matlab-azure-services/Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar`
+* `$MATLABROOT/java/jarext/slf4j/slf4j-api.jar`
+* `$MATLABROOT/java/jarext/slf4j/slf4j-log4j12.jar`
 
 The files can basically be placed anywhere on this machine as long as they are accessible by the runtime. Lastly, also on the target machine where the MATLAB Runtime has been installed, open `$MCRROOT/toolbox/local/classpath.txt` (where `$MCRROOT` stands for the installation directory of the MATLAB Runtime) in a text editor and add the full absolute locations of the three files to the *front* of the list of JAR-files and directories in the text file.
 
@@ -99,4 +99,4 @@ The `toolbox/local/classpath.txt` file contains a notification:
 For this particular use-case, this can partly be ignored, the file *may* be edited but do indeed keep in mind that it may be changed or overwritten when reinstalling the MATLAB Runtime or installing an Update to the runtime. The modification may have to be reapplied afterwards.
 ````
 
-[//]: #  (Copyright 2022 The MathWorks, Inc.)
+[//]: #  (Copyright 2022-2024 The MathWorks, Inc.)

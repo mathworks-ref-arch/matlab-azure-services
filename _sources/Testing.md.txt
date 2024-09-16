@@ -8,6 +8,7 @@ for different Azure services as well as a `Common` directory:
 * `/Common`
 * `/KeyVault`
 * `/Storage`
+* `/Adx`
 
 The unit tests for the different services may have different requirements. These
 are documented on a per service basis below.
@@ -177,4 +178,4 @@ A Key Vault account needs to exist:
 | `KEYVAULT_TENANT_ID`    | Azure Tenant ID                                    |
 | `KEYVAULT_VAULT_NAME`   | Name of the Key Vault                              |
 
-[//]: #  (Copyright 2021-2023 The MathWorks, Inc.)
+[//]: #  (Copyright 2021-2024 The MathWorks, Inc.)

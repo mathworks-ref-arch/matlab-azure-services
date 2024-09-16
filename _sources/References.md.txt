@@ -4,7 +4,6 @@ In general the MATLAB interfaces follow the same design as the Azure® SDK for
 Java. Thus it can be helpful to also consult the [Azure SDK for Java documentation](https://docs.microsoft.com/en-us/azure/developer/java/sdk)
 to learn more about specific client interfaces, methods and authentication workflows.
 
-
 ## Azure Storage
 
 * [Azure SDK for Java Reference Documentation](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.8.0/index.html)

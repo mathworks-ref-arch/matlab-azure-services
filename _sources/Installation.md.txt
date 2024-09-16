@@ -8,7 +8,7 @@ git clone https://github.com/mathworks-ref-arch/matlab-azure-services.git
 
 ## Build MATLAB Azure SDK Jar
 
-MATLAB Interface *for Azure Services* depends on the Azure® Java SDK which,
+MATLAB® Interface *for Azure Services* depends on the Azure® Java SDK which,
 together with some helper code, first needs to be packaged into the MATLAB Azure
 Utility Library. Building this utility requires both a Java 1.8 SDK and Apache
 Maven.
@@ -41,7 +41,7 @@ jar files to the static class path, these typically add them to then *end* of
 the static class path. For example when working with a [packaged custom
 toolbox](https://www.mathworks.com/help/matlab/matlab_prog/create-and-share-custom-matlab-toolboxes.html)
 the included jar file is added to the *end* of the static path in the end user
-MATLAB installation. Or if working with MATLAB Compiler (SDK) standalone
+MATLAB installation. Or if working with MATLAB Compiler® (SDK) standalone
 components the jar file which was packaged into the component are
 automatically added to the *end* of the static class path at runtime. However
 there may be situations in which this is not possible and then these features

@@ -50,5 +50,6 @@ configuration file name if needed:
 
 * [Key Vault](KeyVault.md)
 * [Data Lake Storage Gen2](DataLakeStorageGen2.md)
+* [Azure Data Explorer](DataExplorer.md)
 
-[//]: #  (Copyright 2022-2023 The MathWorks, Inc.)
+[//]: #  (Copyright 2022-2024 The MathWorks, Inc.)

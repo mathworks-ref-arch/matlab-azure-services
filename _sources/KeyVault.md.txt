@@ -41,6 +41,7 @@ which case no configuration file may be needed. See the Name, Value pairs below
 for more details.
 
 ### Name, Value pairs
+
 Additional Name, Value pairs can be supplied to configure non-default options:
 
 **`'ConfigurationFile'`**, explicitly specify which configuration file to use.

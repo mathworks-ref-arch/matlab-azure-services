@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; MATLAB Interface for Azure Services  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authentication" href="ADXAuthentication.html" />
+    <link rel="prev" title="MATLAB Interface for Azure Services" href="Overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-queries">Data queries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hello-world-kql-query">Hello World KQL query</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-command"><code class="docutils literal notranslate"><span class="pre">run</span></code> command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kqlquery-command"><code class="docutils literal notranslate"><span class="pre">KQLQuery</span></code> command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rest-interface">REST interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-request-properties-to-use-tsql-using-the-low-level-interface">Configuring request properties, to use tSQL using the low-level interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#count-the-rows-in-a-table-using-the-lower-level-interfaces">Count the rows in a table, using the lower level interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#progressive-query-execution">Progressive query execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-a-list-of-tables">Get a list of tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-data-to-a-local-parquet-file">Export data to a local parquet file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ingest-a-table-from-a-local-a-table">Ingest a table from a local a table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#higher-level-data-handling-functions">Higher-level data handling functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#control-queries">Control queries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list-clusters">List Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#management">Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ADXAuthentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/ADXGettingStarted.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<p>Azure Data Explorer (ADX) commands can be broadly separated into two classes:</p>
+<ul class="simple">
+<li><p>Data queries, which transact data on the platform</p></li>
+<li><p>Control queries, which relate to the platform itself</p></li>
+</ul>
+<p>This document will describe some examples of each and how they are structured.
+It does not attempt to cover the complete KQL syntax or all of the control options
+that are available. For further detailed refer to the <a class="reference internal" href="#ADXAPI.md"><span class="xref myst">API reference</span></a>
+and Azure’s documentation.</p>
+<p>The following examples assume that the package has previously been configured with
+connection and authentication details, see: <a class="reference internal" href="ADXAuthentication.html"><span class="std std-doc">ADXAuthentication</span></a>.</p>
+<p>The REST API interface used by this package can be somewhat verbose in some cases
+once familiar with its behavior it is generally straightforward to create wrapper
+functions in MATLAB that more concisely address a task. Some such reference implementations
+are provided.</p>
+<blockquote>
+<div><p>MathWorks reserves the <code class="docutils literal notranslate"><span class="pre">internal</span></code> namespace and functions within this namespace
+are subject to change or removal without notice and should not be used.</p>
+</div></blockquote>
+<section id="data-queries">
+<h2>Data queries<a class="headerlink" href="#data-queries" title="Permalink to this heading"></a></h2>
+<section id="hello-world-kql-query">
+<h3>Hello World KQL query<a class="headerlink" href="#hello-world-kql-query" title="Permalink to this heading"></a></h3>
+<section id="run-command">
+<h4><code class="docutils literal notranslate"><span class="pre">run</span></code> command<a class="headerlink" href="#run-command" title="Permalink to this heading"></a></h4>
+<p>The following reference implementation <code class="docutils literal notranslate"><span class="pre">mathworks.adx.run</span></code> is a high-level
+wrapper that abstracts the different types of queries under a generic <code class="docutils literal notranslate"><span class="pre">run</span></code> method.
+For more advanced use cases it may be required to drop to the lower-level interfaces
+described below.</p>
+<p>The query requests that “Hello World” be printed. This is returned as a table with
+a column names “mycol”. the success value is a logical indicating success of the
+call or not, additional optional outputs are not displayed in this example:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="p">[</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">&#39;print mycol=&quot;Hello World&quot;&#39;</span><span class="p">)</span>
+<span class="go">result =</span>
+<span class="go">  table</span>
+<span class="go">        mycol    </span>
+<span class="go">    _____________</span>
+<span class="go">    &quot;Hello World&quot;</span>
+<span class="go">success =</span>
+<span class="go">  logical</span>
+<span class="go">   1</span>
+</pre></div>
+</div>
+<p>To get the contents of an entire table once can run the following command, here Parallel
+processing of the resulting data has been enabled (if available), with a threshold
+of 10000 rows of data. For more details on optimization see: <a class="reference internal" href="Performance.html"><span class="std std-doc">Performance.md</span></a>.</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">[result, success] = mathworks.adx.run(&#39;table(&quot;tableName&quot;, &quot;all&quot;)&#39;, , useParallel=true, parallelThreshold=10000)</span>
+</pre></div>
+</div>
+</section>
+<section id="kqlquery-command">
+<h4><code class="docutils literal notranslate"><span class="pre">KQLQuery</span></code> command<a class="headerlink" href="#kqlquery-command" title="Permalink to this heading"></a></h4>
+<p>At a lower-level the above run command in this case calls the <code class="docutils literal notranslate"><span class="pre">KQLQuery</span></code> reference
+implementation, here we also display the <code class="docutils literal notranslate"><span class="pre">requestId</span></code> which can be used for corelation:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="p">[</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="n">requestId</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">KQLQuery</span><span class="p">(</span><span class="s">&#39;print mycol=&quot;Hello World&quot;&#39;</span><span class="p">)</span>
+
+<span class="go">result =</span>
+<span class="go">  table</span>
+<span class="go">        mycol    </span>
+<span class="go">    _____________</span>
+<span class="go">    &quot;Hello World&quot;</span>
+
+<span class="go">success =</span>
+<span class="go">  logical</span>
+<span class="go">   1</span>
+
+<span class="go">requestId = </span>
+<span class="go">    &quot;4faa0b41-e308-4436-a113-376aa20da525&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="rest-interface">
+<h4>REST interface<a class="headerlink" href="#rest-interface" title="Permalink to this heading"></a></h4>
+<p>At a still lower-level one can work with the REST interface more directly.
+A <code class="docutils literal notranslate"><span class="pre">adx.data.models.QueryRequest</span></code> request object is first created. The <code class="docutils literal notranslate"><span class="pre">.db</span></code> property
+is configured with the database name of interest. If not provided a default, if set,
+will be read from the configuration file. The query itself <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">Test=&quot;Hello</span> <span class="pre">World&quot;</span></code>
+is assigned to the <code class="docutils literal notranslate"><span class="pre">.csl</span></code> property. In this case no request properties are assigned
+to the <code class="docutils literal notranslate"><span class="pre">propertiesProp</span></code> property. This will be used in a later example.</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">% build a request object</span>
+<span class="go">req = adx.data.models.Query</span>
+<span class="go">Request;</span>
+<span class="go">req.db = &quot;mydatabasename&quot;;</span>
+<span class="go">req.csl = &#39;print Test=&quot;Hello World&quot;&#39;</span>
+<span class="go">req = </span>
+<span class="go">QueryRequest with properties:</span>
+
+<span class="go">             csl: &quot;print mycol=&quot;Hello World&quot;&quot;</span>
+<span class="go">              db: &quot;mydatabasename&quot;</span>
+<span class="go">  propertiesProp: []</span>
+</pre></div>
+</div>
+<p>The ADX cluster is assigned and with it a default scope. A default cluster and scope
+can be set in the configuration to avoid setting them for exact query and or having
+the values appear in source code. The ADX configuration may require that multiple
+scopes would be set.</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">% Configure a cluster and scope, defaults to be read from configuration files in future</span>
+<span class="go">cluster = &quot;https://myclustername.myregion.kusto.windows.net&quot;;</span>
+<span class="go">scopes = [&quot;https://myclustername.myregion.kusto.windows.net/.default&quot;];</span>
+</pre></div>
+</div>
+<p>Now a <code class="docutils literal notranslate"><span class="pre">adx.data.api.Query</span></code> query object is created using the scope(s).</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">% Create a query object</span>
+<span class="go">query = adx.data.api.Query(&#39;scopes&#39;, scopes);</span>
+<span class="go">query = </span>
+<span class="go">Query with properties:</span>
+
+<span class="go">            serverUri: [0×0 matlab.net.URI]</span>
+<span class="go">          httpOptions: [1×1 matlab.net.http.HTTPOptions]</span>
+<span class="go">  preferredAuthMethod: [0×0 string]</span>
+<span class="go">          bearerToken: &#39;&lt;unset&gt;&#39;</span>
+<span class="go">               apiKey: &#39;&lt;unset&gt;&#39;</span>
+<span class="go">      httpCredentials: &#39;&lt;unset&gt;&#39;</span>
+<span class="go">           apiVersion: &quot;2022-11-11&quot;</span>
+<span class="go">       subscriptionId: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">             tenantId: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">         clientSecret: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">             clientId: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">               scopes: &quot;https://myclustername.myregion.kusto.windows.net/.default&quot;</span>
+<span class="go">              cookies: [1×1 adx.CookieJar]</span>
+</pre></div>
+</div>
+<p>Having configured the query object it can now be run the request that was previously
+created on a given cluster, if a default is not used:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">[code, result, response] = query.queryRun(req, cluster)</span>
+
+<span class="go">code = </span>
+<span class="go">  StatusCode enumeration</span>
+<span class="go">    OK</span>
+<span class="go">result = </span>
+<span class="go">  1×5 QueryV2ResponseRaw array with properties:</span>
+
+<span class="go">    FrameType</span>
+<span class="go">    Version</span>
+<span class="go">    IsProgressive</span>
+<span class="go">    TableId</span>
+<span class="go">    TableKind</span>
+<span class="go">    TableName</span>
+<span class="go">    Columns</span>
+<span class="go">    Rows</span>
+<span class="go">    HasErrors</span>
+<span class="go">    Cancelled</span>
+<span class="go">    OneApiErrors</span>
+
+<span class="go">response = </span>
+<span class="go">  ResponseMessage with properties:</span>
+
+<span class="go">    StatusLine: &#39;HTTP/1.1 200 OK&#39;</span>
+<span class="go">    StatusCode: OK</span>
+<span class="go">        Header: [1×11 matlab.net.http.HeaderField]</span>
+<span class="go">          Body: [1×1 matlab.net.http.MessageBody]</span>
+<span class="go">     Completed: 0</span>
+</pre></div>
+</div>
+<p>Assuming success the result is a number of <em>Frames</em> that describe and contain tabular data.
+This data can be converted to native MATLAB tables for ease of use.
+Three tables are returned 2 containing metadata and a 3rd containing the data of,
+interest, it is named the <code class="docutils literal notranslate"><span class="pre">PrimaryResult</span></code>.</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">tables = mathworks.internal.adx.queryV2Response2Tables(result)</span>
+<span class="go">tables =</span>
+<span class="go">  3×1 cell array</span>
+<span class="go">    {1×3  table}</span>
+<span class="go">    {1×1  table}</span>
+<span class="go">    {3×12 table}</span>
+<span class="gp">&gt;&gt; </span><span class="n">tables</span><span class="p">{</span><span class="mi">1</span><span class="p">}.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Description</span>
+<span class="go">ans =</span>
+<span class="go">    &#39;@ExtendedProperties&#39;</span>
+<span class="gp">&gt;&gt; </span><span class="n">tables</span><span class="p">{</span><span class="mi">2</span><span class="p">}.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Description</span>
+<span class="go">ans =</span>
+<span class="go">    &#39;PrimaryResult&#39;</span>
+<span class="gp">&gt;&gt; </span><span class="n">tables</span><span class="p">{</span><span class="mi">3</span><span class="p">}.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Description</span>
+<span class="go">ans =</span>
+<span class="go">    &#39;QueryCompletionInformation&#39;</span>
+<span class="gp">&gt;&gt; </span><span class="n">tables</span>
+</pre></div>
+</div>
+<p>Looking at the <code class="docutils literal notranslate"><span class="pre">PrimaryResult</span></code> shows the response to the query:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="n">tables</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span>
+<span class="go">ans =</span>
+<span class="go">  table</span>
+<span class="go">         mycol      </span>
+<span class="go">    _______________</span>
+<span class="go">    &quot;Hello World&quot;</span>
+</pre></div>
+</div>
+<p>Putting the commands together:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% build a request object</span>
+<span class="n">request</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">QueryRequest</span><span class="p">();</span>
+<span class="n">colName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;myOutput&quot;</span><span class="p">;</span>
+<span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="c">% set the KQL query</span>
+<span class="n">request</span><span class="p">.</span><span class="n">csl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;print %s=&quot;%s&quot;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">colName</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="c">% Don&#39;t set the database use the default in .json config file</span>
+<span class="c">% request.db = &quot;myDatabaseName&quot;</span>
+<span class="c">% No adx.data.models.ClientRequestProperties required</span>
+<span class="c">% request.requestProperties</span>
+<span class="c">% Create the Query object and run the request</span>
+<span class="n">query</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">Query</span><span class="p">();</span>
+<span class="c">% The default cluster to use is configured using a .json configuration file</span>
+<span class="c">% Run the query:</span>
+<span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">queryRun</span><span class="p">(</span><span class="n">request</span><span class="p">);</span><span class="w"> </span><span class="c">%#ok&lt;ASGLU&gt;</span>
+<span class="k">if</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">matlab.net.http.StatusCode</span><span class="p">.</span><span class="n">OK</span>
+<span class="w">    </span><span class="c">% Convert the response to Tables</span>
+<span class="w">    </span><span class="n">hwTable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">internal</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">queryV2Response2Tables</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&quot;Query (%s) result:\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">csl</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">hwTable</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">error</span><span class="p">(</span><span class="s">&#39;Error running query: %s&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">csl</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuring-request-properties-to-use-tsql-using-the-low-level-interface">
+<h3>Configuring request properties, to use tSQL using the low-level interface<a class="headerlink" href="#configuring-request-properties-to-use-tsql-using-the-low-level-interface" title="Permalink to this heading"></a></h3>
+<p>The higher-level interface <code class="docutils literal notranslate"><span class="pre">mathworks.adx.tSQLQuery</span></code> automatically configures
+the required request property to enable tSQL. However, as an example of how properties
+can be configured directly using the lower level the following example is illustrative.
+Note the <code class="docutils literal notranslate"><span class="pre">KQLQuery</span></code> and <code class="docutils literal notranslate"><span class="pre">run</span></code> commands both accept properties as optional arguments.</p>
+<p>If not using the KQL language syntax the the <em>T-SQL</em> syntax can be used to write
+queries. This is accomplished the query property <code class="docutils literal notranslate"><span class="pre">query_language</span></code> to <code class="docutils literal notranslate"><span class="pre">sql</span></code>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">QueryRequest</span><span class="p">();</span>
+<span class="n">request</span><span class="p">.</span><span class="n">csl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">query</span><span class="p">;</span>
+<span class="c">% Don&#39;t set the database use the default in .json config file</span>
+<span class="c">% request.db = &quot;databaseName&quot;;</span>
+
+<span class="c">% Configure ClientRequestPropertiesOptions &amp; then ClientRequestProperties</span>
+<span class="n">crpo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">ClientRequestPropertiesOptions</span><span class="p">;</span>
+<span class="n">crpo</span><span class="p">.</span><span class="n">query_language</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;sql&quot;</span><span class="p">;</span>
+<span class="n">crp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">ClientRequestProperties</span><span class="p">();</span>
+<span class="n">crp</span><span class="p">.</span><span class="n">Options</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">crpo</span><span class="p">;</span>
+<span class="n">request</span><span class="p">.</span><span class="n">requestProperties</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">crp</span><span class="p">;</span>
+
+<span class="c">% Create the Query object and run the request</span>
+<span class="n">query</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">Query</span><span class="p">();</span>
+<span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">queryRun</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A reference implementation shows how this can be more concisely used:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Run the SQL query &#39;SELECT top(10) * FROM mytable&#39; to return the 1st 10 row of a table</span>
+<span class="p">[</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="n">requestId</span><span class="p">,</span><span class="w"> </span><span class="n">resultTables</span><span class="p">,</span><span class="w"> </span><span class="n">dataSetHeader</span><span class="p">,</span><span class="w"> </span><span class="n">dataSetCompletion</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">tSQLQuery</span><span class="p">(</span><span class="s">&#39;SELECT top(10) * FROM mytable&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The additional return values can be used to indicate if the query failed:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">dataSetCompletion</span><span class="p">.</span><span class="n">HasErrors</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">dataSetCompletion</span><span class="p">.</span><span class="n">Cancelled</span>
+<span class="w">    </span><span class="nb">error</span><span class="p">(</span><span class="s">&quot;Query had errors or was cancelled&quot;</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</section>
+<section id="count-the-rows-in-a-table-using-the-lower-level-interfaces">
+<h3>Count the rows in a table, using the lower level interfaces<a class="headerlink" href="#count-the-rows-in-a-table-using-the-lower-level-interfaces" title="Permalink to this heading"></a></h3>
+<p>A query to count the rows in a table using KQL syntax:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">req</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">QueryRequest</span><span class="p">;</span>
+<span class="n">req</span><span class="p">.</span><span class="n">csl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;[&#39;mytable&#39;] | count&quot;</span><span class="p">;</span>
+
+<span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">Query</span><span class="p">();</span>
+<span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">queryRun</span><span class="p">(</span><span class="n">req</span><span class="p">);</span><span class="w"> </span><span class="c">%#ok&lt;ASGLU&gt;</span>
+<span class="k">if</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">matlab.net.http.StatusCode</span><span class="p">.</span><span class="n">OK</span>
+<span class="w">    </span><span class="p">[</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">resultTables</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">internal</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">queryV2Response2Tables</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">count</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>In more detail, this example is based on a table created from the <code class="docutils literal notranslate"><span class="pre">airlinesmall.csv</span></code>
+data set that is included with matlab use <code class="docutils literal notranslate"><span class="pre">which('airlinesmall.csv')</span></code> to get its
+location. The result returned should be: 123523.</p>
+<blockquote>
+<div><p>Note that in early releases some warnings about unsupported data types and conversions may be expected.</p>
+</div></blockquote>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="go">% Create a request</span>
+<span class="go">req = adx.ModelsDataPlane.QueryRequest;</span>
+<span class="go">req.db = &quot;mydatabasename&quot;;</span>
+<span class="go">% The table name is: airlinesmallcsv;</span>
+<span class="go">% Kusto query string to count the rows in a given table</span>
+<span class="go">req.csl = &quot;[&#39;airlinesmallcsv&#39;] | count&quot;;</span>
+
+<span class="go">scopes = [&quot;https://myclustername.myregion.kusto.windows.net/.default&quot;];</span>
+<span class="go">cluster = &quot;https://myclustername.myregion.kusto.windows.net&quot;;</span>
+
+<span class="go">q = adx.data.api.Query(&#39;scopes&#39;, scopes);</span>
+<span class="go">[code, result, response] = queryRun(q, req, cluster);</span>
+
+<span class="go">tables =</span>
+<span class="go">  3×1 cell array</span>
+<span class="go">    {1×3  table}</span>
+<span class="go">    {1×1  table}</span>
+<span class="go">    {3×12 table}</span>
+<span class="go">ans =</span>
+<span class="go">  table</span>
+<span class="go">    Count </span>
+<span class="go">    ______</span>
+<span class="go">    123523</span>
+<span class="go">c =</span>
+<span class="go">  int64</span>
+<span class="go">   123523</span>
+<span class="go">ans =</span>
+<span class="go">    &#39;int64&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="progressive-query-execution">
+<h3>Progressive query execution<a class="headerlink" href="#progressive-query-execution" title="Permalink to this heading"></a></h3>
+<p>To execute a query in progressive mode the query request option property <code class="docutils literal notranslate"><span class="pre">results_progressive_enabled</span></code>
+should be set to true.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">query</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;[&#39;tableName &#39;] | take &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">args</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;database&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="s">&quot;propertyNames&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;results_progressive_enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;propertyValues&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">true</span><span class="p">},</span><span class="w"> </span><span class="s">&quot;verbose&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">};</span>
+<span class="p">[</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="n">requestId</span><span class="p">,</span><span class="w"> </span><span class="n">resultTables</span><span class="p">,</span><span class="w"> </span><span class="n">dataSetHeader</span><span class="p">,</span><span class="w"> </span><span class="n">dataSetCompletion</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">KQLQuery</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">{:});</span>
+</pre></div>
+</div>
+</section>
+<section id="get-a-list-of-tables">
+<h3>Get a list of tables<a class="headerlink" href="#get-a-list-of-tables" title="Permalink to this heading"></a></h3>
+<p>Get a list of tables and table properties:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">req</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">QueryRequest</span><span class="p">(</span><span class="s">&#39;db&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mydatabase&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;csl&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;.show tables details&#39;</span><span class="p">);</span>
+<span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">queryRun</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Or more concisely:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">tableList</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">listTables</span><span class="p">(</span><span class="n">database</span><span class="p">=</span><span class="s">&quot;mydatabase&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="export-data-to-a-local-parquet-file">
+<h3>Export data to a local parquet file<a class="headerlink" href="#export-data-to-a-local-parquet-file" title="Permalink to this heading"></a></h3>
+<p>The following example code exports an entire table to a known blob using
+a Shared Access Signature blob URL. The resulting parquet file can be read
+into a MATLAB table using <code class="docutils literal notranslate"><span class="pre">parquetread</span></code>. Parquet is recommended over CSV and
+other formats for speed and data integrity reasons.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">exportURL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;https://myaccount.blob.core.windows.net/&lt;REDACTED&gt;&quot;</span><span class="p">;</span>
+<span class="n">exportURI</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">matlab.net.URI</span><span class="p">(</span><span class="n">exportURL</span><span class="p">);</span>
+<span class="n">SAS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">exportURI</span><span class="p">.</span><span class="n">EncodedQuery</span><span class="p">;</span>
+<span class="n">query</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;table(&#39;mytableName&#39;, &#39;all&#39;)&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">exportToBlob</span><span class="p">(</span><span class="n">exportURI</span><span class="p">.</span><span class="n">EncodedURI</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="o">~</span><span class="n">tf</span>
+<span class="w">    </span><span class="nb">error</span><span class="p">(</span><span class="s">&quot;exportToBlob failed&quot;</span><span class="p">);</span>
+<span class="k">end</span>
+
+<span class="n">downloadURL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">Path</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;?&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">SAS</span><span class="p">;</span>
+<span class="n">downloadURI</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">matlab.net.URI</span><span class="p">(</span><span class="n">downloadURL</span><span class="p">);</span>
+<span class="n">localFile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">websave</span><span class="p">(</span><span class="s">&quot;exportedTable.gz.parquet&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">downloadURI</span><span class="p">);</span>
+<span class="n">T</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">parquetread</span><span class="p">(</span><span class="n">localFile</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="ingest-a-table-from-a-local-a-table">
+<h3>Ingest a table from a local a table<a class="headerlink" href="#ingest-a-table-from-a-local-a-table" title="Permalink to this heading"></a></h3>
+<p>To ingest large volumes of data from MATLAB then the <code class="docutils literal notranslate"><span class="pre">ingestFile</span></code> and <code class="docutils literal notranslate"><span class="pre">ingestTable</span></code>
+functions can be used:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Read some sample data from a parquet file to create a MATLAB table</span>
+<span class="n">inputTable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">parquetread</span><span class="p">(</span><span class="n">parquetFile</span><span class="p">);</span>
+<span class="c">% Ingest the table into a given table</span>
+<span class="p">[</span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">ingestTable</span><span class="p">(</span><span class="n">inputTable</span><span class="p">,</span><span class="w"> </span><span class="n">tableName</span><span class="p">=</span><span class="n">tableName</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To ingest small amounts of data from a MATLAB variable, typically a table the
+<code class="docutils literal notranslate"><span class="pre">ingestInline</span></code>. This function is not suitable for bulk data or high performance
+requirements.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">localPath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fullfile</span><span class="p">(</span><span class="nb">matlabroot</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;toolbox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matlab&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;demos&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outages.parquet&quot;</span><span class="p">);</span>
+<span class="n">tableName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;outages&quot;</span><span class="p">;</span>
+<span class="n">praquetTable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">parquetread</span><span class="p">(</span><span class="n">localPath</span><span class="p">);</span>
+<span class="n">ingestData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">praquetTable</span><span class="p">(</span><span class="mi">1</span><span class="p">,:);</span>
+
+<span class="p">[</span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">requestId</span><span class="p">,</span><span class="w"> </span><span class="n">extentId</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">ingestInline</span><span class="p">(</span><span class="n">tableName</span><span class="p">,</span><span class="w"> </span><span class="n">ingestData</span><span class="p">)</span>
+
+<span class="n">success</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span><span class="nb">logical</span>
+<span class="w">   </span><span class="mi">1</span>
+<span class="n">result</span><span class="w"> </span><span class="p">=</span>
+<span class="w">  </span>1<span class="n">x5</span><span class="w"> </span><span class="nb">table</span>
+<span class="w">                   </span><span class="n">ExtentId</span><span class="w">                                    </span><span class="n">ItemLoaded</span><span class="w">                      </span><span class="n">Duration</span><span class="w">    </span><span class="n">HasErrors</span><span class="w">                 </span><span class="n">OperationId</span><span class="w">              </span>
+<span class="w">    </span><span class="n">______________________________________</span><span class="w">    </span><span class="n">_____________________________________________</span><span class="w">    </span><span class="n">________</span><span class="w">    </span><span class="n">_________</span><span class="w">    </span><span class="n">______________________________________</span>
+<span class="w">    </span><span class="s">&quot;8de6b799-6e12-4994-b57b-ed75e15db0a8&quot;</span><span class="w">    </span><span class="s">&quot;inproc:a607e293-dbdd-4f79-a1a2-a61982585adf&quot;</span><span class="w">    </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="w">      </span><span class="nb">false</span><span class="w">      </span><span class="s">&quot;cd4184ca-0d31-4c42-a273-5f2953f76ddf&quot;</span>
+<span class="n">requestId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span>
+<span class="w">    </span><span class="s">&quot;63bb1cea-b589-45ac-82ad-00d68ca96aeb&quot;</span>
+<span class="n">extentId</span><span class="w"> </span><span class="p">=</span><span class="w"> </span>
+<span class="w">    </span><span class="s">&quot;8de6b799-6e12-4994-b57b-ed75e15db0a8&quot;</span>
+</pre></div>
+</div>
+<p>To ingest from another source in ADX itself rather than MATLAB see <code class="docutils literal notranslate"><span class="pre">ingestFromQuery</span></code>.</p>
+</section>
+<section id="higher-level-data-handling-functions">
+<h3>Higher-level data handling functions<a class="headerlink" href="#higher-level-data-handling-functions" title="Permalink to this heading"></a></h3>
+<p>The following higher-level functions are provided to assist in common operations when working with data.
+Use <code class="docutils literal notranslate"><span class="pre">doc</span> <span class="pre">mathworks.adx.&lt;function-name&gt;</span></code> for more details.</p>
+<ul class="simple">
+<li><p>createTable - Creates a table in a given database</p></li>
+<li><p>dropTable - Drops a table from a given database</p></li>
+<li><p>exportToBlob - Exports data to an Azure blob</p></li>
+<li><p>ingestFile - Ingests a local file to Azure Data Explorer using Azure blob</p></li>
+<li><p>ingestFileQueue - Ingests a local file to Azure Data Explorer using Azure blob &amp; queue <em>(work in progress, do not use)</em></p></li>
+<li><p>ingestTable - Ingests a MATLAB table to an Azure Data Explorer Table</p></li>
+<li><p>ingestTableQueue - Ingests a MATLAB table to an Azure Data Explorer Table <em>(work in progress, do not use)</em></p></li>
+<li><p>ingestInline - Ingests limited amounts of data into Kusto directly from MATLAB</p></li>
+<li><p>ingestFromQuery - Ingest data using the result of a command or query</p></li>
+<li><p>listTables - Returns a list of tables and their properties</p></li>
+<li><p>tableExists - Returns true is a given table exists</p></li>
+</ul>
+</section>
+</section>
+<section id="control-queries">
+<h2>Control queries<a class="headerlink" href="#control-queries" title="Permalink to this heading"></a></h2>
+<section id="list-clusters">
+<h3>List Clusters<a class="headerlink" href="#list-clusters" title="Permalink to this heading"></a></h3>
+<p>Start by creating a <code class="docutils literal notranslate"><span class="pre">Clusters</span></code> object:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="n">clusters</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">Api</span><span class="p">.</span><span class="n">Clusters</span>
+<span class="go">clusters = </span>
+<span class="go">  Clusters with properties:</span>
+
+<span class="go">              serverUri: [0×0 matlab.net.URI]</span>
+<span class="go">            httpOptions: [1×1 matlab.net.http.HTTPOptions]</span>
+<span class="go">    preferredAuthMethod: [0×0 string]</span>
+<span class="go">            bearerToken: &#39;&lt;unset&gt;&#39;</span>
+<span class="go">                 apiKey: &#39;&lt;unset&gt;&#39;</span>
+<span class="go">        httpCredentials: &#39;&lt;unset&gt;&#39;</span>
+<span class="go">             apiVersion: &quot;2022-11-11&quot;</span>
+<span class="go">         subscriptionId: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">               tenantId: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">           clientSecret: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">               clientId: &#39;&lt;redacted&gt;&#39;</span>
+<span class="go">                cookies: [1×1 adx.CookieJar]</span>
+</pre></div>
+</div>
+<p>Call the <code class="docutils literal notranslate"><span class="pre">clustersList</span></code> method:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">clusters</span><span class="p">.</span><span class="n">clustersList</span>
+<span class="go">code = </span>
+<span class="go">  StatusCode enumeration</span>
+<span class="go">    OK</span>
+<span class="go">result = </span>
+<span class="go">  ClusterListResult with properties:</span>
+
+<span class="go">    value: [1×1 adx.Models.Cluster]</span>
+<span class="go">response = </span>
+<span class="go">  ResponseMessage with properties:</span>
+
+<span class="go">    StatusLine: &#39;HTTP/1.1 200 OK&#39;</span>
+<span class="go">    StatusCode: OK</span>
+<span class="go">        Header: [1×13 matlab.net.http.HeaderField]</span>
+<span class="go">          Body: [1×1 matlab.net.http.MessageBody]</span>
+<span class="go">     Completed: 0</span>
+</pre></div>
+</div>
+<p>Examine the result, in this case there is one cluster:</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="n">result</span><span class="p">.</span><span class="n">value</span>
+<span class="go">ans = </span>
+<span class="go">  Cluster with properties:</span>
+
+<span class="go">            sku: [1×1 adx.Models.AzureSku]</span>
+<span class="go">     systemData: [0×0 adx.Models.systemData]</span>
+<span class="go">          zones: &quot;1&quot;</span>
+<span class="go">       identity: [1×1 adx.Models.Identity]</span>
+<span class="go">    xproperties: [1×1 adx.Models.ClusterProperties_1]</span>
+<span class="go">           etag: &quot;&quot;2023-01-04T12:40:35.3452388Z&quot;&quot;</span>
+<span class="go">             id: &quot;/subscriptions/06&lt;REDACTED&gt;74/resourceGroups/mbadx/providers/Microsoft.Kusto/Clusters/myclustername&quot;</span>
+<span class="go">           name: &quot;myclustername&quot;</span>
+<span class="go">           type: &quot;Microsoft.Kusto/Clusters&quot;</span>
+
+<span class="gp">&gt;&gt; </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">sku</span>
+<span class="go">ans = </span>
+<span class="go">  AzureSku with properties:</span>
+
+<span class="go">        name: Dev_No_SLA_Standard_E2a_v4</span>
+<span class="go">    capacity: 1</span>
+<span class="go">        tier: Basic</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">[tf,</span> <span class="pre">cluster]</span> <span class="pre">=</span> <span class="pre">mathworks.adx.isClusterRunning(...)</span></code> command is a convenient function to
+easily determine if a default or given cluster is running or not.</p>
+</div></blockquote>
+</section>
+<section id="management">
+<h3>Management<a class="headerlink" href="#management" title="Permalink to this heading"></a></h3>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get Identity token</span>
+<span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">Management</span><span class="p">(</span><span class="s">&#39;scopes&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">dataPlaneScopes</span><span class="p">)</span>
+<span class="n">req</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">ManagementRequest</span><span class="w"> </span>
+<span class="n">req</span><span class="p">.</span><span class="n">csl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;.get kusto identity token&#39;</span>
+<span class="n">ingestCluster</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;https://ingest-myadxcluster.westeurope.kusto.windows.net&quot;</span>
+<span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">managementRun</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">ingestCluster</span><span class="p">)</span>
+
+<span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">Ingest</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>More concisely using configured defaults:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">Management</span><span class="p">()</span>
+<span class="n">req</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adx</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">ManagementRequest</span>
+<span class="n">req</span><span class="p">.</span><span class="n">csl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;.get kusto identity token&#39;</span>
+<span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">managementRun</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<p>For more sample commands see:</p>
+<ul class="simple">
+<li><p>Example code: <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/adxDemo.m</span></code></p></li>
+<li><p>Basic test code: <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/test/unit/*.m</span></code></p></li>
+</ul>
+<p>For further API reference information see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/rest/api/azurerekusto/">https://learn.microsoft.com/en-us/rest/api/azurerekusto/</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/kusto">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/connection-strings/kusto</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sql-cheat-sheet">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/sql-cheat-sheet</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Overview.html" class="btn btn-neutral float-left" title="MATLAB Interface for Azure Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ADXAuthentication.html" class="btn btn-neutral float-right" title="Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

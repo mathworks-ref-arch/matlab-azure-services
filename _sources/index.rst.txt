@@ -1,6 +1,3 @@
-.. Sphinx Theme documentation master file, created by
-   sphinx-quickstart on Fri Oct  9 13:57:23 2020.
-
 MATLAB Interface *for Azure Services*
 =====================================
 
@@ -11,29 +8,43 @@ MATLAB Interface *for Azure Services*
    Overview
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Installation & Configuration
+   :maxdepth: 1
+   :caption: Azure Data Explorer
+
+   ADXGettingStarted
+   ADXAuthentication
+   NullData
+   Dynamics
+   Performance
+   OpenAPI
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Azure Key Vault
 
    Installation
    Configuration
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Usage
-
    Authentication
-   
-   Services
+   KeyVault
 
-   APIReference   
+.. toctree::
+   :maxdepth: 1
+   :caption: Azure Data Lake Storage Gen2
+
+   Installation
+   Configuration
+   Authentication
+   DataLakeStorageGen2
+   File
+   Queue
 
 .. toctree::
    :maxdepth: 2
-   :caption: Advanced Topics
+   :caption: Further topics
 
    Deployment
    Testing
    FAQ
-
+   APIReference
    References
 
