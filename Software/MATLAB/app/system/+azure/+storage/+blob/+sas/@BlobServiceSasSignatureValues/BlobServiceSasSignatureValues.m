@@ -13,7 +13,7 @@ classdef BlobServiceSasSignatureValues < azure.object
 %   permissions: azure.storage.blob.sas.BlobSasPermission or
 %                BlobContainerSasPermission
 
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2024 The MathWorks, Inc.
 
 methods
     function obj = BlobServiceSasSignatureValues(varargin)
@@ -26,7 +26,7 @@ methods
             if ~(isdatetime(expiryTime) || isscalar(expiryTime))
                 write(logObj,'error','Expected argument of type scalar datetime');
             end
-              expiryTimej = datetime2OffsetDateTime(expiryTime);
+              expiryTimej = azure.mathworks.internal.datetime2OffsetDateTime(expiryTime);
             permissions = varargin{2};
             if ~(isa(permissions, 'azure.storage.blob.sas.BlobSasPermission') ...
                 || isa(permissions, 'azure.storage.blob.sas.BlobContainerSasPermission')) 

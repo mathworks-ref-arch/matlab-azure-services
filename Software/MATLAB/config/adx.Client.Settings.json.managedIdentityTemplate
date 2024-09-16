@@ -1,0 +1,10 @@
+{
+    "preferredAuthMethod" : "managedIdentity",
+    "subscriptionId" : "<REDACTED>",
+    "tenantId" : "<REDACTED>",
+    "clientId" : "<REDACTED>",
+    "database" : "<defaultDatabaseName>",
+    "resourceGroup": "<resourceGroupName>",
+    "cluster" : "https://<defaultClusterName>.<region>.kusto.windows.net"
+    "scopes" : "https://<defaultClusterName>.<region>..kusto.windows.net/.default"
+}

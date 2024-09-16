@@ -1,39 +1,47 @@
 classdef commonFixture < matlab.unittest.fixtures.Fixture
     % Writes the configuration files based on environment variables, this
     % facilities unit testing in CI/CD setups
-    
+
     % Copyright 2022 The MathWorks, Inc.
     methods
         function setup(~)
             disp 'Writing Configuration Files'
-            % Create Configuration Files Based on Environment 
+
+            % Enable pretty printed JSON on >= 21a
+            if verLessThan('matlab','9.10') %#ok<VERLESSMATLAB>
+                prettyArgs = {};
+            else
+                prettyArgs = {'PrettyPrint',true};
+            end
+
+            % Create Configuration Files Based on Environment
             configFile = fullfile(AzureCommonRoot, 'config', 'test_ConnectionString.json');
             json = jsonencode(struct(...
                 'AuthMethod','ConnectionString',...
                 'ConnectionString',getenv('STORAGE_CONNECTION_STRING')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
-            
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_StorageSharedKey.json');
             json = jsonencode(struct(...
                 'AuthMethod','StorageSharedKey',...
                 'AccountKey',getenv('STORAGE_ACCOUNT_KEY'),...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
-            
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_Environment.json');
             json = jsonencode(struct(...
                 'AuthMethod','Environment',...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
-            
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_DefaultAzure.json');
             json = jsonencode(struct(...
                 'AuthMethod','DefaultAzure',...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
 
             configFile = fullfile(AzureCommonRoot, 'config', 'test_InteractiveBrowser.json');
@@ -44,9 +52,9 @@ classdef commonFixture < matlab.unittest.fixtures.Fixture
                 'RedirectUrl',getenv('COMMON_REDIRECT_URI'),...
                 'TokenCachePersistenceOptions',struct('Name','InteractiveBrowser'),...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
-            
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_ClientSecret.json');
             json = jsonencode(struct(...
                 'AuthMethod','ClientSecret',...
@@ -54,9 +62,9 @@ classdef commonFixture < matlab.unittest.fixtures.Fixture
                 'ClientId',getenv('AZURE_CLIENT_ID'),...
                 'ClientSecret',getenv('AZURE_CLIENT_SECRET'),...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
-            
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_ClientCertificate.json');
             certFile = fullfile(AzureCommonRoot, 'config', 'test_cert.pem');
             json = jsonencode(struct(...
@@ -65,7 +73,7 @@ classdef commonFixture < matlab.unittest.fixtures.Fixture
                 'ClientId',getenv('AZURE_CLIENT_ID'),...
                 'PemCertificate',certFile,...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
             f = fopen(certFile,'w'); fwrite(f,matlab.net.base64decode(getenv('AZURE_CLIENT_CERTIFICATE')));fclose(f);
 
@@ -77,15 +85,15 @@ classdef commonFixture < matlab.unittest.fixtures.Fixture
                 'Scopes',{{'https://storage.azure.com/.default'}},...
                 'TokenCachePersistenceOptions',struct('Name','DeviceCode'),...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
+                ),prettyArgs{:});
             f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
-            
+
             configFile = fullfile(AzureCommonRoot, 'config', 'test_AzureCli.json');
             json = jsonencode(struct(...
                 'AuthMethod','AzureCli',...
                 'AccountName',getenv('STORAGE_ACCOUNT_NAME')...
-            ));
-            f = fopen(configFile,'w'); fwrite(f,json);fclose(f);            
+                ),prettyArgs{:});
+            f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
         end
 
         function teardown(~)

@@ -17,8 +17,8 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-project = u'MATLAB Interface for Azure Services Package'
-copyright = u'2020-2022, MathWorks, Inc.'
+project = u'MATLAB Interface for Azure Services'
+copyright = u'2020-2024, MathWorks, Inc.'
 author = u'MathWorks'
 
 # The short X.Y version
@@ -55,7 +55,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+#language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -155,7 +155,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'MATLABInterfaceforAzureServices.tex', u'MATLAB Interface for Azure Services Package',
+    (master_doc, 'MATLABInterfaceforAzureServices.tex', u'MATLAB Interface for Azure Services',
      u'MathWorks, Inc.', 'manual'),
 ]
 
@@ -165,7 +165,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'MATLABInterfaceforAzureServices', u'MATLAB Interface for Azure Services Package Documentation',
+    (master_doc, 'MATLABInterfaceforAzureServices', u'MATLAB Interface for Azure Services Documentation',
      [author], 1)
 ]
 
@@ -176,8 +176,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'MATLABInterfaceforAzureServices', u'MATLAB Interface for Azure Services Package',
-     author, 'MATLABInterfaceforAzureServices', 'MATLAB Interface for Azure Services Package',
+    (master_doc, 'MATLABInterfaceforAzureServices', u'MATLAB Interface for Azure Services',
+     author, 'MATLABInterfaceforAzureServices', 'MATLAB Interface for Azure Services',
      'Miscellaneous'),
 ]
 
@@ -200,3 +200,8 @@ epub_title = project
 epub_exclude_files = ['search.html']
 
 myst_heading_anchors = 5
+
+
+suppress_warnings = [
+    "myst.header"  # Suppress warnings about  WARNING: Non-consecutive header level increase; H2 to H4 [myst.header]
+]

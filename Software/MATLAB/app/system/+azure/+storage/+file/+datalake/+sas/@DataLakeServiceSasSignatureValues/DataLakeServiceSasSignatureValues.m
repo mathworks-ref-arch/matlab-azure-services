@@ -34,7 +34,7 @@ methods
             if ~(isdatetime(expiryTime) || isscalar(expiryTime))
                 write(logObj,'error','Expected argument of type scalar datetime');
             end
-              expiryTimej = datetime2OffsetDateTime(expiryTime);
+              expiryTimej = azure.mathworks.internal.datetime2OffsetDateTime(expiryTime);
             permissions = varargin{2};
             if ~(isa(permissions, 'azure.storage.file.datalake.sas.PathSasPermission') ...
                 || isa(permissions, 'azure.storage.file.datalake.sas.FileSystemSasPermission')) 

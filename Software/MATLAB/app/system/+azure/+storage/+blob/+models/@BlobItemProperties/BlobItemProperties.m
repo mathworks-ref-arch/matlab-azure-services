@@ -25,7 +25,6 @@ classdef BlobItemProperties < azure.object
             value = char(obj.Handle.getCacheControl);
         end
 
-
         function value = getContentEncoding(obj)
             % GETCONTENTENCODING Get the getContentEncoding property
             value = char(obj.Handle.getContentEncoding);
