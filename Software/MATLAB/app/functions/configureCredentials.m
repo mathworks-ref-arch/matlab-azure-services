@@ -107,7 +107,7 @@ switch lower(settings.AuthMethod)
             write(logObj,'verbose',' or AZURE_CLIENT_ID, AZURE_CLIENT_CERTIFICATE_PATH and AZURE_TENANT_ID');
             write(logObj,'verbose',' or AZURE_CLIENT_ID, AZURE_USERNAME and AZURE_PASSWORD');
         end
-        if ~compareAuthEnvVars
+        if ~azure.mathworks.internal.compareAuthEnvVars
             % Check for mismatches in Java and MATLAB that might indicate misconfiguration
             write(logObj,'warning','There is a mismatch between authentication variables in the MATLAB and Java contexts, the Azure SDK will use the Java values. To enable both, set variables in the environment used to start MATLAB.');
         end
@@ -246,7 +246,13 @@ switch lower(settings.AuthMethod)
         end
         
         trc = azure.core.credential.TokenRequestContext();
-        trc.addScopes(settings.Scopes{:});
+        if ischar(settings.Scopes) || isstring(settings.Scopes)
+            trc.addScopes(settings.Scopes);
+        elseif iscellstr(settings.Scopes)
+            trc.addScopes(settings.Scopes{:});
+        else
+             write(logObj,'error','Unexpected settings.Scopes field type');
+        end
 
         if (isfield(settings,'TokenCachePersistenceOptions'))
             % If persistence is requested, create sharedTokenCredential 
@@ -258,7 +264,7 @@ switch lower(settings.AuthMethod)
                 % sharedTokenCredential and do not bother building a
                 % DeviceCodeCredential, it is not needed
             catch
-                % If this failed, create a DeviceCodeCredentialBuiler
+                % If this failed, create a DeviceCodeCredentialBuilder
                 dvcbuilder = createDeviceCodeCredentialBuilder(settings);
                 % Add persistence options
                 dvcbuilder = dvcbuilder.tokenCachePersistenceOptions(tokenCachePersistanceOptions);

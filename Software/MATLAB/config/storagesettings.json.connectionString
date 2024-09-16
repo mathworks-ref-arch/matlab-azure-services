@@ -1,0 +1,5 @@
+{
+    "AuthMethod": "ConnectionString",
+    "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=adlsg2mbtest;AccountKey=lrd7P1Uh879h3J/LCJut/dlyabmTBmpCvDDH/QoaviMEkvxhd96DsgwUBHyIuW0Q258MZC8V83WaOZcn34ua4g==;EndpointSuffix=core.windows.net",
+    "AccountName": "adlsg2mbtest"
+}

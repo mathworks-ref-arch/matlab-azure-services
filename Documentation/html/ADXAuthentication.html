@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication &mdash; MATLAB Interface for Azure Services  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/mathworks.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Null data" href="NullData.html" />
+    <link rel="prev" title="Getting Started" href="ADXGettingStarted.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">MATLAB Interface <em>for Azure Services</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Explorer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ADXGettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#settings-file-fields">Settings file fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#client-secret">Client Secret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#baseclient-extension">BaseClient extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bearer-tokens">Bearer Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="NullData.html">Null data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamics.html">Dynamic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Key Vault</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="KeyVault.html">Azure Key Vault</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Azure Data Lake Storage Gen2</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File Data Lake Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Queue.html">Queue Storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">MATLAB Compiler (SDK) Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Testing.html">Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="APIReference.html">MATLAB Interface <em>for Azure Services</em> - API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MATLAB Interface for Azure Services</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/ADXAuthentication.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h1>
+<p>To create a settings file interactively use: <code class="docutils literal notranslate"><span class="pre">mathworks.internal.adx.buildSettingsFile</span></code>.</p>
+<p>Template JSON configuration files for various authentication approaches can be
+found in <code class="docutils literal notranslate"><span class="pre">matlab-azure-adx/Software/MATLAB/config</span></code></p>
+<p>In general for initial testing Client Secret based authentication is the simplest
+to configure an work with. To use other approaches it is recommended to contact
+MathWorks®: <a class="reference external" href="mailto:mwlab&#37;&#52;&#48;mathworks&#46;com">mwlab<span>&#64;</span>mathworks<span>&#46;</span>com</a>.</p>
+<p>Certain authentication methods require the additional use of the Azure Java SDK
+authentication support as documented in <a class="reference internal" href="Authentication.html"><span class="doc std std-doc">Authentication.md</span></a>.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Authentication Method</p></th>
+<th class="text-left head"><p>JSON file field value</p></th>
+<th class="text-center head"><p>Java SDK support required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Client Secret</p></td>
+<td class="text-left"><p>clientSecret</p></td>
+<td class="text-center"><p>No</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Interactive Browser</p></td>
+<td class="text-left"><p>interactiveBrowser</p></td>
+<td class="text-center"><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Device Code</p></td>
+<td class="text-left"><p>deviceCode</p></td>
+<td class="text-center"><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Managed Identity</p></td>
+<td class="text-left"><p>managedIdentity</p></td>
+<td class="text-center"><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you wish to use an Azure authentication method that is not listed please contact MathWorks at: <a class="reference external" href="mailto:mwlab&#37;&#52;&#48;mathworks&#46;com">mwlab<span>&#64;</span>mathworks<span>&#46;</span>com</a>.</p>
+<section id="settings-file-fields">
+<h2>Settings file fields<a class="headerlink" href="#settings-file-fields" title="Permalink to this headline"></a></h2>
+<p>The default settings file is: <code class="docutils literal notranslate"><span class="pre">matlab-azure-adx/Software/MATLAB/config/adx.Client.Settings.json</span></code>
+Alternative names and paths can be used if required.
+Depending on the authentication method used different fields are required. The
+template files for the documented methods show the fields for the various methods.</p>
+<p>For example Interactive Browser uses:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;preferredAuthMethod&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;interactiveBrowser&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;subscriptionId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tenantId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;clientId&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;REDACTED&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;database&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;defaultDatabaseName&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;resourceGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;resourceGroupName&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;cluster&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://&lt;defaultClusterName&gt;.&lt;region&gt;.kusto.windows.net&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In use the fields <code class="docutils literal notranslate"><span class="pre">controlBearerToken</span></code> and <code class="docutils literal notranslate"><span class="pre">dataBearerToken</span></code> will be added to the file
+to cache the short lived bearer token values the control and data planes. These values are sensitive and should not be exposed.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Field name</p></th>
+<th class="text-left head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>preferredAuthMethod</p></td>
+<td class="text-left"><p>Indicated the authentication approach to use, e.g. clientSecret</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>tenantId</p></td>
+<td class="text-left"><p>Azure tenant ID</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>subscriptionId</p></td>
+<td class="text-left"><p>Azure subscriptions ID</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>clientId</p></td>
+<td class="text-left"><p>ID of the Application Registration used to connect to ADX</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>clientSecret</p></td>
+<td class="text-left"><p>Secret value corresponding to the clientId, this value is sensitive and should not be exposed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>resourceGroup</p></td>
+<td class="text-left"><p>Azure resource group containing the ADX instance</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>database</p></td>
+<td class="text-left"><p>Default database name to use</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>cluster</p></td>
+<td class="text-left"><p>Default cluster name to use</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="client-secret">
+<h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this headline"></a></h2>
+<p>Client Secret authentication is sometimes referred to as “Application Secret” as the
+secrets created apply to Application Registrations. This package uses the term “Client
+Secret or <code class="docutils literal notranslate"><span class="pre">clientSecret</span></code>as appropriate.</p>
+<p>Client secret does not use the “Secret ID” value and it should not be confused with the
+Client ID (sometimes called the App ID) or the Client Secret itself.</p>
+</section>
+<section id="baseclient-extension">
+<h2>BaseClient extension<a class="headerlink" href="#baseclient-extension" title="Permalink to this headline"></a></h2>
+<p>The file <code class="docutils literal notranslate"><span class="pre">matlab-azure-adx/Software/MATLAB/app/system/+adx/+control/BaseClient.m</span></code>
+implements the base client for the interface’s API call classes.
+In this file there are well commented hook points to which custom authentication
+code can be integrated if required. This topic should be discussed with MathWorks
+to clarify is custom code is necessary.</p>
+</section>
+<section id="bearer-tokens">
+<h2>Bearer Tokens<a class="headerlink" href="#bearer-tokens" title="Permalink to this headline"></a></h2>
+<p>The lower-level <code class="docutils literal notranslate"><span class="pre">+api</span></code> classes and some higher-level functions accept an optional
+argument <code class="docutils literal notranslate"><span class="pre">bearerToken</span></code> directly if the authentication process to obtain the token
+is handled by some external means. Note that the KQL queries and management commands
+will require different tokens as they use different endpoints.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Azure Services authentication <a class="reference external" href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Authentication.md">https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Authentication.md</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ADXGettingStarted.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NullData.html" class="btn btn-neutral float-right" title="Null data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, MathWorks, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Customizations */
+/* Copyright (c) 2020 MathWorks, Inc. */
+div.wy-side-nav-search {
+  background-color: #0076a8;
+}
+
+/* Headings */
+h1 {
+    padding: 0 61px 2px 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #cbcbcb;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 58px;
+    color: #c45400;
+    font: normal normal 22px/1.136 Arial,Helvetica,sans-serif;
+}
+
+articleBody span.caption-text {
+    padding-top: 5px;
+    margin-bottom: 8px;
+    color: #404040;
+    font: normal bold 17px/1.35 Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+h2, .h2 {
+    padding-top: 5px;
+    margin-bottom: 8px;
+    color: #404040;
+    font: normal bold 18px/1.35 Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+h3 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font: normal bold 17px/1.35 Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font: normal bold 15px/1.35 Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+/*
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+*/

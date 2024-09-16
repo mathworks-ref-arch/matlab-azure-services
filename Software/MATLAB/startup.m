@@ -3,7 +3,7 @@ function startup(varargin)
     % This script will add the paths below the root directory into the MATLAB
     % path.
 
-    % Copyright 2021-2023 The MathWorks
+    % Copyright 2021-2024 The MathWorks
 
     % If deployed in a .ctf or .exe do not do anything in startup.m & return
     if isdeployed() || ismcc()
@@ -12,10 +12,16 @@ function startup(varargin)
 
     p = inputParser;
     p.addParameter('useStatic', true, @islogical);
+    p.addParameter('useADX', true, @islogical);
     p.parse(varargin{:});
     useStatic = p.Results.useStatic;
+    useADX = p.Results.useADX;
 
-    displayBanner('Adding Azure Paths');
+    if ~usejava('jvm')
+        error('Azure:Services','MATLAB Java support is required');
+    end
+
+    displayBanner('Adding Azure Services paths');
 
     azCommonJar = 'azure-common-sdk-0.2.0.jar';
 
@@ -39,11 +45,12 @@ function startup(varargin)
     % Check if the JAR file exists
     commonJarPath = fullfile(commonRoot, 'Software', 'MATLAB', 'lib', 'jar', azCommonJar);
     docPath = fullfile(commonRoot, 'Documentation', 'Installation.md');
-    
+    docLink = sprintf('<a href="matlab: edit(''%s'')">%s</a>', docPath, docPath);
+
     if ~isfile(commonJarPath)
-        error('Azure:Services', 'Could not find required jar file: %s\nSee documentation for details on building the jar file using Maven: %s', commonJarPath, docPath);
+        fprintf(2, 'Could not find required jar file: %s\nSee documentation for details on building the jar file using Maven: %s\n', commonJarPath, docLink);
     end
-    
+
     if useStatic
         % Set JCP file link
         jcpPath = fullfile(prefdir, 'javaclasspath.txt');
@@ -58,20 +65,55 @@ function startup(varargin)
                 % Does not have to be first but should be near the start,
                 % due to <before>. Needs to be before jna.jar
                 if ~any(strcmpi(staticPath(1:5), commonJarPath))
-                    warning('Azure:Services', '%s was not found at the start of the static Java classpath\nSee documentation for configuration details: %s', commonJarPath, docPath);
+                    warning('Azure:Services', '%s was not found at the start of the static Java classpath\nSee documentation for configuration details: %s', commonJarPath, docLink);
                     fprintf('Edit static Java classpath: %s\n', jcpLink);
                 end
             end
         else
-            fprintf('\nEdit static Java classpath: %s\n', jcpLink);
-            error('Azure:Services', 'Required jar file not found on the static Java classpath: %s\nSee documentation for configuration details: %s', commonJarPath, docPath);
+            adxAuthDocPath = fullfile(commonRoot, 'Documentation', 'ADXAuthentication.md');
+            adxAuthDocLink = sprintf('<a href="matlab: edit(''%s'')">%s</a>', adxAuthDocPath, adxAuthDocPath);
+            fprintf(2, "azure-common-sdk jar file not found on the static Java classpath:\n  %s\n", commonJarPath);
+            fprintf(2, "  Edit the static Java classpath: %s\n", jcpLink);
+            fprintf("This is required except when certain Azure Data Explorer with Client Secret authentication\n");
+            fprintf("See documentation for configuration details:\n");
+            fprintf("  %s\n  %s\n", docLink, adxAuthDocLink);
         end
     else
-         iSafeAddToJavaPath(commonJarPath);
+        iSafeAddToJavaPath(commonJarPath);
     end
 
-    disp('Ready');
+    if useADX
+        startADX();
+    else
+        disp("Skipping Azure Data Explorer startup");
+    end
+
+    disp('Azure Services Ready');
 end
+
+
+function tf = startADX
+    tf = false;
+
+    currentVersion = ver('matlab').Version; %#ok<VERMATLAB>
+    % 9.9 == 20b 9.10 == 21a
+    if verLessThan('matlab','9.11') && ~strcmp(currentVersion, "9.10") %#ok<VERLESSMATLAB>
+        % Error now no point going forward
+        fprintf(2, 'MATLAB Release R2021a or later is required to use Azure Data Explorer, skipping initialization\n');
+    end
+    checkPCT();
+end
+
+
+function checkPCT()
+    if ~isempty(ver('parallel'))
+        prefDocPath = fullfile(mathworks.adx.adxRoot(-2, 'Documentation'), 'Performance.md');
+        prefDocLink = sprintf('<a href="matlab: edit(''%s'')">%s</a>', prefDocPath, prefDocPath);
+        fprintf("Parallel Computing Toolbox is installed, to enable parallel processing\n");
+        fprintf("when using Azure Data Explorer see:\n  %s \n", prefDocLink);
+    end
+end
+
 
 function addFilteredFolders(rootDirs)
     % Helper function to add all folders to the path
