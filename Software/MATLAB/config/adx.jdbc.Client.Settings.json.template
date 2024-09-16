@@ -1,0 +1,7 @@
+{
+    "DatabaseName" : "mydatabase",
+    "Username" : "myname@example.com",
+    "Password" : "mysecretpassword",
+    "ClusterNameRegion" : "myadxcluster.westeurope",
+    "Authetication": "ActiveDirectoryPassword"
+}

@@ -15,15 +15,15 @@ function key = getUserDelegationKey(obj, start, expiry)
 %
 %   key = sc.getUserDelegationKey(datetime('now'),datetime('now')+hours(1))
 
-% Copyright 2022 The MathWorks, Inc.
+% Copyright 2022-2024 The MathWorks, Inc.
 
 if ~isdatetime(start) && ~isdatetime(expiry)
     logObj = Logger.getLogger();
     write(logObj,'error','Expected start and expiry arguments of type datetime');
 end
 
-jStart = datetime2OffsetDateTime(start);
-jExpiry = datetime2OffsetDateTime(expiry);
+jStart = azure.mathworks.internal.datetime2OffsetDateTime(start);
+jExpiry = azure.mathworks.internal.datetime2OffsetDateTime(expiry);
 
 jKey = obj.Handle.getUserDelegationKey(jStart,jExpiry);
 key = azure.storage.blob.models.UserDelegationKey(jKey);

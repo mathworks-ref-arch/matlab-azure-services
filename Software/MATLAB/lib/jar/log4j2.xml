@@ -12,15 +12,15 @@
         </Root>
         <!-- SharedTokenCacheCredential accidentally tries to unlock the cache
              twice which throws a harmless error, hide it -->
-        <Logger name="com.microsoft.aad.msal4jextensions.CrossProcessCacheFileLock" level="fatal"/>        
+        <Logger name="com.microsoft.aad.msal4jextensions.CrossProcessCacheFileLock" level="fatal"/>
         <!-- SharedTokenCacheCredential throws an error if token not found in
              cache. Hide this error as this is not an actual issue. The
              authentication strategies will perform an interactive flow. -->
-        <Logger name="com.azure.identity.SharedTokenCacheCredential" level="fatal"/>        
+        <Logger name="com.azure.identity.SharedTokenCacheCredential" level="fatal"/>
         <!-- RestProxyBase throws 404 errors on missing keys, etc in KeyVault.
              This is not an actual issue as this is in fact used to test whether
              a key exists or not. Hide the error -->
-        <Logger name="com.azure.core.implementation.http.rest.RestProxyBase" level="fatal"/>        
+        <Logger name="com.azure.core.implementation.http.rest.RestProxyBase" level="fatal"/>
         
     </Loggers>
 </Configuration>

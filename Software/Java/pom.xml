@@ -22,7 +22,7 @@
         <dependency>
           <groupId>com.azure</groupId>
           <artifactId>azure-sdk-bom</artifactId>
-          <version>1.2.11</version>
+          <version>1.2.24</version>
           <type>pom</type>
           <scope>import</scope>
         </dependency>
@@ -93,6 +93,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+                <configuration>
+                    <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                    </transformers>
+                </configuration>
                 <version>3.2.4</version>
                 <executions>
                     <execution>
@@ -136,7 +141,7 @@
                                 <relocation>
                                     <pattern>com.ctc.wstx</pattern>
                                     <shadedPattern>shaded.com.ctc.wstx</shadedPattern>
-                                </relocation>                                
+                                </relocation>
                                 <relocation>
                                     <pattern>io.netty</pattern>
                                     <shadedPattern>shaded.io.netty</shadedPattern>
