@@ -1,0 +1,29 @@
+classdef adxFixture < matlab.unittest.fixtures.Fixture
+    % Writes the configuration files based on environment variables, this
+    % facilities unit testing in CI/CD setups as well as local  testing
+    
+    % Copyright 2024 The MathWorks, Inc.
+    
+    methods
+        function setup(~)
+            disp 'Writing Configuration Files'            
+            configFile = fullfile(AzureCommonRoot, 'config', 'adx.Client.Settings.json');
+            json = jsonencode(struct(...
+                'preferredAuthMethod','clientSecret',...
+                'subscriptionId',getenv('ADX_SUBSCRIPTIONID'),...
+                'tenantId',getenv('ADX_TENANTID'),...
+                'clientId',getenv('ADX_CLIENT_ID'),...
+                'clientSecret',getenv('ADX_CLIENT_SECRET'),...
+                'database',getenv('ADX_DATABASE'),...
+                'cluster',getenv('ADX_CLUSTER'),...
+                'resourceGroup',getenv('ADX_RESOURCEGROUP')...
+            ));
+            f = fopen(configFile,'w'); fwrite(f,json);fclose(f);
+        end
+
+        function teardown(~)
+            disp 'Removing Configuration Files'
+            delete(fullfile(AzureCommonRoot,'config','adx.Client.Settings.json'))
+        end
+    end
+end

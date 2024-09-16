@@ -2,6 +2,20 @@
 
 ## Release Notes
 
+## Release 1.0.1 September 10th 2024
+
+* Jar shading fix
+* Removed internal, experimental & partial ADX JDBC support
+
+## Release 1.0.0 July 21st 2024
+
+* Added Azure Data Explorer support
+* Increased Azure SDK BOM version to 1.2.24
+* Added azure.storage.queue.QueueClient.receiveMessages
+* Added azure.storage.blob.models.BlobProperties.getBlobSize
+* Moved compareAuthEnvVars to azure.mathworks.internal.compareAuthEnvVars *Breaking change*
+* Moved datetime2OffsetDateTime to azure.mathworks.internal.datetime2OffsetDateTime *Breaking change*
+
 ## Release 0.3.2 April 14th 2023
 
 * Typo fix in `configureCredentials`.
