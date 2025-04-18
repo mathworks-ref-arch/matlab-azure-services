@@ -50,11 +50,16 @@ classdef (SharedTestFixtures={adxFixture}) testCustomDecoder < matlab.unittest.T
                     % variableNames = ["intCol", "doubleCol", "stringCol"];
                     % crdTable = table(intCol, doubleCol, stringCol);
                     % crdTable.Properties.VariableNames=variableNames;
+                    % Now save the updated random values to rdTable.mat
                     [ingestTf, ingestResult] =  mathworks.adx.ingestTable(crdTable, tableName=tableName, mode="drop", database=testCase.Database); %#ok<ASGLU>
                     testCase.verifyTrue(ingestTf);
                 else
                     fprintf("Existing table found: %s\n", tableName);
                 end
+
+                rowCount = mathworks.adx.run(sprintf("%s | count", tableName));
+                testCase.verifyEqual(rowCount.Count(1), int64(height(crdTable)));
+                testCase.verifyTrue(gt(rowCount.Count(1), 0));
 
                 query = sprintf('table("%s", "all")', tableName);
                 crd = @mathworks.internal.adx.exampleCustomRowDecoder;

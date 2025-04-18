@@ -99,7 +99,7 @@ function [tf, result] = exportToBlob(storageConnectionString, query, options)
 
     if code == matlab.net.http.StatusCode.OK
         cellTabularResult = mathworks.internal.adx.queryV1Response2Tables(result, allowNullStrings=true);
-        if numel(cellTabularResult) == 1
+        if numel(cellTabularResult) == 1 %#ok<ISCL>
             result = cellTabularResult{1};
         else
             warning("adx:exportToBlob", "More than one result table returned");

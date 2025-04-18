@@ -24,7 +24,7 @@ function [tf, result, id] = adxCurlWrite(options)
     %          entirety as described above
     %
     %   bearerToken: A bearerToken as scalar text if not provided an attempt will
-    %                be made to read the value from adx.Client.Settings.json
+    %                be made to determine a controlBearerToken
     %
     %   id: Request id header value as scalar text, if not provided a UUID is created
     %
@@ -84,7 +84,7 @@ function [tf, result, id] = adxCurlWrite(options)
     %   [tf,result,id] = mathworks.internal.curl.adxCurlWrite(verbose=true, propertyNames=propertyNames, propertyValues=propertyValues, skipJSONDecode=true)
     %   [primaryResult, ~] = mathworks.internal.adx.queryV1Response2Tables(result)
 
-    % Copyright 2024 The MathWorks
+    % Copyright 2024-2025 The MathWorks
 
     arguments
         options.clusterUrl string {mustBeTextScalar} = ""
@@ -137,8 +137,8 @@ function [tf, result, id] = adxCurlWrite(options)
         uri = matlab.net.URI(urlWithPath);
         cluster = uri.Scheme + "://" + uri.Host;
         queryObj = adx.data.api.Query("cluster", cluster);
-        if isprop(queryObj, 'dataBearerToken')
-            bearerToken = queryObj.dataBearerToken;
+        if isprop(queryObj, 'controlBearerToken')
+            bearerToken = queryObj.controlBearerToken;
         else
             error("adx:adxCurlWrite", "Cached Bearer Token or bearerToken argument not found.\nRunning a trivial query e.g.:\n   mathworks.adx.run('print mycol=""Hello World""')\nwill cache a fresh cache a token");
         end

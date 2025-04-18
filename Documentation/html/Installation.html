@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -99,8 +104,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Installation.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -111,15 +116,15 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="clone-this-repository">
-<h2>Clone this repository<a class="headerlink" href="#clone-this-repository" title="Permalink to this headline"></a></h2>
+<h2>Clone this repository<a class="headerlink" href="#clone-this-repository" title="Permalink to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/mathworks-ref-arch/matlab-azure-services.git
 </pre></div>
 </div>
 </section>
 <section id="build-matlab-azure-sdk-jar">
-<h2>Build MATLAB Azure SDK Jar<a class="headerlink" href="#build-matlab-azure-sdk-jar" title="Permalink to this headline"></a></h2>
+<h2>Build MATLAB Azure SDK Jar<a class="headerlink" href="#build-matlab-azure-sdk-jar" title="Permalink to this heading"></a></h2>
 <p>MATLAB® Interface <em>for Azure Services</em> depends on the Azure® Java SDK which,
 together with some helper code, first needs to be packaged into the MATLAB Azure
 Utility Library. Building this utility requires both a Java 1.8 SDK and Apache
@@ -134,7 +139,7 @@ mvn clean package
 <p>The build should produce the file: <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar</span></code></p>
 </section>
 <section id="configuring-the-matlab-java-class-path">
-<h2>Configuring the MATLAB Java class path<a class="headerlink" href="#configuring-the-matlab-java-class-path" title="Permalink to this headline"></a></h2>
+<h2>Configuring the MATLAB Java class path<a class="headerlink" href="#configuring-the-matlab-java-class-path" title="Permalink to this heading"></a></h2>
 <p>Having built the SDK jar file, it must be included in the MATLAB Java class
 path. The jar file must be added to the <em>static</em> class path. On Windows® the jar
 file can be added at any position on the static class path, it can be added to
@@ -186,7 +191,7 @@ the end of the output.</p>
 MATLAB path. To add the required directories run <code class="docutils literal notranslate"><span class="pre">startup.m</span></code> from the
 <code class="docutils literal notranslate"><span class="pre">Software/MATLAB</span></code> directory.</p>
 <p>The interface should now be ready to be configured and used, see
-<a class="reference internal" href="Authentication.html"><span class="doc std std-doc">Authentication</span></a> and <a class="reference internal" href="Configuration.html"><span class="doc std std-doc">Configuration</span></a>
+<a class="reference internal" href="Authentication.html"><span class="std std-doc">Authentication</span></a> and <a class="reference internal" href="Configuration.html"><span class="std std-doc">Configuration</span></a>
 for further details.</p>
 </section>
 </section>

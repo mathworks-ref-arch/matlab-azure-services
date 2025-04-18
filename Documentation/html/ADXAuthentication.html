@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Authentication &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -96,8 +101,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Authentication</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Authentication</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/ADXAuthentication.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -108,7 +113,7 @@
            <div itemprop="articleBody">
              
   <section id="authentication">
-<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h1>
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading"></a></h1>
 <p>To create a settings file interactively use: <code class="docutils literal notranslate"><span class="pre">mathworks.internal.adx.buildSettingsFile</span></code>.</p>
 <p>Template JSON configuration files for various authentication approaches can be
 found in <code class="docutils literal notranslate"><span class="pre">matlab-azure-adx/Software/MATLAB/config</span></code></p>
@@ -116,12 +121,12 @@ found in <code class="docutils literal notranslate"><span class="pre">matlab-azu
 to configure an work with. To use other approaches it is recommended to contact
 MathWorks®: <a class="reference external" href="mailto:mwlab&#37;&#52;&#48;mathworks&#46;com">mwlab<span>&#64;</span>mathworks<span>&#46;</span>com</a>.</p>
 <p>Certain authentication methods require the additional use of the Azure Java SDK
-authentication support as documented in <a class="reference internal" href="Authentication.html"><span class="doc std std-doc">Authentication.md</span></a>.</p>
-<table class="colwidths-auto docutils align-default">
+authentication support as documented in <a class="reference internal" href="Authentication.html"><span class="std std-doc">Authentication.md</span></a>.</p>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Authentication Method</p></th>
-<th class="text-left head"><p>JSON file field value</p></th>
-<th class="text-center head"><p>Java SDK support required</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Authentication Method</p></th>
+<th class="head text-left"><p>JSON file field value</p></th>
+<th class="head text-center"><p>Java SDK support required</p></th>
 </tr>
 </thead>
 <tbody>
@@ -145,7 +150,7 @@ authentication support as documented in <a class="reference internal" href="Auth
 </table>
 <p>If you wish to use an Azure authentication method that is not listed please contact MathWorks at: <a class="reference external" href="mailto:mwlab&#37;&#52;&#48;mathworks&#46;com">mwlab<span>&#64;</span>mathworks<span>&#46;</span>com</a>.</p>
 <section id="settings-file-fields">
-<h2>Settings file fields<a class="headerlink" href="#settings-file-fields" title="Permalink to this headline"></a></h2>
+<h2>Settings file fields<a class="headerlink" href="#settings-file-fields" title="Permalink to this heading"></a></h2>
 <p>The default settings file is: <code class="docutils literal notranslate"><span class="pre">matlab-azure-adx/Software/MATLAB/config/adx.Client.Settings.json</span></code>
 Alternative names and paths can be used if required.
 Depending on the authentication method used different fields are required. The
@@ -164,10 +169,10 @@ template files for the documented methods show the fields for the various method
 </div>
 <p>In use the fields <code class="docutils literal notranslate"><span class="pre">controlBearerToken</span></code> and <code class="docutils literal notranslate"><span class="pre">dataBearerToken</span></code> will be added to the file
 to cache the short lived bearer token values the control and data planes. These values are sensitive and should not be exposed.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Field name</p></th>
-<th class="text-left head"><p>Description</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Field name</p></th>
+<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -199,7 +204,7 @@ to cache the short lived bearer token values the control and data planes. These 
 </table>
 </section>
 <section id="client-secret">
-<h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this headline"></a></h2>
+<h2>Client Secret<a class="headerlink" href="#client-secret" title="Permalink to this heading"></a></h2>
 <p>Client Secret authentication is sometimes referred to as “Application Secret” as the
 secrets created apply to Application Registrations. This package uses the term “Client
 Secret or <code class="docutils literal notranslate"><span class="pre">clientSecret</span></code>as appropriate.</p>
@@ -207,7 +212,7 @@ Secret or <code class="docutils literal notranslate"><span class="pre">clientSec
 Client ID (sometimes called the App ID) or the Client Secret itself.</p>
 </section>
 <section id="baseclient-extension">
-<h2>BaseClient extension<a class="headerlink" href="#baseclient-extension" title="Permalink to this headline"></a></h2>
+<h2>BaseClient extension<a class="headerlink" href="#baseclient-extension" title="Permalink to this heading"></a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">matlab-azure-adx/Software/MATLAB/app/system/+adx/+control/BaseClient.m</span></code>
 implements the base client for the interface’s API call classes.
 In this file there are well commented hook points to which custom authentication
@@ -215,14 +220,14 @@ code can be integrated if required. This topic should be discussed with MathWork
 to clarify is custom code is necessary.</p>
 </section>
 <section id="bearer-tokens">
-<h2>Bearer Tokens<a class="headerlink" href="#bearer-tokens" title="Permalink to this headline"></a></h2>
+<h2>Bearer Tokens<a class="headerlink" href="#bearer-tokens" title="Permalink to this heading"></a></h2>
 <p>The lower-level <code class="docutils literal notranslate"><span class="pre">+api</span></code> classes and some higher-level functions accept an optional
 argument <code class="docutils literal notranslate"><span class="pre">bearerToken</span></code> directly if the authentication process to obtain the token
 is handled by some external means. Note that the KQL queries and management commands
 will require different tokens as they use different endpoints.</p>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Azure Services authentication <a class="reference external" href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Authentication.md">https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Authentication.md</a></p></li>
 </ul>

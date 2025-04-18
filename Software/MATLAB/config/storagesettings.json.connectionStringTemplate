@@ -1,0 +1,5 @@
+{
+    "AuthMethod": "ConnectionString",
+    "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=<REDACTED>;AccountKey=<REDACTED>==;EndpointSuffix=core.windows.net",
+    "AccountName": "<REDACTED>"
+}

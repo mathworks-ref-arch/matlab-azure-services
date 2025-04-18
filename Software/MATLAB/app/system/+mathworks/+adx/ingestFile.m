@@ -164,6 +164,8 @@ end
 
 
 function [tf, result] = doIngest(localFile, cluster, database, tableName, blobName, verbose, options)
+    % DOINGEST Copy a local file to blob storage and ingest to a table from there
+    % Returns false if ingest has errors or the query failed.
     arguments
         localFile string {mustBeTextScalar}
         cluster string {mustBeTextScalar}
@@ -237,6 +239,7 @@ end
 
 function [tf, result] = ingestFromStorage(blobUriWithSas, database, tableName, format, options)
     % ingestFromStorage Ingestion direct from a blob
+    % Returns false if ingest has errors or the query failed.
     arguments
         blobUriWithSas string {mustBeTextScalar, mustBeNonzeroLengthText}
         database string {mustBeTextScalar, mustBeNonzeroLengthText}
@@ -256,8 +259,10 @@ function [tf, result] = ingestFromStorage(blobUriWithSas, database, tableName, f
     [code, mrResult, response] = managementClient.managementRun(req);%#ok<*ASGLU>
 
     if code == matlab.net.http.StatusCode.OK
-        tf = true;
         result = mathworks.internal.adx.queryV1Response2Tables(mrResult, allowNullStrings=true);
+        assert(height(result) == 1);
+        assert(any(contains(result.Properties.VariableNames, 'HasErrors')));
+        tf = ~result.HasErrors(1);
     else
         if isa(mrResult, 'adx.control.models.ErrorResponse')
             mrResult.disp();

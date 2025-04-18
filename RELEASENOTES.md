@@ -2,6 +2,16 @@
 
 ## Release Notes
 
+## Release 1.0.2 April 18th 2025
+
+* azure.storage.file.datalake.DataLakeFileClient.readToFile argument handling bug fix
+* ADX Oauth update
+* ADX unit test updates
+* ADX doc bug fix
+* Bug fix to mathworks.adx.ingestFile & mathworks.adx.ingestTable where ingest errors were not correctly reported
+* Credential template update
+* azure-sdk-bom version update to 1.2.33
+
 ## Release 1.0.1 September 10th 2024
 
 * Jar shading fix

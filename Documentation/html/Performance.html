@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Performance &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -95,8 +100,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Performance</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Performance</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Performance.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -107,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="performance">
-<h1>Performance<a class="headerlink" href="#performance" title="Permalink to this headline"></a></h1>
+<h1>Performance<a class="headerlink" href="#performance" title="Permalink to this heading"></a></h1>
 <p>This package uses the <a class="reference external" href="https://github.com/google/gson">GSON</a> Java library for
 comprehensive JSON parsing, however this can have a performance impact when working
 with queries that return large responses. If response times are slow and bandwidth
@@ -126,17 +131,17 @@ repeated inline ingestion of small amounts of data.</p></li>
 for more details.</p></li>
 <li><p>Return int32s rather than int64s if precision is not a limitation.</p></li>
 <li><p>Avoid supporting nulls data if data is know to not have null values. See:
-<a class="reference internal" href="NullData.html"><span class="doc std std-doc">NullData</span></a> for more details.</p></li>
+<a class="reference internal" href="NullData.html"><span class="std std-doc">NullData</span></a> for more details.</p></li>
 <li><p>The MATLAB <a class="reference external" href="https://mathworks.com/help/matlab/matlab_prog/profiling-for-improving-performance.html">profiler</a>
 can be a good way to visualize what portions of query processing are consuming most time.</p></li>
-<li><p>If responses contain <a class="reference internal" href="Dynamics.html"><span class="doc std std-doc">dynamic</span></a> fields where not all values returned
+<li><p>If responses contain <a class="reference internal" href="Dynamics.html"><span class="std std-doc">dynamic</span></a> fields where not all values returned
 may be used consider decoding them at the time of use as needed rather than as
 part of the query.</p></li>
 <li><p>If getting direct access to the raw data return in response is required, this
 can be accomplished using the lower-level functions.</p></li>
 </ul>
 <section id="parallel-processing">
-<h2>Parallel Processing<a class="headerlink" href="#parallel-processing" title="Permalink to this headline"></a></h2>
+<h2>Parallel Processing<a class="headerlink" href="#parallel-processing" title="Permalink to this heading"></a></h2>
 <p>If Parallel Computing Toolbox is installed (use <code class="docutils literal notranslate"><span class="pre">ver</span></code> to check), then it can be
 used to speed up the processing of KQL query rows. Use the optional <code class="docutils literal notranslate"><span class="pre">useParallel</span></code>
 argument to enable this (default is <code class="docutils literal notranslate"><span class="pre">false</span></code>). Additionally a threshold of rows
@@ -154,7 +159,7 @@ queries returning 10000 rows or more.</p>
 </div>
 </section>
 <section id="custom-row-decoder">
-<h2>Custom row decoder<a class="headerlink" href="#custom-row-decoder" title="Permalink to this headline"></a></h2>
+<h2>Custom row decoder<a class="headerlink" href="#custom-row-decoder" title="Permalink to this heading"></a></h2>
 <p>If queries result in a simple JSON response then writing a custom decoder to
 extract the required data rather than using the default decoder.</p>
 <p>A sample of such a decoder <code class="docutils literal notranslate"><span class="pre">/Software/MATLAB/app/system/+mathworks/+internal/+adx/exampleCustomRowDecoder.m</span></code>
@@ -188,7 +193,7 @@ a cluster based pool but this would be possible.</p>
 </div></blockquote>
 </section>
 <section id="donotparse-parallel-array-processing-experimental">
-<h2>doNotParse parallel array processing (Experimental)<a class="headerlink" href="#donotparse-parallel-array-processing-experimental" title="Permalink to this headline"></a></h2>
+<h2>doNotParse parallel array processing (Experimental)<a class="headerlink" href="#donotparse-parallel-array-processing-experimental" title="Permalink to this heading"></a></h2>
 <p>A JSON array of <code class="docutils literal notranslate"><span class="pre">doNotParse</span></code> values being processed by <code class="docutils literal notranslate"><span class="pre">JSONMapper</span></code> must be checked
 for paired double quotes added to some value types the gson <code class="docutils literal notranslate"><span class="pre">toString</span></code> method.
 While trivial this can be slow if there are many elements for example, row values.</p>
@@ -198,7 +203,7 @@ The property can be set in: <code class="docutils literal notranslate"><span cla
 in the <code class="docutils literal notranslate"><span class="pre">fromJSON</span></code> method.</p>
 </section>
 <section id="skip-parsing-row-array-elements-skiprowsarraydecode">
-<h2>Skip parsing row array elements (skipRowsArrayDecode)<a class="headerlink" href="#skip-parsing-row-array-elements-skiprowsarraydecode" title="Permalink to this headline"></a></h2>
+<h2>Skip parsing row array elements (skipRowsArrayDecode)<a class="headerlink" href="#skip-parsing-row-array-elements-skiprowsarraydecode" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>The following applies to v2 queries only.</p>
 </div></blockquote>

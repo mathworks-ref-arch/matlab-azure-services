@@ -9,6 +9,8 @@ function runCITests(name)
         name = ['R' version('-release')];
     end
 
+    disp("NOTE: Start ADX cluster before running tests.")
+
     % Generate a suite with all tests
     suite = matlab.unittest.TestSuite.fromFolder('unit','IncludingSubfolders',true);
 

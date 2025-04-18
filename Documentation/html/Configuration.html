@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Configuration &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -97,8 +102,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Configuration</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuration</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Configuration.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -109,7 +114,7 @@
            <div itemprop="articleBody">
              
   <section id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h1>
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
 <p>The package offers a <code class="docutils literal notranslate"><span class="pre">loadConfigurationSettings</span></code> function which allows reading
 configuration settings from a short JSON format file. This provides a convenient
 way to configure various settings (like endpoint URLs) without having to
@@ -133,16 +138,16 @@ MATLAB path. Alternatively a full absolute path can be provided as well.</p>
 </pre></div>
 </div>
 <section id="authentication">
-<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h2>
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code> function for creating Azure® Credentials objects
 relies on <code class="docutils literal notranslate"><span class="pre">loadConfigurationSettings</span></code> as well, it uses this same function to
 read its settings from a JSON configuration file. Typically both Authentication
 and other settings are in fact kept in a single JSON file. See
-<a class="reference internal" href="Authentication.html"><span class="doc std std-doc">Authentication</span></a> for more details on authentication specific
+<a class="reference internal" href="Authentication.html"><span class="std std-doc">Authentication</span></a> for more details on authentication specific
 configuration options as used by <code class="docutils literal notranslate"><span class="pre">configureCredentials</span></code>.</p>
 </section>
 <section id="service-specific-settings">
-<h2>Service specific settings<a class="headerlink" href="#service-specific-settings" title="Permalink to this headline"></a></h2>
+<h2>Service specific settings<a class="headerlink" href="#service-specific-settings" title="Permalink to this heading"></a></h2>
 <p>Service specific functions may rely on other additional configuration settings
 as well. And they typically work with a service specific default filename for
 the JSON file. But in most cases alternative filenames can be provided as well.</p>
@@ -150,9 +155,9 @@ the JSON file. But in most cases alternative filenames can be provided as well.<
 specific settings, the default JSON filename and how to provide an alternative
 configuration file name if needed:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="KeyVault.html"><span class="doc std std-doc">Key Vault</span></a></p></li>
-<li><p><a class="reference internal" href="DataLakeStorageGen2.html"><span class="doc std std-doc">Data Lake Storage Gen2</span></a></p></li>
-<li><p><a class="reference internal" href="DataExplorer.html"><span class="doc std std-doc">Azure Data Explorer</span></a></p></li>
+<li><p><a class="reference internal" href="KeyVault.html"><span class="std std-doc">Key Vault</span></a></p></li>
+<li><p><a class="reference internal" href="DataLakeStorageGen2.html"><span class="std std-doc">Data Lake Storage Gen2</span></a></p></li>
+<li><p><a class="reference internal" href="DataExplorer.html"><span class="std std-doc">Azure Data Explorer</span></a></p></li>
 </ul>
 </section>
 </section>

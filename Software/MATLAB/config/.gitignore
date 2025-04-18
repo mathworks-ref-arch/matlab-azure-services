@@ -1,11 +1,13 @@
 *.json
-*.password
-*.clientSecret
 *.dontUse
-*.deviceCode
 *.free
 *.paid
-*.interactiveBrowser
 *.bak
 *.gitlab
+*.password
+*.clientSecret
+*.deviceCode
+*.interactiveBrowser
 *.managedIdentity
+*.connectionString
+*.storageSharedKey

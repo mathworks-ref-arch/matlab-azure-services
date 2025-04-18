@@ -102,7 +102,7 @@ classdef (SharedTestFixtures={adxFixture}) testQuery < matlab.unittest.TestCase
             testCase.verifyTrue(success);
             testCase.verifyEqual(36, strlength(requestId));
             testCase.verifyClass(result, 'table');
-            testCase.verifyEqual(result.DayOfWeek{1}, int32(3));
+            testCase.verifyEqual(result.DayOfWeek{1}, int64(3));
             testCase.verifyEqual(27, width(result));
             testCase.verifyEqual(10, height(result));
             testCase.verifyFalse(dataSetCompletion.HasErrors);

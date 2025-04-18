@@ -100,14 +100,19 @@ end
 
 
 function result = procRow(row)
-    % Row format is well know so can skip some checks
+    % Row format is well known so can skip some checks
+    % Sample row: [128030544,1.0,"myStringValue-1"]
     % Expecting only one [
     row = strip(row, "left", "[");
     % Expecting only one ]
     row = strip(row, "right", "]");
+    % Expecting 3 fields
     fields = split(row, ",");
+    % Get an int64
     l =  sscanf(fields(1), "%ld");
+    % Get a double
     d =  str2double(fields(2));
+    % Get a string
     % Expecting only one layer of quotes
     result = {l; d; strip(fields(3),"both", '"')};
 end

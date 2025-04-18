@@ -12,7 +12,7 @@ validString = @(x) ischar(x) || isStringScalar(x);
 p = inputParser;
 p.CaseSensitive = false;
 p.FunctionName = 'readToFile';
-p.addRequired('filePath','',validString);
+p.addRequired('filePath',validString);
 p.addOptional('overwrite',false,@islogical);
 p.parse(varargin{:});
 

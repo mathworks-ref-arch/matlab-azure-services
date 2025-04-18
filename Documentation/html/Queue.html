@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Queue Storage &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -101,9 +106,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a> &raquo;</li>
-      <li>Queue Storage</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="DataLakeStorageGen2.html">Azure Data Lake Storage Gen2</a></li>
+      <li class="breadcrumb-item active">Queue Storage</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/Queue.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -114,7 +119,7 @@
            <div itemprop="articleBody">
              
   <section id="queue-storage">
-<h1>Queue Storage<a class="headerlink" href="#queue-storage" title="Permalink to this headline"></a></h1>
+<h1>Queue Storage<a class="headerlink" href="#queue-storage" title="Permalink to this heading"></a></h1>
 <p>QueueStorage is designed to provide durable message queueing for large
 workloads. This package provides a low-level interface to queue storage and
 provides capabilities not available in shipping MATLAB. This package supersedes
@@ -127,7 +132,7 @@ strongly recommended that this interface be used when working with Gen2 blob
 storage. While conceptually quite similar the APIs are not backwardly compatible
 as a consequence of significant changes in the underlying Azure APIs.</p>
 <section id="queue-clients">
-<h2>Queue Clients<a class="headerlink" href="#queue-clients" title="Permalink to this headline"></a></h2>
+<h2>Queue Clients<a class="headerlink" href="#queue-clients" title="Permalink to this heading"></a></h2>
 <p>The concept of a <em>Client</em> is central to how queue storage is accessed. A
 hierarchy of clients exist that target different levels of the storage
 hierarchy:</p>
@@ -147,11 +152,11 @@ use cases in an extensible way.</p>
 various clients.</p>
 </section>
 <section id="createstorageclient-function">
-<h2><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function<a class="headerlink" href="#createstorageclient-function" title="Permalink to this headline"></a></h2>
-<p>See the <a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> description</span></a> for more details.</p>
+<h2><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> function<a class="headerlink" href="#createstorageclient-function" title="Permalink to this heading"></a></h2>
+<p>See the <a class="reference internal" href="DataLakeStorageGen2.html#createstorageclient-function"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> description</span></a> for more details.</p>
 </section>
 <section id="queue-service-client">
-<h2>Queue Service Client<a class="headerlink" href="#queue-service-client" title="Permalink to this headline"></a></h2>
+<h2>Queue Service Client<a class="headerlink" href="#queue-service-client" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">QueueServiceClient</span></code> can be created using <code class="docutils literal notranslate"><span class="pre">createStorageClient</span></code> as
 follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">qsc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;Type&#39;</span><span class="p">,</span><span class="s">&#39;QueueService&#39;</span><span class="p">);</span><span class="w"></span>
@@ -173,10 +178,10 @@ follows:</p>
 </pre></div>
 </div>
 <section id="common-service-client-operations">
-<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Service Client operations<a class="headerlink" href="#common-service-client-operations" title="Permalink to this heading"></a></h3>
 <p>For a full list of supported service client methods consult the API
 documentation or call <code class="docutils literal notranslate"><span class="pre">methods()</span></code> on the client object or see the
-<a class="reference internal" href="APIReference.html"><span class="doc std std-doc">APIReference.md</span></a> file.</p>
+<a class="reference internal" href="APIReference.html"><span class="std std-doc">APIReference.md</span></a> file.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create a Queue &amp; its client</span><span class="w"></span>
 <span class="n">queueClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qsc</span><span class="p">.</span><span class="n">createQueue</span><span class="p">(</span><span class="s">&#39;myqueuename&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -192,7 +197,7 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
 </section>
 </section>
 <section id="queue-client">
-<h2>Queue Client<a class="headerlink" href="#queue-client" title="Permalink to this headline"></a></h2>
+<h2>Queue Client<a class="headerlink" href="#queue-client" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">QueueClient</span></code> is created as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create using createStorageClient</span><span class="w"></span>
 <span class="n">qc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">createStorageClient</span><span class="p">(</span><span class="s">&#39;QueueName&#39;</span><span class="p">,</span><span class="s">&#39;myquename-123456&#39;</span><span class="p">);</span><span class="w"></span>
@@ -212,7 +217,7 @@ documentation or call <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <section id="common-queue-client-operations">
-<h3>Common Queue Client operations<a class="headerlink" href="#common-queue-client-operations" title="Permalink to this headline"></a></h3>
+<h3>Common Queue Client operations<a class="headerlink" href="#common-queue-client-operations" title="Permalink to this heading"></a></h3>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Send a message</span><span class="w"></span>
 <span class="n">msgResult</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qc</span><span class="p">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&#39;my test message&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="n">receipt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">msgResult</span><span class="p">.</span><span class="n">getPopReceipt</span><span class="p">;</span><span class="w"></span>

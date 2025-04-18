@@ -7,6 +7,7 @@ classdef (SharedTestFixtures={adxFixture}) testDataTypes < matlab.unittest.TestC
     %% Please add your test cases below
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     properties
+        Database = "unittestdb"
     end
 
     methods (TestClassSetup)
@@ -24,16 +25,34 @@ classdef (SharedTestFixtures={adxFixture}) testDataTypes < matlab.unittest.TestC
 
     methods (Test)
         function readTables(testCase)
+            tableName = "airlinesmall";
+            % Reingest if required !! airlinesmall.parquet cannot be
+            % ingested convert to csv for basic tests
+            % t = parquetread(which(sprintf("%s.parquet", tableName)));
+            % [ingestTf, ingestResult] =  mathworks.adx.ingestTable(t, tableName=tableName, mode="drop", database=testCase.Database);
+            
+            testCase.verifyTrue(mathworks.adx.tableExists(tableName, database=testCase.Database));
+            rowCount = mathworks.adx.run(sprintf("%s | count", tableName));
+            testCase.verifyTrue(gt(rowCount.Count(1), 0));
+
             % 123523 rows so takes a while to convert
-            % [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run('table("airlinesmall", "all")', nullPolicy=mathworks.adx.NullPolicy.AllowAll) %#ok<ASGLU>
+            % query = sprintf('table("%s", "all")', tableName);
+            % [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query, nullPolicy=mathworks.adx.NullPolicy.AllowAll) %#ok<ASGLU>
             % testCase.verifyTrue(success);
             % testCase.verifyEqual(height(result), 123523);
 
-            [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run('["airlinesmall"] | take 1000', nullPolicy=mathworks.adx.NullPolicy.AllowAll); %#ok<ASGLU>
+            query = sprintf('["%s"] | take 1000', tableName);
+            [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query, nullPolicy=mathworks.adx.NullPolicy.AllowAll); %#ok<ASGLU>
             testCase.verifyTrue(success);
             testCase.verifyEqual(height(result), 1000);
             
-            [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run('table("outages", "all")'); %#ok<ASGLU>
+            tableName = "outages";
+            testCase.verifyTrue(mathworks.adx.tableExists(tableName, database=testCase.Database));
+            rowCount = mathworks.adx.run(sprintf("%s | count", tableName));
+            testCase.verifyTrue(gt(rowCount.Count(1), 0));
+
+            query = sprintf('table("%s", "all")', tableName);
+            [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query); %#ok<ASGLU>
             testCase.verifyTrue(success);
             testCase.verifyGreaterThanOrEqual(height(result), 1468);
         end

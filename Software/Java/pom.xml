@@ -22,7 +22,7 @@
         <dependency>
           <groupId>com.azure</groupId>
           <artifactId>azure-sdk-bom</artifactId>
-          <version>1.2.24</version>
+          <version>1.2.33</version>
           <type>pom</type>
           <scope>import</scope>
         </dependency>
@@ -80,7 +80,7 @@
                 <!-- Build an executable JAR -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.4.2</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -98,7 +98,7 @@
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                     </transformers>
                 </configuration>
-                <version>3.2.4</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>

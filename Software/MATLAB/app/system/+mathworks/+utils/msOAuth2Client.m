@@ -71,7 +71,7 @@ classdef msOAuth2Client < handle
             % Tenant, ClientID and Scopes.
             %
             %   If a token for configured Tenant, ClientID and Scopes:
-            %       - IS found in the cache and it
+            %       - Is found in the cache and it
             %           - Has NOT expired, it is returned
             %           - HAS expired and a refresh token IS available, it
             %             is refreshed and then returned, if refresh fails
@@ -266,21 +266,30 @@ classdef msOAuth2Client < handle
 
             scopeFields = split(string(scopes)," ");
             redirectUrl = "http://localhost:8765";
-            webOpts = weboptions('Timeout', 30);
-            kustoMetaData = webread(serviceMetadataURI, webOpts);
-            if isfield(kustoMetaData, 'AzureAD')
-                if isfield(kustoMetaData.AzureAD, 'KustoClientAppId')
-                    KustoClientAppId = kustoMetaData.AzureAD.KustoClientAppId;
+            if strlength(serviceMetadataURI.EncodedURI) > 0
+                webOpts = weboptions('Timeout', 30);
+                serviceMetaData = webread(serviceMetadataURI, webOpts);
+                if isfield(serviceMetaData, 'AzureAD')
+                    % Not generic, only supports Kustso
+                    if isfield(serviceMetaData.AzureAD, 'KustoClientAppId')
+                        serviceClientAppId = serviceMetaData.AzureAD.KustoClientAppId;
+                    else
+                        error('KustoClientAppId field not found in serviceMetaData.AzureAD');
+                    end
                 else
-                    error('KustoClientAppId field not found in kustoMetaData.AzureAD');
+                    error('AzureAD field not found in serviceMetaData');
                 end
             else
-                error('AzureAD field not found in kustoMetaData');
+                serviceClientAppId = string.empty;
             end
 
             % Build credential
             builder = azure.identity.InteractiveBrowserCredentialBuilder();
-            builder = builder.clientId(KustoClientAppId);
+            if ~isempty(serviceClientAppId)
+                builder = builder.clientId(serviceClientAppId);
+            else
+                builder = builder.clientId(obj.clientId);
+            end
             builder = builder.tenantId(obj.tenantId);
             builder = builder.redirectUrl(redirectUrl);
             builder = builder.httpClient();
@@ -444,7 +453,7 @@ classdef msOAuth2Client < handle
 
             % Store the token in the cache under the right scopes key
             scopesKey = strjoin(scopes," ");
-            cache(scopesKey) = token;
+            cache(scopesKey) = token; %#ok<NASGU>
 
             % And save the cache
             obj.saveCache

@@ -1,0 +1,5 @@
+{
+    "AuthMethod": "StorageSharedKey",
+    "AccountKey" : "<REDACTED>",
+    "AccountName" : "<REDACTED>"
+}

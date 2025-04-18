@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Frequently Asked Questions &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -100,8 +105,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Frequently Asked Questions</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Frequently Asked Questions</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/FAQ.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -112,11 +117,11 @@
            <div itemprop="articleBody">
              
   <section id="frequently-asked-questions">
-<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline"></a></h1>
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this heading"></a></h1>
 <section id="azure-java-sdk">
-<h2>Azure Java SDK<a class="headerlink" href="#azure-java-sdk" title="Permalink to this headline"></a></h2>
+<h2>Azure Java SDK<a class="headerlink" href="#azure-java-sdk" title="Permalink to this heading"></a></h2>
 <section id="how-to-change-the-underlying-library-logging-level">
-<h3>How to change the underlying library logging level<a class="headerlink" href="#how-to-change-the-underlying-library-logging-level" title="Permalink to this headline"></a></h3>
+<h3>How to change the underlying library logging level<a class="headerlink" href="#how-to-change-the-underlying-library-logging-level" title="Permalink to this heading"></a></h3>
 <p>The Azure® interfaces rely on an number of underlying libraries which are
 included in the <code class="docutils literal notranslate"><span class="pre">Software/MATLAB/lib/jar/azure-common-sdk-0.2.0.jar</span></code> Jar file.
 Many of these libraries use slf4j as a logging mechanism. Further, MATLAB® itself
@@ -139,15 +144,15 @@ To change this to <code class="docutils literal notranslate"><span class="pre">I
 </section>
 </section>
 <section id="azure-data-explorer">
-<h2>Azure Data Explorer<a class="headerlink" href="#azure-data-explorer" title="Permalink to this headline"></a></h2>
+<h2>Azure Data Explorer<a class="headerlink" href="#azure-data-explorer" title="Permalink to this heading"></a></h2>
 <section id="badrequest-streamingingestionpolicynotenabled-error">
-<h3>BadRequest_StreamingIngestionPolicyNotEnabled error<a class="headerlink" href="#badrequest-streamingingestionpolicynotenabled-error" title="Permalink to this headline"></a></h3>
+<h3>BadRequest_StreamingIngestionPolicyNotEnabled error<a class="headerlink" href="#badrequest-streamingingestionpolicynotenabled-error" title="Permalink to this heading"></a></h3>
 <p>This error indicates a need to configure streaming ingestion on your Azure Data Explorer cluster.
 See: <a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp#choose-the-appropriate-streaming-ingestion-type">https://learn.microsoft.com/en-us/azure/data-explorer/ingest-data-streaming?tabs=azure-portal%2Ccsharp#choose-the-appropriate-streaming-ingestion-type</a></p>
 <p>The queries described can be issued using this package.</p>
 </section>
 <section id="unable-to-resolve-the-name-com-azure-identity-interactivebrowsercredentialbuilder">
-<h3>Unable to resolve the name ‘com.azure.identity.InteractiveBrowserCredentialBuilder’<a class="headerlink" href="#unable-to-resolve-the-name-com-azure-identity-interactivebrowsercredentialbuilder" title="Permalink to this headline"></a></h3>
+<h3>Unable to resolve the name ‘com.azure.identity.InteractiveBrowserCredentialBuilder’<a class="headerlink" href="#unable-to-resolve-the-name-com-azure-identity-interactivebrowsercredentialbuilder" title="Permalink to this heading"></a></h3>
 <p>This error is likely to be proceeded by <code class="docutils literal notranslate"><span class="pre">Getting</span> <span class="pre">ingestion</span> <span class="pre">resources</span></code>, the probable cause in that
 the Azure Services SDK jar file which is required for interactive authentication is not found
 of the Java static classpath, review the output of the startup command which may refer to this

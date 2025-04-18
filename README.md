@@ -123,7 +123,7 @@ success =
 ### A query to count the number of rows in a table
 
 ```matlab
->> rowCount = mathworks.adx.run(sprintf("myTableName | count", tableName))
+>> rowCount = mathworks.adx.run("myTableName | count")
 rowCount =
   table
     Count 
@@ -212,4 +212,4 @@ Please create a GitHub issue.
 
 Microsoft Azure Data Explorer, Azure Data Lake Storage & Azure Key Vault are trademarks of the Microsoft group of companies.
 
-[//]: #  (Copyright 2021-2024 The MathWorks, Inc.)
+[//]: #  (Copyright 2021-2025 The MathWorks, Inc.)

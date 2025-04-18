@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Null data &mdash; MATLAB Interface for Azure Services  documentation</title>
@@ -12,10 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> MATLAB Interface for Azure Services
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MATLAB Interface for Azure Services
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,8 +98,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Null data</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Null data</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/mathworks-ref-arch/matlab-azure-services/blob/main/Documentation/NullData.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -105,7 +110,7 @@
            <div itemprop="articleBody">
              
   <section id="null-data">
-<h1>Null data<a class="headerlink" href="#null-data" title="Permalink to this headline"></a></h1>
+<h1>Null data<a class="headerlink" href="#null-data" title="Permalink to this heading"></a></h1>
 <p>In ADX all data types except string may have null values indicating that data is
 not present. When bringing such data into MATLAB® consideration must be given to
 the potential presence of null values. This package provides a number of approaches
@@ -116,9 +121,9 @@ Other datatypes support <code class="docutils literal notranslate"><span class="
 <p>The enumeration class <code class="docutils literal notranslate"><span class="pre">mathworks.adx.NullPolicy</span></code> can be passed as an
 option to query functions to control how nulls are handled in responses. The
 possible values of the enumeration are defined in the following table:</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Enumeration</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Enumeration</p></th>
 <th class="head"><p>Effect</p></th>
 </tr>
 </thead>
@@ -145,15 +150,15 @@ or the query to remove null may be preferable.</p>
 subject to the enumeration value.
 As dynamics can be converted into other types this table assumes the valid value
 is not converted and thus remains a cell array containing a character vector.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Kusto type</p></th>
-<th class="text-left head"><p>MATLAB type</p></th>
-<th class="text-left head"><p>ADX Value</p></th>
-<th class="text-left head"><p>ErrorAny</p></th>
-<th class="text-left head"><p>ErrorLogicalInt32Int64</p></th>
-<th class="text-left head"><p>AllowAll</p></th>
-<th class="text-left head"><p>Convert2Double</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Kusto type</p></th>
+<th class="head text-left"><p>MATLAB type</p></th>
+<th class="head text-left"><p>ADX Value</p></th>
+<th class="head text-left"><p>ErrorAny</p></th>
+<th class="head text-left"><p>ErrorLogicalInt32Int64</p></th>
+<th class="head text-left"><p>AllowAll</p></th>
+<th class="head text-left"><p>Convert2Double</p></th>
 </tr>
 </thead>
 <tbody>
@@ -327,7 +332,7 @@ is not converted and thus remains a cell array containing a character vector.</p
 </tr>
 </tbody>
 </table>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Notes</p></th>
 <th class="head"><p></p></th>
@@ -338,7 +343,7 @@ is not converted and thus remains a cell array containing a character vector.</p
 <td><p>Subject to loss of precision</p></td>
 </tr>
 <tr class="row-odd"><td><p>[N2]</p></td>
-<td><p>Assuming the value is not decode, see <a class="reference internal" href="Dynamics.html"><span class="doc std std-doc">Dynamics.md</span></a></p></td>
+<td><p>Assuming the value is not decode, see <a class="reference internal" href="Dynamics.html"><span class="std std-doc">Dynamics.md</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>[N3]</p></td>
 <td><p>Kusto does not store null strings, however metadata and commands can return null strings that still need to be converted to tables</p></td>
@@ -358,7 +363,7 @@ adopt the null policy applied to the query result.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">testNulls</span></code> test function in <code class="docutils literal notranslate"><span class="pre">/matlab-azure-adx/Software/MATLAB/test/unit/testDataTypes.m</span></code>
 shows some simple queries that can be used to easily return nulls for testing purposes.</p>
 <section id="null-error">
-<h2>Null error<a class="headerlink" href="#null-error" title="Permalink to this headline"></a></h2>
+<h2>Null error<a class="headerlink" href="#null-error" title="Permalink to this heading"></a></h2>
 <p>If a null is encountered, in this case a null long/int64 is returned when using a
 null policy that does not support it an error such as the following is returned.
 In this case a possible solution would be:
@@ -378,7 +383,7 @@ in row 2 column 18.</p>
 </div></blockquote>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/null-values">https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/null-values</a></p></li>
 </ul>
