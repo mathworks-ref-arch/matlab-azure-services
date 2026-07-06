@@ -33,7 +33,6 @@ classdef (SharedTestFixtures={adxFixture}) testCmds < matlab.unittest.TestCase
             testCase.verifyTrue(istable(tableDetails));
             testCase.verifyTrue(isstring(tableNames));
             testCase.verifyTrue(any(contains(tableNames, "outage")));
-            testCase.verifyTrue(any(contains(tableNames, "airlinesmall")));
         end
 
 

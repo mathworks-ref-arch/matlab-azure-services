@@ -24,10 +24,9 @@ function result = dropTable(tableName, options)
     %
     %     result = mathworks.adx.dropTable("TestTable")
     % result =
-    %   5×4 table
+    %   4x4 table
     %         TableName        DatabaseName     Folder      DocString
     %     _________________    ____________    _________    _________
-    %     "airlinesmall"        "testdb1"      <missing>    <missing>
     %     "airlinesmallcsv"     "testdb1"      <missing>    <missing>
     %     "itable"              "testdb1"      <missing>    <missing>
     %     "myparquet"           "testdb1"      <missing>    <missing>
@@ -35,7 +34,7 @@ function result = dropTable(tableName, options)
     %
     % See also: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/drop-table-command
 
-    % Copyright 2023 The MathWorks, Inc.
+    % Copyright 2023-2026 The MathWorks, Inc.
 
     arguments
         tableName string {mustBeTextScalar, mustBeNonzeroLengthText}
@@ -79,14 +78,14 @@ function result = dropTable(tableName, options)
             if options.verbose; fprintf("dropTable failed for: %s\n", tableName); end
             result = runResult;
         else
-            error("adx:dropTable", "Unexpected return type: %s", class(runResult));
+            error("adx:dropTable:unexpectType1", "Unexpected return type: %s", class(runResult));
         end
     else
         if isa(runResult, 'adx.control.models.ErrorResponse')
             if options.verbose; fprintf("dropTable failed for: %s\n", tableName); end
             result = runResult;
         else
-            error("adx:dropTable", "Unexpected return type: %s", class(runResult));
+            error("adx:dropTable:unexpectType2", "Unexpected return type: %s", class(runResult));
         end
     end
 end

@@ -1,7 +1,8 @@
 classdef (SharedTestFixtures={adxFixture}) testCustomDecoder < matlab.unittest.TestCase
-    % testCmds Unit testing for high level commands
+%classdef testCustomDecoder < matlab.unittest.TestCase
+    % testCustomDecoder Unit testing for high level commands
 
-    %  (c) 2024 MathWorks, Inc.
+    %  (c) 2024-2026 MathWorks, Inc.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %% Please add your test cases below
@@ -36,7 +37,7 @@ classdef (SharedTestFixtures={adxFixture}) testCustomDecoder < matlab.unittest.T
                 tableName = "exampleCRD";
                 matFile = mathworks.adx.adxRoot("test", "unit", "Adx", "fixtures",  "crdTable.mat");
                 testCase.verifyTrue(isfile(matFile));
-                load(matFile, "crdTable");
+                load(matFile, "crdTable"); % Should be found in fixtures directory
                 if ~mathworks.adx.tableExists(tableName, database=testCase.Database)
                     % Regenerate an exampleCRD table if required
                     % nrows = 60000;

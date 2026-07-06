@@ -30,7 +30,7 @@ function [mTable, tableSchema, matlabSchema, kustoSchema] = getTableAndSchemas(c
     %  kustoSchema: String array of the Kusto type fields for the columns also
     %               stored in the table descriptions fields
 
-    % Copyright 2024 The MathWorks, Inc.
+    % Copyright 2024-2026 The MathWorks, Inc.
 
     arguments
         columns (1,:) % Should work with both adx.data.models.Column & adx.data.models.ColumnV1 as the V1 DataType field is not used
@@ -54,7 +54,7 @@ function [mTable, tableSchema, matlabSchema, kustoSchema] = getTableAndSchemas(c
 
     for m = 1:numCols
         variableNames{m} = char(matlab.lang.makeValidName(columns(m).ColumnName));
-        matlabTypes{m} = mathworks.internal.adx.mapTypesKustoToMATLAB(columns(m).ColumnType);
+        matlabTypes{m} = char(mathworks.internal.adx.mapTypesKustoToMATLAB(columns(m).ColumnType));
         switch options.nullPolicy
             case mathworks.adx.NullPolicy.AllowAll
                 switch lower(matlabTypes{m})

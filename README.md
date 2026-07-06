@@ -173,7 +173,7 @@ see: [Authentication](https://mathworks-ref-arch.github.io/matlab-azure-services
 First change to the `matlab-azure-services/Software/MATLAB` directory and run the
 startup command to configure paths.
 
-Initially run `mathworks.adx.buildSettingsFile`, to configure credentials & settings.
+Initially run `mathworks.internal.adx.buildSettingsFile`, to configure credentials & settings.
 For more details see: [ADXAuthentication.md](Documentation/ADXAuthentication.md).
 A number of authentication methods are supported.
 

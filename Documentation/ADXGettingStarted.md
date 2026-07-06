@@ -378,7 +378,7 @@ localFile = websave("exportedTable.gz.parquet", downloadURI);
 T = parquetread(localFile);
 ```
 
-### Ingest a table from a local a table
+### Ingest a table from a local table
 
 To ingest large volumes of data from MATLAB then the `ingestFile` and `ingestTable`
 functions can be used:
@@ -397,8 +397,8 @@ requirements.
 ```matlab
 localPath = fullfile(matlabroot, "toolbox", "matlab", "demos", "outages.parquet");
 tableName = "outages";
-praquetTable = parquetread(localPath);
-ingestData = praquetTable(1,:);
+parquetTable = parquetread(localPath);
+ingestData = parquetTable(1,:);
 
 [success, result, requestId, extentId] = mathworks.adx.ingestInline(tableName, ingestData)
 
@@ -417,6 +417,10 @@ extentId =
 ```
 
 To ingest from another source in ADX itself rather than MATLAB see `ingestFromQuery`.
+
+Tables and files with columns of type duration cannot be imported directly.
+Consider converting the duration to an int64 representation of a given number of time units.
+Timespan literals in KQL queries are supported.
 
 ### Higher-level data handling functions
 

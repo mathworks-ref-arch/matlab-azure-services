@@ -62,7 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#progressive-query-execution">Progressive query execution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-a-list-of-tables">Get a list of tables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#export-data-to-a-local-parquet-file">Export data to a local parquet file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ingest-a-table-from-a-local-a-table">Ingest a table from a local a table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ingest-a-table-from-a-local-table">Ingest a table from a local table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#higher-level-data-handling-functions">Higher-level data handling functions</a></li>
 </ul>
 </li>
@@ -476,8 +476,8 @@ other formats for speed and data integrity reasons.</p>
 </pre></div>
 </div>
 </section>
-<section id="ingest-a-table-from-a-local-a-table">
-<h3>Ingest a table from a local a table<a class="headerlink" href="#ingest-a-table-from-a-local-a-table" title="Permalink to this heading"></a></h3>
+<section id="ingest-a-table-from-a-local-table">
+<h3>Ingest a table from a local table<a class="headerlink" href="#ingest-a-table-from-a-local-table" title="Permalink to this heading"></a></h3>
 <p>To ingest large volumes of data from MATLAB then the <code class="docutils literal notranslate"><span class="pre">ingestFile</span></code> and <code class="docutils literal notranslate"><span class="pre">ingestTable</span></code>
 functions can be used:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Read some sample data from a parquet file to create a MATLAB table</span><span class="w"></span>
@@ -491,8 +491,8 @@ functions can be used:</p>
 requirements.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">localPath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fullfile</span><span class="p">(</span><span class="nb">matlabroot</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;toolbox&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matlab&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;demos&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outages.parquet&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">tableName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;outages&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">praquetTable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">parquetread</span><span class="p">(</span><span class="n">localPath</span><span class="p">);</span><span class="w"></span>
-<span class="n">ingestData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">praquetTable</span><span class="p">(</span><span class="mi">1</span><span class="p">,:);</span><span class="w"></span>
+<span class="n">parquetTable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">parquetread</span><span class="p">(</span><span class="n">localPath</span><span class="p">);</span><span class="w"></span>
+<span class="n">ingestData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parquetTable</span><span class="p">(</span><span class="mi">1</span><span class="p">,:);</span><span class="w"></span>
 
 <span class="p">[</span><span class="n">success</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">requestId</span><span class="p">,</span><span class="w"> </span><span class="n">extentId</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mathworks</span><span class="p">.</span><span class="n">adx</span><span class="p">.</span><span class="n">ingestInline</span><span class="p">(</span><span class="n">tableName</span><span class="p">,</span><span class="w"> </span><span class="n">ingestData</span><span class="p">)</span><span class="w"></span>
 
@@ -511,6 +511,9 @@ requirements.</p>
 </pre></div>
 </div>
 <p>To ingest from another source in ADX itself rather than MATLAB see <code class="docutils literal notranslate"><span class="pre">ingestFromQuery</span></code>.</p>
+<p>Tables and files with columns of type duration cannot be imported directly.
+Consider converting the duration to an int64 representation of a given number of time units.
+Timespan literals in KQL queries are supported.</p>
 </section>
 <section id="higher-level-data-handling-functions">
 <h3>Higher-level data handling functions<a class="headerlink" href="#higher-level-data-handling-functions" title="Permalink to this heading"></a></h3>

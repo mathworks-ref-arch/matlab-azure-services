@@ -2,6 +2,15 @@
 
 ## Release Notes
 
+## Release 1.0.3 July 6th 2026
+
+* ADX doc bug fixes
+* Improved error handling for ADX duration imports
+* Improved ADX microsecond resolution datetime imports from Parquet files
+* Minor bug fix to `mathworks.internal.adx.buildSettingsFile`
+* azure-sdk-bom version update to 1.3.7
+* Added conversion support for additional MATLAB datatypes
+
 ## Release 1.0.2 April 18th 2025
 
 * azure.storage.file.datalake.DataLakeFileClient.readToFile argument handling bug fix
@@ -28,7 +37,7 @@
 
 ## Release 0.3.2 April 14th 2023
 
-* Typo fix in `configureCredentials`.
+* Typo fix in `configureCredentials`
 
 ## Release 0.3.1 April 11th 2023
 
@@ -52,8 +61,8 @@
 ## Release 0.1.1 September 7th 2022
 
 * Published documentation to GitHub pages.
-* Fixed relative path issues with `uploadFromFile` and `downloadToFile`.
-* Documented deployment workflows.
+* Fixed relative path issues with `uploadFromFile` and `downloadToFile`
+* Documented deployment workflows
 
 ## Release 0.1.0 May 18th 2022
 

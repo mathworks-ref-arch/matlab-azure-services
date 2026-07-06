@@ -1,7 +1,8 @@
 classdef (SharedTestFixtures={adxFixture}) testDataTypes < matlab.unittest.TestCase
+% classdef testDataTypes < matlab.unittest.TestCase
     % testDataTypes Unit testing for data type conversion
 
-    %  (c) 2024 MathWorks, Inc.
+    %  (c) 2024-2026 MathWorks, Inc.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %% Please add your test cases below
@@ -25,21 +26,26 @@ classdef (SharedTestFixtures={adxFixture}) testDataTypes < matlab.unittest.TestC
 
     methods (Test)
         function readTables(testCase)
-            tableName = "airlinesmall";
-            % Reingest if required !! airlinesmall.parquet cannot be
-            % ingested convert to csv for basic tests
-            % t = parquetread(which(sprintf("%s.parquet", tableName)));
-            % [ingestTf, ingestResult] =  mathworks.adx.ingestTable(t, tableName=tableName, mode="drop", database=testCase.Database);
-            
+            tableName = "outages";
+            asPath = which(sprintf("%s.parquet", tableName));
+            if isempty(asPath) || strlength(asPath) == 0
+                fprintf("%s.parquet not found skipping test\n", tableName);
+                return;           
+            end
+            t = parquetread(which(sprintf("%s.parquet", tableName)));
+            [ingestTf, ingestResult] =  mathworks.adx.ingestTable(t, tableName=tableName, mode="drop", database=testCase.Database);
+            testCase.verifyTrue(ingestTf);
+            testCase.verifyNotEmpty(ingestResult);
+
             testCase.verifyTrue(mathworks.adx.tableExists(tableName, database=testCase.Database));
             rowCount = mathworks.adx.run(sprintf("%s | count", tableName));
             testCase.verifyTrue(gt(rowCount.Count(1), 0));
+            testCase.verifyEqual(int64(height(t)), rowCount.Count(1));
 
-            % 123523 rows so takes a while to convert
-            % query = sprintf('table("%s", "all")', tableName);
-            % [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query, nullPolicy=mathworks.adx.NullPolicy.AllowAll) %#ok<ASGLU>
-            % testCase.verifyTrue(success);
-            % testCase.verifyEqual(height(result), 123523);
+            query = sprintf('table("%s", "all")', tableName);
+            [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query, nullPolicy=mathworks.adx.NullPolicy.AllowAll); %#ok<ASGLU>
+            testCase.verifyTrue(success);
+            testCase.verifyEqual(height(result), height(t));
 
             query = sprintf('["%s"] | take 1000', tableName);
             [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query, nullPolicy=mathworks.adx.NullPolicy.AllowAll); %#ok<ASGLU>
@@ -54,7 +60,7 @@ classdef (SharedTestFixtures={adxFixture}) testDataTypes < matlab.unittest.TestC
             query = sprintf('table("%s", "all")', tableName);
             [result, success, requestId, resultTables, dataSetHeader, dataSetCompletion] = mathworks.adx.run(query); %#ok<ASGLU>
             testCase.verifyTrue(success);
-            testCase.verifyGreaterThanOrEqual(height(result), 1468);
+            testCase.verifyGreaterThanOrEqual(height(result), height(t));
         end
 
         function testDuration(testCase)

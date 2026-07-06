@@ -41,7 +41,7 @@ function [tf, result] = createTable(matlabTable, tableName, options)
 
     % TODO generate adx.control.models.ErrorResponse rather than return empty MATLAB tables
 
-    % Copyright 2023-2024 The MathWorks, Inc.
+    % Copyright 2023-2026 The MathWorks, Inc.
 
     arguments
         matlabTable table {mustBeNonempty}
@@ -131,7 +131,7 @@ end
 
 
 function tf = validateColumnTypes(T)
-    % validateColumnTypes Returns true if all datatype can be handled
+    % validateColumnTypes Returns true if all MATLAB datatypes can be handled
 
     arguments
         T table {mustBeNonempty}
@@ -140,7 +140,7 @@ function tf = validateColumnTypes(T)
     mNames = T.Properties.VariableNames;
     mTypes = varfun(@class,T,'OutputFormat','cell');
 
-    supportedTypes = ["int32", "int64", "string", "double", "datetime", "duration", "logical"];
+    supportedTypes = ["int8", "uint8", "int16", "uint16", "int32", "uint32", "int64", "string", "char", "single", "double", "datetime", "logical"];
 
     tf = true;
     for n = 1:numel(mTypes)
@@ -156,8 +156,11 @@ function mapStr = createTableMapping(T)
     % Form:
     % Region:string, OutageTime:datetime, Loss:double, Customers:double, RestorationTime:datetime, Cause:string
 
-    arguments
+    arguments (Input)
         T table {mustBeNonempty}
+    end
+    arguments (Output)
+        mapStr string
     end
 
     mNames = T.Properties.VariableNames;
@@ -165,7 +168,7 @@ function mapStr = createTableMapping(T)
 
     mapStr = "";
     for n = 1:numel(mTypes)
-        kType = string(mathworks.internal.adx.mapTypesMATLABToKusto(mTypes{n}));
+        kType = mathworks.internal.adx.mapTypesMATLABToKusto(mTypes{n});
         mapStr = mapStr + string(mNames{n}) + ":" + kType;
         if n < numel(mTypes)
             mapStr = mapStr + ", ";

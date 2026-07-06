@@ -137,4 +137,12 @@ query = adx.data.api.Query();
 [code, result, response, id] = query.queryRun(request, apiVersion="v2", skipRowsArrayDecode=true);
 ```
 
-[//]: #  (Copyright 2024 The MathWorks, Inc.)
+## Skip duration checking in table ingestion
+
+When tables are ingested they are first checked to ensure they do not contain columns of
+type duration that cannot natively be ingested into Kusto. If it is known that a table
+or file does nto contain such a column then the optional named argument `checkForDuration`
+can be set to `false` to skip this validation step and improve performance when calling
+`mathworks.adx.ingestFile` or `mathworks.adx.ingestTable`.
+
+[//]: #  (Copyright 2024-2026 The MathWorks, Inc.)

@@ -36,7 +36,7 @@ function buildSettingsFile(options)
 
     writeSettingsFile(s, options.filename)
     disp("Configuration complete");
-    disp(["  As a simple test run: [result, success] = mathworks.adx.run('print mycol=""Hello World""') ", newline])
+    disp("  As a simple test run: [result, success] = mathworks.adx.run('print mycol=""Hello World""') " + newline)
 end
 
 

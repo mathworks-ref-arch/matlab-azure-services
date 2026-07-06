@@ -16,215 +16,226 @@ function [success, result] = ingestFile(localFile, tableName, options)
     %       blobName: Name of the blob to upload to, if not specified a name will be
     %                 generated based on the local file.
     %
-    %         cluster: Cluster name, if not specified the database configured in
+    %        cluster: Cluster name, if not specified the database configured in
     %                 the json settings file will be used.
     %
-    %     bearerToken: Bearer Token, if not specified the database configured in
+    %    bearerToken: Bearer Token, if not specified the database configured in
     %                 the json settings file will be used.
     %
-    %           mode: "drop" drop the existing table if it exists before ingesting
-    %                 "create" create the table if it does not exist
-    %                 "add" (Default) ingest into an existing table
+    %           mode: "drop" drop the existing table if it exists before ingesting.
+    %                 "create" create the table if it does not exist.
+    %                 "add" (Default) ingest into an existing table.
     %
+    %        verbose: Display additional output, default: true.
+    %
+    % uploadViaAzureServices: Logical to enable uploading via Azure services, default: true.
+    %
+    % timeFromMicroseconds: Transform datetimes from microseconds, default: true.
+    %
+    %     ingestionMapping: Specify an ingest mapping as a scalar string.
+    %
+    %     checkForDuration: Logical to enable checking for duration types, default: true.
+    %                       Disable to improve performance if know that input does
+    %                       not contain columns of type duration.
     % Return values:
-    %    success: A logical true is returned if a success message is returned.
+    %    success: A logical true is returned if the ingest was successful.
     %
-    %     result: Tabular output of the command if successful otherwise a
+    %     result: Tabular output of the command or a
     %             adx.control.models.ErrorResponse
     %
     % Example:
-    %    % Get filename & path for the outages.parquet file
+    %    % Get filename & full path for the outages.parquet file
     %    info = parquetinfo('outages.parquet');
-    %    success = mathworks.adx.ingestFile(info.Filename, 'outagesTable');
+    %    [success, result] = mathworks.adx.ingestFile(info.Filename, 'outagesTable');
     %
     %
-    %                                   Table Exists
+    %  Table mode behaviors                    
     %  -----------------------------------------------------
-    %                |       True           |     False
+    %                |                Table Exists   
+    %                ---------------------------------------    
+    %  Mode          |       True           |     False
     %  -----------------------------------------------------
-    %  Mode          |                      |
     %  create        |   add                |    create, add
-    %  drop          |   drop, create, add  |    create add
+    %  drop          |   drop, create, add  |    create, add
     %  add (default) |   add                |    error
 
-    % Copyright 2023-2024 The MathWorks, Inc.
+    % Copyright 2023-2026 The MathWorks, Inc.
 
-    arguments
-        localFile string {mustBeTextScalar}
-        tableName string {mustBeTextScalar}
-        options.database string {mustBeTextScalar}
-        options.format string {mustBeTextScalar}
-        options.blobName string {mustBeTextScalar}
-        options.cluster string {mustBeTextScalar}
-        options.bearerToken string {mustBeTextScalar}
+    arguments (Input)
+        localFile string {mustBeFile}
+        tableName string {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.database string {mustBeTextScalar} = mathworks.internal.adx.getDefaultConfigValue('database')
+        options.format string {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.blobName string {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.cluster string {mustBeTextScalar} = mathworks.internal.adx.getDefaultConfigValue('cluster')
+        options.bearerToken string {mustBeTextScalar, mustBeNonzeroLengthText}
         options.mode string {mustBeMember(options.mode, ["drop","create","add"])} = "add"
         options.verbose (1,1) logical = true
-        options.uploadViaAzureServices logical = true % For debug use only
+        options.uploadViaAzureServices (1,1) logical = true % For debug use only
+        options.timeFromMicroseconds (1,1) logical = true
+        options.ingestionMapping string {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.checkForDuration (1,1) logical = true
+    end
+    arguments (Output)
+        success (1,1) logical
+        result table
     end
 
-    if options.verbose; fprintf('Starting file ingestion: %s\n', localFile); end
-    
-    if ~isfile(localFile)
-        fprintf("File not found: %s\n", localFile);
-        success = false;
-        result = table.empty;
-        return;
-    end
+    success = false;
+    result = table.empty;
 
-    if isfield(options, 'blobName')
+    if options.verbose; fprintf("Starting file ingestion: %s\n", localFile); end
+ 
+    if isfield(options, "blobName")
         blobName = options.blobName;
     else
         [~, name, ext] = fileparts(localFile);
-        blobName = strcat(name, ext);
-        blobName = mathworks.internal.blob.sanitizeBlobName(blobName);
+        blobName = mathworks.internal.blob.sanitizeBlobName(strcat(name, ext));
     end
 
-    if isfield(options, 'database')
-        database = options.database;
+    if isfield(options, "format")
+        format = options.format;
     else
-        database = mathworks.internal.adx.getDefaultConfigValue('database');
+        format = getFormat(localFile);
     end
-    if ~strlength(database) > 0
+
+    if strlength(options.database) == 0
         fprintf("database value not set\n");
-        success = false;
-        result = table.empty;
         return;
-    end
-
-    if isfield(options, 'cluster')
-        cluster = options.cluster;
     else
-        cluster = mathworks.internal.adx.getDefaultConfigValue('cluster');
-    end
-    if ~strlength(cluster) > 0
-        fprintf("cluster value not set\n");
-        success = false;
-        result = table.empty;
-        return;
+        database = options.database;
     end
 
-    if options.verbose; fprintf("Checking for existence of table: %s\n", tableName); end
-    tableExists = mathworks.adx.tableExists(tableName, database=database, cluster=cluster);
-    if options.verbose
-        if tableExists
-            disp("Table found");
-        else
-            disp("Table not found");
+    if strlength(options.cluster) == 0
+        fprintf("cluster value not set\n");
+        return;
+    else
+        cluster = options.cluster;
+    end
+
+    if isfield(options, "bearerToken")
+        bearerToken = options.bearerToken;
+    else
+        bearerToken = getBearerToken(database, cluster);
+    end
+    
+    if options.checkForDuration
+        if ~checkForDuration(localFile, format, verbose=options.verbose)
+            warning("adx:ingestFile:duration",...
+            "Column of type duration cannot be ingested, consider first converting the column to use an int64 of a given time unit\n");
+            return;
         end
     end
 
-    args = mathworks.utils.addArgs(options, ["uploadViaAzureServices", "bearerToken", "format"]);
-    switch options.mode
+    if options.verbose; fprintf("Checking for existence of table: %s... ", tableName); end
+    tableExists = mathworks.adx.tableExists(tableName, database=database, cluster=cluster);
+    if options.verbose
+        if tableExists
+            fprintf("found\n");
+        else
+            fprintf("not found\n");
+        end
+    end
+  
+    switch lower(options.mode)
         case "add"
-            if tableExists
-                [success, result] = doIngest(localFile, cluster, database, tableName, blobName, options.verbose, args{:});
-            else
-                fprintf("Table not found: %s, see: mathworks.adx.createTable or the mode argument to create the table prior to ingestion\n", tableName);
-                success = false;
-                result = table.empty;
+            if ~tableExists
+                fprintf("Table not found: %s, cannot use 'add' mode, see: mathworks.adx.createTable or the mode argument to create the table prior to ingestion\n", tableName);
+                return;
             end
+
         case "drop"
             if tableExists
-                if options.verbose; disp("Dropping table"); end
-                dropResult = mathworks.adx.dropTable(tableName, database=database, cluster=cluster);
-                if ~istable(dropResult)
-                    fprintf("dropTable failed for: %s\n", tableName);
-                    success = false;
-                    result = table.empty;
+                [dropSuccess, dropResult] = doDropTable(tableName, database, cluster, verbose=options.verbose);
+                if ~dropSuccess
+                    fprintf("Table deletion failed: %s, cannot proceed with 'drop' mode\n", tableName);
                     return;
                 end
             end
-            if options.verbose; disp("Creating table"); end
-            mTable = parquetread(localFile);
-            if ~mathworks.adx.createTable(mTable, tableName, database=database, cluster=cluster)
-                fprintf("Table creation failed: %s\n", tableName);
-                success = false;
-                result = table.empty;
-            else
-                clear("mTable");
-                [success, result] = doIngest(localFile, cluster, database, tableName, blobName, options.verbose, args{:});
-            end
+
         case "create"
-            if ~tableExists
-                if options.verbose; disp("Creating table"); end
-                mTable = parquetread(localFile);
-                if ~mathworks.adx.createTable(mTable, tableName, database=database, cluster=cluster)
-                    fprintf("Table creation failed: %s\n", tableName);
-                    success= false;
-                    result = table.empty;
-                    return;
-                end
-                clear("mTable");
-            end
-            [success, result] = doIngest(localFile, cluster, database, tableName, blobName, options.verbose, args{:});
+            % No Op, proceed to doCreateAndIngest
+            
         otherwise
             error("adx:ingestFile", "Unexpected mode value: %s", options.mode);
+    end
+
+    args = mathworks.utils.addArgs(options, ["uploadViaAzureServices", "timeFromMicroseconds", "ingestionMapping", "verbose"]);
+    [success, result] = doCreateAndIngest(localFile, tableName, format, cluster, database, blobName, bearerToken, args{:});
+end
+
+
+function tf = checkForDuration(localFile, format, options)
+    % CHECKFORDURATION Check if table contains duration columns
+    % Returns false if any duration columns found, true otherwise.
+    arguments (Input)
+        localFile {mustBeFile}
+        format string {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.verbose (1,1) logical = true
+    end
+    arguments (Output)
+        tf (1,1) logical
+    end
+
+    if options.verbose
+        fprintf("Checking %s file for duration columns...\n", format);
+    end
+
+    if strcmpi(format, "parquet")
+        tf = checkForParquetDurations(localFile, verbose=options.verbose);
+    else
+        try
+            T = readTable(localFile);
+        catch
+            error("adx:ingestFile:checkForDuration:readTable", "Cannot read table from file: %s, format: %s", localFile, format);
+        end
+        tf = checkOtherDurations(T, verbose=options.verbose);
     end
 end
 
 
-function [tf, result] = doIngest(localFile, cluster, database, tableName, blobName, verbose, options)
-    % DOINGEST Copy a local file to blob storage and ingest to a table from there
-    % Returns false if ingest has errors or the query failed.
-    arguments
-        localFile string {mustBeTextScalar}
-        cluster string {mustBeTextScalar}
-        database string {mustBeTextScalar}
-        tableName string {mustBeTextScalar}
-        blobName string {mustBeTextScalar}
-        verbose (1,1) logical = true
-        options.format string {mustBeTextScalar}
-        options.bearerToken string {mustBeTextScalar}
-        options.uploadViaAzureServices logical = true % For debug use only
+function [success, result] = doCreateAndIngest(localFile, tableName, format, cluster, database, blobName, bearerToken, options)
+    % DOCREATEANDINGEST Create table and ingest file into ADX
+    % Assumes a input does not contain durations.
+    arguments (Input)
+        localFile {mustBeFile}
+        tableName string {mustBeTextScalar, mustBeNonzeroLengthText}
+        format string {mustBeTextScalar, mustBeNonzeroLengthText}
+        cluster string {mustBeTextScalar, mustBeNonzeroLengthText}
+        database string {mustBeTextScalar, mustBeNonzeroLengthText}
+        blobName string {mustBeTextScalar, mustBeNonzeroLengthText}
+        bearerToken string {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.uploadViaAzureServices (1,1) logical = true % For debug use only
+        options.timeFromMicroseconds (1,1) logical = true
+        options.ingestionMapping string {mustBeTextScalar, mustBeNonzeroLengthText} 
+        options.verbose (1,1) logical = true
+    end
+    arguments (Output)
+        success (1,1) logical
+        result table
     end
 
-    if verbose; disp("Ingesting table"); end
+    success = false;
+    result = table.empty;
 
-    % TODO add link to supported formats
-    if ~isfield(options, 'format')
-        [~, ~, ext] = fileparts(localFile);
-        if strlength(ext) > 0
-            if startsWith(ext, ".")
-                format = extractAfter(ext, ".");
-            else
-                format = ext;
-            end
-            if ~strcmpi(format, 'parquet')
-                warning("adx:ingestFile", "Format type not yet validated: %s", format)
-            end
-        else
-            error("adx:ingestFile", "Format cannot be determined from filename: %s", localFile)
-        end
+    % Previously checked for durations
+    if strcmp(format, "parquet")
+        T = parquetread(localFile);
     else
-        format = options.format;
-    end
-    if ~strlength(format) > 0
-        error("adx:ingestFile", "format value not set")
-    end
-
-    if verbose; disp('Getting dataBearerToken'); end
-    if isfield(options, 'bearerToken') && strlength(options.bearerToken) > 0
-        bearerToken = options.dataBearerToken;
-    else
-        q = adx.data.api.Query;
-        if strlength(q.dataBearerToken) > 0
-            bearerToken = q.dataBearerToken;
-        else
-            bearerToken = mathworks.internal.adx.getDataBearerToken(database, cluster);
+        try
+            T = readTable(localFile);
+        catch
+            error("adx:ingestFile:doCreateAndIngest:readTable", "Cannot read table from file: %s, format: %s", localFile, format);
         end
     end
 
-    if ~strlength(bearerToken) > 0
-        error("adx:ingestFile", "dataBearerToken value not set")
-    end
-
-    if verbose; disp('Getting ingestion resources'); end
+    if options.verbose; disp('Getting ingestion resources'); end
     ingestionResources = mathworks.internal.adx.getIngestionResources('bearerToken', bearerToken, 'cluster', cluster);
 
     % Upload file to one of the blob containers we got from Azure Data Explorer.
     % This example uses the first one, but when working with multiple blobs,
     % one should round-robin the containers in order to prevent throttling
-    if verbose; disp('Uploading to blob'); end
+    if options.verbose; disp('Uploading file to blob storage'); end
     if options.uploadViaAzureServices
         [blobUriWithSas, ~] = mathworks.internal.blob.clientUploadToBlobContainer(ingestionResources, blobName, localFile);
     else
@@ -232,43 +243,202 @@ function [tf, result] = doIngest(localFile, cluster, database, tableName, blobNa
         [blobUriWithSas, ~] = mathworks.internal.blob.clientCopyToBlobContainer(ingestionResources, blobName, localFile);
     end
 
-    if verbose; disp('Direct Ingest From Storage'); end
-    [tf, result] = ingestFromStorage(blobUriWithSas, database, tableName, format, 'cluster', cluster, 'bearerToken', bearerToken);
-end
+    managementClient = adx.data.api.Management(bearerToken=bearerToken, cluster=cluster);
 
-
-function [tf, result] = ingestFromStorage(blobUriWithSas, database, tableName, format, options)
-    % ingestFromStorage Ingestion direct from a blob
-    % Returns false if ingest has errors or the query failed.
-    arguments
-        blobUriWithSas string {mustBeTextScalar, mustBeNonzeroLengthText}
-        database string {mustBeTextScalar, mustBeNonzeroLengthText}
-        tableName string {mustBeTextScalar, mustBeNonzeroLengthText}
-        format string {mustBeTextScalar, mustBeNonzeroLengthText}
-        options.cluster string {mustBeTextScalar, mustBeNonzeroLengthText}
-        options.bearerToken string {mustBeTextScalar, mustBeNonzeroLengthText}
+    if isfield(options, "ingestionMapping")
+        ingestionMapping = options.ingestionMapping;
+    else
+        if isempty(T)
+            ingestionMapping = "";
+        else
+            if isMATLABReleaseOlderThan("R2024b")
+                varTypes = string(varfun(@class, T, 'OutputFormat', 'cell'));
+            else
+                varTypes = T.Properties.VariableTypes;
+            end
+            ingestionMapping = buildIngestMapping(varTypes, T.Properties.VariableNames, options.timeFromMicroseconds);
+        end
     end
 
-    args = mathworks.utils.addArgs(options, ["bearerToken", "cluster"]);
-    managementClient = adx.data.api.Management(args{:});
+    if options.verbose; disp('Building ingest command'); end
+    cmdStr = sprintf(".ingest into table %s ('%s') with (", tableName, blobUriWithSas);
+    cmdStr = cmdStr + newline + sprintf("format='%s',\n", format);
+    cmdStr = cmdStr + ingestionMapping;
+    cmdStr = cmdStr + ")";
 
-    cmdStr = sprintf(".ingest into table %s ('%s') with (format='%s')", tableName, blobUriWithSas, format);
+    if options.verbose; disp('Ingest command:'); disp(cmdStr); end
 
     req = adx.data.models.ManagementRequest('db' ,database, 'csl', cmdStr);
 
-    [code, mrResult, response] = managementClient.managementRun(req);%#ok<*ASGLU>
+    if options.verbose; disp('Ingesting From Blob storage'); end
+    [code, mgtRunResult, response] = managementClient.managementRun(req); %#ok<*ASGLU>
 
     if code == matlab.net.http.StatusCode.OK
-        result = mathworks.internal.adx.queryV1Response2Tables(mrResult, allowNullStrings=true);
+        result = mathworks.internal.adx.queryV1Response2Tables(mgtRunResult, allowNullStrings=true);
         assert(height(result) == 1);
         assert(any(contains(result.Properties.VariableNames, 'HasErrors')));
-        tf = ~result.HasErrors(1);
+        success = ~result.HasErrors(1);
     else
-        if isa(mrResult, 'adx.control.models.ErrorResponse')
-            mrResult.disp();
+        if isa(mgtRunResult, 'adx.control.models.ErrorResponse')
+            mgtRunResult.disp();
         end
         warning("adx:ingestFile:ingestFromStorage", "Error ingesting from blob storage")
-        tf = false;
+    end
+end
+
+
+function tf = checkForParquetDurations(localFile, options)
+    % CHECKFORPARQUETDURATIONS Check if parquet file contains duration columns
+    % Returns false if any duration columns found, true otherwise.
+    arguments (Input)
+        localFile {mustBeFile}
+        options.verbose (1,1) logical = true
+    end
+    arguments (Output)
+        tf (1,1) logical
+    end
+
+    tf = true;
+    pInfo = parquetinfo(localFile);
+    for n = 1:length(pInfo.VariableNames)
+        if strcmp(pInfo.VariableTypes(n), "duration")
+            if options.verbose
+                fprintf("Column: %s, is of type duration, parquet columns of type duration cannot be ingested, consider using an int64 of a given time unit\n", pInfo.VariableNames(n));
+            end
+            tf = false;
+            return;
+        end
+    end
+end
+
+
+function tf = checkOtherDurations(T, options)
+    % CHECKOTHERDURATIONS Check if table contains duration columns
+    % Returns false if any duration columns found, true otherwise.
+    arguments (Input)
+        T table
+        options.verbose (1,1) logical = true
+    end
+    arguments (Output)
+        tf (1,1) logical
+    end
+    
+    if isMATLABReleaseOlderThan("R2024b")
+        varTypes = string(varfun(@class, T, 'OutputFormat', 'cell'));
+    else
+        varTypes = T.Properties.VariableTypes;
+    end
+
+    tf = true;
+    for n = 1: numel(T.Properties.VariableNames)
+        if strcmp(varTypes(n), "duration")
+            if options.verbose
+                fprintf("Column: %s, is of type duration, columns of type duration cannot be ingested, consider using an int64 of a given time unit\n", varTypes(n));
+            end
+            tf = false;
+            return;
+        end
+    end
+end
+
+
+function [success, result] = doDropTable(tableName, database, cluster, options)
+    arguments (Input)
+        tableName string {mustBeTextScalar, mustBeNonzeroLengthText}
+        database string {mustBeTextScalar, mustBeNonzeroLengthText}
+        cluster {mustBeTextScalar, mustBeNonzeroLengthText}
+        options.verbose (1,1) logical = true
+    end
+    arguments (Output)
+        success logical
+        result table
+    end
+
+    if options.verbose; disp("Dropping table"); end
+    dropResult = mathworks.adx.dropTable(tableName, database=database, cluster=cluster);
+    if isa(dropResult, 'table')
+        success = true;
+        result = dropResult;
+    elseif isa(dropResult, 'adx.control.models.ErrorResponse')
+        disp(dropResult);
+        success = false;
+        result = table.empty;
+    else
+        fprintf(2, "Unexpected dropTable() return type: %s\n", class(dropResult));
+        success = false;
         result = table.empty;
     end
+end
+
+
+function format = getFormat(localFile)
+    arguments (Input)
+        localFile {mustBeFile}
+    end
+    arguments (Output)
+        format string
+    end
+    [~, ~, ext] = fileparts(localFile);
+    ext = string(lower(strip(ext, "left", ".")));
+    switch ext
+        case "parquet"
+            format = ext;
+        otherwise
+            format = ext;
+            fprintf("File format not validated: %s\n", format);
+            fprintf("Supported formats: parquet\n");
+    end
+end
+
+
+function bearerToken = getBearerToken(database, cluster)
+    arguments (Input)
+        database string {mustBeTextScalar}
+        cluster string {mustBeTextScalar}
+    end
+    arguments (Output)
+        bearerToken string
+    end
+
+    q = adx.data.api.Query;
+    if strlength(q.dataBearerToken) > 0
+        bearerToken = q.dataBearerToken;
+    else
+        bearerToken = mathworks.internal.adx.getDataBearerToken(database, cluster);
+    end
+    
+    if isempty(bearerToken) || strlength(bearerToken) == 0
+        error("adx:ingestFile", "dataBearerToken value not set")
+    end
+end
+
+
+function mapping = buildIngestMapping(variableTypes, variableNames, timeFromMicroseconds)
+    arguments (Input)
+        variableTypes string
+        variableNames string
+        timeFromMicroseconds (1,1) logical = true
+    end
+    arguments(Output)
+        mapping string
+    end
+
+    assert(numel(variableTypes) == numel(variableNames));
+
+    mapping = "ingestionMapping=" + newline + "```[" + newline;
+    for n = 1:length(variableNames)
+        if strcmp(variableTypes(n), "datetime") && timeFromMicroseconds
+            lineStr = "    " + sprintf('{"Column":"%s", "Properties":{"Path": "$", "Transform":"DateTimeFromUnixMicroseconds"}}', variableNames(n));
+        else
+            lineStr = "    " + sprintf('{"Column":"%s", "Properties":{"Path": "$"}}', variableNames(n));
+        end
+        mapping = mapping +  lineStr;
+
+        if n < length(variableNames)
+            mapping = mapping + "," + newline;
+        else
+            mapping = mapping + newline;
+        end
+    end
+    mapping = mapping + "]```" + newline;
 end

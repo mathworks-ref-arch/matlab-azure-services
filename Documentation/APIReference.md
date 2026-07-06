@@ -1482,6 +1482,8 @@ AttachedDatabaseConfigurations Constructor, creates a AttachedDatabaseConfigurat
     client = adx.control.api.AttachedDatabaseConfigurations("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.AttachedDatabaseConfigurations
 ```
 
 #### adx.control.api.AttachedDatabaseConfigurations.attachedDatabaseConfigurationsCheckNameAvailability
@@ -1700,6 +1702,8 @@ ClusterPrincipalAssignments Constructor, creates a ClusterPrincipalAssignments i
     client = adx.control.api.ClusterPrincipalAssignments("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.ClusterPrincipalAssignments
 ```
 
 #### adx.control.api.ClusterPrincipalAssignments.clusterPrincipalAssignmentsCheckNameAvailability
@@ -1928,6 +1932,8 @@ Clusters Constructor, creates a Clusters instance.
     client = adx.control.api.Clusters("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.Clusters
 ```
 
 #### adx.control.api.Clusters.clustersAddLanguageExtensions
@@ -2460,6 +2466,8 @@ DataConnections Constructor, creates a DataConnections instance.
     client = adx.control.api.DataConnections("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.DataConnections
 ```
 
 #### adx.control.api.DataConnections.dataConnectionsCheckNameAvailability
@@ -2745,6 +2753,8 @@ DatabasePrincipalAssignments Constructor, creates a DatabasePrincipalAssignments
     client = adx.control.api.DatabasePrincipalAssignments("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.DatabasePrincipalAssignments
 ```
 
 #### adx.control.api.DatabasePrincipalAssignments.databasePrincipalAssignmentsCheckNameAvailability
@@ -2971,6 +2981,8 @@ Databases Constructor, creates a Databases instance.
     client = adx.control.api.Databases("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.Databases
 ```
 
 #### adx.control.api.Databases.databaseInviteFollower
@@ -3330,6 +3342,8 @@ Default Constructor, creates a Default instance.
     client = adx.control.api.Default("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.Default
 ```
 
 #### adx.control.api.Default.clustersListSkus
@@ -3460,6 +3474,8 @@ ManagedPrivateEndpoints Constructor, creates a ManagedPrivateEndpoints instance.
     client = adx.control.api.ManagedPrivateEndpoints("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.ManagedPrivateEndpoints
 ```
 
 #### adx.control.api.ManagedPrivateEndpoints.managedPrivateEndpointsCheckNameAvailability
@@ -3704,6 +3720,8 @@ OperationResults Constructor, creates a OperationResults instance.
     client = adx.control.api.OperationResults("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.OperationResults
 ```
 
 #### adx.control.api.OperationResults.operationsResultsGet
@@ -3809,6 +3827,8 @@ Operations Constructor, creates a Operations instance.
     client = adx.control.api.Operations("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.Operations
 ```
 
 #### adx.control.api.Operations.operationsList
@@ -3911,6 +3931,8 @@ OutboundNetworkDependenciesEndpoints Constructor, creates a OutboundNetworkDepen
     client = adx.control.api.OutboundNetworkDependenciesEndpoints("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.OutboundNetworkDependenciesEndpoints
 ```
 
 #### adx.control.api.OutboundNetworkDependenciesEndpoints.clustersListOutboundNetworkDependenciesEndpoints
@@ -4019,6 +4041,8 @@ PrivateEndpointConnections Constructor, creates a PrivateEndpointConnections ins
     client = adx.control.api.PrivateEndpointConnections("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.PrivateEndpointConnections
 ```
 
 #### adx.control.api.PrivateEndpointConnections.privateEndpointConnectionsCreateOrUpdate
@@ -4205,6 +4229,8 @@ PrivateLinkResources Constructor, creates a PrivateLinkResources instance.
     client = adx.control.api.PrivateLinkResources("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.PrivateLinkResources
 ```
 
 #### adx.control.api.PrivateLinkResources.privateLinkResourcesGet
@@ -4334,6 +4360,8 @@ Scripts Constructor, creates a Scripts instance.
     client = adx.control.api.Scripts("httpOptions",...
         matlab.net.http.HTTPOptions("ConnectTimeout",42),...
         "apiKey", "ABC123");
+
+    Documentation for adx.control.api.Scripts
 ```
 
 #### adx.control.api.Scripts.scriptsListByDatabase
@@ -4380,6 +4408,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AcceptedAudiences
 ```
 
 ### adx.control.models.AttachedDatabaseConfiDefaultPrincipalsModificationKindEnum_0000
@@ -4402,6 +4432,8 @@ Enumeration values:
 
 ```text
 AttachedDatabaseConfiDefaultPrincipalsModificationKindEnum_0000 No description provided
+
+    Documentation for adx.control.models.AttachedDatabaseConfiDefaultPrincipalsModificationKindEnum_0000
 ```
 
 ### adx.control.models.AttachedDatabaseConfiDefaultPrincipalsModificationKindEnum_0001
@@ -4424,6 +4456,8 @@ Enumeration values:
 
 ```text
 AttachedDatabaseConfiDefaultPrincipalsModificationKindEnum_0001 No description provided
+
+    Documentation for adx.control.models.AttachedDatabaseConfiDefaultPrincipalsModificationKindEnum_0001
 ```
 
 ### adx.control.models.AttachedDatabaseConfiguration
@@ -4448,6 +4482,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AttachedDatabaseConfiguration
 ```
 
 ### adx.control.models.AttachedDatabaseConfigurationListResult
@@ -4468,6 +4504,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AttachedDatabaseConfigurationListResult
 ```
 
 ### adx.control.models.AttachedDatabaseConfigurationProperties
@@ -4495,6 +4533,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AttachedDatabaseConfigurationProperties
 ```
 
 ### adx.control.models.AttachedDatabaseConfigurationProperties_1
@@ -4522,6 +4562,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AttachedDatabaseConfigurationProperties_1
 ```
 
 ### adx.control.models.AttachedDatabaseConfigurationsCheckNameRequest
@@ -4543,6 +4585,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AttachedDatabaseConfigurationsCheckNameRequest
 ```
 
 ### adx.control.models.AttachedDatabaseConfigurationsCheckNameRequestTypeEnum
@@ -4563,6 +4607,8 @@ Enumeration values:
 
 ```text
 AttachedDatabaseConfigurationsCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.AttachedDatabaseConfigurationsCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.AzureCapacity
@@ -4586,6 +4632,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AzureCapacity
 ```
 
 ### adx.control.models.AzureCapacityScaleTypeEnum
@@ -4608,6 +4656,8 @@ Enumeration values:
 
 ```text
 AzureCapacityScaleTypeEnum No description provided
+
+    Documentation for adx.control.models.AzureCapacityScaleTypeEnum
 ```
 
 ### adx.control.models.AzureResourceSku
@@ -4630,6 +4680,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AzureResourceSku
 ```
 
 ### adx.control.models.AzureResourceSku_1
@@ -4652,6 +4704,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AzureResourceSku_1
 ```
 
 ### adx.control.models.AzureSku
@@ -4674,6 +4728,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.AzureSku
 ```
 
 ### adx.control.models.AzureSkuNameEnum
@@ -4757,6 +4813,8 @@ Enumeration values:
 
 ```text
 AzureSkuNameEnum No description provided
+
+    Documentation for adx.control.models.AzureSkuNameEnum
 ```
 
 ### adx.control.models.AzureSkuTierEnum
@@ -4778,6 +4836,8 @@ Enumeration values:
 
 ```text
 AzureSkuTierEnum No description provided
+
+    Documentation for adx.control.models.AzureSkuTierEnum
 ```
 
 ### adx.control.models.BlobStorageEventType
@@ -4799,6 +4859,8 @@ Enumeration values:
 
 ```text
 BlobStorageEventType The name of blob storage event type to process.
+
+    Documentation for adx.control.models.BlobStorageEventType
 ```
 
 ### adx.control.models.CheckNameRequest
@@ -4820,6 +4882,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.CheckNameRequest
 ```
 
 ### adx.control.models.CheckNameRequestTypeEnum
@@ -4841,6 +4905,8 @@ Enumeration values:
 
 ```text
 CheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.CheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.CheckNameResult
@@ -4864,6 +4930,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.CheckNameResult
 ```
 
 ### adx.control.models.CheckNameResultReasonEnum
@@ -4885,6 +4953,8 @@ Enumeration values:
 
 ```text
 CheckNameResultReasonEnum No description provided
+
+    Documentation for adx.control.models.CheckNameResultReasonEnum
 ```
 
 ### adx.control.models.Cluster
@@ -4913,6 +4983,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Cluster
 ```
 
 ### adx.control.models.ClusterCheckNameRequest
@@ -4934,6 +5006,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterCheckNameRequest
 ```
 
 ### adx.control.models.ClusterCheckNameRequestTypeEnum
@@ -4954,6 +5028,8 @@ Enumeration values:
 
 ```text
 ClusterCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.ClusterListResult
@@ -4974,6 +5050,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterListResult
 ```
 
 ### adx.control.models.ClusterMigrateRequest
@@ -4994,6 +5072,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterMigrateRequest
 ```
 
 ### adx.control.models.ClusterPrincipalAssignment
@@ -5017,6 +5097,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterPrincipalAssignment
 ```
 
 ### adx.control.models.ClusterPrincipalAssignmentCheckNameRequest
@@ -5038,6 +5120,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterPrincipalAssignmentCheckNameRequest
 ```
 
 ### adx.control.models.ClusterPrincipalAssignmentCheckNameRequestTypeEnum
@@ -5058,6 +5142,8 @@ Enumeration values:
 
 ```text
 ClusterPrincipalAssignmentCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterPrincipalAssignmentCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.ClusterPrincipalAssignmentListResult
@@ -5078,6 +5164,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterPrincipalAssignmentListResult
 ```
 
 ### adx.control.models.ClusterPrincipalProperties
@@ -5105,6 +5193,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterPrincipalProperties
 ```
 
 ### adx.control.models.ClusterPrincipalPropertiesPrincipalTypeEnum
@@ -5127,6 +5217,8 @@ Enumeration values:
 
 ```text
 ClusterPrincipalPropertiesPrincipalTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterPrincipalPropertiesPrincipalTypeEnum
 ```
 
 ### adx.control.models.ClusterPrincipalPropertiesRoleEnum
@@ -5148,6 +5240,8 @@ Enumeration values:
 
 ```text
 ClusterPrincipalPropertiesRoleEnum No description provided
+
+    Documentation for adx.control.models.ClusterPrincipalPropertiesRoleEnum
 ```
 
 ### adx.control.models.ClusterPrincipalProperties_1
@@ -5175,6 +5269,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterPrincipalProperties_1
 ```
 
 ### adx.control.models.ClusterPrincipalProperties_1PrincipalTypeEnum
@@ -5197,6 +5293,8 @@ Enumeration values:
 
 ```text
 ClusterPrincipalProperties_1PrincipalTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterPrincipalProperties_1PrincipalTypeEnum
 ```
 
 ### adx.control.models.ClusterPrincipalProperties_1RoleEnum
@@ -5218,6 +5316,8 @@ Enumeration values:
 
 ```text
 ClusterPrincipalProperties_1RoleEnum No description provided
+
+    Documentation for adx.control.models.ClusterPrincipalProperties_1RoleEnum
 ```
 
 ### adx.control.models.ClusterProperties
@@ -5262,6 +5362,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterProperties
 ```
 
 ### adx.control.models.ClusterPropertiesEngineTypeEnum
@@ -5283,6 +5385,8 @@ Enumeration values:
 
 ```text
 ClusterPropertiesEngineTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterPropertiesEngineTypeEnum
 ```
 
 ### adx.control.models.ClusterPropertiesPublicIPTypeEnum
@@ -5304,6 +5408,8 @@ Enumeration values:
 
 ```text
 ClusterPropertiesPublicIPTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterPropertiesPublicIPTypeEnum
 ```
 
 ### adx.control.models.ClusterPropertiesPublicNetworkAccessEnum
@@ -5325,6 +5431,8 @@ Enumeration values:
 
 ```text
 ClusterPropertiesPublicNetworkAccessEnum No description provided
+
+    Documentation for adx.control.models.ClusterPropertiesPublicNetworkAccessEnum
 ```
 
 ### adx.control.models.ClusterPropertiesRestrictOutboundNetworkAccessEnum
@@ -5346,6 +5454,8 @@ Enumeration values:
 
 ```text
 ClusterPropertiesRestrictOutboundNetworkAccessEnum No description provided
+
+    Documentation for adx.control.models.ClusterPropertiesRestrictOutboundNetworkAccessEnum
 ```
 
 ### adx.control.models.ClusterPropertiesStateEnum
@@ -5375,6 +5485,8 @@ Enumeration values:
 
 ```text
 ClusterPropertiesStateEnum No description provided
+
+    Documentation for adx.control.models.ClusterPropertiesStateEnum
 ```
 
 ### adx.control.models.ClusterProperties_1
@@ -5419,6 +5531,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterProperties_1
 ```
 
 ### adx.control.models.ClusterProperties_1EngineTypeEnum
@@ -5440,6 +5554,8 @@ Enumeration values:
 
 ```text
 ClusterProperties_1EngineTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterProperties_1EngineTypeEnum
 ```
 
 ### adx.control.models.ClusterProperties_1PublicIPTypeEnum
@@ -5461,6 +5577,8 @@ Enumeration values:
 
 ```text
 ClusterProperties_1PublicIPTypeEnum No description provided
+
+    Documentation for adx.control.models.ClusterProperties_1PublicIPTypeEnum
 ```
 
 ### adx.control.models.ClusterProperties_1PublicNetworkAccessEnum
@@ -5482,6 +5600,8 @@ Enumeration values:
 
 ```text
 ClusterProperties_1PublicNetworkAccessEnum No description provided
+
+    Documentation for adx.control.models.ClusterProperties_1PublicNetworkAccessEnum
 ```
 
 ### adx.control.models.ClusterProperties_1RestrictOutboundNetworkAccessEnum
@@ -5503,6 +5623,8 @@ Enumeration values:
 
 ```text
 ClusterProperties_1RestrictOutboundNetworkAccessEnum No description provided
+
+    Documentation for adx.control.models.ClusterProperties_1RestrictOutboundNetworkAccessEnum
 ```
 
 ### adx.control.models.ClusterProperties_1StateEnum
@@ -5532,6 +5654,8 @@ Enumeration values:
 
 ```text
 ClusterProperties_1StateEnum No description provided
+
+    Documentation for adx.control.models.ClusterProperties_1StateEnum
 ```
 
 ### adx.control.models.ClusterUpdate
@@ -5559,6 +5683,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ClusterUpdate
 ```
 
 ### adx.control.models.Compression
@@ -5580,6 +5706,8 @@ Enumeration values:
 
 ```text
 Compression The compression type
+
+    Documentation for adx.control.models.Compression
 ```
 
 ### adx.control.models.CosmosDbDataConnection
@@ -5603,6 +5731,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.CosmosDbDataConnection
 ```
 
 ### adx.control.models.CosmosDbDataConnectionProperties
@@ -5631,6 +5761,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.CosmosDbDataConnectionProperties
 ```
 
 ### adx.control.models.CosmosDbDataConnectionProperties_1
@@ -5659,6 +5791,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.CosmosDbDataConnectionProperties_1
 ```
 
 ### adx.control.models.DataConnection
@@ -5683,6 +5817,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DataConnection
 ```
 
 ### adx.control.models.DataConnectionCheckNameRequest
@@ -5704,6 +5840,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DataConnectionCheckNameRequest
 ```
 
 ### adx.control.models.DataConnectionCheckNameRequestTypeEnum
@@ -5724,6 +5862,8 @@ Enumeration values:
 
 ```text
 DataConnectionCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.DataConnectionCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.DataConnectionKindEnum
@@ -5747,6 +5887,8 @@ Enumeration values:
 
 ```text
 DataConnectionKindEnum No description provided
+
+    Documentation for adx.control.models.DataConnectionKindEnum
 ```
 
 ### adx.control.models.DataConnectionListResult
@@ -5767,6 +5909,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DataConnectionListResult
 ```
 
 ### adx.control.models.DataConnectionValidation
@@ -5788,6 +5932,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DataConnectionValidation
 ```
 
 ### adx.control.models.DataConnectionValidationListResult
@@ -5808,6 +5954,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DataConnectionValidationListResult
 ```
 
 ### adx.control.models.DataConnectionValidationResult
@@ -5828,6 +5976,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DataConnectionValidationResult
 ```
 
 ### adx.control.models.Database
@@ -5852,6 +6002,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Database
 ```
 
 ### adx.control.models.DatabaseInviteFollowerRequest
@@ -5873,6 +6025,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabaseInviteFollowerRequest
 ```
 
 ### adx.control.models.DatabaseInviteFollowerResult
@@ -5893,6 +6047,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabaseInviteFollowerResult
 ```
 
 ### adx.control.models.DatabaseKindEnum
@@ -5914,6 +6070,8 @@ Enumeration values:
 
 ```text
 DatabaseKindEnum No description provided
+
+    Documentation for adx.control.models.DatabaseKindEnum
 ```
 
 ### adx.control.models.DatabaseListResult
@@ -5935,6 +6093,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabaseListResult
 ```
 
 ### adx.control.models.DatabasePrincipal
@@ -5961,6 +6121,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipal
 ```
 
 ### adx.control.models.DatabasePrincipalAssignment
@@ -5984,6 +6146,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalAssignment
 ```
 
 ### adx.control.models.DatabasePrincipalAssignmentCheckNameRequest
@@ -6005,6 +6169,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalAssignmentCheckNameRequest
 ```
 
 ### adx.control.models.DatabasePrincipalAssignmentCheckNameRequestTypeEnum
@@ -6025,6 +6191,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalAssignmentCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalAssignmentCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.DatabasePrincipalAssignmentListResult
@@ -6045,6 +6213,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalAssignmentListResult
 ```
 
 ### adx.control.models.DatabasePrincipalListRequest
@@ -6065,6 +6235,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalListRequest
 ```
 
 ### adx.control.models.DatabasePrincipalListResult
@@ -6085,6 +6257,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalListResult
 ```
 
 ### adx.control.models.DatabasePrincipalProperties
@@ -6112,6 +6286,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalProperties
 ```
 
 ### adx.control.models.DatabasePrincipalPropertiesPrincipalTypeEnum
@@ -6134,6 +6310,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalPropertiesPrincipalTypeEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalPropertiesPrincipalTypeEnum
 ```
 
 ### adx.control.models.DatabasePrincipalPropertiesRoleEnum
@@ -6159,6 +6337,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalPropertiesRoleEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalPropertiesRoleEnum
 ```
 
 ### adx.control.models.DatabasePrincipalProperties_1
@@ -6186,6 +6366,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabasePrincipalProperties_1
 ```
 
 ### adx.control.models.DatabasePrincipalProperties_1PrincipalTypeEnum
@@ -6208,6 +6390,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalProperties_1PrincipalTypeEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalProperties_1PrincipalTypeEnum
 ```
 
 ### adx.control.models.DatabasePrincipalProperties_1RoleEnum
@@ -6233,6 +6417,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalProperties_1RoleEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalProperties_1RoleEnum
 ```
 
 ### adx.control.models.DatabasePrincipalRoleEnum
@@ -6258,6 +6444,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalRoleEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalRoleEnum
 ```
 
 ### adx.control.models.DatabasePrincipalTypeEnum
@@ -6280,6 +6468,8 @@ Enumeration values:
 
 ```text
 DatabasePrincipalTypeEnum No description provided
+
+    Documentation for adx.control.models.DatabasePrincipalTypeEnum
 ```
 
 ### adx.control.models.DatabaseShareOrigin
@@ -6302,6 +6492,8 @@ Enumeration values:
 
 ```text
 DatabaseShareOrigin The origin of the following setup.
+
+    Documentation for adx.control.models.DatabaseShareOrigin
 ```
 
 ### adx.control.models.DatabaseStatistics
@@ -6322,6 +6514,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DatabaseStatistics
 ```
 
 ### adx.control.models.DiagnoseVirtualNetworkResult
@@ -6342,6 +6536,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.DiagnoseVirtualNetworkResult
 ```
 
 ### adx.control.models.EndpointDependency
@@ -6363,6 +6559,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EndpointDependency
 ```
 
 ### adx.control.models.EndpointDetail
@@ -6383,6 +6581,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EndpointDetail
 ```
 
 ### adx.control.models.ErrorAdditionalInfo
@@ -6404,20 +6604,34 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ErrorAdditionalInfo
 ```
 
 #### adx.control.models.ErrorAdditionalInfo.disp
 
 ```text
-DISP Display array.
-    DISP(X) displays array X without printing the array name or 
-    additional description information such as the size and class name.
-    In all other ways it is the same as leaving the semicolon off an
-    expression except that nothing is shown for empty arrays.
- 
-    If X is a string or character array, the text is displayed.
- 
-    See also formattedDisplayText, sprintf, num2str, format, details.
+disp - Display value of variable
+
+    Syntax
+      disp(X)
+
+    Input Arguments
+      X - Input array
+        array
+
+    Examples
+      openExample('matlab/DisplayVariableValuesExample')
+      openExample('matlab/DisplayMatrixWithColumnLabelsExample')
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/disp.html#btnoykv-1
+      openExample('matlab/DisplayMultipleVariablesOnSameLineExample')
+
+    See also format, int2str, num2str, sprintf, fprintf,
+      formattedDisplayText
+
+    Introduced in MATLAB before R2006a
+    Documentation for disp
+       doc disp
 ```
 
 ### adx.control.models.ErrorDetail
@@ -6442,20 +6656,34 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ErrorDetail
 ```
 
 #### adx.control.models.ErrorDetail.disp
 
 ```text
-DISP Display array.
-    DISP(X) displays array X without printing the array name or 
-    additional description information such as the size and class name.
-    In all other ways it is the same as leaving the semicolon off an
-    expression except that nothing is shown for empty arrays.
- 
-    If X is a string or character array, the text is displayed.
- 
-    See also formattedDisplayText, sprintf, num2str, format, details.
+disp - Display value of variable
+
+    Syntax
+      disp(X)
+
+    Input Arguments
+      X - Input array
+        array
+
+    Examples
+      openExample('matlab/DisplayVariableValuesExample')
+      openExample('matlab/DisplayMatrixWithColumnLabelsExample')
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/disp.html#btnoykv-1
+      openExample('matlab/DisplayMultipleVariablesOnSameLineExample')
+
+    See also format, int2str, num2str, sprintf, fprintf,
+      formattedDisplayText
+
+    Introduced in MATLAB before R2006a
+    Documentation for disp
+       doc disp
 ```
 
 ### adx.control.models.ErrorResponse
@@ -6476,20 +6704,34 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ErrorResponse
 ```
 
 #### adx.control.models.ErrorResponse.disp
 
 ```text
-DISP Display array.
-    DISP(X) displays array X without printing the array name or 
-    additional description information such as the size and class name.
-    In all other ways it is the same as leaving the semicolon off an
-    expression except that nothing is shown for empty arrays.
- 
-    If X is a string or character array, the text is displayed.
- 
-    See also formattedDisplayText, sprintf, num2str, format, details.
+disp - Display value of variable
+
+    Syntax
+      disp(X)
+
+    Input Arguments
+      X - Input array
+        array
+
+    Examples
+      openExample('matlab/DisplayVariableValuesExample')
+      openExample('matlab/DisplayMatrixWithColumnLabelsExample')
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/disp.html#btnoykv-1
+      openExample('matlab/DisplayMultipleVariablesOnSameLineExample')
+
+    See also format, int2str, num2str, sprintf, fprintf,
+      formattedDisplayText
+
+    Introduced in MATLAB before R2006a
+    Documentation for disp
+       doc disp
 ```
 
 ### adx.control.models.EventGridConnectionProperties
@@ -6522,6 +6764,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EventGridConnectionProperties
 ```
 
 ### adx.control.models.EventGridConnectionPropertiesDatabaseRoutingEnum
@@ -6543,6 +6787,8 @@ Enumeration values:
 
 ```text
 EventGridConnectionPropertiesDatabaseRoutingEnum No description provided
+
+    Documentation for adx.control.models.EventGridConnectionPropertiesDatabaseRoutingEnum
 ```
 
 ### adx.control.models.EventGridConnectionProperties_1
@@ -6575,6 +6821,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EventGridConnectionProperties_1
 ```
 
 ### adx.control.models.EventGridConnectionProperties_1DatabaseRoutingEnum
@@ -6596,6 +6844,8 @@ Enumeration values:
 
 ```text
 EventGridConnectionProperties_1DatabaseRoutingEnum No description provided
+
+    Documentation for adx.control.models.EventGridConnectionProperties_1DatabaseRoutingEnum
 ```
 
 ### adx.control.models.EventGridDataConnection
@@ -6619,6 +6869,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EventGridDataConnection
 ```
 
 ### adx.control.models.EventGridDataFormat
@@ -6654,6 +6906,8 @@ Enumeration values:
 
 ```text
 EventGridDataFormat The data format of the message. Optionally the data format can be added to each message.
+
+    Documentation for adx.control.models.EventGridDataFormat
 ```
 
 ### adx.control.models.EventHubConnectionProperties
@@ -6685,6 +6939,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EventHubConnectionProperties
 ```
 
 ### adx.control.models.EventHubConnectionPropertiesDatabaseRoutingEnum
@@ -6706,6 +6962,8 @@ Enumeration values:
 
 ```text
 EventHubConnectionPropertiesDatabaseRoutingEnum No description provided
+
+    Documentation for adx.control.models.EventHubConnectionPropertiesDatabaseRoutingEnum
 ```
 
 ### adx.control.models.EventHubConnectionProperties_1
@@ -6737,6 +6995,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EventHubConnectionProperties_1
 ```
 
 ### adx.control.models.EventHubConnectionProperties_1DatabaseRoutingEnum
@@ -6758,6 +7018,8 @@ Enumeration values:
 
 ```text
 EventHubConnectionProperties_1DatabaseRoutingEnum No description provided
+
+    Documentation for adx.control.models.EventHubConnectionProperties_1DatabaseRoutingEnum
 ```
 
 ### adx.control.models.EventHubDataConnection
@@ -6781,6 +7043,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.EventHubDataConnection
 ```
 
 ### adx.control.models.EventHubDataFormat
@@ -6816,6 +7080,8 @@ Enumeration values:
 
 ```text
 EventHubDataFormat The data format of the message. Optionally the data format can be added to each message.
+
+    Documentation for adx.control.models.EventHubDataFormat
 ```
 
 ### adx.control.models.FollowerDatabaseDefinition
@@ -6840,6 +7106,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.FollowerDatabaseDefinition
 ```
 
 ### adx.control.models.FollowerDatabaseListResult
@@ -6860,6 +7128,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.FollowerDatabaseListResult
 ```
 
 ### adx.control.models.FreeFormObject
@@ -6874,6 +7144,8 @@ Class methods
 
 ```text
 Class methods
+
+    Documentation for adx.control.models.FreeFormObject
 ```
 
 ### adx.control.models.Identity
@@ -6897,6 +7169,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Identity
 ```
 
 ### adx.control.models.IdentityTypeEnum
@@ -6920,6 +7194,8 @@ Enumeration values:
 
 ```text
 IdentityTypeEnum No description provided
+
+    Documentation for adx.control.models.IdentityTypeEnum
 ```
 
 ### adx.control.models.Identity_userAssignedIdentities_value
@@ -6941,6 +7217,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Identity_userAssignedIdentities_value
 ```
 
 ### adx.control.models.IotHubConnectionProperties
@@ -6970,6 +7248,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.IotHubConnectionProperties
 ```
 
 ### adx.control.models.IotHubConnectionPropertiesDatabaseRoutingEnum
@@ -6991,6 +7271,8 @@ Enumeration values:
 
 ```text
 IotHubConnectionPropertiesDatabaseRoutingEnum No description provided
+
+    Documentation for adx.control.models.IotHubConnectionPropertiesDatabaseRoutingEnum
 ```
 
 ### adx.control.models.IotHubConnectionProperties_1
@@ -7020,6 +7302,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.IotHubConnectionProperties_1
 ```
 
 ### adx.control.models.IotHubConnectionProperties_1DatabaseRoutingEnum
@@ -7041,6 +7325,8 @@ Enumeration values:
 
 ```text
 IotHubConnectionProperties_1DatabaseRoutingEnum No description provided
+
+    Documentation for adx.control.models.IotHubConnectionProperties_1DatabaseRoutingEnum
 ```
 
 ### adx.control.models.IotHubDataConnection
@@ -7064,6 +7350,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.IotHubDataConnection
 ```
 
 ### adx.control.models.IotHubDataFormat
@@ -7099,6 +7387,8 @@ Enumeration values:
 
 ```text
 IotHubDataFormat The data format of the message. Optionally the data format can be added to each message.
+
+    Documentation for adx.control.models.IotHubDataFormat
 ```
 
 ### adx.control.models.KeyVaultProperties
@@ -7122,6 +7412,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.KeyVaultProperties
 ```
 
 ### adx.control.models.LanguageExtension
@@ -7143,6 +7435,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.LanguageExtension
 ```
 
 ### adx.control.models.LanguageExtensionImageName
@@ -7165,6 +7459,8 @@ Enumeration values:
 
 ```text
 LanguageExtensionImageName Language extension image name.
+
+    Documentation for adx.control.models.LanguageExtensionImageName
 ```
 
 ### adx.control.models.LanguageExtensionName
@@ -7186,6 +7482,8 @@ Enumeration values:
 
 ```text
 LanguageExtensionName Language extension that can run within KQL query.
+
+    Documentation for adx.control.models.LanguageExtensionName
 ```
 
 ### adx.control.models.LanguageExtension_1
@@ -7207,6 +7505,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.LanguageExtension_1
 ```
 
 ### adx.control.models.LanguageExtensionsList
@@ -7227,6 +7527,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.LanguageExtensionsList
 ```
 
 ### adx.control.models.ListResourceSkusResult
@@ -7247,6 +7549,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ListResourceSkusResult
 ```
 
 ### adx.control.models.ManagedPrivateEndpoint
@@ -7271,6 +7575,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ManagedPrivateEndpoint
 ```
 
 ### adx.control.models.ManagedPrivateEndpointListResult
@@ -7291,6 +7597,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ManagedPrivateEndpointListResult
 ```
 
 ### adx.control.models.ManagedPrivateEndpointProperties
@@ -7315,6 +7623,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ManagedPrivateEndpointProperties
 ```
 
 ### adx.control.models.ManagedPrivateEndpointProperties_1
@@ -7339,6 +7649,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ManagedPrivateEndpointProperties_1
 ```
 
 ### adx.control.models.ManagedPrivateEndpointsCheckNameRequest
@@ -7360,6 +7672,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ManagedPrivateEndpointsCheckNameRequest
 ```
 
 ### adx.control.models.ManagedPrivateEndpointsCheckNameRequestTypeEnum
@@ -7380,6 +7694,8 @@ Enumeration values:
 
 ```text
 ManagedPrivateEndpointsCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.ManagedPrivateEndpointsCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.MigrationClusterProperties
@@ -7403,6 +7719,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.MigrationClusterProperties
 ```
 
 ### adx.control.models.MigrationClusterPropertiesRoleEnum
@@ -7424,6 +7742,8 @@ Enumeration values:
 
 ```text
 MigrationClusterPropertiesRoleEnum No description provided
+
+    Documentation for adx.control.models.MigrationClusterPropertiesRoleEnum
 ```
 
 ### adx.control.models.Operation
@@ -7447,6 +7767,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Operation
 ```
 
 ### adx.control.models.OperationListResult
@@ -7468,6 +7790,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OperationListResult
 ```
 
 ### adx.control.models.OperationResult
@@ -7495,6 +7819,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OperationResult
 ```
 
 ### adx.control.models.OperationResultErrorProperties
@@ -7516,6 +7842,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OperationResultErrorProperties
 ```
 
 ### adx.control.models.OperationResultProperties
@@ -7538,6 +7866,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OperationResultProperties
 ```
 
 ### adx.control.models.OptimizedAutoscale
@@ -7561,6 +7891,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OptimizedAutoscale
 ```
 
 ### adx.control.models.OutboundNetworkDependenciesEndpoint
@@ -7585,6 +7917,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OutboundNetworkDependenciesEndpoint
 ```
 
 ### adx.control.models.OutboundNetworkDependenciesEndpointListResult
@@ -7606,6 +7940,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OutboundNetworkDependenciesEndpointListResult
 ```
 
 ### adx.control.models.OutboundNetworkDependenciesEndpointProperties
@@ -7628,6 +7964,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.OutboundNetworkDependenciesEndpointProperties
 ```
 
 ### adx.control.models.PrivateEndpointConnection
@@ -7652,6 +7990,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateEndpointConnection
 ```
 
 ### adx.control.models.PrivateEndpointConnectionListResult
@@ -7672,6 +8012,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateEndpointConnectionListResult
 ```
 
 ### adx.control.models.PrivateEndpointConnectionProperties
@@ -7695,6 +8037,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateEndpointConnectionProperties
 ```
 
 ### adx.control.models.PrivateEndpointProperty
@@ -7715,6 +8059,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateEndpointProperty
 ```
 
 ### adx.control.models.PrivateLinkResource
@@ -7739,6 +8085,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateLinkResource
 ```
 
 ### adx.control.models.PrivateLinkResourceListResult
@@ -7759,6 +8107,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateLinkResourceListResult
 ```
 
 ### adx.control.models.PrivateLinkResourceProperties
@@ -7781,6 +8131,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateLinkResourceProperties
 ```
 
 ### adx.control.models.PrivateLinkServiceConnectionStateProperty
@@ -7803,6 +8155,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.PrivateLinkServiceConnectionStateProperty
 ```
 
 ### adx.control.models.ProvisioningState
@@ -7829,6 +8183,8 @@ Enumeration values:
 
 ```text
 ProvisioningState The provisioned state of the resource.
+
+    Documentation for adx.control.models.ProvisioningState
 ```
 
 ### adx.control.models.ProxyResource
@@ -7851,6 +8207,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ProxyResource
 ```
 
 ### adx.control.models.ReadOnlyFollowingDatabase
@@ -7874,6 +8232,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ReadOnlyFollowingDatabase
 ```
 
 ### adx.control.models.ReadOnlyFollowingDatabaseProPrincipalsModificationKindEnum_0000
@@ -7896,6 +8256,8 @@ Enumeration values:
 
 ```text
 ReadOnlyFollowingDatabaseProPrincipalsModificationKindEnum_0000 No description provided
+
+    Documentation for adx.control.models.ReadOnlyFollowingDatabaseProPrincipalsModificationKindEnum_0000
 ```
 
 ### adx.control.models.ReadOnlyFollowingDatabaseProPrincipalsModificationKindEnum_0001
@@ -7918,6 +8280,8 @@ Enumeration values:
 
 ```text
 ReadOnlyFollowingDatabaseProPrincipalsModificationKindEnum_0001 No description provided
+
+    Documentation for adx.control.models.ReadOnlyFollowingDatabaseProPrincipalsModificationKindEnum_0001
 ```
 
 ### adx.control.models.ReadOnlyFollowingDatabaseProperties
@@ -7948,6 +8312,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ReadOnlyFollowingDatabaseProperties
 ```
 
 ### adx.control.models.ReadOnlyFollowingDatabaseProperties_1
@@ -7978,6 +8344,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ReadOnlyFollowingDatabaseProperties_1
 ```
 
 ### adx.control.models.ReadWriteDatabase
@@ -8001,6 +8369,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ReadWriteDatabase
 ```
 
 ### adx.control.models.ReadWriteDatabaseProperties
@@ -8027,6 +8397,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ReadWriteDatabaseProperties
 ```
 
 ### adx.control.models.ReadWriteDatabaseProperties_1
@@ -8053,6 +8425,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ReadWriteDatabaseProperties_1
 ```
 
 ### adx.control.models.Resource
@@ -8075,6 +8449,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Resource
 ```
 
 ### adx.control.models.ResourceSkuCapabilities
@@ -8096,6 +8472,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ResourceSkuCapabilities
 ```
 
 ### adx.control.models.ResourceSkuZoneDetails
@@ -8117,6 +8495,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ResourceSkuZoneDetails
 ```
 
 ### adx.control.models.Script
@@ -8141,6 +8521,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.Script
 ```
 
 ### adx.control.models.ScriptCheckNameRequest
@@ -8162,6 +8544,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ScriptCheckNameRequest
 ```
 
 ### adx.control.models.ScriptCheckNameRequestTypeEnum
@@ -8182,6 +8566,8 @@ Enumeration values:
 
 ```text
 ScriptCheckNameRequestTypeEnum No description provided
+
+    Documentation for adx.control.models.ScriptCheckNameRequestTypeEnum
 ```
 
 ### adx.control.models.ScriptListResult
@@ -8202,6 +8588,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ScriptListResult
 ```
 
 ### adx.control.models.ScriptProperties
@@ -8227,6 +8615,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ScriptProperties
 ```
 
 ### adx.control.models.ScriptProperties_1
@@ -8252,6 +8642,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.ScriptProperties_1
 ```
 
 ### adx.control.models.SkuDescription
@@ -8277,6 +8669,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.SkuDescription
 ```
 
 ### adx.control.models.SkuDescriptionList
@@ -8297,6 +8691,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.SkuDescriptionList
 ```
 
 ### adx.control.models.SkuLocationInfoItem
@@ -8319,6 +8715,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.SkuLocationInfoItem
 ```
 
 ### adx.control.models.Status
@@ -8342,6 +8740,8 @@ Enumeration values:
 
 ```text
 Status The status of operation.
+
+    Documentation for adx.control.models.Status
 ```
 
 ### adx.control.models.SuspensionDetails
@@ -8362,6 +8762,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.SuspensionDetails
 ```
 
 ### adx.control.models.TableLevelSharingProperties
@@ -8389,6 +8791,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.TableLevelSharingProperties
 ```
 
 ### adx.control.models.The_object_that_describes_the_operation_
@@ -8412,6 +8816,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.The_object_that_describes_the_operation_
 ```
 
 ### adx.control.models.TrackedResource
@@ -8436,6 +8842,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.TrackedResource
 ```
 
 ### adx.control.models.TrustedExternalTenant
@@ -8456,6 +8864,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.TrustedExternalTenant
 ```
 
 ### adx.control.models.VirtualNetworkConfiguration
@@ -8478,6 +8888,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.VirtualNetworkConfiguration
 ```
 
 ### adx.control.models.systemData
@@ -8503,6 +8915,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.control.models.systemData
 ```
 
 ### adx.control.models.systemDataCreatedByTypeEnum
@@ -8526,6 +8940,8 @@ Enumeration values:
 
 ```text
 systemDataCreatedByTypeEnum No description provided
+
+    Documentation for adx.control.models.systemDataCreatedByTypeEnum
 ```
 
 ### adx.control.models.systemDataLastModifiedByTypeEnum
@@ -8549,6 +8965,8 @@ Enumeration values:
 
 ```text
 systemDataLastModifiedByTypeEnum No description provided
+
+    Documentation for adx.control.models.systemDataLastModifiedByTypeEnum
 ```
 
 ### adx.control.BaseClient
@@ -8569,6 +8987,8 @@ BASECLIENT Base class for RESTful adx services.
 ```text
 adx.control.BaseClient constructor to be called from
   derived classes to allow setting properties upon construction
+
+    Documentation for adx.control.BaseClient
 ```
 
 #### adx.control.BaseClient.applyCookies
@@ -8702,6 +9122,8 @@ COOKIEJAR helper class in MATLAB Generator for OpenAPI package,
     load       - Forces cookie jar to be loaded from disk
     purge      - Empties the entire cookie jar and deletes cookies from
                  disk
+
+    Documentation for adx.control.CookieJar
 ```
 
 #### adx.control.CookieJar.getCookies
@@ -8813,6 +9235,8 @@ JSONEnum Base class for enumerations when working with adx.control.JSONMapper
               VAL2 ("VAL2")
           end
       end
+
+    Documentation for adx.control.JSONEnum
 ```
 
 #### adx.control.JSONEnum.fromJSON
@@ -8910,6 +9334,8 @@ adx.control.JSONMapper Constructor. Call this from
  
   Make sure to update the class name (myClass in the example)
   in both the function name as well as in the arguments block.
+
+    Documentation for adx.control.JSONMapper
 ```
 
 #### adx.control.JSONMapper.doNotParse
@@ -9029,6 +9455,8 @@ JSONMAPPERMAP Alternative to containers.Map for free-form key-value
 ```text
 JSONMAPPERMAP Constructor. Can be called with key value pairs
   as input to initialize the map with those keys and values.
+
+    Documentation for adx.control.JSONMapperMap
 ```
 
 #### adx.control.JSONMapperMap.disp
@@ -9067,6 +9495,8 @@ JSONPROPERTYINFO class used by adx.control.JSONMapper internally
 
 ```text
 JSONPROPERTYINFO class used by adx.control.JSONMapper internally
+
+    Documentation for adx.control.JSONPropertyInfo
 ```
 
 #### adx.control.JSONPropertyInfo.getPropertyInfo
@@ -9091,6 +9521,8 @@ Ingest Class to run an ingest command
 
 ```text
 Call base constructor to override any configured settings
+
+    Documentation for adx.data.api.Ingest
 ```
 
 #### adx.data.api.Ingest.ingestRun
@@ -9111,6 +9543,8 @@ Management Class to run a management command
 
 ```text
 Call base constructor to override any configured settings
+
+    Documentation for adx.data.api.Management
 ```
 
 #### adx.data.api.Management.getPropertyGroups
@@ -9168,6 +9602,8 @@ Query Class to run a KQL query
 
 ```text
 Call base constructor to override any configured settings
+
+    Documentation for adx.data.api.Query
 ```
 
 #### adx.data.api.Query.queryRun
@@ -9235,6 +9671,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.ClientRequestProperties
 ```
 
 ### adx.data.models.ClientRequestPropertiesOptions
@@ -9253,6 +9691,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.ClientRequestPropertiesOptions
 ```
 
 ### adx.data.models.Column
@@ -9270,6 +9710,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.Column
 ```
 
 ### adx.data.models.ColumnV1
@@ -9287,6 +9729,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.ColumnV1
 ```
 
 ### adx.data.models.DataSetCompletion
@@ -9304,6 +9748,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.DataSetCompletion
 ```
 
 ### adx.data.models.DataSetHeader
@@ -9321,6 +9767,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.DataSetHeader
 ```
 
 ### adx.data.models.DataTable
@@ -9338,6 +9786,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.DataTable
 ```
 
 ### adx.data.models.DataTableV1
@@ -9355,6 +9805,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.DataTableV1
 ```
 
 ### adx.data.models.DataTables
@@ -9372,6 +9824,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.DataTables
 ```
 
 ### adx.data.models.DataTablesV1
@@ -9389,6 +9843,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.DataTablesV1
 ```
 
 ### adx.data.models.IngestionResourcesSnapshot
@@ -9411,6 +9867,8 @@ INGESTIONRESOURCESSNAPSHOT Contains result of .get ingestion resources request
 
 ```text
 INGESTIONRESOURCESSNAPSHOT Constructor for IngestionResourcesSnapshot object
+
+    Documentation for adx.data.models.IngestionResourcesSnapshot
 ```
 
 #### adx.data.models.IngestionResourcesSnapshot.table
@@ -9436,6 +9894,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.ManagementRequest
 ```
 
 ### adx.data.models.QueryParameter
@@ -9454,6 +9914,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.QueryParameter
 ```
 
 ### adx.data.models.QueryRequest
@@ -9473,6 +9935,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.QueryRequest
 ```
 
 ### adx.data.models.QueryV1ResponseRaw
@@ -9490,6 +9954,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.QueryV1ResponseRaw
 ```
 
 ### adx.data.models.QueryV2ResponseRaw
@@ -9507,6 +9973,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.QueryV2ResponseRaw
 ```
 
 #### adx.data.models.QueryV2ResponseRaw.getDataSetCompletionFrame
@@ -9538,6 +10006,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.QueryV2ResponseUnparsedRows
 ```
 
 #### adx.data.models.QueryV2ResponseUnparsedRows.getDataSetCompletionFrame
@@ -9569,6 +10039,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.QueueIngestionMessage
 ```
 
 ### adx.data.models.Row
@@ -9587,6 +10059,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.Row
 ```
 
 ### adx.data.models.RowUnparsed
@@ -9605,6 +10079,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.RowUnparsed
 ```
 
 ### adx.data.models.RowsUnparsed
@@ -9623,6 +10099,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.RowsUnparsed
 ```
 
 ### adx.data.models.StreamFormat
@@ -9652,6 +10130,8 @@ Enumeration values:
 STREAMFORMAT Specifies the format of the data in the request body
   The value should be one of: CSV, TSV, SCsv, SOHsv, PSV, JSON, MultiJSON, Avro
   See: https://learn.microsoft.com/en-us/azure/data-explorer/ingestion-supported-formats
+
+    Documentation for adx.data.models.StreamFormat
 ```
 
 ### adx.data.models.TableCompletion
@@ -9669,6 +10149,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.TableCompletion
 ```
 
 ### adx.data.models.TableFragment
@@ -9686,6 +10168,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.TableFragment
 ```
 
 ### adx.data.models.TableFragmentType
@@ -9717,6 +10201,8 @@ TableFragmentType Describes what the client should do with this fragment
      DataReplace
  
   See: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/response2
+
+    Documentation for adx.data.models.TableFragmentType
 ```
 
 ### adx.data.models.TableHeader
@@ -9734,6 +10220,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.TableHeader
 ```
 
 ### adx.data.models.TableKind
@@ -9783,6 +10271,8 @@ TableKind Specifies the type of a Table response
     Unknown
  
   See: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/api/rest/response2
+
+    Documentation for adx.data.models.TableKind
 ```
 
 ### adx.data.models.TableProgress
@@ -9800,6 +10290,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for adx.data.models.TableProgress
 ```
 
 ### azure
@@ -9824,6 +10316,8 @@ ACCESSTOKEN An immutable access token with a token string and an expiration time
 ACCESSTOKEN An immutable access token with a token string and an expiration time
   Can be created based on a corresponding Java com.azure.core.credential.AccessToken
   argument or a token string and an expiry datetime (including a timezone).
+
+    Documentation for azure.core.credential.AccessToken
 ```
 
 #### azure.core.credential.AccessToken.getToken
@@ -9854,6 +10348,8 @@ AZURESASCREDENTIAL A credential that uses a shared access signature to authentic
 AZURESASCREDENTIAL A credential that uses a shared access signature to authenticate
  
   See also: https://azuresdkdocs.blob.core.windows.net/$web/java/azure-core/1.20.0/index.html?com/azure/
+
+    Documentation for azure.core.credential.AzureSasCredential
 ```
 
 #### azure.core.credential.AzureSasCredential.AzureSasSignature
@@ -9891,6 +10387,8 @@ TOKENCREDENTIAL Credential that can provide an access token
 
 ```text
 TOKENCREDENTIAL Credential that can provide an access token
+
+    Documentation for azure.core.credential.TokenCredential
 ```
 
 #### azure.core.credential.TokenCredential.getToken
@@ -9927,6 +10425,8 @@ TOKENREQUESTCONTEXT Contains details of a request to get a token
   Can be created based on a corresponding com.azure.core.credential.TokenRequestContext
   Java object argument or without an argument where further configuration is
   required to add scopes.
+
+    Documentation for azure.core.credential.TokenRequestContext
 ```
 
 #### azure.core.credential.TokenRequestContext.addScopes
@@ -10008,6 +10508,8 @@ LONGRUNNINGOPERATIONSTATUS Represent states of a long-running operation
      NOT_STARTED
      SUCCESSFULLY_COMPLETED
      USER_CANCELLED
+
+    Documentation for azure.core.util.polling.LongRunningOperationStatus
 ```
 
 #### azure.core.util.polling.LongRunningOperationStatus.fromString
@@ -10065,6 +10567,8 @@ POLLRESPONSE Represents a response from long-running polling operation
   Java object argument or a com.azure.core.util.polling.LongRunningOperationStatus
   or azure.core.util.polling.LongRunningOperationStatus status argument and a
   message argument of type character vector or scalar string.
+
+    Documentation for azure.core.util.polling.PollResponse
 ```
 
 #### azure.core.util.polling.PollResponse.getRetryAfter
@@ -10107,6 +10611,8 @@ SYNCPOLLER Simplifies executing long-running operations against Azure
 SYNCPOLLER Simplifies executing long-running operations against Azure
   There is no constructor as this is based on a Java interface. A SyncPoller
   must be created based on the underlying SyncPoller Java object.
+
+    Documentation for azure.core.util.polling.SyncPoller
 ```
 
 #### azure.core.util.polling.SyncPoller.cancelOperation
@@ -10149,6 +10655,8 @@ Represents the account information relating to an authentication request
 ```text
 Represents the account information relating to an authentication request
   Held as a Java reactor.core.publisher.MonoMap.
+
+    Documentation for azure.identity.AuthenticationRecord
 ```
 
 #### azure.identity.AuthenticationRecord.subscribe
@@ -10177,6 +10685,8 @@ AZURECLICREDENTIAL Provides token credentials based on Azure CLI command
 ```text
 Created using a AzureCliCredential java object from the
   AzureCliCredentialBuilder class only
+
+    Documentation for azure.identity.AzureCliCredential
 ```
 
 ### azure.identity.AzureCliCredentialBuilder
@@ -10191,6 +10701,8 @@ AZURECLICREDENTIALBUILDER  Credential builder for instantiating a AzureCliCreden
 
 ```text
 AZURECLICREDENTIALBUILDER  Credential builder for instantiating a AzureCliCredential
+
+    Documentation for azure.identity.AzureCliCredentialBuilder
 ```
 
 #### azure.identity.AzureCliCredentialBuilder.build
@@ -10211,6 +10723,8 @@ CHAINEDTOKENCREDENTIAL Provides a credential from a list of providers
 
 ```text
 CHAINEDTOKENCREDENTIAL Provides a credential from a list of providers
+
+    Documentation for azure.identity.ChainedTokenCredential
 ```
 
 ### azure.identity.ChainedTokenCredentialBuilder
@@ -10225,6 +10739,8 @@ CHAINEDTOKENCREDENTIALBUILDER Builder for instantiating a ChainedTokenCredential
 
 ```text
 CHAINEDTOKENCREDENTIALBUILDER Builder for instantiating a ChainedTokenCredential
+
+    Documentation for azure.identity.ChainedTokenCredentialBuilder
 ```
 
 #### azure.identity.ChainedTokenCredentialBuilder.addLast
@@ -10252,6 +10768,8 @@ CLIENTCERTIFICATECREDENTIAL AAD credential acquires a token with a client certif
 ```text
 Created using a ClientCertificateCredential java object from the
   ClientCertificateCredentialBuilder class only
+
+    Documentation for azure.identity.ClientCertificateCredential
 ```
 
 ### azure.identity.ClientCertificateCredentialBuilder
@@ -10266,6 +10784,8 @@ CLIENTCERTIFICATECREDENTIALBUILDER Builder for ClientCertificateCredential
 
 ```text
 CLIENTCERTIFICATECREDENTIALBUILDER Builder for ClientCertificateCredential
+
+    Documentation for azure.identity.ClientCertificateCredentialBuilder
 ```
 
 #### azure.identity.ClientCertificateCredentialBuilder.authorityHost
@@ -10315,6 +10835,8 @@ CLIENTSECRETCREDENTIAL AAD credential acquires a token with a client secret
 ```text
 Created using a ClientSecretCredential java object from the
   ClientSecretCredentialBuilder class only
+
+    Documentation for azure.identity.ClientSecretCredential
 ```
 
 ### azure.identity.ClientSecretCredentialBuilder
@@ -10329,6 +10851,8 @@ CLIENTSECRETCREDENTIALBUILDER Builder for ClientSecretCredentialBuilder
 
 ```text
 CLIENTSECRETCREDENTIALBUILDER Builder for ClientSecretCredentialBuilder
+
+    Documentation for azure.identity.ClientSecretCredentialBuilder
 ```
 
 #### azure.identity.ClientSecretCredentialBuilder.authorityHost
@@ -10379,6 +10903,8 @@ azure.identity.CredentialBuilderBase is a class.
 ```text
 azure.identity.CredentialBuilderBase/CredentialBuilderBase is a constructor.
     obj = azure.identity.CredentialBuilderBase
+
+    Documentation for azure.identity.CredentialBuilderBase
 ```
 
 #### azure.identity.CredentialBuilderBase.httpClient
@@ -10410,6 +10936,8 @@ DEFAULTAZURECREDENTIAL Creates credential from environment or the shared token
 ```text
 Created using a DefaultAzureCredential java object from the
   DefaultAzureCredentialBuilder class only
+
+    Documentation for azure.identity.DefaultAzureCredential
 ```
 
 ### azure.identity.DefaultAzureCredentialBuilder
@@ -10424,6 +10952,8 @@ DEFAULTAZURECREDENTIALBUILDER Credential builder for DefaultAzureCredential
 
 ```text
 DEFAULTAZURECREDENTIALBUILDER Credential builder for DefaultAzureCredential
+
+    Documentation for azure.identity.DefaultAzureCredentialBuilder
 ```
 
 #### azure.identity.DefaultAzureCredentialBuilder.authorityHost
@@ -10469,6 +10999,8 @@ DEVICECODECREDENTIAL AAD credential acquires token with device code for AAD appl
 
 ```text
 DEVICECODECREDENTIAL AAD credential acquires token with device code for AAD application
+
+    Documentation for azure.identity.DeviceCodeCredential
 ```
 
 #### azure.identity.DeviceCodeCredential.authenticate
@@ -10511,6 +11043,8 @@ DEVICECODECREDENTIALBUILDER Builder for DeviceCodeCredential.
   
   See:
     https://docs.microsoft.com/en-us/java/api/com.azure.identity.devicecodecredentialbuilder.disableautomaticauthentication?view=azure-java-stable#com-azure-identity-devicecodecredentialbuilder-disableautomaticauthentication()
+
+    Documentation for azure.identity.DeviceCodeCredentialBuilder
 ```
 
 #### azure.identity.DeviceCodeCredentialBuilder.authorityHost
@@ -10601,6 +11135,8 @@ DEVICECODEINFO Contains details of a device code request.
 
 ```text
 DEVICECODEINFO Contains details of a device code request.
+
+    Documentation for azure.identity.DeviceCodeInfo
 ```
 
 #### azure.identity.DeviceCodeInfo.getExpiresOn
@@ -10657,6 +11193,8 @@ ENVIRONMENTCREDENTIAL Provides token credentials based on environment variables
 ```text
 Created using a EnvironmentCredential java object from the
   EnvironmentCredential class only
+
+    Documentation for azure.identity.EnvironmentCredential
 ```
 
 ### azure.identity.EnvironmentCredentialBuilder
@@ -10671,6 +11209,8 @@ ENVIRONMENTCREDENTIALBUILDER Builder for EnvironmentCredentialBuilder
 
 ```text
 ENVIRONMENTCREDENTIALBUILDER Builder for EnvironmentCredentialBuilder
+
+    Documentation for azure.identity.EnvironmentCredentialBuilder
 ```
 
 #### azure.identity.EnvironmentCredentialBuilder.authorityHost
@@ -10705,6 +11245,8 @@ INTERACTIVEBROWSERCREDENTIAL Prompt the login in the default browser
 ```text
 Created using a EnvironmentCredential java object from the
   EnvironmentCredential class only
+
+    Documentation for azure.identity.InteractiveBrowserCredential
 ```
 
 ### azure.identity.InteractiveBrowserCredentialBuilder
@@ -10719,6 +11261,8 @@ INTERACTIVEBROWSERCREDENTIALBUILDER builder for InteractiveBrowserCredential
 
 ```text
 INTERACTIVEBROWSERCREDENTIALBUILDER builder for InteractiveBrowserCredential
+
+    Documentation for azure.identity.InteractiveBrowserCredentialBuilder
 ```
 
 #### azure.identity.InteractiveBrowserCredentialBuilder.authorityHost
@@ -10772,6 +11316,8 @@ MANAGEDIDENTITYCREDENTIAL Managed Service Identity token based credentials
 
 ```text
 MANAGEDIDENTITYCREDENTIAL Managed Service Identity token based credentials
+
+    Documentation for azure.identity.ManagedIdentityCredential
 ```
 
 #### azure.identity.ManagedIdentityCredential.getClientId
@@ -10793,6 +11339,8 @@ MANAGEDIDENTITYCREDENTIALBUILDER Builder for ManagedIdentityCredential
 
 ```text
 MANAGEDIDENTITYCREDENTIALBUILDER Builder for ManagedIdentityCredential
+
+    Documentation for azure.identity.ManagedIdentityCredentialBuilder
 ```
 
 #### azure.identity.ManagedIdentityCredentialBuilder.build
@@ -10835,18 +11383,22 @@ DEVICECODECREDENTIAL A credential provider that provides token
 ```text
 DEVICECODECREDENTIAL A credential provider that provides token
   credentials from the MSAL shared token cache.
+
+    Documentation for azure.identity.SharedTokenCacheCredential
 ```
 
 #### azure.identity.SharedTokenCacheCredential.restFlow
 
 ```text
-azure.identity.SharedTokenCacheCredential.restFlow is an undocumented builtin static method or namespace function.
+azure.identity.SharedTokenCacheCredential.restFlow is a function.
+    obj = azure.identity.SharedTokenCacheCredential.restFlow
 ```
 
 #### azure.identity.SharedTokenCacheCredential.restGetSas
 
 ```text
-azure.identity.SharedTokenCacheCredential.restGetSas is an undocumented builtin static method or namespace function.
+azure.identity.SharedTokenCacheCredential.restGetSas is a function.
+    obj = azure.identity.SharedTokenCacheCredential.restGetSas
 ```
 
 ### azure.identity.SharedTokenCacheCredentialBuilder
@@ -10861,6 +11413,8 @@ SHAREDTOKENCACHECREDENTIALBUILDER Builder for SharedTokenCacheCredential
 
 ```text
 SHAREDTOKENCACHECREDENTIALBUILDER Builder for SharedTokenCacheCredential
+
+    Documentation for azure.identity.SharedTokenCacheCredentialBuilder
 ```
 
 #### azure.identity.SharedTokenCacheCredentialBuilder.authorityHost
@@ -10914,6 +11468,8 @@ TOKENREQUESTCONTEXT Contains details of a request to get a token
   Can be created based on a corresponding com.azure.core.credential.TokenRequestContext
   Java object argument or without an argument where further configuration is
   required to add scopes.
+
+    Documentation for azure.identity.TokenCachePersistenceOptions
 ```
 
 #### azure.identity.TokenCachePersistenceOptions.getName
@@ -11018,6 +11574,8 @@ DELETEDKEY Deleted Key is the resource consisting of name, recovery
   In that sense, to determine the name of a deleted key, it appears the
   best option is to call getRecoveryId and parse the name from the URI
   this returns.
+
+    Documentation for azure.security.keyvault.keys.models.DeletedKey
 ```
 
 #### azure.security.keyvault.keys.models.DeletedKey.getDeletedOn
@@ -11063,6 +11621,8 @@ JSONWEBKEY Key as per http://tools.ietf.org/html/draft-ietf-jose-json-web-key-18
 
 ```text
 Create a logger object
+
+    Documentation for azure.security.keyvault.keys.models.JsonWebKey
 ```
 
 #### azure.security.keyvault.keys.models.JsonWebKey.clearMemory
@@ -11164,6 +11724,8 @@ KEYPROPERTIES Contains the properties of the secret except its value
       propList = keyClient.listPropertiesOfKeys();
       % Look at a name in a returned property
       name = propList(1).getName();
+
+    Documentation for azure.security.keyvault.keys.models.KeyProperties
 ```
 
 #### azure.security.keyvault.keys.models.KeyProperties.getId
@@ -11217,6 +11779,8 @@ Enumeration values:
 ```text
 KEYTYPE Defines enumeration values for KeyType
   Values are EC, EC_HSM, OCT, OCT_HSM, RSA & RSA_HSM
+
+    Documentation for azure.security.keyvault.keys.models.KeyType
 ```
 
 #### azure.security.keyvault.keys.models.KeyType.fromString
@@ -11264,6 +11828,8 @@ KEYVAULTSECRET KeyVaultKey class
 
 ```text
 Create a logger object
+
+    Documentation for azure.security.keyvault.keys.models.KeyVaultKey
 ```
 
 #### azure.security.keyvault.keys.models.KeyVaultKey.getId
@@ -11382,6 +11948,8 @@ KEYCLIENT A KeyClient object for transacting keys with the Key Vault
  
       % Create the client
       keyClient = builder.buildClient();
+
+    Documentation for azure.security.keyvault.keys.KeyClient
 ```
 
 #### azure.security.keyvault.keys.KeyClient.beginDeleteKey
@@ -11524,6 +12092,8 @@ KEYCLIENTBUILDER Builder for KeyClient object
 KEYCLIENTBUILDER Builder for KeyClient object
   Can optionally accept a Java com.azure.security.keyvault.keys.KeyClientBuilder
   object as an argument to create a MATLAB builder from the Java builder.
+
+    Documentation for azure.security.keyvault.keys.KeyClientBuilder
 ```
 
 #### azure.security.keyvault.keys.KeyClientBuilder.buildClient
@@ -11597,6 +12167,8 @@ DELETEDSECRET Deleted Secret is the resource consisting of name,
   actually return a value for deleted secrets. These are all behaviors
   of the underlying Azure KeyVault Java SDK and not MATLAB specific
   behaviors.
+
+    Documentation for azure.security.keyvault.secrets.models.DeletedSecret
 ```
 
 #### azure.security.keyvault.secrets.models.DeletedSecret.getDeletedOn
@@ -11649,6 +12221,8 @@ KEYVAULTSECRET Class to provide access to the KeyVaultSecret object
 
 ```text
 Create a logger object
+
+    Documentation for azure.security.keyvault.secrets.models.KeyVaultSecret
 ```
 
 #### azure.security.keyvault.secrets.models.KeyVaultSecret.getId
@@ -11708,6 +12282,8 @@ SECRETPROPERTIES Contains the properties of the secret but not its value
       propList = secretClient.listPropertiesOfSecrets();
       % Look at a name in a returned property
       name = propList(1).getName();
+
+    Documentation for azure.security.keyvault.secrets.models.SecretProperties
 ```
 
 #### azure.security.keyvault.secrets.models.SecretProperties.getId
@@ -11812,6 +12388,8 @@ SECRETCLIENT A SecretClient object for transacting secrets with the Key Vault
  
       % Create the client
       secretClient = builder.buildClient();
+
+    Documentation for azure.security.keyvault.secrets.SecretClient
 ```
 
 #### azure.security.keyvault.secrets.SecretClient.beginDeleteSecret
@@ -11954,6 +12532,8 @@ SECRETCLIENTBUILDER builder for SecretClient
 SECRETCLIENTBUILDER builder for SecretClient
   Can optionally accept a Java com.azure.security.keyvault.secrets.SecretClientBuilder
   object as an argument to build a MATLAB builder from the Java builder.
+
+    Documentation for azure.security.keyvault.secrets.SecretClientBuilder
 ```
 
 #### azure.security.keyvault.secrets.SecretClientBuilder.buildClient
@@ -12011,6 +12591,8 @@ BLOBCONTAINERITEM An Azure Storage container
 
 ```text
 BLOBCONTAINERITEM An Azure Storage container
+
+    Documentation for azure.storage.blob.models.BlobContainerItem
 ```
 
 #### azure.storage.blob.models.BlobContainerItem.getName
@@ -12031,6 +12613,8 @@ BlobItem
 
 ```text
 BlobItem
+
+    Documentation for azure.storage.blob.models.BlobItem
 ```
 
 #### azure.storage.blob.models.BlobItem.getMetadata
@@ -12093,6 +12677,8 @@ BlobItemProperties Properties of a blob
 
 ```text
 BlobItemProperties Properties of a blob
+
+    Documentation for azure.storage.blob.models.BlobItemProperties
 ```
 
 #### azure.storage.blob.models.BlobItemProperties.getCacheControl
@@ -12144,6 +12730,8 @@ BLOBLISTDETAILS Allows users to specify additional information the service shoul
 
 ```text
 BLOBLISTDETAILS Allows users to specify additional information the service should return with each blob when listing blobs
+
+    Documentation for azure.storage.blob.models.BlobListDetails
 ```
 
 #### azure.storage.blob.models.BlobListDetails.getRetrieveCopy
@@ -12278,6 +12866,8 @@ BlobProperties Properties of a blob
 
 ```text
 BlobProperties Properties of a blob
+
+    Documentation for azure.storage.blob.models.BlobProperties
 ```
 
 #### azure.storage.blob.models.BlobProperties.getBlobSize
@@ -12330,6 +12920,8 @@ LISTBLOBSOPTIONS Defines options available to configure the behavior of a call t
 
 ```text
 LISTBLOBSOPTIONS Defines options available to configure the behavior of a call to listBlobs on a BlobContainerClient
+
+    Documentation for azure.storage.blob.models.ListBlobsOptions
 ```
 
 #### azure.storage.blob.models.ListBlobsOptions.getDetails
@@ -12386,6 +12978,8 @@ STORAGEACCOUNTINFO Holds information related to the storage account
 STORAGEACCOUNTINFO Holds information related to the storage account
   Currently only constructing an object based on and existing java object of
   type StorageAccountInfo is supported.
+
+    Documentation for azure.storage.blob.models.StorageAccountInfo
 ```
 
 #### azure.storage.blob.models.StorageAccountInfo.getAccountKind
@@ -12408,6 +13002,8 @@ USERDELEGATIONKEY A user delegation key.
 
 ```text
 USERDELEGATIONKEY A user delegation key.
+
+    Documentation for azure.storage.blob.models.UserDelegationKey
 ```
 
 #### azure.storage.blob.models.UserDelegationKey.getSignedExpiry
@@ -12448,6 +13044,8 @@ BLOBCONTAINERSASPERMISSION Constructs a string of permissions granted by Account
   Once the required values are set, the object should be serialized with
   toString and set as the permissions field on a BlobSasSignatureValues
   object
+
+    Documentation for azure.storage.blob.sas.BlobContainerSasPermission
 ```
 
 #### azure.storage.blob.sas.BlobContainerSasPermission.hasAddPermission
@@ -12581,6 +13179,8 @@ BLOBSASPERMISSION Constructs a string of permissions granted by Account SAS
   Once the required values are set, the object should be serialized with
   toString and set as the permissions field on a BlobSasSignatureValues
   object
+
+    Documentation for azure.storage.blob.sas.BlobSasPermission
 ```
 
 #### azure.storage.blob.sas.BlobSasPermission.hasAddPermission
@@ -12713,6 +13313,8 @@ BLOBSERVICESASSIGNATUREVALUES Used to initialize a SAS for a Blob service
                  confusion, if TimeZone is not set, 'local' is assumed
     permissions: azure.storage.blob.sas.BlobSasPermission or
                  BlobContainerSasPermission
+
+    Documentation for azure.storage.blob.sas.BlobServiceSasSignatureValues
 ```
 
 ### azure.storage.blob.specialized
@@ -12735,6 +13337,8 @@ BLOBLEASECLIENT This class provides a client that contains all the
   leasing operations for BlobContainerClient and BlobClient. This client
   acts as a supplement to those clients and only handles leasing
   operations.
+
+    Documentation for azure.storage.blob.specialized.BlobLeaseClient
 ```
 
 #### azure.storage.blob.specialized.BlobLeaseClient.acquireLease
@@ -12804,6 +13408,8 @@ BLOBCLIENTBUILDER This class provides a fluent builder API to help aid
 ```text
 BLOBCLIENTBUILDER This class provides a fluent builder API to help aid
   the configuration and instantiation of Storage Lease clients.
+
+    Documentation for azure.storage.blob.specialized.BlobLeaseClientBuilder
 ```
 
 #### azure.storage.blob.specialized.BlobLeaseClientBuilder.blobClient
@@ -12858,6 +13464,8 @@ BLOBCLIENT Client performs generic blob operations
 
 ```text
 BLOBCLIENT Client performs generic blob operations
+
+    Documentation for azure.storage.blob.BlobClient
 ```
 
 #### azure.storage.blob.BlobClient.copyFromUrl
@@ -12989,6 +13597,8 @@ BLOBCLIENTBUILDER Aids the configuration and instantiation of BlobClients
 
 ```text
 BLOBCLIENTBUILDER Aids the configuration and instantiation of BlobClients
+
+    Documentation for azure.storage.blob.BlobClientBuilder
 ```
 
 #### azure.storage.blob.BlobClientBuilder.blobName
@@ -13075,6 +13685,8 @@ BLOBCONTAINERCLIENT Client to a container
 
 ```text
 BLOBCONTAINERCLIENT Client to a container
+
+    Documentation for azure.storage.blob.BlobContainerClient
 ```
 
 #### azure.storage.blob.BlobContainerClient.create
@@ -13195,6 +13807,8 @@ BLOBCONTAINERCLIENTBUILDER Aids construction of BlobContinerClients
 
 ```text
 BLOBCONTAINERCLIENTBUILDER Aids construction of BlobContinerClients
+
+    Documentation for azure.storage.blob.BlobContainerClientBuilder
 ```
 
 #### azure.storage.blob.BlobContainerClientBuilder.buildClient
@@ -13265,6 +13879,8 @@ BLOBSERVICECLIENT
 
 ```text
 BLOBSERVICECLIENT
+
+    Documentation for azure.storage.blob.BlobServiceClient
 ```
 
 #### azure.storage.blob.BlobServiceClient.createBlobContainer
@@ -13362,6 +13978,8 @@ BLOBSERVICECLIENTBUILDER Aids construction of BlobServiceClients
 
 ```text
 BLOBSERVICECLIENTBUILDER Aids construction of BlobServiceClients
+
+    Documentation for azure.storage.blob.BlobServiceClientBuilder
 ```
 
 #### azure.storage.blob.BlobServiceClientBuilder.buildClient
@@ -13485,6 +14103,8 @@ REQUESTRETRYOPTIONS Options for configuring the RequestRetryFactory
                        operation, default value is 120ms
  
         secondaryHost: Optional character vector or scalar string
+
+    Documentation for azure.storage.common.policy.RequestRetryOptions
 ```
 
 ### azure.storage.common.policy.RetryPolicyType
@@ -13508,6 +14128,8 @@ Enumeration values:
 RetryPolicyType Defines holds possible options for retry backoff algorithms
   They may be used with RequestRetryOptions.
   Values are EXPONENTIAL & FIXED
+
+    Documentation for azure.storage.common.policy.RetryPolicyType
 ```
 
 #### azure.storage.common.policy.RetryPolicyType.toJava
@@ -13553,6 +14175,8 @@ ACCOUNTSASPERMISSION Constructs a string of permissions granted by Account SAS
   Once the required values are set, the object should be serialized with
   toString and set as the permissions field on an AccountSasSignatureValues
   object
+
+    Documentation for azure.storage.common.sas.AccountSasPermission
 ```
 
 #### azure.storage.common.sas.AccountSasPermission.hasAddPermission
@@ -13719,6 +14343,8 @@ ACCOUNTSASRESOURCETYPE Construct string representing the Account SAS services
   grant access to that resource type.
   Once the required values are set serialize the object with toString for use
   as the resources field on an AccountSasSignatureValues object.
+
+    Documentation for azure.storage.common.sas.AccountSasResourceType
 ```
 
 #### azure.storage.common.sas.AccountSasResourceType.isContainer
@@ -13806,6 +14432,8 @@ ACCOUNTSASSERVICE Construct a string representing the Account SAS services
   grant access to that service. Once required values are set the object should
   be serialized with toString and set as the services field on an
   AccountSasSignatureValues object.
+
+    Documentation for azure.storage.common.sas.AccountSasService
 ```
 
 #### azure.storage.common.sas.AccountSasService.hasBlobAccess
@@ -13925,6 +14553,8 @@ ACCOUNTSASSIGNATUREVALUES Used to initialize a SAS for a storage account
     permissions: azure.storage.common.sas.AccountSasPermission
     services: azure.storage.common.sas.AccountSasService
     resourceTypes: azure.storage.common.sas.AccountSasResourceType
+
+    Documentation for azure.storage.common.sas.AccountSasSignatureValues
 ```
 
 ### azure.storage.common.StorageSharedKeyCredential
@@ -13941,6 +14571,8 @@ STORAGESHAREDKEYCREDENTIAL SharedKey credential policy
 ```text
 STORAGESHAREDKEYCREDENTIAL SharedKey credential policy 
   Used to put into a header to authorize requests.
+
+    Documentation for azure.storage.common.StorageSharedKeyCredential
 ```
 
 #### azure.storage.common.StorageSharedKeyCredential.getAccountName
@@ -13968,6 +14600,8 @@ Copyright 2022 The MathWorks, Inc.
 
 ```text
 Copyright 2022 The MathWorks, Inc.
+
+    Documentation for azure.storage.file.datalake.models.PathItem
 ```
 
 #### azure.storage.file.datalake.models.PathItem.getName
@@ -13996,6 +14630,8 @@ Copyright 2022 The MathWorks, Inc.
 
 ```text
 Copyright 2022 The MathWorks, Inc.
+
+    Documentation for azure.storage.file.datalake.models.PathProperties
 ```
 
 ### azure.storage.file.datalake.sas
@@ -14052,6 +14688,8 @@ DATALAKESERVICESASSIGNATUREVALUES Used to initialize a SAS for Data Lake Storage
     identifier:  Creates an object with the specified identifier.
                  NOTE: Identifier can not be used for a UserDelegationKey SAS.
                  Type character vector or scalar string.
+
+    Documentation for azure.storage.file.datalake.sas.DataLakeServiceSasSignatureValues
 ```
 
 ### azure.storage.file.datalake.sas.FileSystemSasPermission
@@ -14070,6 +14708,8 @@ FILESYSTEMSASPERMISSION Constructs a string of permissions granted by ServiceSAS
 FILESYSTEMSASPERMISSION Constructs a string of permissions granted by ServiceSAS
   Setting a value to true means that any SAS which uses these permissions will
   grant permissions for that operation.
+
+    Documentation for azure.storage.file.datalake.sas.FileSystemSasPermission
 ```
 
 #### azure.storage.file.datalake.sas.FileSystemSasPermission.hasAddPermission
@@ -14256,6 +14896,8 @@ PATHSASPERMISSION Constructs a string of permissions granted by ServiceSAS
 PATHSASPERMISSION Constructs a string of permissions granted by ServiceSAS
   Setting a value to true means that any SAS which uses these permissions will
   grant permissions for that operation.
+
+    Documentation for azure.storage.file.datalake.sas.PathSasPermission
 ```
 
 #### azure.storage.file.datalake.sas.PathSasPermission.hasAddPermission
@@ -14440,6 +15082,8 @@ DATALAKEDIRECTORYCLIENT Client that contains directory operations for Azure Stor
 ```text
 DATALAKEDIRECTORYCLIENT Client that contains directory operations for Azure Storage Data Lake
   This client is instantiated through DataLakePathClientBuilder
+
+    Documentation for azure.storage.file.datalake.DataLakeDirectoryClient
 ```
 
 #### azure.storage.file.datalake.DataLakeDirectoryClient.createFile
@@ -14562,6 +15206,8 @@ DATALAKEFILECLIENT Client that contains file operations for Azure Storage Data L
 DATALAKEFILECLIENT Client that contains file operations for Azure Storage Data Lake
   This client is instantiated through DataLakePathClientBuilder or retrieved via
   getFileClient().
+
+    Documentation for azure.storage.file.datalake.DataLakeFileClient
 ```
 
 #### azure.storage.file.datalake.DataLakeFileClient.delete
@@ -14657,6 +15303,8 @@ DATALAKEFILEFILESYSTEMCLIENT Client that contains file system operations
 ```text
 DATALAKEFILEFILESYSTEMCLIENT Client that contains file system operations
   This client is instantiated through DataLakeFileSystemClientBuilder
+
+    Documentation for azure.storage.file.datalake.DataLakeFileSystemClient
 ```
 
 #### azure.storage.file.datalake.DataLakeFileSystemClient.createDirectory
@@ -14726,6 +15374,8 @@ DATALAKEFILESYSTEMCLIENTBUILDER Aids the configuration and instantiation of Data
 
 ```text
 DATALAKEFILESYSTEMCLIENTBUILDER Aids the configuration and instantiation of DataLakeFileSystemClient
+
+    Documentation for azure.storage.file.datalake.DataLakeFileSystemClientBuilder
 ```
 
 #### azure.storage.file.datalake.DataLakeFileSystemClientBuilder.buildClient
@@ -14791,6 +15441,8 @@ DATALAKEPATHCLIENTBUILDER Aids the configuration and instantiation of DataLakeFi
 
 ```text
 DATALAKEPATHCLIENTBUILDER Aids the configuration and instantiation of DataLakeFileClient
+
+    Documentation for azure.storage.file.datalake.DataLakePathClientBuilder
 ```
 
 #### azure.storage.file.datalake.DataLakePathClientBuilder.buildDirectoryClient
@@ -14875,6 +15527,8 @@ PEEKEDMESSAGEITEM Returned when calling Peek Messages on a queue
 
 ```text
 PEEKEDMESSAGEITEM Returned when calling Peek Messages on a queue
+
+    Documentation for azure.storage.queue.models.PeekedMessageItem
 ```
 
 #### azure.storage.queue.models.PeekedMessageItem.getDequeueCount
@@ -14964,6 +15618,8 @@ QUEUEITEM Azure Storage Queue
 
 ```text
 QUEUEITEM Azure Storage Queue
+
+    Documentation for azure.storage.queue.models.QueueItem
 ```
 
 #### azure.storage.queue.models.QueueItem.getName
@@ -14984,6 +15640,8 @@ QUEUEMESSAGEITEM Returned when calling Get Messages on a queue
 
 ```text
 QUEUEMESSAGEITEM Returned when calling Get Messages on a queue
+
+    Documentation for azure.storage.queue.models.QueueMessageItem
 ```
 
 #### azure.storage.queue.models.QueueMessageItem.getDequeueCount
@@ -15105,6 +15763,8 @@ QUEUEPROPERTIES Class containing properties of a specific queue
 
 ```text
 QUEUEPROPERTIES Class containing properties of a specific queue
+
+    Documentation for azure.storage.queue.models.QueueProperties
 ```
 
 #### azure.storage.queue.models.QueueProperties.getApproximateMessageCount
@@ -15127,6 +15787,8 @@ SENDMESSAGERESULT Returned in the QueueMessageList array when calling Put Messag
 
 ```text
 SENDMESSAGERESULT Returned in the QueueMessageList array when calling Put Message on a Queue
+
+    Documentation for azure.storage.queue.models.SendMessageResult
 ```
 
 #### azure.storage.queue.models.SendMessageResult.getExpirationTime
@@ -15182,6 +15844,8 @@ QUEUESASPERMISSION Constructs a string of permissions granted by Account SAS
   Once the required values are set, the object should be serialized with
   toString and set as the permissions field on a QueueSasSignatureValues
   object
+
+    Documentation for azure.storage.queue.sas.QueueSasPermission
 ```
 
 #### azure.storage.queue.sas.QueueSasPermission.hasAddPermission
@@ -15295,6 +15959,8 @@ QUEUESERVICESASSIGNATUREVALUES Used to initialize a SAS for a Queue service
   Argument types:
     expiryTime: datetime
     permissions: azure.storage.queue.sas.QueueSasPermission
+
+    Documentation for azure.storage.queue.sas.QueueServiceSasSignatureValues
 ```
 
 ### azure.storage.queue.QueueClient
@@ -15309,6 +15975,8 @@ QUEUECLIENT Client performs generic queue operations
 
 ```text
 QUEUECLIENT Client performs generic queue operations
+
+    Documentation for azure.storage.queue.QueueClient
 ```
 
 #### azure.storage.queue.QueueClient.clearMessages
@@ -15443,6 +16111,8 @@ QUEUECLIENTBUILDER Aids the configuration and instantiation of QueueClients
 
 ```text
 QUEUECLIENTBUILDER Aids the configuration and instantiation of QueueClients
+
+    Documentation for azure.storage.queue.QueueClientBuilder
 ```
 
 #### azure.storage.queue.QueueClientBuilder.buildClient
@@ -15513,6 +16183,8 @@ QUEUESERVICECLIENT Service client performs generic queue operations
 
 ```text
 QUEUESERVICECLIENT Service client performs generic queue operations
+
+    Documentation for azure.storage.queue.QueueServiceClient
 ```
 
 #### azure.storage.queue.QueueServiceClient.createQueue
@@ -15576,6 +16248,8 @@ QUEUESERVICECLIENTBUILDER Aids configuration & instantiation of QueueServiceClie
 
 ```text
 QUEUESERVICECLIENTBUILDER Aids configuration & instantiation of QueueServiceClients
+
+    Documentation for azure.storage.queue.QueueServiceClientBuilder
 ```
 
 #### azure.storage.queue.QueueServiceClientBuilder.buildClient
@@ -15639,6 +16313,8 @@ OBJECT Root Class for all Azure wrapper objects
 ```text
 logObj = Logger.getLogger();
   write(logObj,'debug','Creating root object');
+
+    Documentation for azure.object
 ```
 
 #### azure.object.setSystemProperties
@@ -15687,6 +16363,8 @@ NullPolicy Enumeration used to determine how null values ard handled in MATLAB
                  AllowAll: All null types to map to missing, NaN or NaT for
                            all data types
            Convert2Double: Convert logicals, int32s, & int64s  to doubles
+
+    Documentation for mathworks.adx.NullPolicy
 ```
 
 ### mathworks.adx.KQLQuery
@@ -15936,35 +16614,47 @@ ingestTableQueue Ingests a local file to Azure Data Explorer using Azure blob
         blobName: Name of the blob to upload to, if not specified a name will be
                   generated based on the local file.
  
-          cluster: Cluster name, if not specified the database configured in
+         cluster: Cluster name, if not specified the database configured in
                   the json settings file will be used.
  
-      bearerToken: Bearer Token, if not specified the database configured in
+     bearerToken: Bearer Token, if not specified the database configured in
                   the json settings file will be used.
  
-            mode: "drop" drop the existing table if it exists before ingesting
-                  "create" create the table if it does not exist
-                  "add" (Default) ingest into an existing table
+            mode: "drop" drop the existing table if it exists before ingesting.
+                  "create" create the table if it does not exist.
+                  "add" (Default) ingest into an existing table.
  
+         verbose: Display additional output, default: true.
+ 
+  uploadViaAzureServices: Logical to enable uploading via Azure services, default: true.
+ 
+  timeFromMicroseconds: Transform datetimes from microseconds, default: true.
+ 
+      ingestionMapping: Specify an ingest mapping as a scalar string.
+ 
+      checkForDuration: Logical to enable checking for duration types, default: true.
+                        Disable to improve performance if know that input does
+                        not contain columns of type duration.
   Return values:
-     success: A logical true is returned if a success message is returned.
+     success: A logical true is returned if the ingest was successful.
  
-      result: Tabular output of the command if successful otherwise a
+      result: Tabular output of the command or a
               adx.control.models.ErrorResponse
  
   Example:
-     % Get filename & path for the outages.parquet file
+     % Get filename & full path for the outages.parquet file
      info = parquetinfo('outages.parquet');
-     success = mathworks.adx.ingestFile(info.Filename, 'outagesTable');
+     [success, result] = mathworks.adx.ingestFile(info.Filename, 'outagesTable');
  
  
-                                    Table Exists
+   Table mode behaviors                    
    -----------------------------------------------------
-                 |       True           |     False
+                 |                Table Exists   
+                 ---------------------------------------    
+   Mode          |       True           |     False
    -----------------------------------------------------
-   Mode          |                      |
    create        |   add                |    create, add
-   drop          |   drop, create, add  |    create add
+   drop          |   drop, create, add  |    create, add
    add (default) |   add                |    error
 ```
 
@@ -16179,17 +16869,35 @@ ingestTable Ingests a MATLAB table to an Azure Data Explorer Table
  
   Options:
        tableName: A name for the table, if not specified the tabled will
-                  be named ingestedTable-<UTC timestamp>
+                  be named ingestedTable-<UTC timestamp>.
+ 
         database: database name, if not specified the database configured in
                   the json settings file will be used.
+ 
          cluster: Cluster name, if not specified the database configured in
                   the json settings file will be used.
+ 
      bearerToken: Bearer Token, if not specified the database configured in
                   the json settings file will be used.
-            mode: "drop" drop an existing table with the tableName before ingesting
-                  "create" create the table if it does not exist
-                  "add" (Default) ingest into an existing table
-         verbose: Logical to enable additional feedback, default is true
+ 
+            mode: "drop" drop an existing table with the tableName before ingesting.
+                  "create" create the table if it does not exist.
+                  "add" (Default) ingest into an existing table.
+ 
+         verbose: Logical to enable additional feedback, default is true.
+ 
+  timeFromMicroseconds: Transform datetimes from microseconds, default: true.
+ 
+      ingestionMapping: Specify an ingest mapping as a scalar string.
+ 
+      checkForDuration: Logical to enable checking for duration types, default: true.
+                        Disable to improve performance if know that input does
+                        not contain columns of type duration.
+  Return values:
+     success: A logical true is returned if the ingest was successful.
+ 
+      result: Tabular output of the command or a
+              adx.control.models.ErrorResponse
 ```
 
 ### mathworks.adx.ingestTableQueue
@@ -16724,17 +17432,83 @@ logical2Bool Converts a MATLAB logical to a Kusto bool
 ### mathworks.internal.adx.mapTypesKustoToMATLAB
 
 ```text
-MAPTYPESKUSTOTOMATLAB Map Kusto datatypes to corresponding MATLAB type
-  See: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/
-  for .net mapping
+MAPTYPESKUSTOTOMATLAB Map a Kusto scalar datatype name to a MATLAB type.
+    OUTTYPE = MAPTYPESKUSTOTOMATLAB(INTYPE) returns the MATLAB type name
+    corresponding to the Kusto scalar datatype name inType.
+ 
+    Input
+    -----
+    inType must be a nonempty text scalar and may be provided as a
+    string scalar or character vector. Matching is case-insensitive.
+ 
+    Output
+    ------
+    outType is returned as a string scalar containing the MATLAB type
+    name used by the ADX import layer.
+ 
+    Supported mappings
+    ------------------
+    Kusto type    MATLAB type
+    ----------    -----------
+    "int"         "int32"
+    "long"        "int64"
+    "string"      "string"
+    "guid"        "string"
+    "real"        "double"
+    "datetime"    "datetime"
+    "dynamic"     "cell"
+    "bool"        "logical"
+    "timespan"    "duration"
+    "decimal"     "double"
+ 
+    Unsupported input values issue the warning:
+    "adx:mapTypesKustoToMATLAB" and default to "string".
+ 
+    See: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/
+    for Kusto scalar datatype definitions and .NET mapping guidance.
 ```
 
 ### mathworks.internal.adx.mapTypesMATLABToKusto
 
 ```text
-mapTypesMATLABToKusto Map MATLAB datatypes to corresponding Kusto type
-  See: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/
-  for .net mapping
+MAPTYPESMATLABTOKUSTO Map a MATLAB type name to a Kusto scalar datatype.
+    outType = mapTypesMATLABToKusto(inType) returns the Kusto scalar
+    datatype name corresponding to the MATLAB type name inType.
+ 
+    Input
+    -----
+    inType must be a nonempty text scalar and may be provided as a
+    string scalar or character vector. Matching is case-insensitive.
+ 
+    Output
+    ------
+    outType is returned as a scalar string containing the Kusto scalar
+    datatype name used when generating ADX schema definitions.
+ 
+    Supported mappings
+    ------------------
+    MATLAB type       Kusto type
+    -----------       ----------
+    "int32"           "int"
+    "int8"            "int"
+    "uint8"           "int"
+    "int16"           "int"
+    "uint16"          "int"
+    "int64"           "long"
+    "uint32"          "long"
+    "string"          "string"
+    "char"            "string"
+    "double"          "real"
+    "single"          "real"
+    "datetime"        "datetime"
+    "duration"        "timespan"
+    "logical"         "bool"
+ 
+    Unsupported input values issue the warning:
+    "adx:mapTypesMATLABToKusto:Unsupported" and default to "string".
+ 
+    See: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/scalar-data-types/
+    for Kusto scalar datatype definitions and .NET mapping guidance.
 ```
 
 ### mathworks.internal.adx.queryV1Response2Tables
@@ -16922,7 +17696,7 @@ adxCurlWrite adx caller for mathworks.internal.curlWrite
            entirety as described above
  
     bearerToken: A bearerToken as scalar text if not provided an attempt will
-                 be made to read the value from adx.Client.Settings.json
+                 be made to determine a controlBearerToken
  
     id: Request id header value as scalar text, if not provided a UUID is created
  
@@ -17059,6 +17833,8 @@ To allow proper nesting of object, derived objects must
   call the JSONMapper constructor from their constructor. This 
   also allows objects to be instantiated with Name-Value pairs
   as inputs to set properties to specified values.
+
+    Documentation for mathworks.utils.jwt.ClaimsJM
 ```
 
 ### mathworks.utils.jwt.JWT
@@ -17075,6 +17851,8 @@ JWT Represent a Java Web Token
 
 ```text
 JWT Create a JWT object from a token string
+
+    Documentation for mathworks.utils.jwt.JWT
 ```
 
 #### mathworks.utils.jwt.JWT.expiryTime
@@ -17190,7 +17968,7 @@ GETTOKEN Obtain and return an access token for the configured
   Tenant, ClientID and Scopes.
  
     If a token for configured Tenant, ClientID and Scopes:
-        - IS found in the cache and it
+        - Is found in the cache and it
             - Has NOT expired, it is returned
             - HAS expired and a refresh token IS available, it
               is refreshed and then returned, if refresh fails
@@ -17245,6 +18023,8 @@ msOAuth2Client Constructor
  
     When working with Client Secret authentication, no user
     interaction is required.
+
+    Documentation for mathworks.utils.msOAuth2Client
 ```
 
 #### mathworks.utils.msOAuth2Client.refreshToken
@@ -17353,6 +18133,8 @@ Logger - Object definition for Logger
   Examples:
       logObj = Logger.getLogger();
       write(logObj,'warning','My warning message')
+
+    Documentation for Logger
 ```
 
 #### Logger.clearLogFile
@@ -17448,11 +18230,30 @@ This method returns the singleton logger object. Only one
 #### Logger.log
 
 ```text
-LOG    Natural logarithm.
-    LOG(X) is the natural logarithm of the elements of X.
-    Complex results are produced if X is not positive.
- 
-    See also LOG1P, LOG2, LOG10, EXP, LOGM, REALLOG.
+log - Natural logarithm
+
+    Syntax
+      Y = log(X)
+
+    Input Arguments
+      X - Input array
+        scalar | vector | matrix | multidimensional array | table |
+        timetable
+
+    Output Arguments
+      Y - Logarithm values
+        scalar | vector | matrix | multidimensional array | table |
+        timetable
+
+    Examples
+      openExample('matlab/NaturalLogarithmofNegativeNumberExample')
+
+    See also log1p, log2, log10, exp, logm, reallog, loglog, semilogx,
+      semilogy
+
+    Introduced in MATLAB before R2006a
+    Documentation for log
+       doc log
 ```
 
 #### Logger.openLogFile
@@ -17481,8 +18282,50 @@ Logger.verbose is a function.
 #### Logger.warning
 
 ```text
-Logger.warning is a function.
-    Logger.warning(varargin)
+warning - Display warning message
+
+    Syntax
+      warning(msg)
+      warning(msg,A)
+      warning(warnID,___)
+
+      warning(state)
+      warning(state,warnID)
+      warning
+
+      warnStruct = warning
+      warning(warnStruct)
+
+      warning(state,mode)
+      warnStruct = warning(state,mode)
+
+    Input Arguments
+      msg - Information about cause of warning
+        character vector | string scalar
+      A - Replacement value
+        character vector | string scalar | numeric scalar
+      warnID - Identifier for warning
+        character vector | string scalar | 'all' | 'last'
+      state - Warning control indicator
+        'on' | 'off' | 'query'
+      warnStruct - Warning settings
+        structure | array of structures
+      mode - Verbosity and stack trace display settings
+        'backtrace' | 'verbose'
+
+    Examples
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/warning.html#buh8kqc-9
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/warning.html#buh8kqc-10
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/warning.html#buh8kqc-11
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/warning.html#buh8kqc-12
+      web /usr/local/MATLAB/R2026a/help/matlab/ref/warning.html#buh8kqc-13
+
+    See also lastwarn, error, lasterror, dbstop, disp, sprintf, errordlg,
+      warndlg
+
+    Introduced in MATLAB before R2006a
+    Documentation for warning
+       doc warning
 ```
 
 #### Logger.write
@@ -17807,12 +18650,14 @@ INITIALIZE Configure logger and version test at Client builder entry points
 
     Other uses of initialize
 
+       com.mathworks.toolbox.javabuilder.MWApplication/initialize
+       internal.matlab.desktop_workspacebrowser.RemoteWorkspaceBrowser/initialize
+       matlab.internal.cef.webwindow/initialize
        matlab.net.http.io.ContentConsumer/initialize
        matlab.net.http.io.ImageConsumer/initialize
        matlab.net.http.io.JSONConsumer/initialize
        matlab.net.http.io.MultipartConsumer/initialize
        matlab.net.http.io.StringConsumer/initialize
-       myDeployedModule/initialize
        SimTimeseries/initialize
        simulink.Simulation/initialize
 ```
@@ -17831,11 +18676,11 @@ Microsoft Azure Data Explorer, Azure Data Lake Storage & Azure Key Vault are tra
 
 ------
 
-**Copyright 2022-2024 The MathWorks® Inc.**
+**Copyright 2022-2026 The MathWorks® Inc.**
 
 [//]: # (Documentation generation settings: )
 [//]: # (* Including class level help text )
 [//]: # (* Including constructor help text )
 [//]: # (* Excluding inherited methods )
 [//]: # (* Excluding default MATLAB classes )
-[//]: # (* Generated: 10-Sep-2024 12:33:29 )
+[//]: # (* Generated: 06-Jul-2026 12:26:32 )
