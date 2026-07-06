@@ -58,6 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#custom-row-decoder">Custom row decoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#donotparse-parallel-array-processing-experimental">doNotParse parallel array processing (Experimental)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#skip-parsing-row-array-elements-skiprowsarraydecode">Skip parsing row array elements (skipRowsArrayDecode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#skip-duration-checking-in-table-ingestion">Skip duration checking in table ingestion</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OpenAPI.html">Azure Data Explorer OpenAPI Spec</a></li>
@@ -224,6 +225,14 @@ If parsing the Rows independently if needed in a performance optimal way.</p>
 <span class="p">[</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">queryRun</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">apiVersion</span><span class="p">=</span><span class="s">&quot;v2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">skipRowsArrayDecode</span><span class="p">=</span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </div>
+</section>
+<section id="skip-duration-checking-in-table-ingestion">
+<h2>Skip duration checking in table ingestion<a class="headerlink" href="#skip-duration-checking-in-table-ingestion" title="Permalink to this heading"></a></h2>
+<p>When tables are ingested they are first checked to ensure they do not contain columns of
+type duration that cannot natively be ingested into Kusto. If it is known that a table
+or file does nto contain such a column then the optional named argument <code class="docutils literal notranslate"><span class="pre">checkForDuration</span></code>
+can be set to <code class="docutils literal notranslate"><span class="pre">false</span></code> to skip this validation step and improve performance when calling
+<code class="docutils literal notranslate"><span class="pre">mathworks.adx.ingestFile</span></code> or <code class="docutils literal notranslate"><span class="pre">mathworks.adx.ingestTable</span></code>.</p>
 </section>
 </section>
 
